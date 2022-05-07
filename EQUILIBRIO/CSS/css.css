@@ -1,7 +1,6 @@
 ﻿@font-face{
     font-family: 'Raleway';
-    src: url(../CSS/RALEWAY-ITALIC-VARIABLEFONT_WGHT.TTF),
-         url(../CSS/RALEWAY-VARIABLEFONT_WGHT.TTF);
+    src: url(../CSS/RALEWAY-VARIABLEFONT_WGHT.TTF);
 }
 
 * {
