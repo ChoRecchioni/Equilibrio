@@ -1,0 +1,171 @@
+﻿@font-face{
+    font-family: 'Raleway';
+    src: url(../CSS/RALEWAY-ITALIC-VARIABLEFONT_WGHT.TTF),
+         url(../CSS/RALEWAY-VARIABLEFONT_WGHT.TTF);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-image: url(../IMG/fondo2.png);
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px;
+    padding: 0px;
+    z-index: -2;
+    font-family: Raleway;
+}
+
+#transparencia {
+    opacity: 0.65;
+    background: white;
+    z-index: -1;
+    position: absolute;
+    width: -webkit-fill-available;
+    height: 900px;
+    float: left;
+}
+
+#redes {
+    height: 65px;
+    width: -webkit-fill-available;
+}
+
+.red {
+    float: right;
+    height: 43px;
+    width: 43px;
+    margin-top: 13px;
+    margin-right: 5px;
+}
+
+.opUser {
+    float: right;
+    height: 40px;
+    width: 40px;
+    margin-top: 15px;
+    margin-right: 5px;
+}
+
+#divisor {
+    float: right;
+    transform: rotate(90deg);
+    height: 40px;
+    margin-top: 15px;
+    margin-right: -5px;
+    margin-left: -10px;
+}
+
+#titulo {
+    background: #04c3cb;
+    height: 120px;
+    width: -webkit-fill-available;
+}
+
+#menu {
+    background: white;
+    z-index: 3;
+    width: 300px;
+    height: 1200px;
+    margin-top: -180px;
+    margin-left: 60px;
+}
+
+.logo {
+    height: 213px;
+    transform: rotate(45deg);
+    margin-left: 48px;
+    margin-top: 12px;
+}
+
+.curved-text {
+    font-family: Raleway;
+    color: black;
+    width: 39em;
+    height: 18em;
+    position: relative;
+    margin: 0 auto;
+    top: 22.6em;
+}
+
+.letra {
+    font-weight: bold;
+    font-size: 28px;
+    position: absolute;
+    top: -472px;
+    height: 7.4em;
+    width: 51px;
+    margin-left: 120px;
+    line-height: 228px;
+    transform-origin: top center;
+    @include absolute-horizontal-center:;
+    text-align: center;
+}
+
+span:nth-child(1) {
+    transform: rotate(49.75deg);
+}
+
+span:nth-child(2) {
+    transform: rotate(37.85deg);
+}
+
+span:nth-child(3) {
+    transform: rotate(23.95deg);
+}
+
+span:nth-child(4) {
+    transform: rotate(13.05deg);
+}
+
+span:nth-child(5) {
+    transform: rotate(3.15deg);
+}
+
+span:nth-child(6) {
+    transform: rotate(-5.75deg);
+}
+
+span:nth-child(7) {
+    transform: rotate(-16.65deg);
+}
+
+span:nth-child(8) {
+    transform: rotate(-30.55deg);
+}
+
+span:nth-child(9) {
+    transform: rotate(-41.45deg);
+}
+
+span:nth-child(10) {
+    transform: rotate(-52.35deg);
+}
+
+.nav {
+    margin-top: -250px;
+    text-align: center;
+    font-size: 18px;
+}
+
+ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+li {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.subm {
+    margin-top: 15px;
+}
+
+
+.nav a {
+    text-decoration: none;
+}
