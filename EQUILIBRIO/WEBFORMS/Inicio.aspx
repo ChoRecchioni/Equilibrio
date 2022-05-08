@@ -44,7 +44,7 @@
                 <span class="letra">O</span>
             </div>
 
-            <div class="nav">
+            <nav class="nav">
                 <!--Menu-->
                 <ul class="menu">
                     <!--Submenu 1-->

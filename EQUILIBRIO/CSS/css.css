@@ -146,13 +146,17 @@ span:nth-child(10) {
 
 .nav {
     margin-top: -250px;
+    width: 300px;   
     text-align: center;
     font-size: 18px;
+    z-index: 3;
+    position: absolute;
 }
 
 ul {
     list-style: none;
     margin-top: 15px;
+    padding-bottom: 15px;
 }
 
 li {
@@ -164,6 +168,11 @@ li {
     margin-top: 15px;
 }
 
+.submenu {
+    display: none;
+    overflow: hidden;
+    background-color: #ebebeb;
+}
 
 .nav a {
     text-decoration: none;
