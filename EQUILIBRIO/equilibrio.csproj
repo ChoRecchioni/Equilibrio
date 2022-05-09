@@ -92,6 +92,34 @@
     <Compile Include="Clases\Reseñas.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WEBFORMS\PerfilUsuario.aspx.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS\PerfilUsuario.aspx.designer.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS\inicio.aspx.cs">
+      <DependentUpon>inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS\inicio.aspx.designer.cs">
+      <DependentUpon>inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS\IniciarSesión.aspx.cs">
+      <DependentUpon>IniciarSesión.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS\IniciarSesión.aspx.designer.cs">
+      <DependentUpon>IniciarSesión.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS\RegistrarUsuario.aspx.cs">
+      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS\RegistrarUsuario.aspx.designer.cs">
+      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WEBFORMS\Inicio.Master.cs">
       <DependentUpon>Inicio.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -110,6 +138,10 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="WEBFORMS\PerfilUsuario.aspx" />
+    <Content Include="WEBFORMS\inicio.aspx" />
+    <Content Include="WEBFORMS\IniciarSesión.aspx" />
+    <Content Include="WEBFORMS\RegistrarUsuario.aspx" />
     <Content Include="WEBFORMS\Inicio.Master" />
   </ItemGroup>
   <ItemGroup />
