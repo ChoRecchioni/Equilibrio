@@ -59,7 +59,7 @@
                     <li class="Deli"><a href="#"><span>DELIVERY</span></a></li>
                     <li class="Carta"><a href="#"><span>CARTA</span></a></li>
                     <li class="Local"><a href="#"><span>LOCALES</span></a></li>
-                    <li class="Preg"><a href="#"><span>PREGUNTAS FRECUENTES</span></a></li>
+                    <li class="Preg"><a href="#"><span>PREGUNTAS <br /> FRECUENTES</span></a></li>
                     <!--Submenu 2-->
                     <li class="item-submenu" menu="1">
                         <a href="#" class="subm"><span>RESEÑAS</span></a>

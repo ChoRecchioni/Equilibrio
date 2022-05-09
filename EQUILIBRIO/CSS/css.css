@@ -148,7 +148,7 @@ span:nth-child(10) {
     margin-top: -250px;
     width: 300px;   
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     z-index: 3;
     position: absolute;
 }
@@ -161,7 +161,7 @@ ul {
 
 li {
     list-style: none;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .subm {
@@ -176,4 +176,6 @@ li {
 
 .nav a {
     text-decoration: none;
+    color: black;
+    
 }
