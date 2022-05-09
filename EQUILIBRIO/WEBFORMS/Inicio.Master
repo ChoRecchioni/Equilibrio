@@ -27,6 +27,7 @@
             <a id="cart" href="">
                 <img class="opUser" src="../IMG/cart.png" /></a>
         </section>
+     </ header>
         <section id="titulo">
         </section>
         <section id="menu">
@@ -74,8 +75,7 @@
                 <!--Fin Menu-->
             </div>
         </section>
-    </header>
-    <div>
+    <div class="CPH">
     <form id="form1" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
