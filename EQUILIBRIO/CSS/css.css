@@ -181,7 +181,11 @@ li {
 }
 
 .CPH {
-    border: 3px solid black;
-    width: 300px;
-    height: 300px;
+    float: left;
+    position: absolute;
+    z-index: 3;
+    margin-left: 300px;
+    top: 185px;
+    height: max-content;
+    width: max-content;
 }

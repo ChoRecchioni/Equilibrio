@@ -73,15 +73,16 @@
                     <!--Fin submenu 2-->
                 </ul>
                 <!--Fin Menu-->
-            </div>
-        </section>
-    <div class="CPH">
-    <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+            </nav>
+        <div class="CPH">
+            <form id="form1" runat="server">
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </form>
         </div>
-    </form>
-    </div>
+        </section>
+    
 </body>
 </html>
