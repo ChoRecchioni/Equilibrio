@@ -78,7 +78,6 @@
     <Content Include="IMG\wsp.png" />
     <Content Include="JS\JavaScript.js" />
     <Content Include="JS\query.js" />
-    <Content Include="WEBFORMS\Inicio.aspx" />
     <Content Include="IMG\logo equilibrio.png" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -92,14 +91,14 @@
     <Compile Include="Clases\Reservas.cs" />
     <Compile Include="Clases\Reseñas.cs" />
     <Compile Include="Clases\Usuario.cs" />
-    <Compile Include="WEBFORMS\Inicio.aspx.cs">
-      <DependentUpon>Inicio.aspx</DependentUpon>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WEBFORMS\Inicio.Master.cs">
+      <DependentUpon>Inicio.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WEBFORMS\Inicio.aspx.designer.cs">
-      <DependentUpon>Inicio.aspx</DependentUpon>
+    <Compile Include="WEBFORMS\Inicio.Master.designer.cs">
+      <DependentUpon>Inicio.Master</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\RALEWAY-ITALIC-VARIABLEFONT_WGHT.TTF" />
@@ -111,6 +110,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="WEBFORMS\Inicio.Master" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
