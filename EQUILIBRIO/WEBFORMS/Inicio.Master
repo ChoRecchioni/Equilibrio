@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Inicio.master.cs" Inherits="equilibrio.WEBFORMS.Inicio" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Inicio.Master.cs" Inherits="equilibrio.WEBFORMS.Inicio" %>
 
 <!DOCTYPE html>
 
@@ -75,11 +75,13 @@
             </div>
         </section>
     </header>
+    <div>
     <form id="form1" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
+    </div>
 </body>
 </html>
