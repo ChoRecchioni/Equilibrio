@@ -13,13 +13,5 @@ namespace equilibrio.WEBFORMS
         {
 
         }
-
-        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
-        {
-            //seleccion de fecha  TxtFecha.Text = Calendar1.SelectdDate.ToShortDateString(); en paantalla muestra solo dd/mm/yyyy pero sigue almacenando fecha y hora del equipo
-
-
-            
-        }
     }
 }
