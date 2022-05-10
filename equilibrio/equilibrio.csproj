@@ -69,12 +69,10 @@
   <ItemGroup>
     <Content Include="CSS\css.css" />
     <Content Include="IMG\cart.png" />
-    <Content Include="IMG\edit.png" />
     <Content Include="IMG\fb.png" />
     <Content Include="IMG\fondo2.png" />
     <Content Include="IMG\instagram.png" />
     <Content Include="IMG\line.png" />
-    <Content Include="IMG\plus.png" />
     <Content Include="IMG\twitter.png" />
     <Content Include="IMG\user.png" />
     <Content Include="IMG\wsp.png" />
@@ -86,13 +84,17 @@
   <ItemGroup>
     <Compile Include="Clases\Carro de compras.cs" />
     <Compile Include="Clases\Carta.cs" />
+    <Compile Include="Clases\Comuna.cs" />
     <Compile Include="Clases\Delivery.cs" />
     <Compile Include="Clases\Direccion.cs" />
     <Compile Include="Clases\Empleado.cs" />
     <Compile Include="Clases\Nomina.cs" />
+    <Compile Include="Clases\Region.cs" />
     <Compile Include="Clases\Reservas.cs" />
     <Compile Include="Clases\Reseñas.cs" />
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Controller\ComunaController.cs" />
+    <Compile Include="Controller\RegionController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WEBFORMS\AgregarDirección.aspx.cs">
       <DependentUpon>AgregarDirección.aspx</DependentUpon>

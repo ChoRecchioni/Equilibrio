@@ -1,18 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WEBFORMS/Inicio.Master" AutoEventWireup="true" CodeBehind="RegistrarUsuario.aspx.cs" Inherits="equilibrio.WEBFORMS.Formulario_web1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
-    
     <style type="text/css">
         .auto-style1 {
-            width: 670px;
+            width: 100%;
         }
         .auto-style2 {
-            border-right: 150px transparent solid;
-            width: 400px;
+            width: 367px;
+        }
+        .auto-style4 {
+            width: 279px;
+        }
+        .auto-style5 {
+            width: 279px;
+            text-align: right;
         }
     </style>
-
-    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -22,9 +24,9 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">
-            <asp:Label class="LblTitulo" ID="LbRegistro" runat="server" Text="DATOS PERSONALES"></asp:Label></td>
+            <asp:Label class="lbl" ID="LbRegistro" runat="server" Text="DATOS PERSONALES"></asp:Label></td>
                     <td class="auto-style4">
-            <asp:Label class="LblTitulo" ID="Label3" runat="server" Text="DIRECCIÓN"></asp:Label></td>
+            <asp:Label class="lbl" ID="Label3" runat="server" Text="DIRECCIÓN"></asp:Label></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
@@ -49,7 +51,7 @@
             <asp:TextBox class="Txt" ID="TextTelefono" runat="server" placeholder="TELÉFONO"></asp:TextBox></td>
                     <td class="auto-style4">
             <asp:DropDownList class="Drop" ID="DropComuna" runat="server">
-                <asp:ListItem Text="SELECCIONE UNA REGIÓN" Value="0" />
+                <asp:ListItem Text="Seleccione una comuna" Value="0" />
             </asp:DropDownList></td>
                 </tr>
                 <tr>
@@ -57,14 +59,14 @@
             <asp:TextBox class="Txt" type="password" ID="TextContraseña" runat="server" placeholder="CONTRASEÑA"></asp:TextBox></td>
                     <td class="auto-style4">
             <asp:DropDownList class="Drop" ID="DropRegion" runat="server">
-                <asp:ListItem Text="SELECCIONE UNA COMUNA" Value="0" />
+                <asp:ListItem Text="Seleccione una región" Value="0" />
             </asp:DropDownList></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
                     </td>
                     <td class="auto-style5">
-            <asp:Button class="Btn" ID="BtnEnviar" runat="server" Text="CONFIRMAR" />
+            <asp:Button class="btn" ID="BtnEnviar" runat="server" Text="CONFIRMAR"/>
                     </td>
                 </tr>
             </table>
