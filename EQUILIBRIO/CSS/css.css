@@ -189,3 +189,39 @@ li {
     height: max-content;
     width: max-content;
 }
+
+#background {
+    background: #04c3cb;
+}
+
+.IniciarSesion {
+    text-align-last: center;
+    height: 300px;
+    width: 800px;
+    margin-top: 85px;
+    margin-left: 150px;
+    border-radius: 20px;
+}
+
+.TxtBoxIS {
+    width: 400px;
+    height: 40px;
+    margin-top: 35px;
+    border: none;
+    border-radius: 5px;
+    align-items: center;
+    color: grey;
+    font-size: 16px;
+}
+
+#ContentPlaceHolder1_BtnIniciar {
+    height: 30px;
+    width: 160px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 3px 3px #888888;
+    border-radius: 3px;
+    border: none;
+}
+
+
