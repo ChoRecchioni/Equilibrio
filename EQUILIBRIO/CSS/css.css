@@ -212,7 +212,7 @@ li {
     align-items: center;
     color: grey;
     font-size: 16px;
-}
+} 
 
 .Btn {
     height: 30px;
@@ -223,6 +223,12 @@ li {
     box-shadow: 3px 3px #888888;
     border-radius: 3px;
     border: none;
+    font-size: 16px
+}
+
+input#ContentPlaceHolder1_BtnIniciar.Btn {
+    margin-top: 35px;
+    margin-left: auto;
 }
 
 .Lbl {
@@ -232,6 +238,19 @@ li {
 .LblTitulo {
     font-size: larger;
     font-weight: bold;
+}
+
+span#ContentPlaceHolder1_LblTitulo {
+    font-size: initial;
+    font-weight: bold;
+    color: black;
+}
+
+a#ContentPlaceHolder1_LnkRegistrar.LblTitulo {
+    font-size: larger;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
 }
 
 .Txt {
@@ -263,8 +282,17 @@ li {
 }
 
 table {
+    margin-top: 20px;
     width: 150%
 }
 
+TablaInicio {
+    margin-top: 30px;
+    width: 150%
+}
 
+img#ContentPlaceHolder1_ImgInicio {
+    padding: 30px;
+    
+}
 
