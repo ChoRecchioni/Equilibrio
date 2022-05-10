@@ -99,6 +99,34 @@
     <Compile Include="WEBFORMS\AgregarDirección.aspx.designer.cs">
       <DependentUpon>AgregarDirección.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WEBFORMS\AgregarArticulo.aspx.cs">
+      <DependentUpon>AgregarArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS\AgregarArticulo.aspx.designer.cs">
+      <DependentUpon>AgregarArticulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS\AgregarEmpleado.aspx.cs">
+      <DependentUpon>AgregarEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS\AgregarEmpleado.aspx.designer.cs">
+      <DependentUpon>AgregarEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS\AgregarReseña.aspx.cs">
+      <DependentUpon>AgregarReseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS\AgregarReseña.aspx.designer.cs">
+      <DependentUpon>AgregarReseña.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS\CarroCompras.aspx.cs">
+      <DependentUpon>CarroCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS\CarroCompras.aspx.designer.cs">
+      <DependentUpon>CarroCompras.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WEBFORMS\RegistrarReserva.aspx.cs">
       <DependentUpon>RegistrarReserva.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -160,6 +188,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <Content Include="WEBFORMS\AgregarDirección.aspx" />
+    <Content Include="WEBFORMS\AgregarArticulo.aspx" />
+    <Content Include="WEBFORMS\AgregarEmpleado.aspx" />
+    <Content Include="WEBFORMS\AgregarReseña.aspx" />
+    <Content Include="WEBFORMS\CarroCompras.aspx" />
     <Content Include="WEBFORMS\RegistrarReserva.aspx" />
     <Content Include="WEBFORMS\MisReservas.aspx" />
     <Content Include="WEBFORMS\PerfilUsuario.aspx" />
