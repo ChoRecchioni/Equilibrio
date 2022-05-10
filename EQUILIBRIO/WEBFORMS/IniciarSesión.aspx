@@ -5,7 +5,7 @@
     <div class="IniciarSesion" id="background">
         <asp:TextBox class="TxtBoxIS" ID="TxtUser" runat="server" Text="USUARIO"></asp:TextBox><br />
         <asp:TextBox class="TxtBoxIS" ID="TxtPass" runat="server" Text="CONTRASEÑA"></asp:TextBox><br />
-        <asp:Button class="btn" ID="BtnIniciar" runat="server" Text="INICIAR SESIÓN" /><br />
+        <asp:Button ID="BtnIniciar" runat="server" Text="INICIAR SESIÓN" /><br />
         <asp:LinkButton ID="LnkRegistrar" runat="server">NO TIENE CUENTA? REGISTRESE</asp:LinkButton>
     </div>
 </asp:Content>

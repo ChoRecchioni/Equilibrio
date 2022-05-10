@@ -11,7 +11,7 @@ namespace equilibrio.WEBFORMS
 {
 
 
-    public partial class Formulario_web16
+    public partial class Formulario_web17
     {
 
         /// <summary>
@@ -24,84 +24,48 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control Label2.
+        /// Control DropCategoria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.DropDownList DropCategoria;
 
         /// <summary>
-        /// Control DropLocal.
+        /// Control TxtProducto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropLocal;
+        protected global::System.Web.UI.WebControls.TextBox TxtProducto;
 
         /// <summary>
-        /// Control Calendar1.
+        /// Control TxtDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar1;
+        protected global::System.Web.UI.WebControls.TextBox TxtDescripcion;
 
         /// <summary>
-        /// Control Label3.
+        /// Control TxtPrecio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.TextBox TxtPrecio;
 
         /// <summary>
-        /// Control DropHoras.
+        /// Control BtnAgregar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropHoras;
-
-        /// <summary>
-        /// Control Label4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-
-        /// <summary>
-        /// Control DropMesas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropMesas;
-
-        /// <summary>
-        /// Control TxtCliente.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtCliente;
-
-        /// <summary>
-        /// Control Button1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button BtnAgregar;
     }
 }

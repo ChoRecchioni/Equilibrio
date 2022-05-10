@@ -192,7 +192,6 @@ li {
 
 #background {
     background: #04c3cb;
-    border-radius: 20px;
 }
 
 .IniciarSesion {
@@ -201,6 +200,7 @@ li {
     width: 800px;
     margin-top: 85px;
     margin-left: 150px;
+    border-radius: 20px;
 }
 
 .TxtBoxIS {
@@ -214,7 +214,7 @@ li {
     font-size: 16px;
 }
 
-.btn {
+#ContentPlaceHolder1_BtnIniciar {
     height: 30px;
     width: 160px;
     margin-top: 30px;
@@ -223,44 +223,5 @@ li {
     border-radius: 3px;
     border: none;
 }
-
-.lbl {
-    font-size: larger;
-}
-
-.Txt {
-    width: 350px;
-    height: 40px;
-    margin-top: 25px;
-    border: none;
-    border-radius: 5px;
-    text-align-last: center;
-    color: grey;
-    font-size: 16px;
-}
-
-.Drop {
-    width: 350px;
-    height: 40px;
-    margin-top: 25px;
-    border: none;
-    border-radius: 5px;
-    text-align-last: center;
-    color: grey;
-    font-size: 16px;
-}
-
-.RegistrarUsuario {
-    height: 450px;
-    width: 750px;
-    margin-top: 25px;
-    margin-left: 70px;
-    padding: 50px;
-}
-
-input#ContentPlaceHolder1_BtnEnviar {
-    margin-right: 20px;
-}
-
 
 

@@ -11,89 +11,71 @@ namespace equilibrio.WEBFORMS
 {
 
 
-    public partial class Formulario_web16
+    public partial class Formulario_web18
     {
 
         /// <summary>
-        /// Control Label1.
+        /// Control TxtRut.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.TextBox TxtRut;
 
         /// <summary>
-        /// Control Label2.
+        /// Control TxtNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.TextBox TxtNombre;
 
         /// <summary>
-        /// Control DropLocal.
+        /// Control TxtApellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropLocal;
+        protected global::System.Web.UI.WebControls.TextBox TxtApellido;
 
         /// <summary>
-        /// Control Calendar1.
+        /// Control TxtTelefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar1;
+        protected global::System.Web.UI.WebControls.TextBox TxtTelefono;
 
         /// <summary>
-        /// Control Label3.
+        /// Control TxtDireccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.TextBox TxtDireccion;
 
         /// <summary>
-        /// Control DropHoras.
+        /// Control LbRol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropHoras;
+        protected global::System.Web.UI.WebControls.Label LbRol;
 
         /// <summary>
-        /// Control Label4.
+        /// Control DropRol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-
-        /// <summary>
-        /// Control DropMesas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropMesas;
-
-        /// <summary>
-        /// Control TxtCliente.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtCliente;
+        protected global::System.Web.UI.WebControls.DropDownList DropRol;
 
         /// <summary>
         /// Control Button1.
