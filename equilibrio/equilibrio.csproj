@@ -69,10 +69,12 @@
   <ItemGroup>
     <Content Include="CSS\css.css" />
     <Content Include="IMG\cart.png" />
+    <Content Include="IMG\edit.png" />
     <Content Include="IMG\fb.png" />
     <Content Include="IMG\fondo2.png" />
     <Content Include="IMG\instagram.png" />
     <Content Include="IMG\line.png" />
+    <Content Include="IMG\plus.png" />
     <Content Include="IMG\twitter.png" />
     <Content Include="IMG\user.png" />
     <Content Include="IMG\wsp.png" />
