@@ -15,58 +15,13 @@ namespace equilibrio.WEBFORMS
     {
 
         /// <summary>
-        /// Control LbResgistro.
+        /// Control LbRegistro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbResgistro;
-
-        /// <summary>
-        /// Control TextNombre.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextNombre;
-
-        /// <summary>
-        /// Control TextApellido.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextApellido;
-
-        /// <summary>
-        /// Control TextRut.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextRut;
-
-        /// <summary>
-        /// Control TextTelefono.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextTelefono;
-
-        /// <summary>
-        /// Control TextContraseña.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextContraseña;
+        protected global::System.Web.UI.WebControls.Label LbRegistro;
 
         /// <summary>
         /// Control Label3.
@@ -78,6 +33,15 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
+        /// Control TextNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextNombre;
+
+        /// <summary>
         /// Control TextAlias.
         /// </summary>
         /// <remarks>
@@ -85,6 +49,15 @@ namespace equilibrio.WEBFORMS
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextAlias;
+
+        /// <summary>
+        /// Control TextApellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextApellido;
 
         /// <summary>
         /// Control TextCalle.
@@ -96,13 +69,31 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.TextBox TextCalle;
 
         /// <summary>
-        /// Control Label1.
+        /// Control TextRut.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.TextBox TextRut;
+
+        /// <summary>
+        /// Control TextDpto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextDpto;
+
+        /// <summary>
+        /// Control TextTelefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextTelefono;
 
         /// <summary>
         /// Control DropComuna.
@@ -114,13 +105,13 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.DropDownList DropComuna;
 
         /// <summary>
-        /// Control Label2.
+        /// Control TextContraseña.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.TextBox TextContraseña;
 
         /// <summary>
         /// Control DropRegion.
