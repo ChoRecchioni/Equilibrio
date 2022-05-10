@@ -99,6 +99,13 @@
     <Compile Include="WEBFORMS\AgregarDirección.aspx.designer.cs">
       <DependentUpon>AgregarDirección.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WEBFORMS\RegistrarReserva.aspx.cs">
+      <DependentUpon>RegistrarReserva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS\RegistrarReserva.aspx.designer.cs">
+      <DependentUpon>RegistrarReserva.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WEBFORMS\MisReservas.aspx.cs">
       <DependentUpon>MisReservas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -153,6 +160,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <Content Include="WEBFORMS\AgregarDirección.aspx" />
+    <Content Include="WEBFORMS\RegistrarReserva.aspx" />
     <Content Include="WEBFORMS\MisReservas.aspx" />
     <Content Include="WEBFORMS\PerfilUsuario.aspx" />
     <Content Include="WEBFORMS\Inicio.aspx" />
