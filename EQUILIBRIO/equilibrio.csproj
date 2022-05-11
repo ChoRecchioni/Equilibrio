@@ -82,17 +82,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\Carro de compras.cs" />
-    <Compile Include="Clases\Carta.cs" />
-    <Compile Include="Clases\Comuna.cs" />
-    <Compile Include="Clases\Delivery.cs" />
-    <Compile Include="Clases\Direccion.cs" />
-    <Compile Include="Clases\Empleado.cs" />
-    <Compile Include="Clases\Nomina.cs" />
-    <Compile Include="Clases\Region.cs" />
-    <Compile Include="Clases\Reservas.cs" />
-    <Compile Include="Clases\Reseñas.cs" />
-    <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Clases\Entidades.cs" />
     <Compile Include="Controller\ComunaController.cs" />
     <Compile Include="Controller\RegionController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
