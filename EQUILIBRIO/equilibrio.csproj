@@ -88,89 +88,96 @@
     <Compile Include="Controller\ComunaController.cs" />
     <Compile Include="Controller\RegionController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WEBFORMS\AgregarDirección.aspx.cs">
+    <Compile Include="WEBFORMS ADM\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS CLI\AgregarDirección.aspx.cs">
       <DependentUpon>AgregarDirección.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WEBFORMS\AgregarDirección.aspx.designer.cs">
+    <Compile Include="WEBFORMS CLI\AgregarDirección.aspx.designer.cs">
       <DependentUpon>AgregarDirección.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WEBFORMS\AgregarArticulo.aspx.cs">
+    <Compile Include="WEBFORMS CLI\AgregarArticulo.aspx.cs">
       <DependentUpon>AgregarArticulo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WEBFORMS\AgregarArticulo.aspx.designer.cs">
+    <Compile Include="WEBFORMS CLI\AgregarArticulo.aspx.designer.cs">
       <DependentUpon>AgregarArticulo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WEBFORMS\AgregarEmpleado.aspx.cs">
+    <Compile Include="WEBFORMS ADM\AgregarEmpleado.aspx.cs">
       <DependentUpon>AgregarEmpleado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WEBFORMS\AgregarEmpleado.aspx.designer.cs">
+    <Compile Include="WEBFORMS ADM\AgregarEmpleado.aspx.designer.cs">
       <DependentUpon>AgregarEmpleado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WEBFORMS\AgregarReseña.aspx.cs">
+    <Compile Include="WEBFORMS CLI\AgregarReseña.aspx.cs">
       <DependentUpon>AgregarReseña.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WEBFORMS\AgregarReseña.aspx.designer.cs">
+    <Compile Include="WEBFORMS CLI\AgregarReseña.aspx.designer.cs">
       <DependentUpon>AgregarReseña.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WEBFORMS\CarroCompras.aspx.cs">
+    <Compile Include="WEBFORMS CLI\CarroCompras.aspx.cs">
       <DependentUpon>CarroCompras.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WEBFORMS\CarroCompras.aspx.designer.cs">
+    <Compile Include="WEBFORMS CLI\CarroCompras.aspx.designer.cs">
       <DependentUpon>CarroCompras.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WEBFORMS\RegistrarReserva.aspx.cs">
+    <Compile Include="WEBFORMS CLI\RegistrarReserva.aspx.cs">
       <DependentUpon>RegistrarReserva.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WEBFORMS\RegistrarReserva.aspx.designer.cs">
+    <Compile Include="WEBFORMS CLI\RegistrarReserva.aspx.designer.cs">
       <DependentUpon>RegistrarReserva.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WEBFORMS\MisReservas.aspx.cs">
+    <Compile Include="WEBFORMS CLI\MisReservas.aspx.cs">
       <DependentUpon>MisReservas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WEBFORMS\MisReservas.aspx.designer.cs">
+    <Compile Include="WEBFORMS CLI\MisReservas.aspx.designer.cs">
       <DependentUpon>MisReservas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WEBFORMS\PerfilUsuario.aspx.cs">
+    <Compile Include="WEBFORMS CLI\PerfilUsuario.aspx.cs">
       <DependentUpon>PerfilUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WEBFORMS\PerfilUsuario.aspx.designer.cs">
+    <Compile Include="WEBFORMS CLI\PerfilUsuario.aspx.designer.cs">
       <DependentUpon>PerfilUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WEBFORMS\Inicio.aspx.cs">
+    <Compile Include="WEBFORMS CLI\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WEBFORMS\Inicio.aspx.designer.cs">
+    <Compile Include="WEBFORMS CLI\Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WEBFORMS\IniciarSesión.aspx.cs">
+    <Compile Include="WEBFORMS CLI\IniciarSesión.aspx.cs">
       <DependentUpon>IniciarSesión.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WEBFORMS\IniciarSesión.aspx.designer.cs">
+    <Compile Include="WEBFORMS CLI\IniciarSesión.aspx.designer.cs">
       <DependentUpon>IniciarSesión.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WEBFORMS\RegistrarUsuario.aspx.cs">
+    <Compile Include="WEBFORMS CLI\RegistrarUsuario.aspx.cs">
       <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WEBFORMS\RegistrarUsuario.aspx.designer.cs">
+    <Compile Include="WEBFORMS CLI\RegistrarUsuario.aspx.designer.cs">
       <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WEBFORMS\Inicio.Master.cs">
-      <DependentUpon>Inicio.Master</DependentUpon>
+    <Compile Include="WEBFORMS CLI\Cliente.Master.cs">
+      <DependentUpon>Cliente.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WEBFORMS\Inicio.Master.designer.cs">
-      <DependentUpon>Inicio.Master</DependentUpon>
+    <Compile Include="WEBFORMS CLI\Cliente.Master.designer.cs">
+      <DependentUpon>Cliente.Master</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -183,18 +190,19 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="WEBFORMS\AgregarDirección.aspx" />
-    <Content Include="WEBFORMS\AgregarArticulo.aspx" />
-    <Content Include="WEBFORMS\AgregarEmpleado.aspx" />
-    <Content Include="WEBFORMS\AgregarReseña.aspx" />
-    <Content Include="WEBFORMS\CarroCompras.aspx" />
-    <Content Include="WEBFORMS\RegistrarReserva.aspx" />
-    <Content Include="WEBFORMS\MisReservas.aspx" />
-    <Content Include="WEBFORMS\PerfilUsuario.aspx" />
-    <Content Include="WEBFORMS\Inicio.aspx" />
-    <Content Include="WEBFORMS\IniciarSesión.aspx" />
-    <Content Include="WEBFORMS\RegistrarUsuario.aspx" />
-    <Content Include="WEBFORMS\Inicio.Master" />
+    <Content Include="WEBFORMS CLI\AgregarDirección.aspx" />
+    <Content Include="WEBFORMS CLI\AgregarArticulo.aspx" />
+    <Content Include="WEBFORMS ADM\AgregarEmpleado.aspx" />
+    <Content Include="WEBFORMS CLI\AgregarReseña.aspx" />
+    <Content Include="WEBFORMS CLI\CarroCompras.aspx" />
+    <Content Include="WEBFORMS CLI\RegistrarReserva.aspx" />
+    <Content Include="WEBFORMS CLI\MisReservas.aspx" />
+    <Content Include="WEBFORMS CLI\PerfilUsuario.aspx" />
+    <Content Include="WEBFORMS CLI\Inicio.aspx" />
+    <Content Include="WEBFORMS CLI\IniciarSesión.aspx" />
+    <Content Include="WEBFORMS CLI\RegistrarUsuario.aspx" />
+    <Content Include="WEBFORMS CLI\Cliente.Master" />
+    <Content Include="WEBFORMS ADM\Admin.Master" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

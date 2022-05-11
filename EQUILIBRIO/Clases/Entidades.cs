@@ -21,14 +21,17 @@ namespace equilibrio.Clases
     {
 
     }
+
     public class CarroCompras
     {
 
     }
+
     public class Delivery
     {
 
     }
+
     public class Direccion
     {
         public int Codigo { get; set; }
@@ -37,22 +40,27 @@ namespace equilibrio.Clases
         public Comuna Comuna { get; set; }
         public Region Region { get; set; }
     }
+
     public class Empleado
     {
 
     }
+
     public class Nomina
     {
 
     }
+
     public class Reseña
     {
 
     }
+
     public class Reservas
     {
 
     }
+
     public class Usuario
     {
         public string Codigo;
@@ -62,5 +70,4 @@ namespace equilibrio.Clases
         public string Telefono;
         public string Pass;
     }
-
 }
