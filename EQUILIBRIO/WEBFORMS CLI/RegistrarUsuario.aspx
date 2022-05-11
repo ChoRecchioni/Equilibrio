@@ -16,7 +16,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-        <div class="RegistrarUsuario">
+        <div class="Contenedor">
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">
@@ -62,7 +62,7 @@
                     <td class="auto-style2">
                     </td>
                     <td class="auto-style5">
-            <asp:Button class="Btn" ID="BtnEnviar" runat="server" Text="CONFIRMAR" />
+            <asp:Button class="BtnOK" ID="BtnEnviar" runat="server" Text="CONFIRMAR" />
                     </td>
                 </tr>
             </table>

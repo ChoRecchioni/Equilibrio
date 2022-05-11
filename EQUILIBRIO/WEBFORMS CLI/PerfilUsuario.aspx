@@ -67,7 +67,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="PerfilUsuario">
+    <div class="Contenedor">
     <table class="auto-style1">
         <tr style="height: 10px;">
             <td class="auto-style4" colspan="2"><asp:Label class="LblTitulo" ID="LbDatos" runat="server" Text="DATOS PERSONALES"></asp:Label>

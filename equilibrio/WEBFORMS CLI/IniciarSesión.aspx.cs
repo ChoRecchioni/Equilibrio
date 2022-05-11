@@ -7,16 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace equilibrio.WEBFORMS
 {
-    public partial class Formulario_web110 : System.Web.UI.Page
+    public partial class Formulario_web11 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void BtnPagar_Click(object sender, EventArgs e)
+        protected void LnkRegistrar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("http://webpay.cl");
+            Response.Redirect("RegistrarUsuario.aspx");
         }
     }
 }

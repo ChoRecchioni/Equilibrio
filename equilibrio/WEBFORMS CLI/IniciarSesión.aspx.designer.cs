@@ -11,52 +11,43 @@ namespace equilibrio.WEBFORMS
 {
 
 
-    public partial class Formulario_web14
+    public partial class Formulario_web11
     {
 
         /// <summary>
-        /// Control TxtAlias.
+        /// Control TxtUser.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtAlias;
+        protected global::System.Web.UI.WebControls.TextBox TxtUser;
 
         /// <summary>
-        /// Control TxtCalle.
+        /// Control TxtPass.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtCalle;
+        protected global::System.Web.UI.WebControls.TextBox TxtPass;
 
         /// <summary>
-        /// Control DropComuna.
+        /// Control BtnIniciar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropComuna;
+        protected global::System.Web.UI.WebControls.Button BtnIniciar;
 
         /// <summary>
-        /// Control DropRegion.
+        /// Control LnkRegistrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropRegion;
-
-        /// <summary>
-        /// Control BtnEnviar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnEnviar;
+        protected global::System.Web.UI.WebControls.LinkButton LnkRegistrar;
     }
 }

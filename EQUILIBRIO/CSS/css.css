@@ -212,9 +212,16 @@ li {
     align-items: center;
     color: grey;
     font-size: 16px;
-} 
+}
 
 .Btn {
+    box-shadow: 3px 3px #888888;
+    border-radius: 3px;
+    border: none;
+    font-size: 16px;
+}
+
+.BtnOK {
     height: 30px;
     width: 200px;
     margin-top: 50px;
@@ -223,7 +230,7 @@ li {
     box-shadow: 3px 3px #888888;
     border-radius: 3px;
     border: none;
-    font-size: 16px
+    font-size: 16px;
 }
 
 input#ContentPlaceHolder1_BtnIniciar.Btn {
@@ -275,13 +282,7 @@ a#ContentPlaceHolder1_LnkRegistrar.LblTitulo {
     font-size: 16px;
 }
 
-.RegistrarUsuario {
-    height: 450px;
-    width: 900px;
-    margin-left: 70px;
-}
-
-.PerfilUsuario {
+.Contenedor {
     height: 450px;
     width: 900px;
     margin-left: 70px;
