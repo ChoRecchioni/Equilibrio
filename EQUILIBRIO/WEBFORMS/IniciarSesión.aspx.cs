@@ -13,5 +13,10 @@ namespace equilibrio.WEBFORMS
         {
 
         }
+
+        protected void LnkRegistrar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RegistrarUsuario.aspx");
+        }
     }
 }
