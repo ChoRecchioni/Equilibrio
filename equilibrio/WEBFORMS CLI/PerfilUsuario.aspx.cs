@@ -14,5 +14,9 @@ namespace equilibrio.WEBFORMS
 
         }
 
+        protected void BtnAgregar_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("AgregarDireccion.aspx");
+        }
     }
 }

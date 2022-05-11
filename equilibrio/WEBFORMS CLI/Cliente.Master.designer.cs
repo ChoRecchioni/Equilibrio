@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace equilibrio.WEBFORMS_ADM
+namespace equilibrio.WEBFORMS
 {
 
 
-    public partial class Admin
+    public partial class Inicio
     {
 
         /// <summary>

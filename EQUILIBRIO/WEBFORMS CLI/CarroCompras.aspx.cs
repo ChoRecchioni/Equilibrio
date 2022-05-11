@@ -13,5 +13,10 @@ namespace equilibrio.WEBFORMS
         {
 
         }
+
+        protected void BtnPagar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("http://webpay.cl");
+        }
     }
 }

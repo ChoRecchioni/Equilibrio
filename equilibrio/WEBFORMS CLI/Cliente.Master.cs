@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace equilibrio.WEBFORMS
 {
-    public partial class Formulario_web14 : System.Web.UI.Page
+    public partial class Inicio : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void BtnEnviar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("PerfilUsuario.aspx");
         }
     }
 }

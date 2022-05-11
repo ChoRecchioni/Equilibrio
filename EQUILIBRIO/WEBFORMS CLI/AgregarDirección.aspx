@@ -48,7 +48,7 @@
                     <td class="auto-style2">
                     </td>
                     <td class="auto-style5">
-            <asp:Button class="BtnOK" ID="BtnEnviar" runat="server" Text="CONFIRMAR" style="margin-left: 300px;" />
+            <asp:Button class="BtnOK" ID="BtnEnviar" runat="server" Text="CONFIRMAR" style="margin-left: 300px;" OnClick="BtnEnviar_Click" />
                     </td>
                 </tr>
             </table>

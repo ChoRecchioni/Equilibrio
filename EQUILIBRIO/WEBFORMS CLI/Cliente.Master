@@ -53,8 +53,8 @@
                     <li class="item-submenu" menu="2">
                         <a href="#" class="subm"><span>RESERVAS</span></a>
                         <ul class="submenu">
-                            <li class="MisReservas"><a href="#">MIS RESERVAS</a></li>
-                            <li class="AddReserva"><a href="#">NUEVA RESERVA</a></li>
+                            <li class="MisReservas"><a href="MisReservas.aspx">MIS RESERVAS</a></li>
+                            <li class="AddReserva"><a href="RegistrarReserva.aspx">NUEVA RESERVA</a></li>
                         </ul>
                     </li>
                     <!--Fin submenu 1-->
@@ -67,7 +67,7 @@
                         <a href="#" class="subm"><span>RESEÑAS</span></a>
                         <ul class="submenu">
                             <li class="Reseñas"><a href="#">RESEÑAS</a></li>
-                            <li class="AddReseña"><a href="#">NUEVA RESEÑA</a></li>
+                            <li class="AddReseña"><a href="AgregarReseña.aspx">NUEVA RESEÑA</a></li>
                         </ul>
                     </li>
                     <!--Fin submenu 2-->

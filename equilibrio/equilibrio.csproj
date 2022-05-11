@@ -102,11 +102,11 @@
     <Compile Include="WEBFORMS CLI\AgregarDirección.aspx.designer.cs">
       <DependentUpon>AgregarDirección.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WEBFORMS CLI\AgregarArticulo.aspx.cs">
+    <Compile Include="WEBFORMS ADM\AgregarArticulo.aspx.cs">
       <DependentUpon>AgregarArticulo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WEBFORMS CLI\AgregarArticulo.aspx.designer.cs">
+    <Compile Include="WEBFORMS ADM\AgregarArticulo.aspx.designer.cs">
       <DependentUpon>AgregarArticulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="WEBFORMS ADM\AgregarEmpleado.aspx.cs">
@@ -191,7 +191,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <Content Include="WEBFORMS CLI\AgregarDirección.aspx" />
-    <Content Include="WEBFORMS CLI\AgregarArticulo.aspx" />
+    <Content Include="WEBFORMS ADM\AgregarArticulo.aspx" />
     <Content Include="WEBFORMS ADM\AgregarEmpleado.aspx" />
     <Content Include="WEBFORMS CLI\AgregarReseña.aspx" />
     <Content Include="WEBFORMS CLI\CarroCompras.aspx" />
