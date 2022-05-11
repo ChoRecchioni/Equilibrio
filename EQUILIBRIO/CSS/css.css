@@ -281,6 +281,17 @@ a#ContentPlaceHolder1_LnkRegistrar.LblTitulo {
     margin-left: 70px;
 }
 
+.PerfilUsuario {
+    height: 450px;
+    width: 900px;
+    margin-left: 70px;
+}
+
+span#ContentPlaceHolder1_.Lbl {
+    width: 100px;
+    font-size: large;
+}
+
 table {
     margin-top: 20px;
     width: 150%
@@ -293,6 +304,14 @@ TablaInicio {
 
 img#ContentPlaceHolder1_ImgInicio {
     padding: 30px;
-    
 }
 
+input#ContentPlaceHolder1_BtnEditar.BtnForm {
+    float: right;
+    margin-right: 30px;
+}
+
+input#ContentPlaceHolder1_BtnAgregar.BtnForm {
+    float: right;
+    margin-right: 30px;
+}
