@@ -34,16 +34,16 @@
             <a id="logo" href="inicio.aspx">
                 <img class="logo" src="../IMG/logo equilibrio.png"></img></a>
             <div class="curved-text">
-                <span ID="E" class="letra">E</span>
-                <span ID="Q" class="letra">Q</span>
-                <span ID="U" class="letra">U</span>
-                <span ID="IL" class="letra">I</span>
-                <span ID="LI" class="letra">L</span>
-                <span ID="IB" class="letra">I</span>
-                <span ID="B" class="letra">B</span>
-                <span ID="R" class="letra">R</span>
-                <span ID="I" class="letra">I</span>
-                <span ID="O" class="letra">O</span>
+                <span class="letra">E</span>
+                <span class="letra">Q</span>
+                <span class="letra">U</span>
+                <span class="letra">I</span>
+                <span class="letra">L</span>
+                <span class="letra">I</span>
+                <span class="letra">B</span>
+                <span class="letra">R</span>
+                <span class="letra">I</span>
+                <span class="letra">O</span>
             </div>
 
             <nav class="nav">

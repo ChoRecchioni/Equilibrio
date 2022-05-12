@@ -11,7 +11,7 @@ namespace equilibrio.Controller
         private static List<Direccion> listaDireccion = new List<Direccion>();
 
         //Metodo para agregar Direccion
-        public static string AddDireccion(string codigo, string alias, string calleYnum, string codcomuna, string codregion)
+        public static string AddDireccion(string codigo, string alias, string calleYnum, string depto, string codcomuna, string codregion)
         {
             Comuna comuna = ComunaController.FindComuna(codcomuna);
             Region region = RegionController.FindRegion(codregion);
@@ -23,6 +23,7 @@ namespace equilibrio.Controller
                     Codigo = int.Parse(codigo),
                     Alias = alias,
                     CalleYnum = calleYnum,
+                    Depto = depto,
                     Comuna = comuna,
                     Region = region,
                 });
@@ -69,7 +70,7 @@ namespace equilibrio.Controller
 
         //Metodo para editar direccion
 
-        public static string EditDireccion(string codigo, string alias, string calleYnum, string codcomuna, string codregion)
+        public static string EditDireccion(string codigo, string alias, string calleYnum, string depto, string codcomuna, string codregion)
         {
 
             try
@@ -79,6 +80,7 @@ namespace equilibrio.Controller
                 Direccion direccion = FindDireccion(codigo);
                 direccion.Alias = alias;
                 direccion.CalleYnum = calleYnum;
+                direccion.Depto = depto;
                 direccion.Comuna = comuna;
                 direccion.Region = region;
 

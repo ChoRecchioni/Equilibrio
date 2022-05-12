@@ -1,5 +1,11 @@
 ﻿$(document).ready(function () {
 
+    //$('.nav .menu > .item-submenu a').click(function () {
+    //    //captura valor de atributo menu
+    //    var posicionMenu = $(this).parent().attr('menu');
+    //    $('.item-submenu[menu=' + posicionMenu + '] .submenu').css({ 'visibility' : 'hidden' });
+    //});
+
     var coll = document.getElementsByClassName("subm");
     var i;
 
@@ -14,10 +20,6 @@
             }
         });
     }
-
-    $(':radio').change(function () {
-        console.log('Rating: ' + this.value);
-    });
 
 
 });

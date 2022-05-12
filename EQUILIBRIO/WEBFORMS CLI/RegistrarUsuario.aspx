@@ -15,6 +15,8 @@
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+      <asp:HiddenField ID="HdnCodigoU" runat="server" />
+      <asp:HiddenField ID="HdnCodigoD" runat="server" />
 
         <div class="Contenedor">
             <table class="auto-style1">
@@ -62,13 +64,15 @@
                     <td class="auto-style2">
                     </td>
                     <td class="auto-style5">
-            <asp:Button class="BtnOK" ID="BtnEnviar" runat="server" Text="CONFIRMAR" />
+            <asp:Button class="BtnOK" ID="BtnEnviar" runat="server" Text="CONFIRMAR" OnClick="BtnEnviar_Click" />
                     </td>
                 </tr>
             </table>
             <br />
             
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </div>
+                 <asp:Label ID="LbMensaje" runat="server" Text=""></asp:Label>
+            <asp:Label ID="LbMensaje1" runat="server" Text=""></asp:Label>
+            </div>
     
 </asp:Content>

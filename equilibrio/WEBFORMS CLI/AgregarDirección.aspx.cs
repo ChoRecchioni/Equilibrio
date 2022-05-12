@@ -58,7 +58,7 @@ namespace equilibrio.WEBFORMS
         {
             HdnCodigo.Value = "1";
             LbMensaje.Text = DireccionController.AddDireccion(HdnCodigo.Value, TxtAlias.Text,
-              TxtCalle.Text, DropComuna.SelectedValue, DropRegion.SelectedValue);
+              TxtCalle.Text, TxtDpto.Text, DropComuna.SelectedValue, DropRegion.SelectedValue);
             Response.Redirect("PerfilUsuario.aspx");
         }
     }

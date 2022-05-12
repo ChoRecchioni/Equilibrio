@@ -37,6 +37,7 @@ namespace equilibrio.Clases
         public int Codigo { get; set; }
         public string Alias { get; set; }
         public string CalleYnum { get; set; }
+        public string Depto { get; set; }
         public Comuna Comuna { get; set; }
         public Region Region { get; set; }
     }
@@ -63,11 +64,12 @@ namespace equilibrio.Clases
 
     public class Usuario
     {
-        public string Codigo;
+        public int Codigo;
         public string RUT;
         public string Nombre;
         public string Apellido;
         public string Telefono;
         public string Pass;
+        public Direccion Direccion;
     }
 }
