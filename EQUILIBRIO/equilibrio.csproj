@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="CSS\css.css" />
     <Content Include="IMG\cart.png" />
+    <Content Include="IMG\delete.png" />
     <Content Include="IMG\fb.png" />
     <Content Include="IMG\fondo2.png" />
     <Content Include="IMG\instagram.png" />
@@ -86,7 +87,6 @@
   <ItemGroup>
     <Compile Include="Clases\Entidades.cs" />
     <Compile Include="Controller\ComunaController.cs" />
-    <Compile Include="Controller\DireccionController.cs" />
     <Compile Include="Controller\RegionController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WEBFORMS ADM\Admin.Master.cs">
