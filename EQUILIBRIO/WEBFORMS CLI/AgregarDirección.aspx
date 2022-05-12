@@ -35,6 +35,12 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
+        <asp:TextBox class="Txt" ID="TxtDpto" runat="server" placeholder="DPTO O BLOQUE"></asp:TextBox></td>
+                    <td class="auto-style4">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">
         <asp:DropDownList class="Drop" ID="DropComuna" runat="server"></asp:DropDownList></td>
                     <td class="auto-style4">
                         &nbsp;</td>
