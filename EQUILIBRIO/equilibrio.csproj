@@ -137,6 +137,13 @@
     <Compile Include="WEBFORMS CLI\CarroCompras.aspx.designer.cs">
       <DependentUpon>CarroCompras.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WEBFORMS CLI\Delivery.aspx.cs">
+      <DependentUpon>Delivery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS CLI\Delivery.aspx.designer.cs">
+      <DependentUpon>Delivery.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WEBFORMS CLI\RegistrarReserva.aspx.cs">
       <DependentUpon>RegistrarReserva.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -235,6 +242,7 @@
     <Content Include="WEBFORMS ADM\AgregarEmpleado.aspx" />
     <Content Include="WEBFORMS CLI\AgregarReseña.aspx" />
     <Content Include="WEBFORMS CLI\CarroCompras.aspx" />
+    <Content Include="WEBFORMS CLI\Delivery.aspx" />
     <Content Include="WEBFORMS CLI\RegistrarReserva.aspx" />
     <Content Include="WEBFORMS CLI\MisReservas.aspx" />
     <Content Include="WEBFORMS CLI\PerfilUsuario.aspx" />
