@@ -11,6 +11,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:HiddenField ID="HdnCodigo" runat="server" />
     <div class="Contenedor">
             <table class="auto-style1">
                 <tr>
@@ -52,6 +53,7 @@
                     </td>
                 </tr>
             </table>
+                <asp:Label ID="LbMensaje" runat="server" Text=""></asp:Label>
          </div>
     <div>
 

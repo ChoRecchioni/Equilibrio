@@ -52,5 +52,28 @@ namespace equilibrio.Controller
                 AddComuna("5", "Chillán");
             }
         }
+
+        public static Comuna FindComuna(string cod)
+        {
+
+            try
+            {
+                foreach (Comuna comuna in FindAll())
+                {
+                    if (comuna.Codigo == int.Parse(cod))
+                    {
+                        return comuna;
+                    }
+                }
+
+                return null;
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+
+        }
     }
 }

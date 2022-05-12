@@ -52,5 +52,28 @@ namespace equilibrio.Controller
                 AddRegion("5", "Ñuble");
             }
         }
+
+        public static Region FindRegion(string cod)
+        {
+
+            try
+            {
+                foreach (Region region in FindAll())
+                {
+                    if (region.Codigo == int.Parse(cod))
+                    {
+                        return region;
+                    }
+                }
+
+                return null;
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+
+        }
     }
 }
