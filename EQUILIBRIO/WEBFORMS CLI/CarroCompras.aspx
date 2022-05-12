@@ -8,7 +8,6 @@
         }
         .auto-style1 {
             margin-top: 20px;
-            width: 73%;
         }
         .auto-style2 {
             width: 222px;
@@ -43,7 +42,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-    <div class="CarroCompras">
+    <div class="Contenedor">
     <table>
         <tr style="height: 50px;">
             <td class="auto-style1"><asp:Label class="LblTitulo" ID="LbProducto" runat="server" Text="PRODUCTO" ></asp:Label></td>
