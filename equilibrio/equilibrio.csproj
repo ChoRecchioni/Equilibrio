@@ -102,6 +102,55 @@
     <Compile Include="WEBFORMS ADM\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="WEBFORMS ADM\DeliveryPendiente.aspx.cs">
+      <DependentUpon>DeliveryPendiente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\DeliveryPendiente.aspx.designer.cs">
+      <DependentUpon>DeliveryPendiente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\DeliveryFinalizados.aspx.cs">
+      <DependentUpon>DeliveryFinalizados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\DeliveryFinalizados.aspx.designer.cs">
+      <DependentUpon>DeliveryFinalizados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\CartaAdmi.aspx.cs">
+      <DependentUpon>CartaAdmi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\CartaAdmi.aspx.designer.cs">
+      <DependentUpon>CartaAdmi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\VerReseñaAdmi.aspx.cs">
+      <DependentUpon>VerReseñaAdmi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\VerReseñaAdmi.aspx.designer.cs">
+      <DependentUpon>VerReseñaAdmi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\Nomina.aspx.cs">
+      <DependentUpon>Nomina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\Nomina.aspx.designer.cs">
+      <DependentUpon>Nomina.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\GestionarReservas.aspx.cs">
+      <DependentUpon>GestionarReservas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\GestionarReservas.aspx.designer.cs">
+      <DependentUpon>GestionarReservas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\PerfilAdmi.aspx.cs">
+      <DependentUpon>PerfilAdmi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\PerfilAdmi.aspx.designer.cs">
+      <DependentUpon>PerfilAdmi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WEBFORMS CLI\AgregarDirección.aspx.cs">
       <DependentUpon>AgregarDirección.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -143,6 +192,27 @@
     </Compile>
     <Compile Include="WEBFORMS CLI\Delivery.aspx.designer.cs">
       <DependentUpon>Delivery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS CLI\Carta.aspx.cs">
+      <DependentUpon>Carta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS CLI\Carta.aspx.designer.cs">
+      <DependentUpon>Carta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS CLI\VerReseña.aspx.cs">
+      <DependentUpon>VerReseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS CLI\VerReseña.aspx.designer.cs">
+      <DependentUpon>VerReseña.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS CLI\ResumenPedido.aspx.cs">
+      <DependentUpon>ResumenPedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS CLI\ResumenPedido.aspx.designer.cs">
+      <DependentUpon>ResumenPedido.aspx</DependentUpon>
     </Compile>
     <Compile Include="WEBFORMS CLI\RegistrarReserva.aspx.cs">
       <DependentUpon>RegistrarReserva.aspx</DependentUpon>
@@ -237,12 +307,22 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="WEBFORMS ADM\DeliveryPendiente.aspx" />
+    <Content Include="WEBFORMS ADM\DeliveryFinalizados.aspx" />
+    <Content Include="WEBFORMS ADM\CartaAdmi.aspx" />
+    <Content Include="WEBFORMS ADM\VerReseñaAdmi.aspx" />
+    <Content Include="WEBFORMS ADM\Nomina.aspx" />
+    <Content Include="WEBFORMS ADM\GestionarReservas.aspx" />
+    <Content Include="WEBFORMS ADM\PerfilAdmi.aspx" />
     <Content Include="WEBFORMS CLI\AgregarDirección.aspx" />
     <Content Include="WEBFORMS ADM\AgregarArticulo.aspx" />
     <Content Include="WEBFORMS ADM\AgregarEmpleado.aspx" />
     <Content Include="WEBFORMS CLI\AgregarReseña.aspx" />
     <Content Include="WEBFORMS CLI\CarroCompras.aspx" />
     <Content Include="WEBFORMS CLI\Delivery.aspx" />
+    <Content Include="WEBFORMS CLI\Carta.aspx" />
+    <Content Include="WEBFORMS CLI\VerReseña.aspx" />
+    <Content Include="WEBFORMS CLI\ResumenPedido.aspx" />
     <Content Include="WEBFORMS CLI\RegistrarReserva.aspx" />
     <Content Include="WEBFORMS CLI\MisReservas.aspx" />
     <Content Include="WEBFORMS CLI\PerfilUsuario.aspx" />
