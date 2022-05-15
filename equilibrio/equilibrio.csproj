@@ -87,6 +87,8 @@
     <Content Include="JS\query.js" />
     <Content Include="IMG\logo equilibrio.png" />
     <Content Include="Web.config" />
+    <Content Include="WEBFORMS CLI\IniciarSesión.aspx" />
+    <Content Include="WEBFORMS CLI\RegistrarUsuario.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Entidades.cs" />
@@ -242,6 +244,13 @@
     <Compile Include="WEBFORMS CLI\Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WEBFORMS CLI\Cliente.Master.cs">
+      <DependentUpon>Cliente.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS CLI\Cliente.Master.designer.cs">
+      <DependentUpon>Cliente.Master</DependentUpon>
+    </Compile>
     <Compile Include="WEBFORMS CLI\IniciarSesión.aspx.cs">
       <DependentUpon>IniciarSesión.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -255,13 +264,6 @@
     </Compile>
     <Compile Include="WEBFORMS CLI\RegistrarUsuario.aspx.designer.cs">
       <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WEBFORMS CLI\Cliente.Master.cs">
-      <DependentUpon>Cliente.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WEBFORMS CLI\Cliente.Master.designer.cs">
-      <DependentUpon>Cliente.Master</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -327,14 +329,10 @@
     <Content Include="WEBFORMS CLI\MisReservas.aspx" />
     <Content Include="WEBFORMS CLI\PerfilUsuario.aspx" />
     <Content Include="WEBFORMS CLI\Inicio.aspx" />
-    <Content Include="WEBFORMS CLI\IniciarSesión.aspx" />
-    <Content Include="WEBFORMS CLI\RegistrarUsuario.aspx" />
     <Content Include="WEBFORMS CLI\Cliente.Master" />
     <Content Include="WEBFORMS ADM\Admin.Master" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="WEBFORMS USER\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
