@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WEBFORMS ADM/Admin.Master" AutoEventWireup="true" CodeBehind="AgregarArticulo.aspx.cs" Inherits="equilibrio.WEBFORMS.Formulario_web17" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="CPHtitulos" runat="server">
+    <asp:Label class="titulos" ID="Label2" runat="server" Text="AGREGAR ARTÍCULO"></asp:Label><br />
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="Contenedor" id="">
     <asp:Label ID="Label1" runat="server" Text="Elegir categoria"></asp:Label><br />

@@ -23,6 +23,9 @@
         }
     </style>
 </asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="CPHtitulos" runat="server">
+    <asp:Label class="titulos" ID="Label7" runat="server" Text="RESERVAS"></asp:Label><br />
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="Contenedor">
 

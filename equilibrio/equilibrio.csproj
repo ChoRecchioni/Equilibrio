@@ -87,6 +87,7 @@
     <Content Include="JS\query.js" />
     <Content Include="IMG\logo equilibrio.png" />
     <Content Include="Web.config" />
+    <Content Include="WEBFORMS ADM\InicioAdm.aspx" />
     <Content Include="WEBFORMS CLI\IniciarSesión.aspx" />
     <Content Include="WEBFORMS CLI\RegistrarUsuario.aspx" />
   </ItemGroup>
@@ -124,6 +125,13 @@
     </Compile>
     <Compile Include="WEBFORMS ADM\CartaAdmi.aspx.designer.cs">
       <DependentUpon>CartaAdmi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\InicioAdm.aspx.cs">
+      <DependentUpon>InicioAdm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\InicioAdm.aspx.designer.cs">
+      <DependentUpon>InicioAdm.aspx</DependentUpon>
     </Compile>
     <Compile Include="WEBFORMS ADM\VerReseñaAdmi.aspx.cs">
       <DependentUpon>VerReseñaAdmi.aspx</DependentUpon>

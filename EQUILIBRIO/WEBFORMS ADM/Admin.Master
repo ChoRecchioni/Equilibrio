@@ -29,6 +29,7 @@
         </section>
      </ header>
         <section id="titulo">
+            <asp:ContentPlaceHolder ID="CPHtitulos" runat="server"></asp:ContentPlaceHolder>
         </section>
         <section id="menu">
             <a id="logo" href="inicio.aspx">

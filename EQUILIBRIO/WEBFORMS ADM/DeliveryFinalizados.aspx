@@ -21,6 +21,9 @@
         }
     </style>
 </asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="CPHtitulos" runat="server">
+    <asp:Label class="titulos" ID="Label1" runat="server" Text="DELIVERYS FINALIZADOS"></asp:Label><br />
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
     <asp:TextBox ID="TxtNpedido" runat="server" placeholder="N° PEDIDO" ></asp:TextBox><asp:Button class= "btn" ID="Button1" runat="server" Text="Buscar" />

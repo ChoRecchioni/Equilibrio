@@ -6,6 +6,9 @@
         }
     </style>
 </asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="CPHtitulos" runat="server">
+    <asp:Label class="titulos" ID="Label1" runat="server" Text="NÓMINA"></asp:Label><br />
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
     <asp:TextBox ID="TxtRut" runat="server" placeholder="RUT" ></asp:TextBox><asp:Button class="btn" ID="BtnBuscar1" runat="server" Text="BUSCAR" />

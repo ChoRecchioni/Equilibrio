@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace equilibrio.WEBFORMS
+namespace equilibrio.WEBFORMS_ADM
 {
     public partial class Formulario_web16 : System.Web.UI.Page
     {
@@ -13,7 +13,5 @@ namespace equilibrio.WEBFORMS
         {
 
         }
-
-        
     }
 }

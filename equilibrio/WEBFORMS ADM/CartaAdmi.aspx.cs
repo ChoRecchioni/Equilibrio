@@ -5,15 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace equilibrio.WEBFORMS
+namespace equilibrio.WEBFORMS_ADM
 {
-    public partial class Formulario_web16 : System.Web.UI.Page
+    public partial class Formulario_web14 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
-        
     }
 }

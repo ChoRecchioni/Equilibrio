@@ -62,6 +62,15 @@ body {
     background: #04c3cb;
     height: 120px;
     width: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+}
+
+.titulos {
+    margin-left: 410px;
+    font-weight: bolder;
+    font-size: 35px;
+    text-transform: uppercase;
 }
 
 #menu {
@@ -231,6 +240,7 @@ li {
     border-radius: 3px;
     border: none;
     font-size: 16px;
+    text-transform: uppercase;
 }
 
 input#ContentPlaceHolder1_BtnIniciar.Btn {
@@ -245,6 +255,7 @@ input#ContentPlaceHolder1_BtnIniciar.Btn {
 .LblTitulo {
     font-size: larger;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 span#ContentPlaceHolder1_LblTitulo {
@@ -382,3 +393,8 @@ input#ContentPlaceHolder1_BtnAgregar.BtnForm {
         color: #000;
         text-shadow: 0 0 5px #04c3cb;
     }
+
+.calendario {
+    width: 350px;
+}
+
