@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
-            margin-top: 20px;
+            margin-top: 30px;
             width: 75%;
         }
         .auto-style2 {
@@ -15,7 +15,16 @@
         <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">
-        <asp:DropDownList class="Drop" ID="DropComuna" runat="server"></asp:DropDownList></td>
+        <asp:DropDownList class="Drop" ID="DropLocal" runat="server">
+            <asp:ListItem Text="SELECCIONE UN LOCAL" Value="0" />
+            <asp:ListItem Text="SANTIAGO" Value="1" />
+            <asp:ListItem Text="PROVIDENCIA" Value="2" />
+            <asp:ListItem Text="ÑUÑOA" Value="3" />
+            <asp:ListItem Text="MAIPÚ" Value="4" />
+            <asp:ListItem Text="VIÑA DEL MAR" Value="5" />
+
+        </asp:DropDownList></td>
+
                     <td class="auto-style4">
                         &nbsp;</td>
                 </tr>
@@ -69,7 +78,7 @@
                         <asp:TextBox class="Txt" ID="TxtComentario" runat="server" placeholder="COMENTARIO:" Style="text-align-last: left; margin-top: -35px; padding-left: 5px;" Height="100px"></asp:TextBox></td>
                     </td>
                     <td class="auto-style5">
-            <asp:Button class="BtnOK" ID="BtnEnviar" runat="server" Text="CONFIRMAR" style="margin-left: 300px;" />
+            <asp:Button class="BtnOK" ID="BtnEnviar" runat="server" Text="AGREGAR" style="margin-left: 300px;" OnClick="BtnEnviar_Click" />
                     </td>
                 </tr>
             </table>

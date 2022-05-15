@@ -21,7 +21,13 @@ namespace equilibrio.WEBFORMS
 
         protected void BtnIniciar_Click(object sender, EventArgs e)
         {
-
+            if (TxtUser.Text == "admin" && TxtPass.Text == "admin")
+            {
+                Response.Redirect("../WEBFORMS ADM/InicioAdm.aspx");
+            }
+            else
+            {
+            }
         }
     }
 }

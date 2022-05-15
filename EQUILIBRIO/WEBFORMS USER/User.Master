@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="equilibrio.WEBFORMS_ADM.Admin" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.Master.cs" Inherits="equilibrio.WEBFORMS.Inicio" %>
 
 <!DOCTYPE html>
 
@@ -50,7 +50,7 @@
                 <!--Menu-->
                 <ul class="menu">
                     <!--Submenu 1-->
-                    <li class="item-submenu" menu="1">
+                    <li class="item-submenu" menu="2">
                         <a href="#" class="subm"><span>RESERVAS</span></a>
                         <ul class="submenu">
                             <li class="MisReservas"><a href="MisReservas.aspx">MIS RESERVAS</a></li>
@@ -58,43 +58,19 @@
                         </ul>
                     </li>
                     <!--Fin submenu 1-->
-                    <!--Submenu 2-->
-                    <li class="item-submenu" menu="2">
-                        <a href="#" class="subm"><span>DELIVERY</span></a>
-                        <ul class="submenu">
-                            <li class="Pendientes"><a href="#">PENDIENTES</a></li>
-                            <li class="Finalizados"><a href="#">FINALIZADOS</a></li>
-                        </ul>
-                    </li>
-                    <!--Fin submenu 2-->
-                    <!--Submenu 3-->
-                    <li class="item-submenu" menu="3">
-                        <a href="#" class="subm"><span>CARTA</span></a>
-                        <ul class="submenu">
-                            <li class="Carta"><a href="#">CARTA</a></li>
-                            <li class="AddArt"><a href="AgregarArticulo.aspx">AGREGAR ARTICULO</a></li>
-                        </ul>
-                    </li>
-                    <!--Fin submenu 4-->
+                    <li class="Deli"><a href="#"><span>DELIVERY</span></a></li>
+                    <li class="Carta"><a href="#"><span>CARTA</span></a></li>
                     <li class="Local"><a href="#"><span>LOCALES</span></a></li>
-                    <!--Submenu 3-->
-                    <li class="item-submenu" menu="4">
-                        <a href="#" class="subm"><span>NÓMINA</span></a>
-                        <ul class="submenu">
-                            <li class="Carta"><a href="#">EMPLEADOS</a></li>
-                            <li class="AddArt"><a href="AgregarEmpleado.aspx">AGREGAR EMPLEADO</a></li>
-                        </ul>
-                    </li>
-                    <!--Fin submenu 4-->
-                    <!--Submenu 5-->
-                    <li class="item-submenu" menu="5">
+                    <li class="Preg"><a href="#"><span>PREGUNTAS <br /> FRECUENTES</span></a></li>
+                    <!--Submenu 2-->
+                    <li class="item-submenu" menu="1">
                         <a href="#" class="subm"><span>RESEÑAS</span></a>
                         <ul class="submenu">
                             <li class="Reseñas"><a href="#">RESEÑAS</a></li>
                             <li class="AddReseña"><a href="AgregarReseña.aspx">NUEVA RESEÑA</a></li>
                         </ul>
                     </li>
-                    <!--Fin submenu 5-->
+                    <!--Fin submenu 2-->
                 </ul>
                 <!--Fin Menu-->
             </nav>
