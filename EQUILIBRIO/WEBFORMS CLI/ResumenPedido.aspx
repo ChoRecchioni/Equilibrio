@@ -1,8 +1,30 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WEBFORMS CLI/Cliente.Master" AutoEventWireup="true" CodeBehind="ResumenPedido.aspx.cs" Inherits="equilibrio.WEBFORMS_CLI.Formulario_web11" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
-            width: 400%;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .auto-style2 {
+            margin-left: 30px;
+            width: 250px;
+            border-left: 3px black solid;
+        }
+
+
+        .auto-style30 {
+            margin-left: 30px;
+            width: 291px;
+            border-left: 3px black solid;
+            text-align: right;
+        }
+        .auto-style31 {
+            width: 126px;
+        }
+        .auto-style32 {
+            width: 76px;
         }
     </style>
 </asp:Content>
@@ -12,54 +34,91 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <table class="auto-style1">
-        <tr>
-            <td>DATOS CLIENTE</td>
-        </tr>
-        <tr>
-            <td>RUT:<asp:Label ID="LbRut" runat="server" Text=" "></asp:Label><br />
-                NOMBRE:<asp:Label ID="LbNombre" runat="server" Text=" "></asp:Label><br />
-                APELLIDO:<asp:Label ID="LbApellido" runat="server" Text=" "></asp:Label><br />
-                TELEFONO:<asp:Label ID="LbTelefono" runat="server" Text=" "></asp:Label></td>
-        </tr>
-    </table>
+    <div class="Contenedor">
+        <table class="auto-style1">
+            <tr style="height: 10px;">
+                <td class="LblTitulo" colspan="2">Cliente</td>
+                <td class="auto-style5">
+                    <asp:Label class="LblTitulo" ID="LbCompras" runat="server" Text="MIS COMPRAS" Style="margin-left: 10px;"></asp:Label></td>
+            </tr>
+            <tr style="height: 10px;">
+                <td class="auto-style32">
+                    <asp:Label class="Lbl" ID="LblRut" runat="server" Text="RUT:" />
+                </td>
+                <td class="auto-style31">
+                    <asp:Label class="Lbl" ID="Label2" runat="server" Text="Label"></asp:Label>
+                </td>
+                <td class="auto-style2" rowspan="9">&nbsp;</td>
+            </tr>
+            <tr style="height: 10px;">
+                <td class="auto-style32">
+                    <asp:Label class="Lbl" ID="LblNombre" runat="server" Text="NOMBRE:" />
+                </td>
+                <td class="auto-style31">
+                    <asp:Label class="Lbl" ID="Label3" runat="server" Text="Label"></asp:Label>
+                </td>
+            </tr>
+            <tr style="height: 10px;">
+                <td class="auto-style32">
+                    <asp:Label class="Lbl" ID="LblApellido" runat="server" Text="APELLIDO:" />
+                </td>
+                <td class="auto-style31">
+                    <asp:Label class="Lbl" ID="Label4" runat="server" Text="Label"></asp:Label>
+                </td>
+            </tr>
+            <tr style="height: 10px;">
+                <td class="auto-style32">
+                    <asp:Label class="Lbl" ID="LblTelefono" runat="server" Text="TELÉFONO:" />
+                </td>
+                <td class="auto-style31">
+                    <asp:Label class="Lbl" ID="Label5" runat="server" Text="Label"></asp:Label>
+                </td>
+            </tr>
+            <tr style="height: 10px;">
+                <td class="auto-style4" colspan="2">
+                    <br />
+                    <span class="LblTitulo">Dirección</span></td>
+            </tr>
+            <tr style="height: 10px;">
+                <td class="auto-style32">
+                    <asp:Label class="Lbl" ID="LblDireccion" runat="server" Text="DIRECCIÓN:" />
+                </td>
+                <td class="auto-style31">
+                    <asp:Label class="Lbl" ID="Label6" runat="server" Text="Label"></asp:Label>
+                </td>
+            </tr>
+            <tr style="height: 10px;">
+                <td class="auto-style32">
+                    <asp:Label class="Lbl" ID="LblComuna" runat="server" Text="COMUNA:" />
+                </td>
+                <td class="auto-style31">
+                    <asp:Label class="Lbl" ID="Label7" runat="server" Text="Label"></asp:Label>
+                </td>
+            </tr>
+            <tr style="height: 10px;">
+                <td class="auto-style32">
+                    <asp:Label class="Lbl" ID="LblRegion" runat="server" Text="REGIÓN:" />
+                </td>
+                <td class="auto-style31">
+                    <asp:Label class="Lbl" ID="Label8" runat="server" Text="Label"></asp:Label>
+                </td>
+            </tr>
+            <tr style="height: 10px;">
+                <td class="auto-style29" colspan="2">
+                    <br />
+                    <span class="LblTitulo">Método de pago</span>
+                </td>
+            </tr>
+            <tr style="height: 10px;">
+                <td class="auto-style29" colspan="2">
+                    <asp:Label class="Lbl" ID="Label9" runat="server" Text="Crédito/Débito/Transferencia"></asp:Label>
+                </td>
+                <td class="auto-style30"> 
+                <asp:Label class="LblTitulo" ID="LbCantidad0" runat="server" Text="TOTAL:" ></asp:Label>
+                <asp:Label class="LblTitulo" ID="LblTotal" runat="server" Text="$10.000.-"></asp:Label>
+                </td>
+            </tr>
+            </table>
+    </div>
 
-     <table class="auto-style1">
-        <tr>
-            <td>DIRECCION DE ENVIO</td>
-        </tr>
-        <tr>
-            <td>ALIAS:<asp:Label ID="LbAlias" runat="server" Text=" "></asp:Label><br />
-                DIRECCION:<asp:Label ID="LbDireccion" runat="server" Text=" "></asp:Label><br />
-                COMUNA:<asp:Label ID="LbComuna" runat="server" Text=" "></asp:Label></td>
-        </tr>
-    </table>
-
-    <table class="auto-style1">
-        <tr>
-            <td>METODO DE PAGO</td>
-        </tr>
-        <tr>
-            <asp:Label ID="LbMetodo" runat="server" Text=" "></asp:Label>
-            <td><br />    
-        </tr>
-    </table>
-
-    <table class="auto-style1">
-        <tr>
-            <td>COMPRA</td>
-        </tr>
-        <tr>
-            <asp:Label ID="LbProducto1" runat="server" Text=" "></asp:Label>
-            <td>   
-        </tr>
-        <tr>
-            <td><asp:Label ID="LbProducto2" runat="server" Text=" "></asp:Label></tr>
-        <tr>
-            <td><asp:Label ID="LbProducto3" runat="server" Text=" "></asp:Label></tr>
-        <tr>
-            <td>TOTAL:<asp:Label ID="LbTotal" runat="server" Text="48.000"></asp:Label></tr>
-        
-    </table>
-    
 </asp:Content>

@@ -75,7 +75,7 @@ namespace equilibrio.Controller
                    Usuario usuario = FindUsuario(codigo);
                     usuario.RUT = rut;
                     usuario.Nombre = nombre;
-                     usuario.Apellido = apellido;
+                    usuario.Apellido = apellido;
                     usuario.Telefono = telefono;
                     usuario.Pass = pass;
                     usuario.Direccion = direccion;

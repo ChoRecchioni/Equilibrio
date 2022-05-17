@@ -3,7 +3,7 @@
     <style type="text/css">
         .auto-style1 {
             margin-top: 20px;
-            width: 75%;
+            width: 85%;
             
         }
         .auto-style2 {
@@ -63,6 +63,10 @@
             width: 350px;
             height: 28px;
         }
+        .auto-style29 {
+            width: 540px;
+            height: 10px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CPHtitulos" runat="server">
@@ -78,14 +82,14 @@
             </td>
             <td class="auto-style5"><asp:Label class="LblTitulo" ID="LbCompras" runat="server" Text="MIS COMPRAS" Style="margin-left: 10px;"></asp:Label></td>
         </tr>
-        <tr style="height: 10px;">
+        <tr>
             <td class="auto-style25">
                 <asp:Label class="Lbl" ID="LblRut" runat="server" Text="RUT:"/>
             </td>
             <td class="auto-style26">
                 <asp:TextBox class="Txt" ID="TxtRut" runat="server"></asp:TextBox>
             </td>
-            <td class="auto-style2" rowspan="9">&nbsp;</td>
+            <td class="auto-style2" rowspan="8">&nbsp;</td>
         </tr>
         <tr style="height: 10px;">
             <td class="auto-style15">
@@ -112,7 +116,7 @@
             </td>
         </tr>
         <tr style="height: 10px;">
-            <td class="auto-style4" colspan="2">
+            <td class="auto-style29" colspan="2">
                 <br />
                 <asp:Label class="LblTitulo" ID="LbDirecciones" runat="server" Text="MIS DIRECCIONES"></asp:Label>
                 <asp:ImageButton class="BtnForm" ID="BtnAgregar" runat="server" Height="20px" Width="20px" ImageUrl="~/IMG/plus.png" OnClick="BtnAgregar_Click"/>
@@ -149,6 +153,7 @@
             <td class="auto-style28">
                 <asp:TextBox class="Txt" ID="TxtRegion" runat="server"></asp:TextBox>
             </td>
+            <td class="auto-style2">&nbsp;</td>
         </tr>
     </table>
     </div>

@@ -42,13 +42,13 @@ namespace equilibrio.WEBFORMS_CLI
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control BtnMenos.
+        /// Control Button7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnMenos;
+        protected global::System.Web.UI.WebControls.Button Button7;
 
         /// <summary>
         /// Control Label4.
@@ -60,22 +60,22 @@ namespace equilibrio.WEBFORMS_CLI
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Control BtnMas.
+        /// Control Button8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnMas;
+        protected global::System.Web.UI.WebControls.Button Button8;
 
         /// <summary>
-        /// Control Precio.
+        /// Control Label17.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Precio;
+        protected global::System.Web.UI.WebControls.Label Label17;
 
         /// <summary>
         /// Control Label5.
