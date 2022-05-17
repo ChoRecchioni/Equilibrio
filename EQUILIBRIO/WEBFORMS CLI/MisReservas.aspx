@@ -5,6 +5,7 @@
             width: 100%;
             border-bottom: 1px solid black;
             padding-bottom: 20px;
+            margin-top: 20px;
         }
         .auto-style2 {
             width: 423px;
@@ -25,12 +26,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="Contenedor">
-
-
-            <br />
-        <br />
-        <br />
-        <br />
         <table class="auto-style1">
             <tr>
                 <td class="auto-style2">

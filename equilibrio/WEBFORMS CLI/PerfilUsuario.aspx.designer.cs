@@ -159,6 +159,15 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.TextBox TxtAlias;
 
         /// <summary>
+        /// Control BtnEditar0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton BtnEditar0;
+
+        /// <summary>
         /// Control LblDireccion.
         /// </summary>
         /// <remarks>

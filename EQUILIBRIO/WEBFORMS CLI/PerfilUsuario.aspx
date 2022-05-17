@@ -29,24 +29,6 @@
         .auto-style16 {
             width: 350px;
         }
-        .auto-style17 {
-            width: 58px;
-        }
-        .auto-style18 {
-            width: 350px;
-        }
-        .auto-style19 {
-            width: 58px;
-        }
-        .auto-style20 {
-            width: 350px;
-        }
-        .auto-style21 {
-            width: 58px;
-        }
-        .auto-style22 {
-            width: 350px;
-        }
         .auto-style25 {
             width: 58px;
             height: 30px;
@@ -54,14 +36,6 @@
         .auto-style26 {
             width: 350px;
             height: 30px;
-        }
-        .auto-style27 {
-            width: 58px;
-            height: 28px;
-        }
-        .auto-style28 {
-            width: 350px;
-            height: 28px;
         }
         .auto-style29 {
             width: 540px;
@@ -89,7 +63,7 @@
             <td class="auto-style26">
                 <asp:TextBox class="Txt" ID="TxtRut" runat="server"></asp:TextBox>
             </td>
-            <td class="auto-style2" rowspan="8">&nbsp;</td>
+            <td class="auto-style2" rowspan="6">&nbsp;</td>
         </tr>
         <tr style="height: 10px;">
             <td class="auto-style15">
@@ -122,37 +96,22 @@
                 <asp:ImageButton class="BtnForm" ID="BtnAgregar" runat="server" Height="20px" Width="20px" ImageUrl="~/IMG/plus.png" OnClick="BtnAgregar_Click"/>
             </td>
         </tr>
-        <tr style="height: 10px;">
-            <td class="auto-style17">
-                <asp:Label class="Lbl" ID="LblAlias" runat="server" Text="ALIAS:"/>
-            </td>
-            <td class="auto-style18">
-                <asp:TextBox class="Txt" ID="TxtAlias" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr style="height: 10px;">
-            <td class="auto-style19">
-                <asp:Label class="Lbl" ID="LblDireccion" runat="server" Text="DIRECCIÓN:"/>
-            </td>
-            <td class="auto-style20">
-                <asp:TextBox class="Txt" ID="TxtDireccion" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr style="height: 10px;">
-            <td class="auto-style21">
-                <asp:Label class="Lbl" ID="LblComuna" runat="server" Text="COMUNA:"/>
-            </td>
-            <td class="auto-style22">
-                <asp:TextBox class="Txt" ID="TxtComuna" runat="server"></asp:TextBox>
+        <tr style="height: 10px;">            
+            <td colspan="2" rowspan="2">
+                <div class="Direccion" style="margin-bottom: 20px;">
+                    <asp:Label class="Lbl" ID="LblAlias" runat="server" Text="ALIAS:"/>
+                    <asp:TextBox class="Txt Dir" ID="TxtAlias" runat="server" Width="300px" Style="position: relative; right: -70px;"></asp:TextBox>
+                    <asp:ImageButton class="BtnForm" ID="BtnEditar0" runat="server" Height="20px" Width="20px" Style="position: relative; right: -85px;" ImageUrl="~/IMG/edit.png" /><br />
+                    <asp:Label class="Lbl" ID="LblDireccion" runat="server" Text="DIRECCIÓN:"/>
+                    <asp:TextBox class="Txt Dir" ID="TxtDireccion" runat="server" Style="position: relative; right: -20px;"></asp:TextBox><br />
+                    <asp:Label class="Lbl" ID="LblComuna" runat="server" Text="COMUNA:"/>
+                    <asp:TextBox class="Txt Dir" ID="TxtComuna" runat="server" Style="position: relative; right: -36px;"></asp:TextBox><br />
+                    <asp:Label class="Lbl" ID="LblRegion" runat="server" Text="REGIÓN:"/>
+                    <asp:TextBox class="Txt Dir" ID="TxtRegion" runat="server" Style="position: relative; right: -50px;"></asp:TextBox><br />
+                </div>
             </td>
         </tr>
         <tr style="height: 10px;">
-            <td class="auto-style27">
-                <asp:Label class="Lbl" ID="LblRegion" runat="server" Text="REGIÓN:"/>
-            </td>
-            <td class="auto-style28">
-                <asp:TextBox class="Txt" ID="TxtRegion" runat="server"></asp:TextBox>
-            </td>
             <td class="auto-style2">&nbsp;</td>
         </tr>
     </table>
