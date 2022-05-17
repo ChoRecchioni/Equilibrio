@@ -74,11 +74,15 @@
     <Content Include="CSS\font-awesome-4.7.0\HELP-US-OUT.txt" />
     <Content Include="IMG\cart.png" />
     <Content Include="IMG\delete.png" />
+    <Content Include="IMG\edit.png" />
+    <Content Include="IMG\empty-star.png" />
     <Content Include="IMG\fb.png" />
     <Content Include="IMG\fondo2.png" />
+    <Content Include="IMG\full-star.png" />
     <Content Include="IMG\instagram.png" />
     <Content Include="IMG\line.png" />
     <Content Include="IMG\Mariscos-e1592426953245-1200x900.jpg" />
+    <Content Include="IMG\plus.png" />
     <Content Include="IMG\sopa-marisco-y-pescado-655x368.jpeg" />
     <Content Include="IMG\twitter.png" />
     <Content Include="IMG\user.png" />
@@ -87,15 +91,19 @@
     <Content Include="JS\query.js" />
     <Content Include="IMG\logo equilibrio.png" />
     <Content Include="Web.config" />
-    <Content Include="WEBFORMS ADM\InicioAdm.aspx" />
-    <Content Include="WEBFORMS CLI\IniciarSesión.aspx" />
-    <Content Include="WEBFORMS CLI\RegistrarUsuario.aspx" />
+    <Content Include="WEBFORMS CLI\Carta.aspx" />
+    <Content Include="WEBFORMS CLI\ResumenPedido.aspx" />
+    <Content Include="WEBFORMS CLI\VerReseña.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Entidades.cs" />
     <Compile Include="Controller\ComunaController.cs" />
     <Compile Include="Controller\DireccionController.cs" />
+    <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\RegionController.cs" />
+    <Compile Include="Controller\ReseñaController.cs" />
+    <Compile Include="Controller\RoleController.cs" />
+    <Compile Include="Controller\SedeController.cs" />
     <Compile Include="Controller\UsuarioController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WEBFORMS ADM\Admin.Master.cs">
@@ -105,12 +113,12 @@
     <Compile Include="WEBFORMS ADM\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
-    <Compile Include="WEBFORMS ADM\DeliveryPendiente.aspx.cs">
-      <DependentUpon>DeliveryPendiente.aspx</DependentUpon>
+    <Compile Include="WEBFORMS ADM\CartaAdmi.aspx.cs">
+      <DependentUpon>CartaAdmi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WEBFORMS ADM\DeliveryPendiente.aspx.designer.cs">
-      <DependentUpon>DeliveryPendiente.aspx</DependentUpon>
+    <Compile Include="WEBFORMS ADM\CartaAdmi.aspx.designer.cs">
+      <DependentUpon>CartaAdmi.aspx</DependentUpon>
     </Compile>
     <Compile Include="WEBFORMS ADM\DeliveryFinalizados.aspx.cs">
       <DependentUpon>DeliveryFinalizados.aspx</DependentUpon>
@@ -119,33 +127,12 @@
     <Compile Include="WEBFORMS ADM\DeliveryFinalizados.aspx.designer.cs">
       <DependentUpon>DeliveryFinalizados.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WEBFORMS ADM\CartaAdmi.aspx.cs">
-      <DependentUpon>CartaAdmi.aspx</DependentUpon>
+    <Compile Include="WEBFORMS ADM\DeliveryPendiente.aspx.cs">
+      <DependentUpon>DeliveryPendiente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WEBFORMS ADM\CartaAdmi.aspx.designer.cs">
-      <DependentUpon>CartaAdmi.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WEBFORMS ADM\InicioAdm.aspx.cs">
-      <DependentUpon>InicioAdm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WEBFORMS ADM\InicioAdm.aspx.designer.cs">
-      <DependentUpon>InicioAdm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WEBFORMS ADM\VerReseñaAdmi.aspx.cs">
-      <DependentUpon>VerReseñaAdmi.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WEBFORMS ADM\VerReseñaAdmi.aspx.designer.cs">
-      <DependentUpon>VerReseñaAdmi.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WEBFORMS ADM\Nomina.aspx.cs">
-      <DependentUpon>Nomina.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WEBFORMS ADM\Nomina.aspx.designer.cs">
-      <DependentUpon>Nomina.aspx</DependentUpon>
+    <Compile Include="WEBFORMS ADM\DeliveryPendiente.aspx.designer.cs">
+      <DependentUpon>DeliveryPendiente.aspx</DependentUpon>
     </Compile>
     <Compile Include="WEBFORMS ADM\GestionarReservas.aspx.cs">
       <DependentUpon>GestionarReservas.aspx</DependentUpon>
@@ -154,12 +141,33 @@
     <Compile Include="WEBFORMS ADM\GestionarReservas.aspx.designer.cs">
       <DependentUpon>GestionarReservas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WEBFORMS ADM\InicioAdm.aspx.cs">
+      <DependentUpon>InicioAdm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\InicioAdm.aspx.designer.cs">
+      <DependentUpon>InicioAdm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\Nomina.aspx.cs">
+      <DependentUpon>Nomina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\Nomina.aspx.designer.cs">
+      <DependentUpon>Nomina.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WEBFORMS ADM\PerfilAdmi.aspx.cs">
       <DependentUpon>PerfilAdmi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WEBFORMS ADM\PerfilAdmi.aspx.designer.cs">
       <DependentUpon>PerfilAdmi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\VerReseñaAdmi.aspx.cs">
+      <DependentUpon>VerReseñaAdmi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\VerReseñaAdmi.aspx.designer.cs">
+      <DependentUpon>VerReseñaAdmi.aspx</DependentUpon>
     </Compile>
     <Compile Include="WEBFORMS CLI\AgregarDirección.aspx.cs">
       <DependentUpon>AgregarDirección.aspx</DependentUpon>
@@ -196,13 +204,6 @@
     <Compile Include="WEBFORMS CLI\CarroCompras.aspx.designer.cs">
       <DependentUpon>CarroCompras.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WEBFORMS CLI\Delivery.aspx.cs">
-      <DependentUpon>Delivery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WEBFORMS CLI\Delivery.aspx.designer.cs">
-      <DependentUpon>Delivery.aspx</DependentUpon>
-    </Compile>
     <Compile Include="WEBFORMS CLI\Carta.aspx.cs">
       <DependentUpon>Carta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -210,19 +211,15 @@
     <Compile Include="WEBFORMS CLI\Carta.aspx.designer.cs">
       <DependentUpon>Carta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WEBFORMS CLI\VerReseña.aspx.cs">
-      <DependentUpon>VerReseña.aspx</DependentUpon>
+    <Compile Include="WEBFORMS CLI\Delivery.aspx.cs">
+      <DependentUpon>Delivery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WEBFORMS CLI\VerReseña.aspx.designer.cs">
-      <DependentUpon>VerReseña.aspx</DependentUpon>
+    <Compile Include="WEBFORMS CLI\Delivery.aspx.designer.cs">
+      <DependentUpon>Delivery.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WEBFORMS CLI\ResumenPedido.aspx.cs">
-      <DependentUpon>ResumenPedido.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WEBFORMS CLI\ResumenPedido.aspx.designer.cs">
-      <DependentUpon>ResumenPedido.aspx</DependentUpon>
+    <Compile Include="WEBFORMS CLI\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="WEBFORMS CLI\RegistrarReserva.aspx.cs">
       <DependentUpon>RegistrarReserva.aspx</DependentUpon>
@@ -249,16 +246,6 @@
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WEBFORMS CLI\Inicio.aspx.designer.cs">
-      <DependentUpon>Inicio.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WEBFORMS CLI\Cliente.Master.cs">
-      <DependentUpon>Cliente.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WEBFORMS CLI\Cliente.Master.designer.cs">
-      <DependentUpon>Cliente.Master</DependentUpon>
-    </Compile>
     <Compile Include="WEBFORMS CLI\IniciarSesión.aspx.cs">
       <DependentUpon>IniciarSesión.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -272,6 +259,27 @@
     </Compile>
     <Compile Include="WEBFORMS CLI\RegistrarUsuario.aspx.designer.cs">
       <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS CLI\Cliente.Master.cs">
+      <DependentUpon>Cliente.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS CLI\Cliente.Master.designer.cs">
+      <DependentUpon>Cliente.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS CLI\ResumenPedido.aspx.cs">
+      <DependentUpon>ResumenPedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS CLI\ResumenPedido.aspx.designer.cs">
+      <DependentUpon>ResumenPedido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS CLI\VerReseña.aspx.cs">
+      <DependentUpon>VerReseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS CLI\VerReseña.aspx.designer.cs">
+      <DependentUpon>VerReseña.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -317,30 +325,32 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="WEBFORMS ADM\DeliveryPendiente.aspx" />
-    <Content Include="WEBFORMS ADM\DeliveryFinalizados.aspx" />
     <Content Include="WEBFORMS ADM\CartaAdmi.aspx" />
-    <Content Include="WEBFORMS ADM\VerReseñaAdmi.aspx" />
-    <Content Include="WEBFORMS ADM\Nomina.aspx" />
+    <Content Include="WEBFORMS ADM\DeliveryFinalizados.aspx" />
+    <Content Include="WEBFORMS ADM\DeliveryPendiente.aspx" />
     <Content Include="WEBFORMS ADM\GestionarReservas.aspx" />
+    <Content Include="WEBFORMS ADM\InicioAdm.aspx" />
+    <Content Include="WEBFORMS ADM\Nomina.aspx" />
     <Content Include="WEBFORMS ADM\PerfilAdmi.aspx" />
+    <Content Include="WEBFORMS ADM\VerReseñaAdmi.aspx" />
     <Content Include="WEBFORMS CLI\AgregarDirección.aspx" />
     <Content Include="WEBFORMS ADM\AgregarArticulo.aspx" />
     <Content Include="WEBFORMS ADM\AgregarEmpleado.aspx" />
     <Content Include="WEBFORMS CLI\AgregarReseña.aspx" />
     <Content Include="WEBFORMS CLI\CarroCompras.aspx" />
     <Content Include="WEBFORMS CLI\Delivery.aspx" />
-    <Content Include="WEBFORMS CLI\Carta.aspx" />
-    <Content Include="WEBFORMS CLI\VerReseña.aspx" />
-    <Content Include="WEBFORMS CLI\ResumenPedido.aspx" />
     <Content Include="WEBFORMS CLI\RegistrarReserva.aspx" />
     <Content Include="WEBFORMS CLI\MisReservas.aspx" />
     <Content Include="WEBFORMS CLI\PerfilUsuario.aspx" />
     <Content Include="WEBFORMS CLI\Inicio.aspx" />
+    <Content Include="WEBFORMS CLI\IniciarSesión.aspx" />
+    <Content Include="WEBFORMS CLI\RegistrarUsuario.aspx" />
     <Content Include="WEBFORMS CLI\Cliente.Master" />
     <Content Include="WEBFORMS ADM\Admin.Master" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="WEBFORMS USER\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

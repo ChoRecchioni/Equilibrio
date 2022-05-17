@@ -19,12 +19,7 @@
                 <tr>
                     <td class="auto-style2">
         <asp:DropDownList class="Drop" ID="DropLocal" runat="server">
-            <asp:ListItem Text="SELECCIONE UN LOCAL" Value="0" />
-            <asp:ListItem Text="SANTIAGO" Value="1" />
-            <asp:ListItem Text="PROVIDENCIA" Value="2" />
-            <asp:ListItem Text="ÑUÑOA" Value="3" />
-            <asp:ListItem Text="MAIPÚ" Value="4" />
-            <asp:ListItem Text="VIÑA DEL MAR" Value="5" />
+
 
         </asp:DropDownList></td>
 
@@ -33,31 +28,31 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <div class="rating">
+                        <div class="rating" runat="server" id="estrellas">
                           <label>
-                            <input type="radio" name="stars" value="1" />
+                            <input type="radio" id="rd1" runat="server" name="stars" value="1" />
                             <span class="icon">★</span>
                           </label>
                           <label>
-                            <input type="radio" name="stars" value="2" />
+                            <input type="radio" id="rd2" runat="server" name="stars" value="2" />
                             <span class="icon">★</span>
                             <span class="icon">★</span>
                           </label>
                           <label>
-                            <input type="radio" name="stars" value="3" />
+                            <input type="radio" id="rd3" runat="server" name="stars" value="3" />
                             <span class="icon">★</span>
                             <span class="icon">★</span>
                             <span class="icon">★</span>   
                           </label>
-                          <label>
-                            <input type="radio" name="stars" value="4" />
+                          <label> 
+                            <input type="radio" id="rd4" runat="server" name="stars" value="4" />
                             <span class="icon">★</span>
                             <span class="icon">★</span>
                             <span class="icon">★</span>
                             <span class="icon">★</span>
                           </label>
                           <label>
-                            <input type="radio" name="stars" value="5" />
+                            <input type="radio" id="rd5" runat="server" name="stars" value="5" />
                             <span class="icon">★</span>
                             <span class="icon">★</span>
                             <span class="icon">★</span>

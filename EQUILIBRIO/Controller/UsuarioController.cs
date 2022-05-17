@@ -11,31 +11,26 @@ namespace equilibrio.Controller
         private static List<Usuario> listaUsuario = new List<Usuario>();
 
         //Metodo para agregar Usuario
-        public static string AddUsuario(string codigo, string rut, string nombre, string apellido, string telefono, string pass, string codDireccion)
+
+        public static string AddUsuario(int codigo, string rut, string nombre, string apellido, string telefono, string pass, string codDireccion, string Codrol)
         {
+
             Direccion direccion = DireccionController.FindDireccion(codDireccion);
-            try
+            Role rol = RoleController.FindRole(Codrol);
+            Usuario u = new Usuario()
             {
-                listaUsuario.Add(new Usuario()
-                {
+                Codigo = codigo,
+                RUT = rut,
+                Nombre = nombre,
+                Apellido = apellido,
+                Telefono = telefono,
+                Pass = pass,
+                Direccion = direccion,
+                Rol = rol,
+            };
+            listaUsuario.Add(u);
 
-                    Codigo = int.Parse(codigo),
-                    RUT = rut,
-                    Nombre = nombre,
-                    Apellido = apellido,
-                    Telefono = telefono,
-                    Pass = pass,
-                    Direccion = direccion,
-                });
-
-                return "Usuario agregado.";
-
-            }
-            catch (Exception e)
-            {
-
-                return e.Message;
-            }
+            return "Ok";
         }
 
         //Metodo para listar todos los usuarios
@@ -68,6 +63,7 @@ namespace equilibrio.Controller
 
         }
 
+
         //Metodo para editar Usuario
 
         public static string EditUsuario(string codigo, string rut, string nombre, string apellido, string telefono, string pass, string codDireccion)
@@ -75,7 +71,7 @@ namespace equilibrio.Controller
 
             try
             {
-                   Direccion direccion = DireccionController.FindDireccion(codDireccion);
+                Direccion direccion = DireccionController.FindDireccion(codDireccion);
                    Usuario usuario = FindUsuario(codigo);
                     usuario.RUT = rut;
                     usuario.Nombre = nombre;
@@ -84,7 +80,7 @@ namespace equilibrio.Controller
                     usuario.Pass = pass;
                     usuario.Direccion = direccion;
 
-                return "Dirección Modificada";
+                return "Usuario Modificado";
             }
             catch (Exception ex)
             {
@@ -103,6 +99,44 @@ namespace equilibrio.Controller
             listaUsuario.Remove(FindUsuario(cod));
 
             return "Usuario removido de la lista";
+        }
+
+        //Metodo de validar usuario
+        public static Usuario FindUser(string username)
+        {
+
+            foreach (Usuario item in listaUsuario)
+            {
+                if (item.Nombre.Equals(username))
+                {
+                    return item;
+                }
+            }
+            return null;
+
+        }
+        public static Usuario FindUser(int codigo)
+        {
+            return null;
+        }
+
+        //Metodo para precargar Admin y Cliente
+        public static void CargarUsuario()
+        {
+
+            if (listaUsuario.Count < 1)
+            {
+                AddUsuario(1, "101", "admin", "admin", "569", "admin", "0", "1");
+                AddUsuario(2, "202", "cliente", "cliente", "569", "cliente", "0", "2");
+            }
+        }
+
+        //Metodo de auto increment
+        public static int UserAI()
+        {
+              int cod = listaUsuario[listaUsuario.Count - 1].Codigo + 1;
+
+            return cod;
         }
     }
 }

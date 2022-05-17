@@ -15,6 +15,9 @@ namespace equilibrio.WEBFORMS
         {
             ComunaController.CargarComuna();
             RegionController.CargarRegion();
+            RoleController.CargarRoles();
+            UsuarioController.CargarUsuario();
+            DireccionController.CargarDirección();
 
             if (!Page.IsPostBack)
             {
@@ -56,16 +59,20 @@ namespace equilibrio.WEBFORMS
 
         protected void BtnEnviar_Click(object sender, EventArgs e)
         {
-            HdnCodigoU.Value = "1";
-            HdnCodigoD.Value = "1";
+            
 
-            LbMensaje1.Text = DireccionController.AddDireccion(HdnCodigoD.Value, TextAlias.Text,
+            int codUser = UsuarioController.UserAI();
+            int codDir = DireccionController.DirAI();
+            HdnRolCliente.Value = "2";
+           
+
+            LbMensaje1.Text = DireccionController.AddDireccion(codDir.ToString(), TextAlias.Text,
               TextCalle.Text, TextDpto.Text, DropComuna.SelectedValue, DropRegion.SelectedValue);
 
-            LbMensaje.Text = UsuarioController.AddUsuario(HdnCodigoU.Value, TextRut.Text,
-              TextNombre.Text, TextApellido.Text, TextTelefono.Text, TextContraseña.Text, HdnCodigoD.Value);
+            LbMensaje.Text = UsuarioController.AddUsuario(codUser, TextRut.Text,
+            TextNombre.Text, TextApellido.Text, TextTelefono.Text, TextContraseña.Text, codDir.ToString(), HdnRolCliente.Value);
 
-            Response.Redirect("PerfilUsuario.aspx");
+            Response.Redirect("IniciarSesión.aspx");
         }
     }
 }

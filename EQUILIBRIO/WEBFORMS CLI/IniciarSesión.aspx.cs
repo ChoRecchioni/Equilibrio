@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using equilibrio.Controller;
+using equilibrio.Clases;
 
 namespace equilibrio.WEBFORMS
 {
@@ -11,7 +13,7 @@ namespace equilibrio.WEBFORMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            UsuarioController.CargarUsuario();
         }
 
         protected void LnkRegistrar_Click(object sender, EventArgs e)
@@ -21,12 +23,16 @@ namespace equilibrio.WEBFORMS
 
         protected void BtnIniciar_Click(object sender, EventArgs e)
         {
-            if (TxtUser.Text == "admin" && TxtPass.Text == "admin")
+            Usuario u = LoginController.Login(TxtUser.Text, TxtPass.Text);
+            if (u != null)
             {
-                Response.Redirect("../WEBFORMS ADM/InicioAdm.aspx");
+                Session["ActiveUser"] = u;
+                Response.Redirect("PerfilUsuario.aspx");
             }
             else
             {
+                Session["ActiveUser"] = null;
+                Response.Redirect("IniciarSesión.aspx");
             }
         }
     }

@@ -105,6 +105,23 @@ namespace equilibrio.Controller
             return "Dirección removida de la lista";
         }
 
+        public static void CargarDirección()
+        {
+
+            if (listaDireccion.Count < 1)
+            {
+                AddDireccion("1", "casa", "casa 1", "1", "1", "1");
+
+            }
+        }
+
+        public static int DirAI()
+        {
+            int cod = listaDireccion[listaDireccion.Count - 1].Codigo + 1;
+
+            return cod;
+        }
+
 
     }
 }

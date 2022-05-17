@@ -18,8 +18,8 @@
     <asp:Label class="titulos" ID="Label1" runat="server" Text="REGISTRO"></asp:Label><br />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      <asp:HiddenField ID="HdnCodigoU" runat="server" />
-      <asp:HiddenField ID="HdnCodigoD" runat="server" />
+      <asp:HiddenField ID="HdnRolCliente" runat="server" />
+
 
         <div class="Contenedor">
             <table class="auto-style1">

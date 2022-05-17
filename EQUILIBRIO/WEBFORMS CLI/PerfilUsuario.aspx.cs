@@ -13,37 +13,39 @@ namespace equilibrio.WEBFORMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ValidarUser();
+        }
 
-            Direccion dir = DireccionController.FindDireccion("1");
-            Usuario usu = UsuarioController.FindUsuario("1");
+        public void ValidarUser()
+        {
 
-            if (dir != null || usu !=null)
+            if (Session["ActiveUser"] == null)
             {
+                Response.Redirect("IniciarSesión.aspx");
+            }
 
-                TxtAlias.Text = dir.Alias;
-                TxtDireccion.Text = dir.CalleYnum;
-                TxtComuna.Text = dir.Comuna.Nombre;
-                TxtRegion.Text = dir.Region.Nombre;
-                TxtRut.Text = usu.RUT;
-                TxtNombre.Text = usu.Nombre;
-                TxtApellido.Text = usu.Apellido;
-                TxtTeléfono.Text = usu.Telefono;
-
-                Session["masc"] = dir;
-                Session["Usur"] = usu;
-
+            Usuario u = (Usuario)Session["ActiveUser"];
+            if (u.Rol.Codigo == 2)
+            {
+                TxtAlias.Text = u.Direccion.Alias;
+                TxtDireccion.Text = u.Direccion.CalleYnum;
+                TxtComuna.Text = u.Direccion.Comuna.Nombre;
+                TxtRegion.Text = u.Direccion.Region.Nombre;
+                TxtRut.Text = u.RUT;
+                TxtNombre.Text = u.Nombre;
+                TxtApellido.Text = u.Apellido;
+                TxtTeléfono.Text = u.Telefono;
             }
             else
             {
-                Session["masc"] = null;
-                Session["Usur"] = null;
+                Response.Redirect("IniciarSesión.aspx");
             }
-
         }
 
         protected void BtnAgregar_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("AgregarDireccion.aspx");
         }
+
     }
 }

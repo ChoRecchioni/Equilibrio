@@ -54,7 +54,10 @@ namespace equilibrio.Clases
 
     public class Reseña
     {
-
+        public int Codigo { get; set; }
+        public Sede Sede { get; set; }
+        public int Puntuacion { get; set; }
+        public string Comentario { get; set; }
     }
 
     public class Reservas
@@ -64,12 +67,29 @@ namespace equilibrio.Clases
 
     public class Usuario
     {
-        public int Codigo;
-        public string RUT;
-        public string Nombre;
-        public string Apellido;
-        public string Telefono;
-        public string Pass;
-        public Direccion Direccion;
+        public Usuario() { }
+        public int Codigo { get; set; }
+        public string RUT { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Telefono { get; set; }
+        public string Pass { get; set; }
+        public Direccion Direccion { get; set; }
+        public Role Rol { get; set; }
+
+
+    }
+
+    public class Role
+    {
+        public Role() { }
+        public int Codigo { get; set; }
+        public string Nombre { get; set; }
+    }
+
+    public class Sede
+    {
+        public int Codigo { get; set; }
+        public string Nombre { get; set; }
     }
 }
