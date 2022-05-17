@@ -16,6 +16,7 @@ namespace equilibrio.WEBFORMS
             ValidarUser();
         }
 
+        //Metodo para validar inicio de sesion y rol
         public void ValidarUser()
         {
 

@@ -80,5 +80,6 @@
                     </td>
                 </tr>
             </table>
+        <asp:Label ID="LbAddReseña" runat="server" Text=""></asp:Label>
     </div>
 </asp:Content>

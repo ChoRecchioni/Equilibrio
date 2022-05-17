@@ -101,7 +101,7 @@ namespace equilibrio.Controller
             return "Usuario removido de la lista";
         }
 
-        //Metodo de validar usuario
+        //Metodo de validar usuario en la lista
         public static Usuario FindUser(string username)
         {
 

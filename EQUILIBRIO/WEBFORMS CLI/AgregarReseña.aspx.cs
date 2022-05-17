@@ -13,6 +13,7 @@ namespace equilibrio.WEBFORMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ReseñaController.CargarReseña();
             SedeController.CargarSedes();
 
 
@@ -40,33 +41,41 @@ namespace equilibrio.WEBFORMS
         protected void BtnEnviar_Click(object sender, EventArgs e)
         {
 
-             string value;
-             if (rd1.Checked)
-             {
-                  value = rd1.Value;
-             }
-             else if (rd2.Checked)
-             {
-                  value = rd2.Value;
-             }
-             else if (rd3.Checked)
-             {
-                 value = rd3.Value;
-            }
-            else if (rd4.Checked)
-            {
-                value = rd4.Value;
-            }
-            else if (rd5.Checked)
-            {
-                value = rd5.Value;
-            }
-
             //string var = estrellas.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
 
-            Response.Redirect("MisReservas.aspx");
+            if (Session["ActiveUser"] == null)
+            {
+                Response.Redirect("IniciarSesión.aspx");
+            }
+            else
+            {
+                string puntuacion;
 
+                if (rd1.Checked)
+                {
+                    puntuacion = rd1.Value;
+                }
+                else if (rd2.Checked)
+                {
+                    puntuacion = rd2.Value;
+                }
+                else if (rd3.Checked)
+                {
+                    puntuacion = rd3.Value;
+                }
+                else if (rd4.Checked)
+                {
+                    puntuacion = rd4.Value;
+                }
+                else
+                {
+                    puntuacion = rd5.Value;
+                }
 
+                int codRe = ReseñaController.ReseñaAI();
+                LbAddReseña.Text = ReseñaController.AddReseña(codRe.ToString(), DropLocal.SelectedValue, puntuacion, TxtComentario.Text);
+                Response.Redirect("VerReseña.aspx");
+            }
             
         }
 

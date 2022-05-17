@@ -98,5 +98,25 @@ namespace equilibrio.Controller
 
             return "Reseña removida de la lista";
         }
+
+        //Metodo para precargar Reseña
+        public static void CargarReseña()
+        {
+
+            if (listaReseña.Count < 1)
+            {
+                SedeController.CargarSedes();
+                AddReseña("1", "1", "1", "asd");
+                
+            }
+        }
+
+        //Metodo de auto increment
+        public static int ReseñaAI()
+        {
+            int cod = listaReseña[listaReseña.Count - 1].Codigo + 1;
+
+            return cod;
+        }
     }
 }

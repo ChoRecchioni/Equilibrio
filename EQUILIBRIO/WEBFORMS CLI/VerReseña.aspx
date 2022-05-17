@@ -18,17 +18,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:DropDownList class="Drop" ID="DropTier" runat="server"></asp:DropDownList>
 
-    <table class="auto-style1">
-        <tr>
-            <td class="auto-style3"><asp:Label ID="LbNEstrella1" runat="server" Text="3"></asp:Label><asp:Image ID="ImgEstrella1" runat="server" Width="35px" /></td>
-            <td><asp:Label ID="LbComentario1" runat="server" Text="COMENTARIO:"></asp:Label></td>
-        </tr>
-    </table>
-    <table class="auto-style1">
-        <tr>
-            <td class="auto-style4"><asp:Label ID="LbNEstrella2" runat="server" Text="1"></asp:Label><asp:Image ID="ImgEstrella2" runat="server" Width="35px" /></td>
-            <td><asp:Label ID="LbComentario2" runat="server" Text="COMENTARIO:"></asp:Label></td>
-        </tr>
-    </table>
+<div class="Contenedor">   
+    <asp:GridView ID="GrdReseña" runat="server"></asp:GridView>
+</div>
 
 </asp:Content>
