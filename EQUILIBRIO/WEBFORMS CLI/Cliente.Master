@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Cliente.Master.cs" Inherits="equilibrio.WEBFORMS.Inicio" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Cliente.Master.cs" Inherits="equilibrio.WEBFORMS_CLI.Cliente" %>
 
 <!DOCTYPE html>
 
@@ -14,7 +14,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <section id="transparencia"></section>
+    <div id="transparencia"></div>
     <header>
         <section id="redes">
             <a id="fb" href="http://www.facebook.com">

@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace equilibrio.WEBFORMS
+namespace equilibrio.WEBFORMS_CLI
 {
 
 
-    public partial class Inicio
+    public partial class Cliente
     {
 
         /// <summary>
