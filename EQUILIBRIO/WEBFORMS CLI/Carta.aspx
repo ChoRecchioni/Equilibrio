@@ -6,7 +6,7 @@
     <asp:Label class="titulos" ID="Label1" runat="server" Text="CARTA"></asp:Label><br />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="Contenedor" style="width: 800px;">
+    <div class="Contenedor">
         <div class="CategoriaCarta" >
             <label class="LblTituloCarta">CATEGORÍA</label><br />
             <div class="ProductoCarta" >
