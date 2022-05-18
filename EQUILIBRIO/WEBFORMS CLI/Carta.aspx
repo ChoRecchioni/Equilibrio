@@ -1,52 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WEBFORMS CLI/Cliente.Master" AutoEventWireup="true" CodeBehind="Carta.aspx.cs" Inherits="equilibrio.WEBFORMS_CLI.Formulario_web12" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style1 {
-            width: 389%;
-        }
-        .auto-style2 {
-            width: 546px;
-        }
-    </style>
+    
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CPHtitulos" runat="server">
     <asp:Label class="titulos" ID="Label1" runat="server" Text="CARTA"></asp:Label><br />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <br />
-    <asp:Label ID="LbTitulo" runat="server" Text="CATEGORIA"></asp:Label>
-    <br />
-    <table class="auto-style1">
-        <tr>
-            <td class="auto-style2">PRODUCTO:<asp:Label ID="LbProducto1" runat="server" Text=" "></asp:Label></td>
-            <td>
-                <asp:Label ID="LbPrecio1" runat="server" Text="12.000"></asp:Label></td>
-        </tr>
-        <tr>
-            <td colspan="2">INFORMACION:<asp:Label ID="LbInformacion1" runat="server" Text=" "></asp:Label></td>
-        </tr>
-    </table>
+    <div class="Contenedor" style="width: 800px;">
+        <div class="CategoríaCarta">
+            <label class="LblTitulo" style="font-size: x-large;">CATEGORÍA</label><br />
+            <div class="ProductoCarta" style="margin-top: 20px;">
+                <div class="NomProd" style="float: left; margin: 0px; margin-top: 10px;">
+                    <asp:Label class="LblTitulo" ID="Label2" runat="server" Text="Label"></asp:Label>
+                </div>
+                <br /><br />
+                <div class="PrecProd" style="float: right;">
+                    <asp:Label class="Lbl" ID="Label4" runat="server" Text="$10.000.-"></asp:Label>
+                </div>
+                <div class="InforProd" style="float: left; margin-left: 0px;">
+                    <asp:Label class="Lbl" ID="Label3" runat="server" Text="Información"></asp:Label>
+                </div>
+            </div>
 
-    <table class="auto-style1">
-        <tr>
-            <td class="auto-style2">PRODUCTO:<asp:Label ID="LbProducto2" runat="server" Text=" "></asp:Label></td>
-            <td>
-                <asp:Label ID="LbPrecio2" runat="server" Text="12.000"></asp:Label></td>
-        </tr>
-        <tr>
-            <td colspan="2">INFORMACION:<asp:Label ID="LbInformacion2" runat="server" Text=" "></asp:Label></td>
-        </tr>
-    </table>
-
-    <table class="auto-style1">
-        <tr>
-            <td class="auto-style2">PRODUCTO:<asp:Label ID="LbProducto3" runat="server" Text=" "></asp:Label></td>
-            <td>
-                <asp:Label ID="LbPrecio3" runat="server" Text="12.000"></asp:Label></td>
-        </tr>
-        <tr>
-            <td colspan="2">INFORMACION: <asp:Label ID="LbInformacion3" runat="server" Text=" "></asp:Label></td>
-        </tr>
-    </table>
-
+        </div>
+    </div>
 </asp:Content>

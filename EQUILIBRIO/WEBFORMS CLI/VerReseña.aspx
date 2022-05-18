@@ -12,7 +12,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
 <div class="Contenedor">  
-    <asp:DropDownList ID="FiltroLocal" runat="server">
+    <asp:DropDownList class="Drop" ID="FiltroLocal" runat="server">
         <%--rellenar--%>
     </asp:DropDownList>
     <div class="reseña" style="border-bottom:solid 1px black; margin-bottom: 20px;">
