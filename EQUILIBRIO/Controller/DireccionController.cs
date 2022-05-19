@@ -105,8 +105,12 @@ namespace equilibrio.Controller
             return "Dirección removida de la lista";
         }
 
+
+        //Precargar direcciones
         public static void CargarDirección()
         {
+            ComunaController.CargarComuna();
+            RegionController.CargarRegion();
 
             if (listaDireccion.Count < 1)
             {
@@ -115,6 +119,7 @@ namespace equilibrio.Controller
             }
         }
 
+        // Direccion auto increment
         public static int DirAI()
         {
             int cod = listaDireccion[listaDireccion.Count - 1].Codigo + 1;

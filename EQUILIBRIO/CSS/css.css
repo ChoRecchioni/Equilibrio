@@ -394,7 +394,7 @@ input#ContentPlaceHolder1_BtnAgregar.BtnForm {
         text-shadow: 0 0 5px #04c3cb;
     }
 
-.Calendario {
+.calendario {
     width: 350px;
 }
 
@@ -420,33 +420,4 @@ input#ContentPlaceHolder1_BtnAgregar.BtnForm {
     position: relative;
     bottom: -40px;
     left: 200px;
-}
-
-.ProductoCarta {
-    margin-top: 15px;
-}
-
-.CategoriaCarta {
-    margin-top: 40px;
-}
-
-.InfoPCarta {
-    margin-left: 0px;
-}
-
-.NomPCarta {
-    float: left;
-    margin: 0px;
-    margin-top: 10px;
-    text-transform: uppercase;
-}
-
-.PrecProd {
-    float: right;
-}
-
-.LblTituloCarta {
-    font-size: x-large;
-    font-weight: bold;
-    text-transform: uppercase;
 }

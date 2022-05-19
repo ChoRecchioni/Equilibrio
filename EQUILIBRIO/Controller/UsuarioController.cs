@@ -123,11 +123,12 @@ namespace equilibrio.Controller
         //Metodo para precargar Admin y Cliente
         public static void CargarUsuario()
         {
-
+            RoleController.CargarRoles();
+            DireccionController.CargarDirección();
             if (listaUsuario.Count < 1)
             {
-                AddUsuario(1, "101", "admin", "admin", "569", "admin", "0", "1");
-                AddUsuario(2, "202", "cliente", "cliente", "569", "cliente", "0", "2");
+                AddUsuario(1, "101", "admin", "admin", "569", "admin", "1", "1");
+                AddUsuario(2, "202", "cliente", "cliente", "569", "cliente", "1", "2");
             }
         }
 
