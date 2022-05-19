@@ -14,7 +14,29 @@ namespace equilibrio.WEBFORMS_CLI
         protected void Page_Load(object sender, EventArgs e)
         {
             SedeController.CargarSedes();
+            cargarDropSedes();
             //CargarGrid();
+        }
+
+        //public void asd()
+        //{
+        //    var items = ReseñaController.FindAll().Select(re => new List<string>() { re.Puntuacion.ToString(), re.Comentario }).SelectMany(Reseña => Reseña).Distinct();
+
+        //}
+
+        public void cargarDropSedes()
+        {
+
+            FiltroLocal.DataSource = from sed in SedeController.FindAll()
+                                   select new
+                                   {
+                                       codigo = sed.Codigo,
+                                       texto = sed.Nombre,
+                                   };
+            FiltroLocal.DataValueField = "codigo";
+            FiltroLocal.DataTextField = "texto";
+
+            FiltroLocal.DataBind();
         }
 
         //public void CargarGrid()
