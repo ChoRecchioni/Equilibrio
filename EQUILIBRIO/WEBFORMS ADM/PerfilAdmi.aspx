@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WEBFORMS ADM/Admin.Master" AutoEventWireup="true" CodeBehind="PerfilAdmi.aspx.cs" Inherits="equilibrio.WEBFORMS_ADM.Formulario_web1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
-    .auto-style1 {
+        .auto-style1 {
             margin-top: 20px;
-            width: 75%;
+            width: 85%;
             
         }
         .auto-style2 {
@@ -29,24 +29,6 @@
         .auto-style16 {
             width: 350px;
         }
-        .auto-style17 {
-            width: 58px;
-        }
-        .auto-style18 {
-            width: 350px;
-        }
-        .auto-style19 {
-            width: 58px;
-        }
-        .auto-style20 {
-            width: 350px;
-        }
-        .auto-style21 {
-            width: 58px;
-        }
-        .auto-style22 {
-            width: 350px;
-        }
         .auto-style25 {
             width: 58px;
             height: 30px;
@@ -55,13 +37,9 @@
             width: 350px;
             height: 30px;
         }
-        .auto-style27 {
-            width: 58px;
-            height: 28px;
-        }
-        .auto-style28 {
-            width: 350px;
-            height: 28px;
+        .auto-style29 {
+            width: 540px;
+            height: 10px;
         }
     </style>
 </asp:Content>
@@ -69,22 +47,21 @@
     <asp:Label class="titulos" ID="Label1" runat="server" Text="MI PERFIL"></asp:Label><br />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="Contenedor">
+
+    <div class="Contenedor" style="width: 650px;">
     <table class="auto-style1">
         <tr style="height: 10px;">
             <td class="auto-style4" colspan="2"><asp:Label class="LblTitulo" ID="LbDatos" runat="server" Text="DATOS PERSONALES"></asp:Label>
                 <asp:ImageButton class="BtnForm" ID="BtnEditar" runat="server" Height="20px" Width="20px" ImageUrl="~/IMG/edit.png" />
             </td>
-            <td class="auto-style5"><asp:Label class="LblTitulo" ID="LbCompras" runat="server" Text="MIS COMPRAS" Style="margin-left: 10px;"></asp:Label></td>
         </tr>
-        <tr style="height: 10px;">
+        <tr>
             <td class="auto-style25">
                 <asp:Label class="Lbl" ID="LblRut" runat="server" Text="RUT:"/>
             </td>
             <td class="auto-style26">
                 <asp:TextBox class="Txt" ID="TxtRut" runat="server"></asp:TextBox>
             </td>
-            <td class="auto-style2" rowspan="9">&nbsp;</td>
         </tr>
         <tr style="height: 10px;">
             <td class="auto-style15">
@@ -111,44 +88,36 @@
             </td>
         </tr>
         <tr style="height: 10px;">
-            <td class="auto-style4" colspan="2">
+            <td class="auto-style15">
+                <asp:Label class="Lbl" ID="LblRol" runat="server" Text="ROL:"/>
+            </td>
+            <td class="auto-style16">
+                <asp:TextBox class="Txt" ID="TxtRol" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        <tr style="height: 10px;">
+            <td class="auto-style29" colspan="2">
                 <br />
                 <asp:Label class="LblTitulo" ID="LbDirecciones" runat="server" Text="MIS DIRECCIONES"></asp:Label>
-                <%--<asp:ImageButton class="BtnForm" ID="BtnAgregar" runat="server" Height="20px" Width="20px" ImageUrl="~/IMG/plus.png" OnClick="BtnAgregar_Click"/>--%>
+                <asp:ImageButton class="BtnForm" ID="BtnAgregar" runat="server" Height="20px" Width="20px" ImageUrl="~/IMG/plus.png" />
             </td>
         </tr>
-        <tr style="height: 10px;">
-            <td class="auto-style17">
-                <asp:Label class="Lbl" ID="LblAlias" runat="server" Text="ALIAS:"/>
-            </td>
-            <td class="auto-style18">
-                <asp:TextBox class="Txt" ID="TxtAlias" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr style="height: 10px;">
-            <td class="auto-style19">
-                <asp:Label class="Lbl" ID="LblDireccion" runat="server" Text="DIRECCIÓN:"/>
-            </td>
-            <td class="auto-style20">
-                <asp:TextBox class="Txt" ID="TxtDireccion" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr style="height: 10px;">
-            <td class="auto-style21">
-                <asp:Label class="Lbl" ID="LblComuna" runat="server" Text="COMUNA:"/>
-            </td>
-            <td class="auto-style22">
-                <asp:TextBox class="Txt" ID="TxtComuna" runat="server"></asp:TextBox>
+        <tr style="height: 10px;">            
+            <td colspan="2">
+                <div class="Direccion" style="margin-bottom: 20px;">
+                    <asp:Label class="Lbl" ID="LblAlias" runat="server" Text="ALIAS:"/>
+                    <asp:TextBox class="Txt Dir" ID="TxtAlias" runat="server" Width="300px" Style="position: relative; right: -70px;"></asp:TextBox>
+                    <asp:ImageButton class="BtnForm" ID="BtnEditar0" runat="server" Height="20px" Width="20px" Style="position: relative; right: -85px;" ImageUrl="~/IMG/edit.png" /><br />
+                    <asp:Label class="Lbl" ID="LblDireccion" runat="server" Text="DIRECCIÓN:"/>
+                    <asp:TextBox class="Txt Dir" ID="TxtDireccion" runat="server" Style="position: relative; right: -20px;"></asp:TextBox><br />
+                    <asp:Label class="Lbl" ID="LblComuna" runat="server" Text="COMUNA:"/>
+                    <asp:TextBox class="Txt Dir" ID="TxtComuna" runat="server" Style="position: relative; right: -36px;"></asp:TextBox><br />
+                    <asp:Label class="Lbl" ID="LblRegion" runat="server" Text="REGIÓN:"/>
+                    <asp:TextBox class="Txt Dir" ID="TxtRegion" runat="server" Style="position: relative; right: -50px;"></asp:TextBox><br />
+                </div>
             </td>
         </tr>
-        <tr style="height: 10px;">
-            <td class="auto-style27">
-                <asp:Label class="Lbl" ID="LblRegion" runat="server" Text="REGIÓN:"/>
-            </td>
-            <td class="auto-style28">
-                <asp:TextBox class="Txt" ID="TxtRegion" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-    </table>
+        </table>
+
     </div>
 </asp:Content>

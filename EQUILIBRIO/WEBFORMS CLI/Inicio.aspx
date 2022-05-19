@@ -3,6 +3,7 @@
     <style type="text/css">
         .auto-style1 {
             width: 100%;
+            margin-left: 20px;
         }
     </style>
 </asp:Content>

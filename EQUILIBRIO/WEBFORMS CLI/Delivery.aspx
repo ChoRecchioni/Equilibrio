@@ -23,7 +23,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="Contenedor">
-
         <div class="Categoría" style="margin-top: 40px;">
             <label class="LblTitulo" style="font-size: x-large;">CATEGORÍA</label>
             <table class="ProdXCateg">

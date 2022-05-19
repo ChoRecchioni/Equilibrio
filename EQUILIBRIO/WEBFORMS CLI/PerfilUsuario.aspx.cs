@@ -13,14 +13,12 @@ namespace equilibrio.WEBFORMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
             ValidarUser();
         }
 
         //Metodo para validar inicio de sesion y rol
         public void ValidarUser()
         {
-
 
             if (Session["ActiveUser"] == null)
             {

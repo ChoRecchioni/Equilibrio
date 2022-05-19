@@ -91,6 +91,7 @@
     <Content Include="JS\query.js" />
     <Content Include="IMG\logo equilibrio.png" />
     <Content Include="Web.config" />
+    <Content Include="WEBFORMS ADM\AddReseña.aspx" />
     <Content Include="WEBFORMS CLI\Carta.aspx" />
     <Content Include="WEBFORMS CLI\ResumenPedido.aspx" />
     <Content Include="WEBFORMS CLI\VerReseña.aspx" />
@@ -133,6 +134,13 @@
     </Compile>
     <Compile Include="WEBFORMS ADM\DeliveryPendiente.aspx.designer.cs">
       <DependentUpon>DeliveryPendiente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\AddReseña.aspx.cs">
+      <DependentUpon>AddReseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\AddReseña.aspx.designer.cs">
+      <DependentUpon>AddReseña.aspx</DependentUpon>
     </Compile>
     <Compile Include="WEBFORMS ADM\GestionarReservas.aspx.cs">
       <DependentUpon>GestionarReservas.aspx</DependentUpon>
@@ -348,9 +356,7 @@
     <Content Include="WEBFORMS CLI\Cliente.Master" />
     <Content Include="WEBFORMS ADM\Admin.Master" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="WEBFORMS USER\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
