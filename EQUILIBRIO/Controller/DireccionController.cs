@@ -107,6 +107,8 @@ namespace equilibrio.Controller
 
         public static void CargarDirección()
         {
+            ComunaController.CargarComuna();
+            RegionController.CargarRegion();
 
             if (listaDireccion.Count < 1)
             {
