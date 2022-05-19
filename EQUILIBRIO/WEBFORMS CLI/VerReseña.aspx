@@ -4,6 +4,14 @@
         .Contenedor {
             margin-top: 40px;
         }
+        .Reseña {
+            border-bottom: solid 1px black;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+        .Drop {
+            margin-bottom: 20px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CPHtitulos" runat="server">
@@ -13,10 +21,11 @@
     
 <div class="Contenedor">  
     <asp:DropDownList class="Drop" ID="FiltroLocal" runat="server">
+        <asp:ListItem Text="SELECCIONE UN LOCAL" Value="-1" />
         <%--rellenar--%>
     </asp:DropDownList>
-    <div class="reseña" style="border-bottom:solid 1px black; margin-bottom: 20px;">
-        <asp:Label class="LblTitulo" ID="Ptaje" runat="server" Text=""></asp:Label>
+    <div class="Reseña">
+        <asp:Label class="LblTitulo" ID="Ptaje" runat="server" Text="3"></asp:Label>
         <asp:Image ID="Image1" runat="server" ImageUrl="~/IMG/full-star.png" Height="20px" Width="20px" Style="vertical-align: bottom;" />
         <asp:Label class="LblTitulo" ID="Label3" runat="server" Text="- COMENTARIO:"></asp:Label>
         <asp:Label class="Lbl" ID="Coment" runat="server" Text=""></asp:Label><br />

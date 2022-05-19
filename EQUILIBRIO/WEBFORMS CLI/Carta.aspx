@@ -7,13 +7,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="Contenedor">
-        <div class="CategoriaCarta" >
+        <div class="CategoriaCarta">
             <label class="LblTituloCarta">CATEGORÍA</label><br />
-            <div class="ProductoCarta" >
+            <div class="ProductoCarta">
                 <div class="NomPCarta">
                     <asp:Label class="LblTitulo" ID="Label2" runat="server" Text="Nombre del producto"></asp:Label>
                 </div>
-                <br /><br />
+                <br />
+                <br />
                 <div class="PrecProd">
                     <asp:Label class="Lbl" ID="Label4" runat="server" Text="$10.000.-"></asp:Label>
                 </div>
@@ -25,23 +26,25 @@
                 <div class="NomPCarta">
                     <asp:Label class="LblTitulo" ID="Label5" runat="server" Text="Nombre del producto"></asp:Label>
                 </div>
-                <br /><br />
-                <div class="PrecProd" >
+                <br />
+                <br />
+                <div class="PrecProd">
                     <asp:Label class="Lbl" ID="Label6" runat="server" Text="$10.000.-"></asp:Label>
                 </div>
-                <div class="InfoPCarta" >
+                <div class="InfoPCarta">
                     <asp:Label class="Lbl" ID="Label7" runat="server" Text="Información"></asp:Label>
                 </div>
             </div>
         </div>
 
         <div class="CategoriaCarta" >
-            <label class="LblTituloCarta" >CATEGORÍA</label><br />
+            <label class="LblTituloCarta">CATEGORÍA</label><br />
             <div class="ProductoCarta">
                 <div class="NomPCarta">
                     <asp:Label class="LblTitulo" ID="Label8" runat="server" Text="Nombre del producto"></asp:Label>
                 </div>
-                <br /><br />
+                <br />
+                <br />
                 <div class="PrecProd">
                     <asp:Label class="Lbl" ID="Label9" runat="server" Text="$10.000.-"></asp:Label>
                 </div>
@@ -53,7 +56,8 @@
                 <div class="NomPCarta">
                     <asp:Label class="LblTitulo" ID="Label11" runat="server" Text="Nombre del producto"></asp:Label>
                 </div>
-                <br /><br />
+                <br />
+                <br />
                 <div class="PrecProd">
                     <asp:Label class="Lbl" ID="Label12" runat="server" Text="$10.000.-"></asp:Label>
                 </div>
