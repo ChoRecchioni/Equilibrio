@@ -55,7 +55,7 @@
             </tr>
             <tr>
                 <td class="auto-style2">
-                    <asp:Calendar class="calendario" ID="Calendar1" runat="server" Width="350px"></asp:Calendar>
+                    <asp:Calendar class="calendario" ID="Calendar1" runat="server"></asp:Calendar>
                     
 
                 </td>
