@@ -31,20 +31,22 @@ namespace equilibrio.WEBFORMS_CLI
 
             foreach (var item in listado)
             {
-                //Se crear un objeto DIV dinamico por cada reseña
+                //Instanciamos/generamos objeto DIV por cada reseña (con n)
                 HtmlGenericControl divResena = new HtmlGenericControl("div");
                 
                 divResena.Attributes.Add("class", "Reseña");
 
-                ///Genero la etiqueta titulo
+                //Si quisieramos generar la etiqueta título:
                 //Label labelTitulo = new Label();
                 //labelTitulo.Text = item.Puntuacion.ToString();
                 //labelTitulo.CssClass = "LblTitulo";
                 //divResena.Controls.Add(labelTitulo);
 
+                //Recorremos las puntuaciones que trae, para generar
+                //la cantidad de estrellas correspondiente
                 for (int i = 0 ; i < item.Puntuacion ; i++)
                 {
-                    //Genero Imagen de estrella
+                    //Generamos la imagen de estrella
                     Image imgTitulo = new Image();
                     imgTitulo.Height = 20;
                     imgTitulo.Width = 20;
@@ -54,23 +56,21 @@ namespace equilibrio.WEBFORMS_CLI
                     divResena.Controls.Add(imgTitulo);
                 }
 
-                //Genero Label tirulo Comentario
+                //Generamos un Lbl con su clase de css de título
                 Label labelTituloComentario = new Label();
                 labelTituloComentario.CssClass = "LblTitulo";
-                labelTituloComentario.Text = "  - COMENTARIO:";
+                labelTituloComentario.Text = "  - COMENTARIO: ";
 
-                //Genero Label de comenario
+                //Generamos el comentario de cada reseNa
                 Label labelComentario = new Label();
                 labelComentario.CssClass = "Lbl";
                 labelComentario.Text = item.Comentario;
 
-                //Agrego los objetos al nuevo DIV
-                
-                
+                //Agregamos los objetos al nuevo div instanciado (linea 35)   
                 divResena.Controls.Add(labelTituloComentario);
                 divResena.Controls.Add(labelComentario);
 
-                //Luego agrego el nuevo div con 1 comentario al DIV principal
+                //Luego lo agregamos al div que tenemos en aspx "DivResenas" (con N)
                 DivResenas.Controls.Add(divResena);
             }
         }

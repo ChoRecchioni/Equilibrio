@@ -7,7 +7,7 @@
         }
 
         .auto-style2 {
-            width: 759px;
+            width: 550px;
         }
     </style>
 </asp:Content>
