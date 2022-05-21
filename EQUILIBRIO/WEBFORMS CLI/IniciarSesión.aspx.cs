@@ -27,7 +27,7 @@ namespace equilibrio.WEBFORMS
             if (u != null)
             {
                 Session["ActiveUser"] = u;
-                Response.Redirect("PerfilUsuario.aspx");
+                Response.Redirect("Inicio.aspx");
             }
             else
             {

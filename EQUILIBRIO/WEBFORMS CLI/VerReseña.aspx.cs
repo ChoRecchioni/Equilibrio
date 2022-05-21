@@ -33,7 +33,7 @@ namespace equilibrio.WEBFORMS_CLI
             {
                 //Se crear un objeto DIV dinamico por cada reseña
                 HtmlGenericControl divResena = new HtmlGenericControl("div");
-
+                
                 divResena.Attributes.Add("class", "Reseña");
 
                 ///Genero la etiqueta titulo
