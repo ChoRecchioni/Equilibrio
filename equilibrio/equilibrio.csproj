@@ -100,8 +100,11 @@
     <Compile Include="Clases\Entidades.cs" />
     <Compile Include="Controller\ComunaController.cs" />
     <Compile Include="Controller\DireccionController.cs" />
+    <Compile Include="Controller\HoraController.cs" />
     <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\MesaController.cs" />
     <Compile Include="Controller\RegionController.cs" />
+    <Compile Include="Controller\ReservaController.cs" />
     <Compile Include="Controller\ReseñaController.cs" />
     <Compile Include="Controller\RoleController.cs" />
     <Compile Include="Controller\SedeController.cs" />

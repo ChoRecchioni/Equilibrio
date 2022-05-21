@@ -60,9 +60,35 @@ namespace equilibrio.Clases
         public string Comentario { get; set; }
     }
 
-    public class Reservas
+    public class Reserva
     {
+        public int Codigo { get; set; }
+        public Sede Sede { get; set; }
+        public DateTime Fecha { get; set; }
+        public Horas Hora { get; set; }
+        public Mesa Mesa { get; set; }
+    }
 
+    public class Horas
+    {
+        public int Codigo { get; set; }
+
+
+        public string Hora { get; set; }
+       
+    }
+
+    public class HoraMesa
+    {
+        public Horas hora { get; set; }
+        public Mesa mesa { get; set; }
+    }
+
+    public class Mesa
+    {
+        public int Codigo { get; set; }
+        public string NumMesa { get; set; }
+        public int Comensales { get; set; }
     }
 
     public class Usuario
