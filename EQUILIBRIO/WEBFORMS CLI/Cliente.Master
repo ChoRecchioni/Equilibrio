@@ -8,7 +8,7 @@
     <title>EQUILIBRIO</title>
 
     <link href="../CSS/css.css" type="text/css" rel="stylesheet" />
-    <script src="../JS/query.js"></script>
+    <script src="../Scripts/jquery-3.6.0.js"></script>
     <script src="../JS/JavaScript.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
