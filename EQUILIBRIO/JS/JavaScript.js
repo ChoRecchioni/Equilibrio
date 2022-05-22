@@ -6,20 +6,18 @@
 
     for (i = 0; i < coll.length; i++) {
         coll[i].addEventListener("click", function () {
-            
+            debugger;
             this.classList.toggle("active");
             var content = this.nextElementSibling;
-            
+
             if (content.style.display === "block") {
                 content.style.display = "none";
-                content.children().children().addClass('arrow');
+                $(this).find(".worra").removeClass("worra").addClass("arrow")
             } else {
                 content.style.display = "block";
-                content.children().children().addClass('worra');
-                }
+                $(this).find(".arrow").removeClass("arrow").addClass("worra")
+            }
         });
     }
-
-
 
 });

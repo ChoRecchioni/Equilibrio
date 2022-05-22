@@ -11,7 +11,7 @@ namespace equilibrio.WEBFORMS
 {
 
 
-    public partial class Formulario_web12
+    public partial class InicioAdm
     {
 
         /// <summary>
