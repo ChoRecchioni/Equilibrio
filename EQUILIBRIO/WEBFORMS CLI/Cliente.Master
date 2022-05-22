@@ -43,7 +43,7 @@
             <ul class="menu">
                 <!--Submenu 1-->
                 <li class="item-submenu" menu="2">
-                    <a href="#" class="subm"><span>RESERVAS</span></a>
+                    <a href="#" class="subm"><span>RESERVAS<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
                     <ul class="submenu">
                         <li class="MisReservas"><a href="MisReservas.aspx">MIS RESERVAS</a></li>
                         <li class="AddReserva"><a href="RegistrarReserva.aspx">NUEVA RESERVA</a></li>
@@ -58,7 +58,7 @@
                     FRECUENTES</span></a></li>
                 <!--Submenu 2-->
                 <li class="item-submenu" menu="1">
-                    <a href="#" class="subm"><span>RESEÑAS</span></a>
+                    <a href="#" class="subm"><span>RESEÑAS<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
                     <ul class="submenu">
                         <li class="VerReseña"><a href="VerReseña.aspx">RESEÑAS</a></li>
                         <li class="AddReseña"><a href="AgregarReseña.aspx">NUEVA RESEÑA</a></li>

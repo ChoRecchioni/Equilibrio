@@ -7,9 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>EQUILIBRIO</title>
 
-    <link href="../CSS/css.css" type="text/css" rel="stylesheet" />
     <script src="../JS/query.js"></script>
     <script src="../JS/JavaScript.js"></script>
+
+    <link href="../CSS/css.css" type="text/css" rel="stylesheet" />
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -52,7 +54,7 @@
                 <ul class="menu">
                     <!--Submenu 1-->
                     <li class="item-submenu" menu="1">
-                        <a href="#" class="subm"><span>RESERVAS</span></a>
+                        <a href="#" class="subm"><span>RESERVAS<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
                         <ul class="submenu">
                             <li class="MisReservas"><a href="MisReservas.aspx">MIS RESERVAS</a></li>
                             <li class="AddReserva"><a href="RegistrarReserva.aspx">NUEVA RESERVA</a></li>
@@ -61,7 +63,7 @@
                     <!--Fin submenu 1-->
                     <!--Submenu 2-->
                     <li class="item-submenu" menu="2">
-                        <a href="#" class="subm"><span>DELIVERY</span></a>
+                        <a href="#" class="subm"><span>DELIVERY<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
                         <ul class="submenu">
                             <li class="Pendientes"><a href="#">PENDIENTES</a></li>
                             <li class="Finalizados"><a href="#">FINALIZADOS</a></li>
@@ -70,7 +72,7 @@
                     <!--Fin submenu 2-->
                     <!--Submenu 3-->
                     <li class="item-submenu" menu="3">
-                        <a href="#" class="subm"><span>CARTA</span></a>
+                        <a href="#" class="subm"><span>CARTA<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
                         <ul class="submenu">
                             <li class="Carta"><a href="#">CARTA</a></li>
                             <li class="AddArt"><a href="AgregarArticulo.aspx">AGREGAR ARTICULO</a></li>
@@ -80,22 +82,14 @@
                     <li class="Local"><a href="#"><span>LOCALES</span></a></li>
                     <!--Submenu 3-->
                     <li class="item-submenu" menu="4">
-                        <a href="#" class="subm"><span>NÓMINA</span></a>
+                        <a href="#" class="subm"><span>NÓMINA<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
                         <ul class="submenu">
-                            <li class="Carta"><a href="#">EMPLEADOS</a></li>
-                            <li class="AddArt"><a href="AgregarEmpleado.aspx">AGREGAR EMPLEADO</a></li>
+                            <li class="Empleados"><a href="#">EMPLEADOS</a></li>
+                            <li class="AddEmp"><a href="AgregarEmpleado.aspx">AGREGAR EMPLEADO</a></li>
                         </ul>
                     </li>
                     <!--Fin submenu 4-->
-                    <!--Submenu 5-->
-                    <li class="item-submenu" menu="5">
-                        <a href="#" class="subm"><span>RESEÑAS</span></a>
-                        <ul class="submenu">
-                            <li class="Reseñas"><a href="#">RESEÑAS</a></li>
-                            <li class="AddReseña"><a href="AgregarReseña.aspx">NUEVA RESEÑA</a></li>
-                        </ul>
-                    </li>
-                    <!--Fin submenu 5-->
+                    <li class="Local"><a href="VerReseñaAdmi"><span>RESEÑAS</span></a></li>
                 </ul>
                 <!--Fin Menu-->
             </nav>

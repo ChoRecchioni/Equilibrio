@@ -72,6 +72,7 @@
     <Content Include="CSS\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="CSS\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
     <Content Include="CSS\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="IMG\arrow.png" />
     <Content Include="IMG\cart.png" />
     <Content Include="IMG\delete.png" />
     <Content Include="IMG\edit.png" />
@@ -92,7 +93,6 @@
     <Content Include="JS\query.js" />
     <Content Include="IMG\logo equilibrio.png" />
     <Content Include="Web.config" />
-    <Content Include="WEBFORMS ADM\AddReseña.aspx" />
     <Content Include="WEBFORMS CLI\Carta.aspx" />
     <Content Include="WEBFORMS CLI\ResumenPedido.aspx" />
     <Content Include="WEBFORMS CLI\VerReseña.aspx" />
@@ -138,13 +138,6 @@
     </Compile>
     <Compile Include="WEBFORMS ADM\DeliveryPendiente.aspx.designer.cs">
       <DependentUpon>DeliveryPendiente.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WEBFORMS ADM\AddReseña.aspx.cs">
-      <DependentUpon>AddReseña.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WEBFORMS ADM\AddReseña.aspx.designer.cs">
-      <DependentUpon>AddReseña.aspx</DependentUpon>
     </Compile>
     <Compile Include="WEBFORMS ADM\GestionarReservas.aspx.cs">
       <DependentUpon>GestionarReservas.aspx</DependentUpon>

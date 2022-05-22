@@ -90,6 +90,23 @@ body {
     margin-top: 12px;
 }
 
+.arrow {
+    width: 15px;
+    height: 13px;
+    color: black;
+    margin-left: 15px;
+    background-image:url(../IMG/arrow.png);
+}
+
+.worra {
+    width: 15px;
+    height: 13px;
+    color: black;
+    margin-left: 15px;
+    transform: rotate(180deg);
+    background-image: url(../IMG/arrow.png);
+}
+
 .nav {
     width: 300px;   
     text-align: center;
@@ -321,6 +338,12 @@ input#ContentPlaceHolder1_BtnAgregar.BtnForm {
         color: #000;
         text-shadow: 0 0 5px #04c3cb;
     }
+
+.Reseña {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid black;
+}
 
 .Calendario {
     width: 350px;
