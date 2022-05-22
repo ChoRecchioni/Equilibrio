@@ -11,7 +11,7 @@ namespace equilibrio.WEBFORMS
 {
 
 
-    public partial class Formulario_web12
+    public partial class InicioAdm
     {
 
         /// <summary>
@@ -24,21 +24,21 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.Image ImgInicio;
 
         /// <summary>
-        /// Control TitInicio.
+        /// Control LblTitulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TitInicio;
+        protected global::System.Web.UI.WebControls.Label LblTitulo;
 
         /// <summary>
-        /// Control TextInicio.
+        /// Control Texto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TextInicio;
+        protected global::System.Web.UI.WebControls.Label Texto;
     }
 }
