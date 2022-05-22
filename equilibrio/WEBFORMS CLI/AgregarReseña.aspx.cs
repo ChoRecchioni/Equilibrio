@@ -73,7 +73,9 @@ namespace equilibrio.WEBFORMS
                 }
 
                 int codRe = ReseñaController.ReseñaAI();
-                LbAddReseña.Text = ReseñaController.AddReseña(codRe.ToString(), DropLocal.SelectedValue, puntuacion, TxtComentario.Text);
+                Usuario u = (Usuario)Session["ActiveUser"];
+
+                LbAddReseña.Text = ReseñaController.AddReseña(codRe.ToString(), DropLocal.SelectedValue, puntuacion, TxtComentario.Text, u);
                 Response.Redirect("VerReseña.aspx");
             }
             

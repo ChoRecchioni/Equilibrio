@@ -406,6 +406,10 @@ input#ContentPlaceHolder1_TxtPrecio.TxtCarta {
     border-bottom: 1px solid black;
 }
 
+.Usuario {
+    margin-top: 10px;
+}
+
 .Calendario {
     width: 350px;
 }

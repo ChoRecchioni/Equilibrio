@@ -18,6 +18,6 @@
     <div id="DivResenas" runat="server">
         
     </div>
-
+    </div>
 
 </asp:Content>

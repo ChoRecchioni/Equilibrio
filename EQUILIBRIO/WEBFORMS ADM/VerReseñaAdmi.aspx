@@ -12,15 +12,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="Contenedor">  
-    <asp:DropDownList class="Drop" ID="FiltroLocal" runat="server" Height="30px">
-        <%--rellenar--%>
+    <asp:DropDownList class="Drop" ID="FiltroLocal" runat="server">
+        <asp:ListItem Text="SELECCIONE UN LOCAL" Value="-1" />
+        
     </asp:DropDownList>
-    <div class="Reseña" style="border-bottom:solid 1px black; margin-bottom: 20px;">
-        <asp:Label class="LblTitulo" ID="Ptaje" runat="server" Text=""></asp:Label>
-        <asp:Image ID="Image1" runat="server" ImageUrl="~/IMG/full-star.png" Height="20px" Width="20px" Style="vertical-align: bottom;" />
-        <asp:Label class="LblTitulo" ID="Label3" runat="server" Text="- COMENTARIO:"></asp:Label>
-        <asp:Label class="Lbl" ID="Coment" runat="server" Text=""></asp:Label><br />
+
+    <div id="DivResenas" runat="server">
+        
     </div>
-</div>
+    </div>
 
 </asp:Content>

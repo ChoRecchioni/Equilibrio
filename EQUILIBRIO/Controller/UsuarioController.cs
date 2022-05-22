@@ -8,7 +8,7 @@ namespace equilibrio.Controller
 {
     public class UsuarioController
     {
-        private static List<Usuario> listaUsuario = new List<Usuario>();
+        public static List<Usuario> listaUsuario = new List<Usuario>();
 
         //Metodo para agregar Usuario
 

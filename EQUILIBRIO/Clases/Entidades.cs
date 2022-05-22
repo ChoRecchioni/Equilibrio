@@ -58,6 +58,7 @@ namespace equilibrio.Clases
         public Sede Sede { get; set; }
         public int Puntuacion { get; set; }
         public string Comentario { get; set; }
+        public Usuario Usuario { get; set; }
     }
 
     public class Reserva

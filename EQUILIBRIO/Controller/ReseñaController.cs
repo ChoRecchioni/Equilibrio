@@ -11,18 +11,19 @@ namespace equilibrio.Controller
         private static List<Reseña> listaReseña = new List<Reseña>();
 
         //Metodo para agregar Reseña
-        public static string AddReseña(string codigo, string codSede, string puntuacion, string comentario)
+        public static string AddReseña(string codigo, string codSede, string puntuacion, string comentario, Usuario usuario)
         {
             Sede sede = SedeController.FindSede(codSede);
             try
             {
                 listaReseña.Add(new Reseña()
                 {
-
                     Codigo = int.Parse(codigo),
                     Sede = sede,
                     Puntuacion = int.Parse(puntuacion),
                     Comentario = comentario,
+                    Usuario = usuario,
+
                 });
 
                 return "Reseña agregada.";
@@ -105,9 +106,10 @@ namespace equilibrio.Controller
 
             if (listaReseña.Count < 1)
             {
-                SedeController.CargarSedes();
-                AddReseña("1", "1", "1", "asd");
+                SedeController.CargarSedes(); 
                 
+                AddReseña("2", "3", "2", "comentario sobre el local", UsuarioController.listaUsuario[1]);
+
             }
         }
 
