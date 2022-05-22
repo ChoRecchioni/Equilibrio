@@ -74,6 +74,7 @@
     <Content Include="CSS\font-awesome-4.7.0\HELP-US-OUT.txt" />
     <Content Include="IMG\arrow.png" />
     <Content Include="IMG\cart.png" />
+    <Content Include="IMG\check.png" />
     <Content Include="IMG\delete.png" />
     <Content Include="IMG\edit.png" />
     <Content Include="IMG\empty-star.png" />

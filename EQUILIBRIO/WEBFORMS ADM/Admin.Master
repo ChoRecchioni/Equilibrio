@@ -4,7 +4,7 @@
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>EQUILIBRIO</title>
 
     <script src="../Scripts/jquery-3.6.0.js"></script>
@@ -17,6 +17,7 @@
 </head>
 <body>
     <div id="transparencia"></div>
+
     <header>
         <section id="redes">
             <a id="fb" href="http://www.facebook.com">
@@ -29,79 +30,71 @@
             <a id="cart" href="CarroCompras.aspx">
                 <img class="opUser" src="../IMG/cart.png" /></a>
         </section>
-     </ header>
-        <section id="titulo">
-            <asp:ContentPlaceHolder ID="CPHtitulos" runat="server"></asp:ContentPlaceHolder>
-        </section>
-        <section id="menu">
-            <a id="logo" href="inicio.aspx">
-                <img class="logo" src="../IMG/logo equilibrio.png"></img></a>
-            <div class="curved-text">
-                <span ID="E" class="letra">E</span>
-                <span ID="Q" class="letra">Q</span>
-                <span ID="U" class="letra">U</span>
-                <span ID="IL" class="letra">I</span>
-                <span ID="LI" class="letra">L</span>
-                <span ID="IB" class="letra">I</span>
-                <span ID="B" class="letra">B</span>
-                <span ID="R" class="letra">R</span>
-                <span ID="I" class="letra">I</span>
-                <span ID="O" class="letra">O</span>
-            </div>
+    </header>
 
-            <nav class="nav">
-                <!--Menu-->
-                <ul class="menu">
-                    <!--Submenu 1-->
-                    <li class="item-submenu" menu="1">
-                        <a href="#" class="subm"><span>RESERVAS<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
-                        <ul class="submenu">
-                            <li class="MisReservas"><a href="MisReservas.aspx">MIS RESERVAS</a></li>
-                            <li class="AddReserva"><a href="RegistrarReserva.aspx">NUEVA RESERVA</a></li>
-                        </ul>
-                    </li>
-                    <!--Fin submenu 1-->
-                    <!--Submenu 2-->
-                    <li class="item-submenu" menu="2">
-                        <a href="#" class="subm"><span>DELIVERY<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
-                        <ul class="submenu">
-                            <li class="Pendientes"><a href="#">PENDIENTES</a></li>
-                            <li class="Finalizados"><a href="#">FINALIZADOS</a></li>
-                        </ul>
-                    </li>
-                    <!--Fin submenu 2-->
-                    <!--Submenu 3-->
-                    <li class="item-submenu" menu="3">
-                        <a href="#" class="subm"><span>CARTA<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
-                        <ul class="submenu">
-                            <li class="Carta"><a href="#">CARTA</a></li>
-                            <li class="AddArt"><a href="AgregarArticulo.aspx">AGREGAR ARTICULO</a></li>
-                        </ul>
-                    </li>
-                    <!--Fin submenu 4-->
-                    <li class="Local"><a href="#"><span>LOCALES</span></a></li>
-                    <!--Submenu 3-->
-                    <li class="item-submenu" menu="4">
-                        <a href="#" class="subm"><span>NÓMINA<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
-                        <ul class="submenu">
-                            <li class="Empleados"><a href="#">EMPLEADOS</a></li>
-                            <li class="AddEmp"><a href="AgregarEmpleado.aspx">AGREGAR EMPLEADO</a></li>
-                        </ul>
-                    </li>
-                    <!--Fin submenu 4-->
-                    <li class="Local"><a href="VerReseñaAdmi"><span>RESEÑAS</span></a></li>
-                </ul>
-                <!--Fin Menu-->
-            </nav>
-        <div class="CPH">
-            <form id="form1" runat="server">
-                <div>
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                    </asp:ContentPlaceHolder>
-                </div>
-            </form>
-        </div>
-        </section>
-    
+    <section id="titulo">
+        <asp:ContentPlaceHolder ID="CPHtitulos" runat="server"></asp:ContentPlaceHolder>
+    </section>
+
+    <section id="menu">
+        <a id="logo" href="inicio.aspx">
+            <img class="logo" src="../IMG/logo.png"></img></a>
+        
+        <nav class="nav">
+            <!--Menu-->
+            <ul class="menu">
+                <!--Submenu 1-->
+                <li class="item-submenu" menu="1">
+                    <a href="#" class="subm"><span>RESERVAS<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
+                    <ul class="submenu">
+                        <li class="Reservas"><a href="GestionarReservas.aspx">RESERVAS</a></li>
+                        <li class="AddReserva"><a href="RegistrarReserva.aspx">NUEVA RESERVA</a></li>
+                    </ul>
+                </li>
+                <!--Fin submenu 1-->
+                <!--Submenu 2-->
+                <li class="item-submenu" menu="2">
+                    <a href="#" class="subm"><span>DELIVERY<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
+                    <ul class="submenu">
+                        <li class="Pendientes"><a href="DeliveryPendiente.aspx">PENDIENTES</a></li>
+                        <li class="Finalizados"><a href="DeliveryFinalizados.aspx">FINALIZADOS</a></li>
+                    </ul>
+                </li>
+                <!--Fin submenu 2-->
+                <!--Submenu 3-->
+                <li class="item-submenu" menu="3">
+                    <a href="#" class="subm"><span>CARTA<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
+                    <ul class="submenu">
+                        <li class="Carta"><a href="CartaAdmi.aspx">CARTA</a></li>
+                        <li class="AddArt"><a href="AgregarArticulo.aspx">AGREGAR ARTICULO</a></li>
+                    </ul>
+                </li>
+                <!--Fin submenu 4-->
+                <li class="Local"><a href="#"><span>LOCALES</span></a></li>
+                <!--Submenu 3-->
+                <li class="item-submenu" menu="4">
+                    <a href="#" class="subm"><span>NÓMINA<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
+                    <ul class="submenu">
+                        <li class="Empleados"><a href="Nomina.aspx">EMPLEADOS</a></li>
+                        <li class="AddEmp"><a href="AgregarEmpleado.aspx">AGREGAR EMPLEADO</a></li>
+                    </ul>
+                </li>
+                <!--Fin submenu 4-->
+                <li class="verRes"><a href="VerReseñaAdmi.aspx"><span>RESEÑAS</span></a></li>
+            </ul>
+            <!--Fin Menu-->
+        </nav>
+    </section>
+
+    <div class="CPH">
+        <form id="form1" runat="server">
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </form>
+    </div>
+
+
 </body>
 </html>
