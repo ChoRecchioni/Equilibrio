@@ -255,6 +255,18 @@ a#ContentPlaceHolder1_LnkRegistrar.LblTitulo {
     font-size: 16px;
 }
 
+.TxtAddEm {
+    width: 350px;
+    height: 30px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    text-align-last: center;
+    color: grey;
+    font-size: 16px;
+    margin-inline: 20px;
+}
+
 .TxtNomina {
     width: 200px;
     height: 30px;

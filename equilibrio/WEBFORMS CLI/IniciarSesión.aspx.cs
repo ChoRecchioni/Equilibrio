@@ -26,8 +26,16 @@ namespace equilibrio.WEBFORMS
             Usuario u = LoginController.Login(TxtUser.Text, TxtPass.Text);
             if (u != null)
             {
-                Session["ActiveUser"] = u;
-                Response.Redirect("Inicio.aspx");
+                if (u.Rol.Codigo == 1)
+                {
+                    Session["ActiveUser"] = u;
+                    Response.Redirect("../WEBFORMS ADM/InicioAdm.aspx");
+                }
+                else
+                {
+                    Session["ActiveUser"] = u;
+                    Response.Redirect("Inicio.aspx");
+                }
             }
             else
             {
