@@ -7,9 +7,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>EQUILIBRIO</title>
 
-    <link href="../CSS/css.css" type="text/css" rel="stylesheet" />
     <script src="../Scripts/jquery-3.6.0.js"></script>
     <script src="../JS/JavaScript.js"></script>
+
+    <link href="../CSS/css.css" type="text/css" rel="stylesheet" />
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -36,7 +38,7 @@
 
     <section id="menu">
         <a id="logo" href="inicio.aspx">
-            <img class="logo" src="../IMG/logo.png"></img></a>
+            <img class="logo" src="../IMG/logo.png"/></a>
         
         <nav class="nav">
             <!--Menu-->

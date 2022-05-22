@@ -6,20 +6,17 @@
 
     for (i = 0; i < coll.length; i++) {
         coll[i].addEventListener("click", function () {
-            
+
             this.classList.toggle("active");
             var content = this.nextElementSibling;
-            
+
             if (content.style.display === "block") {
                 content.style.display = "none";
-                coll.children().children().addClass('arrow');
+                $(this).find(".worra").removeClass("worra").addClass("arrow")
             } else {
                 content.style.display = "block";
-                coll.children().children().addClass('worra');
-                }
+                $(this).find(".arrow").removeClass("arrow").addClass("worra")
+            }
         });
     }
-
-
-
 });

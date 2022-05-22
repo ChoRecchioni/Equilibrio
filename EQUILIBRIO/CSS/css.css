@@ -196,6 +196,26 @@ li {
     text-transform: uppercase;
 }
 
+.BtnOKCarta {
+    height: 25px;
+    width: 200px;
+    margin-top: 10px;
+    box-shadow: 3px 3px #888888;
+    border-radius: 3px;
+    border: none;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.BtnBN {
+    box-shadow: 3px 3px #888888;
+    border-radius: 3px;
+    border: none;
+    font-size: 16px;
+    height: 25px;
+    width: 90px;
+}
+
 input#ContentPlaceHolder1_BtnIniciar.Btn {
     margin-top: 35px;
     margin-left: auto;
@@ -235,6 +255,31 @@ a#ContentPlaceHolder1_LnkRegistrar.LblTitulo {
     font-size: 16px;
 }
 
+.TxtNomina {
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    text-align-last: center;
+    color: grey;
+    font-size: 16px;
+    border: none;
+}
+
+.TxtCarta {
+    width: 350px;
+    height: 30px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    color: grey;
+    font-size: 16px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 .Drop {
     width: 350px;
     height: 40px;
@@ -271,6 +316,10 @@ input#ContentPlaceHolder1_BtnEditar.BtnForm {
 input#ContentPlaceHolder1_BtnAgregar.BtnForm {
     float: right;
     margin-right: 30px;
+}
+
+input#ContentPlaceHolder1_TxtPrecio.TxtCarta {
+    text-align: right;
 }
 
 .rating {
@@ -373,7 +422,16 @@ input#ContentPlaceHolder1_BtnAgregar.BtnForm {
     left: 200px;
 }
 
+.HeadCarta {
+    text-align-last: center;
+}
+
 .ProductoCarta {
+    margin-top: 15px;
+    margin-bottom: 50px;
+}
+
+.EditarProductoCarta {
     margin-top: 15px;
 }
 
@@ -389,15 +447,23 @@ input#ContentPlaceHolder1_BtnAgregar.BtnForm {
     float: left;
     margin: 0px;
     margin-top: 10px;
-    text-transform: uppercase;
 }
 
 .PrecProd {
     float: right;
+    margin-top: 10px;
 }
 
 .LblTituloCarta {
     font-size: x-large;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.BtnCarta {
+    float: right;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    margin-top: 5px;
 }

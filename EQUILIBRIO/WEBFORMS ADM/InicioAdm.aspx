@@ -7,20 +7,15 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table id="TablaInicio" class="auto-style1">
-        <tr>
-            <td>
-    <asp:Image ID="ImgInicio" runat="server" ImageUrl="~/IMG/Mariscos-e1592426953245-1200x900.jpg" Width="622px"/>
-            </td>
-            <td rowspan="2" style="vertical-align: baseline; padding-top: 30px; width: 300px;">
-    <asp:Label ID="LblTitulo" runat="server" Text="NUESTRA HISTORIA"></asp:Label><br />
-    <asp:Label ID="Texto" runat="server" Text="
-        Equilibrio es una cadena de mariscos con locales en Santiago y Viña del mar..." ></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-    </table>
-    <br />
+    
+    <div class="Contenedor">
+        <asp:Image ID="ImgInicio" runat="server" ImageUrl="~/IMG/Mariscos-e1592426953245-1200x900.jpg" Width="450px" style="float: left; margin-right: 40px;8"/>
+
+        <div class="TextoInicio">
+            <asp:Label Class="LblTitulo" ID="TitInicio" runat="server" Text="NUESTRA HISTORIA"></asp:Label><br />
+            <asp:Label Class="Lbl" ID="TextInicio" runat="server" Text="
+        Equilibrio es una cadena de mariscos con locales en Santiago y Viña del mar..."></asp:Label>
+        </div>
+    </div>
+
     </asp:Content>

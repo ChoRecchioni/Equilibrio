@@ -7,65 +7,65 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace equilibrio.WEBFORMS
+namespace equilibrio.WEBFORMS_ADM
 {
 
 
-    public partial class Formulario_web17
+    public partial class Formulario_web16
     {
 
         /// <summary>
-        /// Control Label2.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control DropCategoria.
+        /// Control FiltroLocal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropCategoria;
+        protected global::System.Web.UI.WebControls.DropDownList FiltroLocal;
 
         /// <summary>
-        /// Control TxtProducto.
+        /// Control Ptaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtProducto;
+        protected global::System.Web.UI.WebControls.Label Ptaje;
 
         /// <summary>
-        /// Control TxtDescripcion.
+        /// Control Image1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtDescripcion;
+        protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
-        /// Control TxtPrecio.
+        /// Control Label3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtPrecio;
+        protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control BtnAgregar.
+        /// Control Coment.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnAgregar;
+        protected global::System.Web.UI.WebControls.Label Coment;
     }
 }
