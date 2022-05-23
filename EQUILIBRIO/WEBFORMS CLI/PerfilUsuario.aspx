@@ -41,6 +41,11 @@
             width: 540px;
             height: 10px;
         }
+        .auto-style30 {
+            width: 540px;
+            height: 10px;
+            text-align: right;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CPHtitulos" runat="server">
@@ -63,7 +68,7 @@
             <td class="auto-style26">
                 <asp:TextBox class="Txt" ID="TxtRut" runat="server"></asp:TextBox>
             </td>
-            <td class="auto-style2" rowspan="6">&nbsp;</td>
+            <td class="auto-style2" rowspan="7">&nbsp;</td>
         </tr>
         <tr style="height: 10px;">
             <td class="auto-style15">
@@ -90,6 +95,11 @@
             </td>
         </tr>
         <tr style="height: 10px;">
+            <td class="auto-style30" colspan="2">
+                <asp:Button class="BtnOK" ID="Button1" runat="server" Text="Cerrar sesión" style="width: 150px; margin-top: 20px; margin-right: 65px;" OnClick="Button1_Click"/>
+            </td>
+        </tr>
+        <tr style="height: 10px;">
             <td class="auto-style29" colspan="2">
                 <br />
                 <asp:Label class="LblTitulo" ID="LbDirecciones" runat="server" Text="MIS DIRECCIONES"></asp:Label>
@@ -97,7 +107,7 @@
             </td>
         </tr>
         <tr style="height: 10px;">            
-            <td colspan="2" rowspan="2">
+            <td colspan="2">
                 <div class="Direccion" style="margin-bottom: 20px;">
                     <asp:Label class="Lbl" ID="LblAlias" runat="server" Text="ALIAS:"/>
                     <asp:TextBox class="Txt Dir" ID="TxtAlias" runat="server" Width="300px" Style="position: relative; right: -70px;"></asp:TextBox>
@@ -111,10 +121,7 @@
                 </div>
             </td>
         </tr>
-        <tr style="height: 10px;">
-            <td class="auto-style2">&nbsp;</td>
-        </tr>
-    </table>
+        </table>
     </div>
 
 </asp:Content>

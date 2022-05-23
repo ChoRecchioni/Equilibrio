@@ -11,10 +11,8 @@ namespace equilibrio.Controller
         public static List<Usuario> listaUsuario = new List<Usuario>();
 
         //Metodo para agregar Usuario
-
         public static string AddUsuario(int codigo, string rut, string nombre, string apellido, string telefono, string pass, string codDireccion, string Codrol)
         {
-
             Direccion direccion = DireccionController.FindDireccion(codDireccion);
             Role rol = RoleController.FindRole(Codrol);
             Usuario u = new Usuario()
@@ -42,7 +40,6 @@ namespace equilibrio.Controller
         //Metodo para encontrar un objeto
         public static Usuario FindUsuario(string cod)
         {
-
             try
             {
                 foreach (Usuario usuario in FindAll())
@@ -52,7 +49,6 @@ namespace equilibrio.Controller
                         return usuario;
                     }
                 }
-
                 return null;
             }
             catch (Exception)
@@ -60,42 +56,33 @@ namespace equilibrio.Controller
 
                 return null;
             }
-
         }
 
-
         //Metodo para editar Usuario
-
         public static string EditUsuario(string codigo, string rut, string nombre, string apellido, string telefono, string pass, string codDireccion)
         {
-
             try
             {
                 Direccion direccion = DireccionController.FindDireccion(codDireccion);
-                   Usuario usuario = FindUsuario(codigo);
-                    usuario.RUT = rut;
-                    usuario.Nombre = nombre;
-                    usuario.Apellido = apellido;
-                    usuario.Telefono = telefono;
-                    usuario.Pass = pass;
-                    usuario.Direccion = direccion;
+                Usuario usuario = FindUsuario(codigo);
+                usuario.RUT = rut;
+                usuario.Nombre = nombre;
+                usuario.Apellido = apellido;
+                usuario.Telefono = telefono;
+                usuario.Pass = pass;
+                usuario.Direccion = direccion;
 
                 return "Usuario Modificado";
             }
             catch (Exception ex)
             {
-
                 return ex.Message;
             }
-
-
         }
-        // Metodo para eliminar Usuario
 
+        // Metodo para eliminar Usuario
         public static string RemoveUsuario(string cod)
         {
-
-
             listaUsuario.Remove(FindUsuario(cod));
 
             return "Usuario removido de la lista";
@@ -104,7 +91,6 @@ namespace equilibrio.Controller
         //Metodo de validar usuario en la lista
         public static Usuario FindUser(string username)
         {
-
             foreach (Usuario item in listaUsuario)
             {
                 if (item.Nombre.Equals(username))
@@ -113,7 +99,6 @@ namespace equilibrio.Controller
                 }
             }
             return null;
-
         }
         public static Usuario FindUser(int codigo)
         {
@@ -136,7 +121,7 @@ namespace equilibrio.Controller
         //Metodo de auto increment
         public static int UserAI()
         {
-              int cod = listaUsuario[listaUsuario.Count - 1].Codigo + 1;
+            int cod = listaUsuario[listaUsuario.Count - 1].Codigo + 1;
 
             return cod;
         }

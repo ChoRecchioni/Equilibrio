@@ -106,9 +106,10 @@ namespace equilibrio.Controller
 
             if (listaReseña.Count < 1)
             {
-                SedeController.CargarSedes(); 
+                SedeController.CargarSedes();
+                UsuarioController.CargarUsuario();
                 
-                AddReseña("2", "3", "2", "comentario sobre el local", UsuarioController.listaUsuario[1]);
+                AddReseña("2", "3", "2", "comentario sobre el local", UsuarioController.listaUsuario[0]);
 
             }
         }

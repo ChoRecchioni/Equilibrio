@@ -16,6 +16,7 @@ namespace equilibrio.WEBFORMS_CLI
         {
             CargarDropSedes();
             CargarGrid();
+            ReseñaController.CargarReseña();
         }
 
         public void CargarGrid()

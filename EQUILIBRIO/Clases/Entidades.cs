@@ -59,6 +59,7 @@ namespace equilibrio.Clases
         public int Puntuacion { get; set; }
         public string Comentario { get; set; }
         public Usuario Usuario { get; set; }
+        public DateTime Fecha { get; set; }
     }
 
     public class Reserva
@@ -103,8 +104,6 @@ namespace equilibrio.Clases
         public string Pass { get; set; }
         public Direccion Direccion { get; set; }
         public Role Rol { get; set; }
-
-
     }
 
     public class Role

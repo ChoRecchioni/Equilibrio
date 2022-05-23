@@ -25,7 +25,7 @@
             <a id="ig" href="http://www.instagram.com">
                 <img class="red" src="../IMG/instagram.png" /></a>
             <img id="divisor" src="../IMG/line.png" />
-            <a id="user" href="IniciarSesión.aspx">
+            <a id="usericon" href="#" runat="server">
                 <img class="opUser" src="../IMG/user.png" /></a>
             <a id="cart" href="CarroCompras.aspx">
                 <img class="opUser" src="../IMG/cart.png" /></a>
