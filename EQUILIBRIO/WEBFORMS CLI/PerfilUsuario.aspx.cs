@@ -53,5 +53,15 @@ namespace equilibrio.WEBFORMS
             Session["ActiveUser"] = null;
             Response.Redirect("IniciarSesión.aspx");
         }
+
+        protected void BtnEditar_Click(object sender, ImageClickEventArgs e)
+        {
+            TxtNombre.Enabled = true;
+            TxtApellido.Enabled = true;
+            TxtTeléfono.Enabled = true;
+            /* Usuario u = (Usuario)Session["ActiveUser"];
+             LbEditUser.Text = UsuarioController.EditUsuario(u.Codigo.ToString(), u.RUT, TxtNombre.Text, TxtApellido.Text, TxtTeléfono.Text, u.Pass, u.Direccion.Codigo.ToString());
+             Response.Redirect(Request.RawUrl); */
+        }
     }
 }

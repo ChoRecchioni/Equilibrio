@@ -57,7 +57,8 @@
     <table class="auto-style1">
         <tr style="height: 10px;">
             <td class="auto-style4" colspan="2"><asp:Label class="LblTitulo" ID="LbDatos" runat="server" Text="DATOS PERSONALES"></asp:Label>
-                <asp:ImageButton class="BtnForm" ID="BtnEditar" runat="server" Height="20px" Width="20px" ImageUrl="~/IMG/edit.png" />
+                <asp:ImageButton class="BtnForm" ID="BtnEditar" runat="server" />
+                <asp:ImageButton class="BtnForm" ID="BtnEditConfirm" runat="server" OnClick="BtnEditar_Click"/>
             </td>
             <td class="auto-style5"><asp:Label class="LblTitulo" ID="LbCompras" runat="server" Text="MIS COMPRAS" Style="margin-left: 10px;"></asp:Label></td>
         </tr>
@@ -122,6 +123,7 @@
             </td>
         </tr>
         </table>
+        <asp:Label ID="LbEditUser" runat="server" Text=""></asp:Label>
     </div>
 
 </asp:Content>

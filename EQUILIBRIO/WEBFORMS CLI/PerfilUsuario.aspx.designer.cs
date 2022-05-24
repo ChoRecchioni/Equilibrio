@@ -42,6 +42,15 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.ImageButton BtnEditar;
 
         /// <summary>
+        /// Control BtnEditConfirm.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton BtnEditConfirm;
+
+        /// <summary>
         /// Control LbCompras.
         /// </summary>
         /// <remarks>
@@ -229,5 +238,14 @@ namespace equilibrio.WEBFORMS
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtRegion;
+
+        /// <summary>
+        /// Control LbEditUser.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LbEditUser;
     }
 }

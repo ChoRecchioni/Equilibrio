@@ -8,13 +8,15 @@ using System.Web.UI.WebControls;
 using equilibrio.Clases;
 using equilibrio.Controller;
 
+//Se mostrarán las reservas según sede de administrador.
+//Filtro de estrellas.
+
 namespace equilibrio.WEBFORMS_ADM
 {
     public partial class Formulario_web16 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CargarDropSedes();
             CargarGrid();
         }
         public void CargarGrid()
@@ -26,7 +28,7 @@ namespace equilibrio.WEBFORMS_ADM
                               Sede = re.Sede.Nombre,
                               Puntuacion = re.Puntuacion,
                               Comentario = re.Comentario,
-                              Usuario = re.Usuario                                
+                              Usuario = re.Usuario
                           };
 
             foreach (var item in listado)
@@ -96,27 +98,11 @@ namespace equilibrio.WEBFORMS_ADM
                 divResenaUsuario.Controls.Add(labelClienteC);
                 divResenaUsuario.Controls.Add(labelDatos);
                 divResenaUsuario.Controls.Add(labelDatos1);
-            
+
                 divResena.Controls.Add(divResenaUsuario);
 
                 DivResenas.Controls.Add(divResena);
             }
-        }
-
-        public void CargarDropSedes()
-        {
-            SedeController.CargarSedes();
-
-            FiltroLocal.DataSource = from sed in SedeController.FindAll()
-                                     select new
-                                     {
-                                         codigo = sed.Codigo,
-                                         texto = sed.Nombre,
-                                     };
-            FiltroLocal.DataValueField = "codigo";
-            FiltroLocal.DataTextField = "texto";
-
-            FiltroLocal.DataBind();
         }
     }
 }

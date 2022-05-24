@@ -17,19 +17,18 @@ namespace equilibrio.Clases
         public string Nombre { get; set; }
     }
 
-    public class Carta
-    {
-
-    }
-
     public class CarroCompras
     {
-
+        public int Codigo { get; set; }
+        public Usuario user { get; set; }
     }
 
-    public class Delivery
+    public class Artículo
     {
-
+        public int Codigo { get; set; }
+        public string Nombre { get; set; }
+        public string Precio { get; set; }
+        public string Comentario { get; set; }
     }
 
     public class Direccion
@@ -44,12 +43,13 @@ namespace equilibrio.Clases
 
     public class Empleado
     {
-
-    }
-
-    public class Nomina
-    {
-
+        public int Codigo { get; set; }
+        public string RUT { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Telefono { get; set; }
+        public Direccion direccion { get; set; }
+        public Role role { get; set; }
     }
 
     public class Reseña
@@ -69,15 +69,15 @@ namespace equilibrio.Clases
         public DateTime Fecha { get; set; }
         public Horas Hora { get; set; }
         public Mesa Mesa { get; set; }
+
+        public Usuario usuario { get; set; }
     }
 
     public class Horas
     {
         public int Codigo { get; set; }
 
-
-        public string Hora { get; set; }
-       
+        public string Hora { get; set; }       
     }
 
     public class HoraMesa

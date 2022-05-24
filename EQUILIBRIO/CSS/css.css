@@ -303,6 +303,18 @@ a#ContentPlaceHolder1_LnkRegistrar.LblTitulo {
     font-size: 16px;
 }
 
+.DropStars {
+    width: 100px;
+    text-align-last: auto;
+    padding-left: 5px;
+    height: 40px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    color: grey;
+    font-size: 16px;
+}
+
 .Contenedor {
     margin: 50px;
 }
@@ -323,6 +335,19 @@ table {
 input#ContentPlaceHolder1_BtnEditar.BtnForm {
     float: right;
     margin-right: 30px;
+    Height: 20px;
+    Width: 20px;
+    background-image: src("~/IMG/edit.png");
+    display: block;
+}
+
+input#ContentPlaceHolder1_BtnEditConfirm.BtnForm {
+    float: right;
+    margin-right: 30px;
+    Height: 20px;
+    Width: 20px;
+    background-image: src("~/IMG/check.png");
+    display: none;
 }
 
 input#ContentPlaceHolder1_BtnAgregar.BtnForm {

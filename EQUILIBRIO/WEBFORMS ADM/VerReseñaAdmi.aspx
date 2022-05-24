@@ -12,9 +12,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="Contenedor">  
-    <asp:DropDownList class="Drop" ID="FiltroLocal" runat="server">
-        <asp:ListItem Text="SELECCIONE UN LOCAL" Value="-1" />
-        
+    <asp:DropDownList class="DropStars" ID="FiltroEstrellas" runat="server">
+        <asp:ListItem Value="1" >★</asp:ListItem>
+        <asp:ListItem Value="2" >★★</asp:ListItem>
+        <asp:ListItem Value="3" >★★★</asp:ListItem>
+        <asp:ListItem Value="4" >★★★★</asp:ListItem>
+        <asp:ListItem Value="5" >★★★★★</asp:ListItem>        
     </asp:DropDownList>
 
     <div id="DivResenas" runat="server">

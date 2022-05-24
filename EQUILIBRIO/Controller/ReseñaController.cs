@@ -103,14 +103,12 @@ namespace equilibrio.Controller
         //Metodo para precargar Reseña
         public static void CargarReseña()
         {
-
             if (listaReseña.Count < 1)
             {
                 SedeController.CargarSedes();
                 UsuarioController.CargarUsuario();
                 
                 AddReseña("2", "3", "2", "comentario sobre el local", UsuarioController.listaUsuario[0]);
-
             }
         }
 
