@@ -6,11 +6,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using equilibrio.Controller;
 using equilibrio.Clases;
+using System.Windows.Forms;
 
 namespace equilibrio.WEBFORMS
 {
     public partial class Formulario_web11 : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             UsuarioController.CargarUsuario();
@@ -43,5 +45,7 @@ namespace equilibrio.WEBFORMS
                 Response.Redirect("IniciarSesión.aspx");
             }
         }
+
+        
     }
 }

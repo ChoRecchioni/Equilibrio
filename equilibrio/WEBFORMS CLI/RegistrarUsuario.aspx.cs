@@ -58,9 +58,7 @@ namespace equilibrio.WEBFORMS
         }
 
         protected void BtnEnviar_Click(object sender, EventArgs e)
-        {
-            
-
+        {     
             int codUser = UsuarioController.UserAI();
             int codDir = DireccionController.DirAI();
             HdnRolCliente.Value = "2";
@@ -74,5 +72,12 @@ namespace equilibrio.WEBFORMS
 
             Response.Redirect("IniciarSesión.aspx");
         }
+
+
+
+
+
+
+
     }
 }

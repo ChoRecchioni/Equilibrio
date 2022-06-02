@@ -53,6 +53,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -74,13 +75,18 @@
     <Content Include="CSS\font-awesome-4.7.0\HELP-US-OUT.txt" />
     <Content Include="IMG\arrow.png" />
     <Content Include="IMG\cart.png" />
+    <Content Include="IMG\check.png" />
     <Content Include="IMG\delete.png" />
     <Content Include="IMG\edit.png" />
     <Content Include="IMG\empty-star.png" />
     <Content Include="IMG\fb.png" />
+    <Content Include="IMG\fb2.png" />
+    <Content Include="IMG\fb_co.png" />
     <Content Include="IMG\fondo2.png" />
     <Content Include="IMG\full-star.png" />
     <Content Include="IMG\instagram.png" />
+    <Content Include="IMG\instagram2.png" />
+    <Content Include="IMG\instagram_co.png" />
     <Content Include="IMG\line.png" />
     <Content Include="IMG\logo.png" />
     <Content Include="IMG\Mariscos-e1592426953245-1200x900.jpg" />

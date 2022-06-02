@@ -6,6 +6,8 @@
 * {
     margin: 0px;
     padding: 0px;
+    font-family: Raleway;
+    font-size: 22px;
 }
 
 body {
@@ -16,7 +18,6 @@ body {
     margin: 0px;
     padding: 0px;
     z-index: -2;
-    font-family: Raleway;
 }
 
 #transparencia {
@@ -39,15 +40,15 @@ body {
     height: 43px;
     width: 43px;
     margin-top: 13px;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 .opUser {
     float: right;
-    height: 40px;
-    width: 40px;
-    margin-top: 15px;
-    margin-right: 5px;
+    height: 43px;
+    width: 45px;
+    margin-top: 13px;
+    margin-right: 8px;
 }
 
 #divisor {
@@ -56,7 +57,7 @@ body {
     height: 40px;
     margin-top: 15px;
     margin-right: -5px;
-    margin-left: -10px;
+    margin-left: -15px;
 }
 
 #titulo {
@@ -85,9 +86,9 @@ body {
 }
 
 .logo {
-    height: 213px;
-    margin-left: 48px;
-    margin-top: 12px;
+    height: 250px;
+    margin-left: 30px;
+    margin-top: 10px;
 }
 
 .arrow {
@@ -294,7 +295,7 @@ a#ContentPlaceHolder1_LnkRegistrar.LblTitulo {
 
 .Drop {
     width: 350px;
-    height: 40px;
+    height: 30px;
     margin-top: 10px;
     border: none;
     border-radius: 5px;
@@ -440,7 +441,7 @@ input#ContentPlaceHolder1_TxtPrecio.TxtCarta {
 }
 
 .Producto {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     width: 450px;
     height: 130px;

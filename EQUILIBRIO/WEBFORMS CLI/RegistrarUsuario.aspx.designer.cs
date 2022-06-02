@@ -60,6 +60,15 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.TextBox TextNombre;
 
         /// <summary>
+        /// Control RequiredFieldValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+
+        /// <summary>
         /// Control TextAlias.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace equilibrio.WEBFORMS
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextAlias;
+
+        /// <summary>
+        /// Control RequiredFieldValidator7.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
 
         /// <summary>
         /// Control TextApellido.
@@ -78,6 +96,15 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.TextBox TextApellido;
 
         /// <summary>
+        /// Control RequiredFieldValidator2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+
+        /// <summary>
         /// Control TextCalle.
         /// </summary>
         /// <remarks>
@@ -85,6 +112,15 @@ namespace equilibrio.WEBFORMS
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextCalle;
+
+        /// <summary>
+        /// Control RequiredFieldValidator8.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
 
         /// <summary>
         /// Control TextRut.
@@ -96,6 +132,15 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.TextBox TextRut;
 
         /// <summary>
+        /// Control RequiredFieldValidator3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+
+        /// <summary>
         /// Control TextDpto.
         /// </summary>
         /// <remarks>
@@ -105,6 +150,15 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.TextBox TextDpto;
 
         /// <summary>
+        /// Control RequiredFieldValidator9.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator9;
+
+        /// <summary>
         /// Control TextTelefono.
         /// </summary>
         /// <remarks>
@@ -112,6 +166,15 @@ namespace equilibrio.WEBFORMS
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextTelefono;
+
+        /// <summary>
+        /// Control RequiredFieldValidator4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
 
         /// <summary>
         /// Control DropComuna.
@@ -132,6 +195,15 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.TextBox TextContraseña;
 
         /// <summary>
+        /// Control RequiredFieldValidator10.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator10;
+
+        /// <summary>
         /// Control DropRegion.
         /// </summary>
         /// <remarks>
@@ -139,6 +211,33 @@ namespace equilibrio.WEBFORMS
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropRegion;
+
+        /// <summary>
+        /// Control TextContraseña2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextContraseña2;
+
+        /// <summary>
+        /// Control RequiredFieldValidator6.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+
+        /// <summary>
+        /// Control ValidationSummary1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
 
         /// <summary>
         /// Control BtnEnviar.

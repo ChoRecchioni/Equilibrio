@@ -21,9 +21,9 @@
     <header>
         <section id="redes">
             <a id="fb" href="http://www.facebook.com">
-                <img class="red" src="../IMG/fb.png"></img></a>
+                <img class="red" src="../IMG/fb2.png"></img></a>
             <a id="ig" href="http://www.instagram.com">
-                <img class="red" src="../IMG/instagram.png" /></a>
+                <img class="red" src="../IMG/instagram2.png" /></a>
             <img id="divisor" src="../IMG/line.png" />
             <a id="usericon" href="#" runat="server">
                 <img class="opUser" src="../IMG/user.png" /></a>
