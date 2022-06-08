@@ -58,14 +58,15 @@ namespace equilibrio.WEBFORMS
         }
 
         protected void BtnEnviar_Click(object sender, EventArgs e)
-        {     
+        {
+            System.Threading.Thread.Sleep(2500);
+
             int codUser = UsuarioController.UserAI();
             int codDir = DireccionController.DirAI();
             HdnRolCliente.Value = "2";
            
-
             LbMensaje1.Text = DireccionController.AddDireccion(codDir.ToString(), TextAlias.Text,
-              TextCalle.Text, TextDpto.Text, DropComuna.SelectedValue, DropRegion.SelectedValue);
+            TextCalle.Text, TextDpto.Text, DropComuna.SelectedValue, DropRegion.SelectedValue);
 
             LbMensaje.Text = UsuarioController.AddUsuario(codUser, TextRut.Text,
             TextNombre.Text, TextApellido.Text, TextTelefono.Text, TextContraseña.Text, codDir.ToString(), HdnRolCliente.Value);
