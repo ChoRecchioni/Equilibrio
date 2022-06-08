@@ -250,6 +250,8 @@ li {
     font-size: 16px;
 }
 
+
+
 .Btn {
     box-shadow: 3px 3px #888888;
     border-radius: 3px;
@@ -318,6 +320,9 @@ a#ContentPlaceHolder1_LnkRegistrar.LblTitulo {
 
 .ValidadorRegistro {
     display: block;
+    color : red;
+    font-Size : 10px;
+    height: 12px;
 }
 
 .Txt {
@@ -328,6 +333,7 @@ a#ContentPlaceHolder1_LnkRegistrar.LblTitulo {
     text-align-last: center;
     color: grey;
     font-size: 22px;
+    text-transform: uppercase;
 }
 
 .TxtAddEm {
@@ -338,8 +344,9 @@ a#ContentPlaceHolder1_LnkRegistrar.LblTitulo {
     border-radius: 5px;
     text-align-last: center;
     color: grey;
-    font-size: 16px;
+    font-size: 22px;
     margin-inline: 20px;
+    text-transform: uppercase;
 }
 
 .TxtNomina {
@@ -351,8 +358,9 @@ a#ContentPlaceHolder1_LnkRegistrar.LblTitulo {
     border-radius: 5px;
     text-align-last: center;
     color: grey;
-    font-size: 16px;
+    font-size: 22px;
     border: none;
+    text-transform: uppercase;
 }
 
 .TxtCarta {
@@ -362,20 +370,21 @@ a#ContentPlaceHolder1_LnkRegistrar.LblTitulo {
     border: none;
     border-radius: 5px;
     color: grey;
-    font-size: 16px;
+    font-size: 22px;
     padding-left: 5px;
     padding-right: 5px;
+    text-transform: uppercase;
 }
 
 .Drop {
     width: 350px;
     height: 30px;
-    margin-top: 10px;
     border: none;
     border-radius: 5px;
     text-align-last: center;
     color: grey;
-    font-size: 16px;
+    font-size: 22px;
+    text-transform: uppercase;
 }
 
 .DropStars {
