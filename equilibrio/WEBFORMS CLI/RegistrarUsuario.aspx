@@ -28,7 +28,7 @@
 
             <div class="Contenedor">
                 <table class="auto-style1">
-                    <tr>
+                    <tr style="height: 50px; vertical-align: top;">
                         <td class="auto-style2">
                             <asp:Label class="LblTitulo" ID="LbRegistro" runat="server" Text="DATOS PERSONALES"></asp:Label></td>
                         <td class="auto-style4">
@@ -37,38 +37,39 @@
                     <tr>
                         <td class="auto-style2">
                             <asp:TextBox class="Txt" ID="TextNombre" runat="server" placeholder="NOMBRE"></asp:TextBox>
-                            <asp:RequiredFieldValidator ControlToValidate="TextNombre" ID="RequiredFieldValidator1" runat="server" ForeColor="Red" ErrorMessage="Campo Requerido" Font-Size="10px" Height="12px"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="TextNombre" class="ValidadorRegistro" runat="server" ForeColor="Red" ErrorMessage="Campo Requerido" Font-Size="10px" Height="12px"></asp:RequiredFieldValidator>
                         </td>
                         <td class="auto-style4">
                             <asp:TextBox class="Txt" ID="TextAlias" runat="server" placeholder="ALIAS"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="TextAlias" ErrorMessage="*"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" class="ValidadorRegistro" runat="server" ControlToValidate="TextAlias" ErrorMessage="*"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
                         <td class="auto-style2">
                             <asp:TextBox class="Txt" ID="TextApellido" runat="server" placeholder="APELLIDO"></asp:TextBox>
 
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextApellido" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" class="ValidadorRegistro" runat="server" ControlToValidate="TextApellido" ErrorMessage="*"></asp:RequiredFieldValidator></td>
                         <td class="auto-style4">
                             <asp:TextBox class="Txt" ID="TextCalle" runat="server" placeholder="CALLE Y N°"></asp:TextBox>
 
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="TextCalle" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" class="ValidadorRegistro" runat="server" ControlToValidate="TextCalle" ErrorMessage="*"></asp:RequiredFieldValidator></td>
                     </tr>
                     <tr>
                         <td class="auto-style2">
                             <asp:TextBox class="Txt" ID="TextRut" runat="server" placeholder="RUT"></asp:TextBox>
 
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextRut" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3"  class="ValidadorRegistro" runat="server" ControlToValidate="TextRut" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" class="ValidadorRegistro" runat="server" Display="Dynamic" ControlToValidate="TextRut" ErrorMessage="RUT no valido" ValidationExpression="^(\d{1}|\d{2})\.(\d{3}\.\d{3}-)([a-zA-Z]{1}$|\d{1}$)"></asp:RegularExpressionValidator>
                         <td class="auto-style4">
                             <asp:TextBox class="Txt" ID="TextDpto" runat="server" placeholder="DPTO O BLOQUE"></asp:TextBox>
 
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="TextDpto" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" class="ValidadorRegistro" runat="server" ControlToValidate="TextDpto" ErrorMessage="*"></asp:RequiredFieldValidator></td>
                     </tr>
                     <tr>
                         <td class="auto-style2">
                             <asp:TextBox class="Txt" ID="TextTelefono" runat="server" placeholder="TELÉFONO"></asp:TextBox>
 
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextTelefono" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4"  class="ValidadorRegistro" runat="server" ControlToValidate="TextTelefono" ErrorMessage="*"></asp:RequiredFieldValidator></td>
                         <td class="auto-style4">
                             <asp:DropDownList class="Drop" ID="DropComuna" runat="server">
                                 <asp:ListItem Text="SELECCIONE UNA REGIÓN" Value="0" />
@@ -76,9 +77,10 @@
                     </tr>
                     <tr>
                         <td class="auto-style2">
-                            <asp:TextBox class="Txt" type="password" ID="TextCorreo" runat="server" placeholder="CORREO"></asp:TextBox>
+                            <asp:TextBox class="Txt" ID="TextCorreo" runat="server" placeholder="CORREO"></asp:TextBox>
 
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="TextCorreo" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator10" class="ValidadorRegistro" runat="server" ControlToValidate="TextCorreo" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" class="ValidadorRegistro" runat="server" display="Dynamic" ControlToValidate="TextCorreo" ErrorMessage="Correo No Valido." ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ></asp:RegularExpressionValidator>
                         <td class="auto-style4">
                             <asp:DropDownList class="Drop" ID="DropRegion" runat="server">
                                 <asp:ListItem Text="SELECCIONE UNA COMUNA" Value="0" />
@@ -87,13 +89,13 @@
                     <tr>
                         <td class="auto-style2">
                             <asp:TextBox class="Txt" type="password" ID="TextContraseña" runat="server" placeholder="CONTRASEÑA"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextContraseña" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" class="ValidadorRegistro" runat="server" ControlToValidate="TextContraseña" ErrorMessage="*"></asp:RequiredFieldValidator></td>
                         <td class="auto-style4">&nbsp;</td>
                     </tr>
                     <tr>
                         <td class="auto-style2">
                             <asp:TextBox class="Txt" type="password" ID="TextContraseña2" runat="server" placeholder="REPITA SU CONTRASEÑA"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextContraseña2" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" class="ValidadorRegistro" runat="server" ControlToValidate="TextContraseña2" ErrorMessage="*"></asp:RequiredFieldValidator></td>
                         </td>
                         <td class="auto-style5">
                             
