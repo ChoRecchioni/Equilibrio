@@ -204,13 +204,13 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.DropDownList DropComuna;
 
         /// <summary>
-        /// Control TextContraseña.
+        /// Control TextCorreo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextContraseña;
+        protected global::System.Web.UI.WebControls.TextBox TextCorreo;
 
         /// <summary>
         /// Control RequiredFieldValidator10.
@@ -231,13 +231,13 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.DropDownList DropRegion;
 
         /// <summary>
-        /// Control TextContraseña2.
+        /// Control TextContraseña.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextContraseña2;
+        protected global::System.Web.UI.WebControls.TextBox TextContraseña;
 
         /// <summary>
         /// Control RequiredFieldValidator6.
@@ -249,13 +249,22 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
 
         /// <summary>
-        /// Control ValidationSummary1.
+        /// Control TextContraseña2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        protected global::System.Web.UI.WebControls.TextBox TextContraseña2;
+
+        /// <summary>
+        /// Control RequiredFieldValidator5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
 
         /// <summary>
         /// Control BtnEnviar.

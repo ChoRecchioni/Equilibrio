@@ -37,7 +37,7 @@
                     <tr>
                         <td class="auto-style2">
                             <asp:TextBox class="Txt" ID="TextNombre" runat="server" placeholder="NOMBRE"></asp:TextBox>
-                            <asp:RequiredFieldValidator class="ValidadorRegistro" ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextNombre" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ControlToValidate="TextNombre" ID="RequiredFieldValidator1" runat="server" ForeColor="Red" ErrorMessage="Campo Requerido" Font-Size="10px" Height="12px"></asp:RequiredFieldValidator>
                         </td>
                         <td class="auto-style4">
                             <asp:TextBox class="Txt" ID="TextAlias" runat="server" placeholder="ALIAS"></asp:TextBox>
@@ -76,9 +76,9 @@
                     </tr>
                     <tr>
                         <td class="auto-style2">
-                            <asp:TextBox class="Txt" type="password" ID="TextContraseña" runat="server" placeholder="CONTRASEÑA"></asp:TextBox>
+                            <asp:TextBox class="Txt" type="password" ID="TextCorreo" runat="server" placeholder="CORREO"></asp:TextBox>
 
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="TextContraseña" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="TextCorreo" ErrorMessage="*"></asp:RequiredFieldValidator></td>
                         <td class="auto-style4">
                             <asp:DropDownList class="Drop" ID="DropRegion" runat="server">
                                 <asp:ListItem Text="SELECCIONE UNA COMUNA" Value="0" />
@@ -86,15 +86,17 @@
                     </tr>
                     <tr>
                         <td class="auto-style2">
-                            <asp:TextBox class="Txt" type="password" ID="TextContraseña2" runat="server" placeholder="REPITA SU CONTRASEÑA"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextContraseña2" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                            <asp:TextBox class="Txt" type="password" ID="TextContraseña" runat="server" placeholder="CONTRASEÑA"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextContraseña" ErrorMessage="*"></asp:RequiredFieldValidator></td>
                         <td class="auto-style4">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td class="auto-style2"></td>
+                        <td class="auto-style2">
+                            <asp:TextBox class="Txt" type="password" ID="TextContraseña2" runat="server" placeholder="REPITA SU CONTRASEÑA"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextContraseña2" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                        </td>
                         <td class="auto-style5">
-                            <asp:ValidationSummary ID="ValidationSummary1" class="ValidadorRegistro" runat="server" HeaderText="Campos vacíos requeridos."/>
-
+                            
                             <asp:Button class="BtnOK" ID="BtnEnviar" runat="server" Text="CONFIRMAR" OnClick="BtnEnviar_Click" />
                         </td>
                     </tr>
