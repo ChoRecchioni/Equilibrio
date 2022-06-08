@@ -37,7 +37,7 @@
                     <tr>
                         <td class="auto-style2">
                             <asp:TextBox class="Txt" ID="TextNombre" runat="server" placeholder="NOMBRE"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextNombre" ErrorMessage="*"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator class="ValidadorRegistro" ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextNombre" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
                         </td>
                         <td class="auto-style4">
                             <asp:TextBox class="Txt" ID="TextAlias" runat="server" placeholder="ALIAS"></asp:TextBox>
@@ -93,7 +93,7 @@
                     <tr>
                         <td class="auto-style2"></td>
                         <td class="auto-style5">
-                            <asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="Campos vacíos requeridos." DisplayMode="SingleParagraph" />
+                            <asp:ValidationSummary ID="ValidationSummary1" class="ValidadorRegistro" runat="server" HeaderText="Campos vacíos requeridos."/>
 
                             <asp:Button class="BtnOK" ID="BtnEnviar" runat="server" Text="CONFIRMAR" OnClick="BtnEnviar_Click" />
                         </td>

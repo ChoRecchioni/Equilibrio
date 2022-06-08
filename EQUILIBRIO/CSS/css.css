@@ -312,10 +312,14 @@ span#ContentPlaceHolder1_LblTitulo {
 }
 
 a#ContentPlaceHolder1_LnkRegistrar.LblTitulo {
-    font-size: larger;
+    font-size: 22px;
     font-weight: bold;
     color: black;
     margin-bottom: 10px;
+}
+
+.ValidadorRegistro {
+    display: block;
 }
 
 .Txt {
@@ -326,7 +330,7 @@ a#ContentPlaceHolder1_LnkRegistrar.LblTitulo {
     border-radius: 5px;
     text-align-last: center;
     color: grey;
-    font-size: 16px;
+    font-size: 22px;
 }
 
 .TxtAddEm {
