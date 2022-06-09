@@ -24,15 +24,6 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control HdnRolCliente.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HdnRolCliente;
-
-        /// <summary>
         /// Control ScriptManager1.
         /// </summary>
         /// <remarks>
@@ -49,6 +40,15 @@ namespace equilibrio.WEBFORMS
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdateMain;
+
+        /// <summary>
+        /// Control HdnRolCliente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HdnRolCliente;
 
         /// <summary>
         /// Control LbRegistro.
