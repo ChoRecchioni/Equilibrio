@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 using equilibrio.Clases;
 using equilibrio.Controller;
 
@@ -74,11 +75,6 @@ namespace equilibrio.WEBFORMS
             Response.Redirect("IniciarSesión.aspx");
         }
 
-
-
-
-
-
-
+       
     }
 }

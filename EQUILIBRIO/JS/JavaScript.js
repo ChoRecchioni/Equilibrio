@@ -20,27 +20,6 @@
         });
     }
 
-    //var btnE = document.getElementById("BtnEditar");
-    //var btnC = document.getElementById("BtnEditConfirm");
-
-    //btnE[i].addEventListener("click", function () {
-    //    if (btnE.style.display === "block") {
-    //        btnE.style.display = "none";
-    //        btnC.style.display = "block";
-    //    }
-    //});
-
-    //btnC[i].addEventListener("click", function () {
-    //    if (btnC.style.display === "block") {
-    //        btnC.style.display = "none";
-    //        btnE.style.display = "block";
-    //    }
-    //});
-
-    //$('#BtnEditar').click(function () {
-    //    $('#BtnEditar').css({ 'display': 'none' });
-    //    $('#BtnEditConfirm').css({ 'display': 'block' });
-    //});
-
+    
 
 });
