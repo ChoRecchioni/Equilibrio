@@ -5,6 +5,7 @@ using System.Web;
 
 namespace equilibrio.Clases
 {
+    /*
     public class Region
     {
         public int Codigo { get; set; }
@@ -121,4 +122,5 @@ namespace equilibrio.Clases
         public int Codigo { get; set; }
         public string Nombre { get; set; }
     }
+    */
 }

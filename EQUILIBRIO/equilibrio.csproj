@@ -108,7 +108,21 @@
     <Content Include="WEBFORMS CLI\VerReseña.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Artículo.cs" />
+    <Compile Include="Clases\CarroCompras.cs" />
+    <Compile Include="Clases\Comuna.cs" />
+    <Compile Include="Clases\Direccion.cs" />
+    <Compile Include="Clases\Empleado.cs" />
     <Compile Include="Clases\Entidades.cs" />
+    <Compile Include="Clases\Fechas.cs" />
+    <Compile Include="Clases\Horas.cs" />
+    <Compile Include="Clases\Local.cs" />
+    <Compile Include="Clases\Mesa.cs" />
+    <Compile Include="Clases\Region.cs" />
+    <Compile Include="Clases\Reserva.cs" />
+    <Compile Include="Clases\Reseña.cs" />
+    <Compile Include="Clases\Role.cs" />
+    <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Controller\ComunaController.cs" />
     <Compile Include="Controller\DireccionController.cs" />
     <Compile Include="Controller\LoginController.cs" />
