@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 using equilibrio.Clases;
 using equilibrio.Controller;
 
-//Se mostrarán las reservas según sede de administrador.
+//Se mostrarán las reservas según local del administrador.
 //Filtro de estrellas.
 
 namespace equilibrio.WEBFORMS_ADM
@@ -25,7 +25,7 @@ namespace equilibrio.WEBFORMS_ADM
             var listado = from re in ReseñaController.FindAll()
                           select new
                           {
-                              Sede = re.Sede.Nombre,
+                              Local = re.Local.Nombre,
                               Puntuacion = re.Puntuacion,
                               Comentario = re.Comentario,
                               Usuario = re.Usuario

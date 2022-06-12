@@ -11,15 +11,15 @@ namespace equilibrio.Controller
         private static List<Reseña> listaReseña = new List<Reseña>();
 
         //Metodo para agregar Reseña
-        public static string AddReseña(string codigo, string codSede, string puntuacion, string comentario, Usuario usuario)
+        public static string AddReseña(string codigo, string codLocal, string puntuacion, string comentario, Usuario usuario)
         {
-            Sede sede = SedeController.FindSede(codSede);
+            Local local = LocalController.FindLocal(codLocal);
             try
             {
                 listaReseña.Add(new Reseña()
                 {
                     Codigo = int.Parse(codigo),
-                    Sede = sede,
+                    Local = local,
                     Puntuacion = int.Parse(puntuacion),
                     Comentario = comentario,
                     Usuario = usuario,
@@ -68,14 +68,14 @@ namespace equilibrio.Controller
 
         //Metodo para editar Reseña
 
-        public static string EditReseña(string codigo, string codSede, string puntuacion, string comentario)
+        public static string EditReseña(string codigo, string codLocal, string puntuacion, string comentario)
         {
 
             try
             {
-                Sede sede = SedeController.FindSede(codSede);
+                Local local = LocalController.FindLocal(codLocal);
                 Reseña reseña = FindReseña(codigo);
-                reseña.Sede = sede;
+                reseña.Local = local;
                 reseña.Puntuacion = int.Parse(puntuacion);
                 reseña.Comentario = comentario;
 
@@ -93,8 +93,6 @@ namespace equilibrio.Controller
 
         public static string RemoveUsuario(string cod)
         {
-
-
             listaReseña.Remove(FindReseña(cod));
 
             return "Reseña removida de la lista";
@@ -105,7 +103,7 @@ namespace equilibrio.Controller
         {
             if (listaReseña.Count < 1)
             {
-                SedeController.CargarSedes();
+                LocalController.CargarLocales();
                 UsuarioController.CargarUsuario();
                 
                 AddReseña("2", "3", "2", "comentario sobre el local", UsuarioController.listaUsuario[0]);

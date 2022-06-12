@@ -14,7 +14,7 @@ namespace equilibrio.WEBFORMS_CLI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CargarDropSedes();
+            CargarDropLocales();
             CargarGrid();
             ReseñaController.CargarReseña();
         }
@@ -25,7 +25,7 @@ namespace equilibrio.WEBFORMS_CLI
            var listado = from re in ReseñaController.FindAll()
                                    select new
                                    {
-                                       Sede = re.Sede.Nombre,
+                                       Local = re.Local.Nombre,
                                        Puntuacion = re.Puntuacion,
                                        Comentario = re.Comentario
                                    };
@@ -78,11 +78,11 @@ namespace equilibrio.WEBFORMS_CLI
 
 
 
-        public void CargarDropSedes()
+        public void CargarDropLocales()
         {
-            SedeController.CargarSedes();
+            LocalController.CargarLocales();
 
-            FiltroLocal.DataSource = from sed in SedeController.FindAll()
+            FiltroLocal.DataSource = from sed in LocalController.FindAll()
                                      select new
                                      {
                                          codigo = sed.Codigo,

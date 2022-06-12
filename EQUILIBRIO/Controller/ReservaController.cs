@@ -12,22 +12,19 @@ namespace equilibrio.Controller
         private static List<Reserva> listaReserva = new List<Reserva>();
 
         //Metodo para agregar Reserva
-        public static string AddReserva(string codigo, string codSede, DateTime fecha, string codHora, string codMesa)
+        public static string AddReserva(string codigo, string codMesa, DateTime fecha, string codLocal, string codUsuario)
         {
-            Sede sede = SedeController.FindSede(codSede);
-            Horas hora = HoraController.FindHora(codHora);
             Mesa mesa = MesaController.FindMesa(codMesa);
 
             try
             {
                 listaReserva.Add(new Reserva()
                 {
-
                     Codigo = int.Parse(codigo),
-                    Sede = sede,
-                    Fecha = fecha,
-                    Hora = hora,
                     Mesa = mesa,
+                    FechaHora = fecha,
+                    Local = LocalController.FindLocal(codLocal),
+                    Usuario = UsuarioController.FindUser(codUsuario)
                 });
 
                 return "Reserva agregada.";
@@ -72,18 +69,15 @@ namespace equilibrio.Controller
 
         //Metodo para editar Reserva
 
-        public static string EditReserva(string codigo, DateTime fecha, string codHora, string codMesa)
+        public static string EditReserva(string codigo, DateTime fecha, string codLocal, string codMesa, string codUsuario)
         {
-
             try
             {
                 Reserva reserva = FindReserva(codigo);
-                Horas hora = HoraController.FindHora(codHora);
-                Mesa mesa = MesaController.FindMesa(codMesa);
-
-                reserva.Fecha = fecha;
-                reserva.Hora = hora;
-                reserva.Mesa = mesa;
+                reserva.FechaHora = fecha;
+                reserva.Local = LocalController.FindLocal(codLocal);
+                reserva.Mesa = MesaController.FindMesa(codMesa);
+                reserva.Usuario = UsuarioController.FindUser(codUsuario);
 
                 return "Reserva Modificada";
             }
@@ -99,8 +93,6 @@ namespace equilibrio.Controller
 
         public static string RemoveMesa(string cod)
         {
-
-
             listaReserva.Remove(FindReserva(cod));
 
             return "Reserva removida de la lista";
@@ -108,16 +100,25 @@ namespace equilibrio.Controller
 
         public static void CargarReserva()
         {
-            SedeController.CargarSedes();
+            LocalController.CargarLocales();
             MesaController.CargarMesa();
-            HoraController.CargarHora();
 
             if (listaReserva.Count < 1)
             {
-                AddReserva("1", "1", DateTime.Now, "1", "17");
+                AddReserva("1", "16", new DateTime(2022, 8, 3, 13, 0, 0), "1", "1");
+                AddReserva("2", "2", new DateTime(2022, 8, 5, 12, 0, 0), "1", "1");
+                AddReserva("3", "2", new DateTime(2022, 8, 7, 12, 0, 0), "1", "1");
+                AddReserva("4", "2", new DateTime(2022, 8, 10, 12, 0, 0), "1", "1");
+                AddReserva("5", "2", new DateTime(2022, 8, 10, 12, 0, 0), "1", "1");
+                AddReserva("6", "2", new DateTime(2022, 8, 10, 12, 0, 0), "1", "1");
+                AddReserva("7", "2", new DateTime(2022, 8, 10, 12, 0, 0), "1", "1");
+                AddReserva("8", "4", new DateTime(2022, 8, 16, 13, 0, 0), "1", "1");
+                AddReserva("9", "4", new DateTime(2022, 8, 19, 19, 0, 0), "1", "1");
+                AddReserva("10", "3", new DateTime(2022, 8, 24, 20, 0, 0), "1", "1");
+                AddReserva("11", "1", new DateTime(2022, 8, 25, 14, 0, 0), "1", "1");
+                AddReserva("12", "1", new DateTime(2022, 8, 26, 12, 0, 0), "1", "1");
+                AddReserva("13", "1", new DateTime(2022, 8, 30, 16, 0, 0), "1", "1");
             }
-
-
         }
 
         public static int ResAI()

@@ -13,7 +13,7 @@ namespace equilibrio.WEBFORMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SedeController.CargarSedes();
+            LocalController.CargarLocales();
 
             if (!Page.IsPostBack)
             {
@@ -23,12 +23,12 @@ namespace equilibrio.WEBFORMS
 
         protected void CargarDropLocal()
         {
-            DropLocal.DataSource = from com in SedeController.FindAll()
-                                    select new
-                                    {
-                                        codigo = com.Codigo,
-                                        texto = com.Nombre,
-                                    };
+            DropLocal.DataSource = from com in LocalController.FindAll()
+                                   select new
+                                   {
+                                       codigo = com.Codigo,
+                                       texto = com.Nombre,
+                                   };
             DropLocal.DataValueField = "codigo";
             DropLocal.DataTextField = "texto";
 
@@ -37,56 +37,74 @@ namespace equilibrio.WEBFORMS
 
         protected void CargarDropHoras()
         {
-            DropHoras.DataSource = from com in HoraController.FindAll()
-                                   select new
-                                   {
-                                       codigo = com.Codigo,
-                                       texto = com.Hora,
-                                   };
-            DropHoras.DataValueField = "codigo";
-            DropHoras.DataTextField = "texto";
+            MesaController.CargarMesa();
+            ReservaController.CargarReserva();
+            var mesas = MesaController.FindAll().Where(m => m.Local.Codigo == int.Parse(DropLocal.SelectedValue));
 
-            DropHoras.DataBind();
+            //for (int hora = 12; hora < 21; hora++)
+            for (int hora = 12; hora < 15; hora++)
+            {
+                var reservasLocal = ReservaController.FindAll().Where(r => r.Local.Codigo == int.Parse(DropLocal.SelectedValue) && r.FechaHora == Calendar1.SelectedDate.AddHours(hora));
+
+                if ((mesas.Count() * 0.25) - reservasLocal.Count() > 0)
+                {
+                    DropHoras.Items.Add(new ListItem(hora.ToString() + ":00", hora.ToString()));
+                }
+            }
         }
 
-        protected void CargarDropMesas()
+        protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
         {
-            DropMesas.DataSource = from com in MesaController.FindAll()
-                                   select new
-                                   {
-                                       codigo = com.Codigo,
-                                       texto = com.Comensales,
-                                   };
-            DropMesas.DataValueField = "codigo";
-            DropMesas.DataTextField = "texto";
+            string codLocal = DropLocal.SelectedValue;
+            LocalController.CargarLocales();
+            MesaController.CargarMesa();
+            ReservaController.CargarReserva();
 
-            DropMesas.DataBind();
+            var reservas = ReservaController.FindAll().Where(r => r.Local.Codigo == int.Parse(codLocal) && r.FechaHora.Date == e.Day.Date);
+            var mesas = MesaController.FindAll().Where(m => m.Local.Codigo == int.Parse(codLocal));
+
+            if (e.Day.Date.DayOfWeek == DayOfWeek.Sunday)
+                e.Day.IsSelectable = false;
+            else
+            {
+                if ((mesas.Count() * 0.25) - reservas.Count() > 0)
+                {
+                    e.Day.IsSelectable = true;
+                }
+            }
+            //foreach (var fecha in lista)
+            //{
+            //    if (e.Day.Date == fecha.Fecha && e.Day.Date > DateTime.Now)
+            //    {
+            //        e.Day.IsSelectable = true;
+            //        break;
+            //    }
+            //    else
+            //        e.Day.IsSelectable = false;
+            //}
         }
 
         protected void DropLocal_SelectedIndexChanged(object sender, EventArgs e)
         {
             Calendar1.SelectedDates.Clear();
             DropHoras.Items.Clear();
-            DropMesas.Items.Clear();
-            //cargar datos calendario
         }
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
             DropHoras.Items.Clear();
-            DropMesas.Items.Clear();
-            //cargar datos horas
-            //cargar datos mesas
+            CargarDropHoras();
         }
         protected void DropHoras_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DropMesas.Items.Clear();
-            //cargar datos mesas
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
             System.Threading.Thread.Sleep(2500);
+
+
         }
+
+
     }
 }

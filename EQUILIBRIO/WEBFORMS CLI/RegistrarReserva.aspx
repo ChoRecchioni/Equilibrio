@@ -67,16 +67,18 @@
                 <td class="auto-style2">
                     <asp:UpdatePanel ID="UPFecha" runat="server">
                         <ContentTemplate>
-                            <asp:Calendar class="calendario" ID="Calendar1" OnSelectionChanged="Calendar1_SelectionChanged" AutoPostBack="true" runat="server"></asp:Calendar>
+                            <asp:Calendar class="calendario" ID="Calendar1" OnDayRender="Calendar1_DayRender" OnSelectionChanged="Calendar1_SelectionChanged" AutoPostBack="true" runat="server"></asp:Calendar>
                         </ContentTemplate>
                         <Triggers>
                             <asp:AsyncPostBackTrigger ControlID="Calendar1" EventName="selectionChanged" />
                         </Triggers>
                     </asp:UpdatePanel>
                 </td>
-                <td style="vertical-align: top">
-                    <asp:DropDownList class="Drop" ID="DropMesas" AutoPostBack="true" runat="server">
-                    </asp:DropDownList>
+                <td style="vertical-align: top">  
+                        <asp:CheckBoxList id="Check" runat="server">
+                            <asp:ListItem Value="1">2 personas</asp:ListItem>
+                            <asp:ListItem Value="2">4 personas</asp:ListItem>
+                        </asp:CheckBoxList>
                 </td>
             </tr>
             <tr>

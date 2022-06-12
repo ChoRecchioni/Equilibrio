@@ -55,7 +55,7 @@ namespace equilibrio.Clases
     public class Reseña
     {
         public int Codigo { get; set; }
-        public Sede Sede { get; set; }
+        public Local Local { get; set; }
         public int Puntuacion { get; set; }
         public string Comentario { get; set; }
         public Usuario Usuario { get; set; }
@@ -65,33 +65,25 @@ namespace equilibrio.Clases
     public class Reserva
     {
         public int Codigo { get; set; }
-        public Sede Sede { get; set; }
-        public DateTime Fecha { get; set; }
-        public Horas Hora { get; set; }
+        public Local Local { get; set; }
+        public DateTime FechaHora { get; set; }
+        //public DateTime Hora { get; set; }
         public Mesa Mesa { get; set; }
-
-        public Usuario usuario { get; set; }
+        public Usuario Usuario { get; set; }
     }
 
     public class Horas
     {
         public int Codigo { get; set; }
-
         public string Hora { get; set; }
+        public Fechas Fechas { get; set; }
     }
 
     public class Fechas
     {
         public int Codigo { get; set; }
-
-        public string Fecha { get; set; }
-    }
-
-    public class HoraMesa
-    {
-        public Horas Hora { get; set; }
-        public Mesa Mesa { get; set; }
-        public Fechas Fecha { get; set; }
+        public DateTime Fecha { get; set; }
+        public Local Local { get; set; }
     }
 
     public class Mesa
@@ -99,6 +91,9 @@ namespace equilibrio.Clases
         public int Codigo { get; set; }
         public string NumMesa { get; set; }
         public int Comensales { get; set; }
+        public Local Local { get; set; }
+        //public Horas Hora { get; set; }
+        //public Fechas Fechas { get; set; }
     }
 
     public class Usuario
@@ -121,7 +116,7 @@ namespace equilibrio.Clases
         public string Nombre { get; set; }
     }
 
-    public class Sede
+    public class Local
     {
         public int Codigo { get; set; }
         public string Nombre { get; set; }

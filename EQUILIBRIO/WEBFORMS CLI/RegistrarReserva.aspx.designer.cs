@@ -123,13 +123,13 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.Calendar Calendar1;
 
         /// <summary>
-        /// Control DropMesas.
+        /// Control Check.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropMesas;
+        protected global::System.Web.UI.WebControls.CheckBoxList Check;
 
         /// <summary>
         /// Control UPBtnOK.

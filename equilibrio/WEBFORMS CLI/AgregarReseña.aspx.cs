@@ -14,19 +14,19 @@ namespace equilibrio.WEBFORMS
         protected void Page_Load(object sender, EventArgs e)
         {
             ReseñaController.CargarReseña();
-            SedeController.CargarSedes();
+            LocalController.CargarLocales();
 
 
             if (!Page.IsPostBack)
             {
-                cargarDropSedes();
+                cargarDropLocales();
             }
         }
 
-        public void cargarDropSedes()
+        public void cargarDropLocales()
         {
 
-            DropLocal.DataSource = from sed in SedeController.FindAll()
+            DropLocal.DataSource = from sed in LocalController.FindAll()
                                     select new
                                     {
                                         codigo = sed.Codigo,
