@@ -24,6 +24,15 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
+        /// Control ScriptManager1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+
+        /// <summary>
         /// Control Label2.
         /// </summary>
         /// <remarks>
@@ -42,6 +51,15 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
+        /// Control UPLocal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UPLocal;
+
+        /// <summary>
         /// Control DropLocal.
         /// </summary>
         /// <remarks>
@@ -49,6 +67,15 @@ namespace equilibrio.WEBFORMS
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropLocal;
+
+        /// <summary>
+        /// Control UPHora.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UPHora;
 
         /// <summary>
         /// Control DropHoras.
@@ -78,6 +105,15 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
+        /// Control UPFecha.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UPFecha;
+
+        /// <summary>
         /// Control Calendar1.
         /// </summary>
         /// <remarks>
@@ -96,6 +132,15 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.DropDownList DropMesas;
 
         /// <summary>
+        /// Control UPBtnOK.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UPBtnOK;
+
+        /// <summary>
         /// Control Button1.
         /// </summary>
         /// <remarks>
@@ -112,5 +157,14 @@ namespace equilibrio.WEBFORMS
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtCliente;
+
+        /// <summary>
+        /// Control Cargando.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdateProgress Cargando;
     }
 }

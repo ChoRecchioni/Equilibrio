@@ -77,13 +77,21 @@ namespace equilibrio.Clases
     {
         public int Codigo { get; set; }
 
-        public string Hora { get; set; }       
+        public string Hora { get; set; }
+    }
+
+    public class Fechas
+    {
+        public int Codigo { get; set; }
+
+        public string Fecha { get; set; }
     }
 
     public class HoraMesa
     {
-        public Horas hora { get; set; }
-        public Mesa mesa { get; set; }
+        public Horas Hora { get; set; }
+        public Mesa Mesa { get; set; }
+        public Fechas Fecha { get; set; }
     }
 
     public class Mesa

@@ -15,32 +15,42 @@
     <asp:Label class="titulos" ID="Label1" runat="server" Text="Nueva Reserva"></asp:Label><br />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
     <div class="Contenedor">
-
         <table class="auto-style1">
             <tr>
                 <td class="auto-style2">
-
-                    <asp:Label class="LblTitulo" ID="Label2" runat="server" Text="Seleccione un local"></asp:Label><br />
+                    <asp:Label class="LblTitulo" ID="Label2" runat="server" Text="Seleccione un local"></asp:Label>
+                    <br />
                 </td>
                 <td>
-                    <asp:Label class="LblTitulo" ID="Label3" runat="server" Text="Seleccione la hora"></asp:Label><br />
+                    <asp:Label class="LblTitulo" ID="Label3" runat="server" Text="Seleccione la hora"></asp:Label>
+                    <br />
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">
-                    <asp:DropDownList class="Drop" ID="DropLocal" runat="server">
-                        <asp:ListItem Text="LOCAL" Value="0" />
-                    </asp:DropDownList><br />
+                    <asp:UpdatePanel ID="UPLocal" runat="server">
+                        <ContentTemplate>
+                            <asp:DropDownList class="Drop" ID="DropLocal" OnSelectedIndexChanged="DropLocal_SelectedIndexChanged" AutoPostBack="true" runat="server">
+                                <asp:ListItem Text="LOCAL" Value="0" />
+                            </asp:DropDownList>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                    <br />
                 </td>
                 <td>
-                    <asp:DropDownList class="Drop" ID="DropHoras" runat="server">
-                        <asp:ListItem Text="12:00" Value="0" />
-                        <asp:ListItem Text="14:00" Value="1" />
-                        <asp:ListItem Text="16:00" Value="2" />
-                        <asp:ListItem Text="18:00" Value="3" />
-                    </asp:DropDownList><br />
+                    <asp:UpdatePanel ID="UPHora" runat="server">
+                        <ContentTemplate>
+                            <asp:DropDownList class="Drop" ID="DropHoras" OnSelectedIndexChanged="DropHoras_SelectedIndexChanged" AutoPostBack="true" runat="server">
+                            </asp:DropDownList>
+                        </ContentTemplate>
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="DropHoras" EventName="selectedindexchanged" />
+                        </Triggers>
+                    </asp:UpdatePanel>
+                    <br />
                 </td>
             </tr>
             <tr>
@@ -50,32 +60,48 @@
                 </td>
                 <td>
                     <br />
-                    <asp:Label class="LblTitulo" ID="Label4" runat="server" Text="Seleccione mesa disponible"></asp:Label>
+                    <asp:Label class="LblTitulo" ID="Label4" runat="server" Text="Cantidad de personas"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">
-                    <asp:Calendar class="calendario" ID="Calendar1" runat="server"></asp:Calendar>
-                    
-
+                    <asp:UpdatePanel ID="UPFecha" runat="server">
+                        <ContentTemplate>
+                            <asp:Calendar class="calendario" ID="Calendar1" OnSelectionChanged="Calendar1_SelectionChanged" AutoPostBack="true" runat="server"></asp:Calendar>
+                        </ContentTemplate>
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="Calendar1" EventName="selectionChanged" />
+                        </Triggers>
+                    </asp:UpdatePanel>
                 </td>
                 <td style="vertical-align: top">
-                    <asp:DropDownList class="Drop" ID="DropMesas" runat="server">
-                        <asp:ListItem Text="MESAS" Value="0" />
+                    <asp:DropDownList class="Drop" ID="DropMesas" AutoPostBack="true" runat="server">
                     </asp:DropDownList>
-
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2"></td>
                 <td>
-
-                    <asp:Button class="BtnOK" ID="Button1" runat="server" Text="Reservar" />
+                    <asp:UpdatePanel ID="UPBtnOK" runat="server">
+                        <ContentTemplate>
+                            <asp:Button class="BtnOK" ID="Button1" runat="server" Text="Reservar" OnClick="Button1_Click" />
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                 </td>
             </tr>
         </table>
-
         <asp:TextBox ID="TxtCliente" type="Hidden" runat="server" placeholder="CLIENTE"></asp:TextBox>
-
     </div>
+
+    <asp:UpdateProgress ID="Cargando" runat="server">
+        <ProgressTemplate>
+            <div id="fondo"></div>
+            <div class="load-9">
+                <div class="spinner">
+                    <div class="bubble-1"></div>
+                    <div class="bubble-2"></div>
+                </div>
+            </div>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
 </asp:Content>

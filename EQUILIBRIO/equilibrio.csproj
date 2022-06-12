@@ -111,6 +111,7 @@
     <Compile Include="Clases\Entidades.cs" />
     <Compile Include="Controller\ComunaController.cs" />
     <Compile Include="Controller\DireccionController.cs" />
+    <Compile Include="Controller\FechaController.cs" />
     <Compile Include="Controller\HoraController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\MesaController.cs" />

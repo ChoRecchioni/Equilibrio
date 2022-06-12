@@ -76,7 +76,7 @@
 
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="UpdateMain" runat="server">
-        <ContentTemplate>
+        <ContentTemplate>            
             <asp:HiddenField ID="HdnRolCliente" runat="server" />
 
             <div class="Contenedor">

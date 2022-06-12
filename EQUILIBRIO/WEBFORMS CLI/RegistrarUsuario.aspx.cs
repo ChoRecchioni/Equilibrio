@@ -22,13 +22,13 @@ namespace equilibrio.WEBFORMS
 
             if (!Page.IsPostBack)
             {
-                cargarDropComuna();
-                cargarDropRegion();
+                CargarDropComuna();
+                CargarDropRegion();
             }
 
         }
 
-        public void cargarDropComuna()
+        public void CargarDropComuna()
         {
 
             DropComuna.DataSource = from com in ComunaController.FindAll()
@@ -43,7 +43,7 @@ namespace equilibrio.WEBFORMS
             DropComuna.DataBind();
         }
 
-        public void cargarDropRegion()
+        public void CargarDropRegion()
         {
 
             DropRegion.DataSource = from reg in RegionController.FindAll()
