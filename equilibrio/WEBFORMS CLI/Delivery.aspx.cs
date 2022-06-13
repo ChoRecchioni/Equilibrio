@@ -15,11 +15,7 @@ namespace equilibrio.WEBFORMS_CLI
         {
             Usuario u = (Usuario)Session["ActiveUser"];
 
-            if (u != null)
-            {
-                Response.Redirect("Delivery.aspx");
-            }
-            else
+            if (u == null)
             {
                 Response.Redirect("IniciarSesión.aspx");
             }

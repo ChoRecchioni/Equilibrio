@@ -29,13 +29,20 @@
             margin-left: 25px;
         }
     </style>
+    <script>
+        function EditarReserva(id) {
+            window.location = "RegistrarReserva.aspx?Id=" + id;
+            return false;
+        }
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CPHtitulos" runat="server">
     <asp:Label class="titulos" ID="Label2" runat="server" Text="MIS RESERVAS"></asp:Label><br />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="divReservas" runat="server" class="Contenedor">
-        <table class="auto-style1">
+        <%--<table class="auto-style1">
             <tr>
                 <td class="auto-style2">
                     <asp:Label class="TxtReserva" ID="Label1" runat="server" Text="FECHA:"></asp:Label>
@@ -72,7 +79,7 @@
 
                 </td>
             </tr>
-        </table>
+        </%--table>--%>
 
 
     </div>

@@ -26,17 +26,13 @@ namespace equilibrio.WEBFORMS
 
             Usuario u = (Usuario)Session["ActiveUser"];
 
-            if (u != null)
-            {
-                Response.Redirect("MisReservas.aspx");
-            }
-            else
+            if (u == null)
             {
                 Response.Redirect("IniciarSesión.aspx");
             }
         }
 
-        private void CargaReservas(Usuario usuario)
+        public void CargaReservas(Usuario usuario)
         {
             UsuarioController.CargarUsuario();
             ReservaController.CargarReserva();
@@ -74,7 +70,7 @@ namespace equilibrio.WEBFORMS
                 Label lblHora = new Label();
                 lblHora.Attributes.Add("class", "TxtReserva");
                 lblHora.Text = item.FechaHora.ToShortTimeString();
-                LblHora.CssClass = "lblReserva";
+                lblHora.CssClass = "lblReserva";
 
                 tdHora.Controls.Add(lblTituloHora);
                 tdHora.Controls.Add(lblHora);
@@ -86,6 +82,8 @@ namespace equilibrio.WEBFORMS
                 btnEditar.Height = 20;
                 btnEditar.Width = 20;
                 btnEditar.ImageUrl = "~/IMG/edit.png";
+                btnEditar.OnClientClick = "return EditarReserva('" + item.Codigo.ToString() + "');";
+                btnEditar.ID = item.Codigo.ToString();
                 tdbtnEditar.Controls.Add(btnEditar);
                 trFechaHora.Controls.Add(tdbtnEditar);
 
@@ -95,6 +93,8 @@ namespace equilibrio.WEBFORMS
                 btnEliminar.Height = 20;
                 btnEliminar.Width = 20;
                 btnEliminar.ImageUrl = "~/IMG/delete.png";
+                btnEliminar.Click += EliminarReserva;
+                btnEliminar.ID = item.Codigo.ToString();
                 tdbtnEliminar.Controls.Add(btnEliminar);
                 trFechaHora.Controls.Add(tdbtnEliminar);
 
@@ -107,7 +107,7 @@ namespace equilibrio.WEBFORMS
 
                 Label lblLocal = new Label();
                 lblLocal.Text = item.Local.Nombre;
-                LblLocal.CssClass = "lblReserva";
+                lblLocal.CssClass = "lblReserva";
 
                 tdLocal.Controls.Add(lblTituloLocal);
                 tdLocal.Controls.Add(lblLocal);
@@ -118,7 +118,7 @@ namespace equilibrio.WEBFORMS
                 tdDireccion.Attributes.Add("colspan", "4");
 
                 Label lblTituloDireccion = new Label();
-                lblTituloDireccion.Text = "DIRECCIÖN:";
+                lblTituloDireccion.Text = "DIRECCIÓN:";
 
                 Label lblDireccion = new Label();
                 lblDireccion.Text = item.Local.Nombre;
@@ -150,6 +150,18 @@ namespace equilibrio.WEBFORMS
 
                 divReservas.Controls.Add(Table);
             }
+        }
+
+        private void EliminarReserva(object sender, ImageClickEventArgs e)
+        {
+
+
+            ReservaController.RemoveReserva(((ImageButton)sender).ID).ToString();
+        }
+
+        protected void BtnEditar_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("RegistrarReserva.aspx?id=" + ((ImageButton)sender).ID);
 
         }
     }

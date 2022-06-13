@@ -15,14 +15,11 @@ namespace equilibrio.WEBFORMS
         {
             Usuario u = (Usuario)Session["ActiveUser"];
 
-            if (u != null)
-            {
-                Response.Redirect("AgregarReseña.aspx");
-            }
-            else
+            if (u == null)
             {
                 Response.Redirect("IniciarSesión.aspx");
-            }
+            } 
+
             ReseñaController.CargarReseña();
             LocalController.CargarLocales();
 
