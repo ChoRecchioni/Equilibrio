@@ -21,6 +21,7 @@ namespace equilibrio.WEBFORMS_CLI
 
         public void CargarGrid()
         {
+            ReseñaController.CargarReseña();
 
            var listado = from re in ReseñaController.FindAll()
                                    select new
