@@ -100,7 +100,8 @@ namespace equilibrio.Controller
         {
             if (listaArticulo.Count < 1)
             {
-                AddAarticulo(1, "papas fritas", "10.000", "Ricas papas fritas de huerto sabor natural 100% real no fake");
+                AddAarticulo("1", "papas fritas", "10.000", "Ricas papas fritas de huerto sabor natural 100% real no fake");
+                AddAarticulo("2", "pescado", "15.000", "Pescado de tierra");
             }
         }
 

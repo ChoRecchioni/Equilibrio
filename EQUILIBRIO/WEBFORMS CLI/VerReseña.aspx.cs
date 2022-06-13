@@ -16,11 +16,12 @@ namespace equilibrio.WEBFORMS_CLI
         {
             CargarDropLocales();
             CargarGrid();
-            ReseñaController.CargarReseña();
         }
 
         public void CargarGrid()
         {
+
+            ReseñaController.CargarReseña();
 
            var listado = from re in ReseñaController.FindAll()
                                    select new
