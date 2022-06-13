@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -42,7 +43,7 @@ namespace equilibrio.WEBFORMS
             var mesas = MesaController.FindAll().Where(m => m.Local.Codigo == int.Parse(DropLocal.SelectedValue));
 
             //for (int hora = 12; hora < 21; hora++)
-            for (int hora = 12; hora < 15; hora++)
+            for (int hora = int.Parse(ConfigurationManager.AppSettings["HoraInicio"]); hora < int.Parse(ConfigurationManager.AppSettings["HoraTermino"]); hora++)
             {
                 var reservasLocal = ReservaController.FindAll().Where(r => r.Local.Codigo == int.Parse(DropLocal.SelectedValue) && r.FechaHora == Calendar1.SelectedDate.AddHours(hora));
 
@@ -60,28 +61,25 @@ namespace equilibrio.WEBFORMS
             MesaController.CargarMesa();
             ReservaController.CargarReserva();
 
-            var reservas = ReservaController.FindAll().Where(r => r.Local.Codigo == int.Parse(codLocal) && r.FechaHora.Date == e.Day.Date);
             var mesas = MesaController.FindAll().Where(m => m.Local.Codigo == int.Parse(codLocal));
 
-            if (e.Day.Date.DayOfWeek == DayOfWeek.Sunday)
+            //deshabilita domingos y dias anteriores a hoy.
+            if (e.Day.Date.DayOfWeek == DayOfWeek.Sunday || e.Day.Date < DateTime.Now.Date)
                 e.Day.IsSelectable = false;
             else
             {
-                if ((mesas.Count() * 0.25) - reservas.Count() > 0)
+                e.Day.IsSelectable = false;
+
+                for (int hora = int.Parse(ConfigurationManager.AppSettings["HoraInicio"]); hora < int.Parse(ConfigurationManager.AppSettings["HoraTermino"]); hora++)
                 {
-                    e.Day.IsSelectable = true;
+                    var reservasLocal = ReservaController.FindAll().Where(r => r.Local.Codigo == int.Parse(DropLocal.SelectedValue) && r.FechaHora == e.Day.Date.AddHours(hora));
+                    if ((mesas.Count() * 0.25) - reservasLocal.Count() > 0)
+                    {
+                        e.Day.IsSelectable = true;
+                        break;
+                    }
                 }
             }
-            //foreach (var fecha in lista)
-            //{
-            //    if (e.Day.Date == fecha.Fecha && e.Day.Date > DateTime.Now)
-            //    {
-            //        e.Day.IsSelectable = true;
-            //        break;
-            //    }
-            //    else
-            //        e.Day.IsSelectable = false;
-            //}
         }
 
         protected void DropLocal_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,9 +98,14 @@ namespace equilibrio.WEBFORMS
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            //Check.SelectedValue
+
+            Mesa mesa = MesaController.FindMesa(int.Parse(DropLocal.SelectedValue), int.Parse(Check.SelectedValue), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)));
+            if (mesa != null)
+            {
+                ReservaController.AddReserva(ReservaController.ResAI().ToString(), mesa.Codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).Codigo.ToString());
+            }
             System.Threading.Thread.Sleep(2500);
-
-
         }
 
 

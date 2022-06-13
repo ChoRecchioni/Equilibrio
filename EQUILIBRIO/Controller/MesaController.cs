@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using equilibrio.Clases;
-using equilibrio.Controller;
 
 namespace equilibrio.Controller
 {
@@ -43,7 +41,6 @@ namespace equilibrio.Controller
         //Metodo para encontrar un objeto
         public static Mesa FindMesa(string cod)
         {
-
             try
             {
                 foreach (Mesa mesa in FindAll())
@@ -59,6 +56,26 @@ namespace equilibrio.Controller
             catch (Exception)
             {
 
+                return null;
+            }
+
+        }
+
+        public static Mesa FindMesa(int codLocal, int comensales, DateTime fecha)
+        {
+            try
+            {
+                var mesas = FindAll().Where(m => m.Local.Codigo == codLocal && m.Comensales == comensales);
+                var mesasReservadas = ReservaController.FindAll().Where(r => r.Local.Codigo == codLocal && r.FechaHora == fecha);
+                var lista = mesas.Where(m => !mesasReservadas.Any(mr => mr.Mesa.Codigo == m.Codigo));
+
+                if (lista.Count() > 0)
+                    return lista.FirstOrDefault();
+
+                return null;
+            }
+            catch (Exception)
+            {
                 return null;
             }
 

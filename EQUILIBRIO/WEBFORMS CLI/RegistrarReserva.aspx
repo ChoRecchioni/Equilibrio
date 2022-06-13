@@ -76,8 +76,8 @@
                 </td>
                 <td style="vertical-align: top">  
                         <asp:CheckBoxList id="Check" runat="server">
-                            <asp:ListItem Value="1">2 personas</asp:ListItem>
-                            <asp:ListItem Value="2">4 personas</asp:ListItem>
+                            <asp:ListItem Value="2">2 personas</asp:ListItem>
+                            <asp:ListItem Value="4">4 personas</asp:ListItem>
                         </asp:CheckBoxList>
                 </td>
             </tr>

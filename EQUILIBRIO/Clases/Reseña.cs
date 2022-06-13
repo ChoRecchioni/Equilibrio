@@ -8,7 +8,7 @@ namespace equilibrio.Clases
     public class Reseña
     {
         private int codigo;
-        private Sede sede;
+        private Local local;
         private int puntuacion;
         private string comentario;
         private Usuario usuario;
@@ -20,10 +20,10 @@ namespace equilibrio.Clases
             set { codigo = value; }
         }
 
-        public Sede Sede
+        public Local Local
         {
-            get { return sede; }
-            set { sede = value; }
+            get { return local; }
+            set { local = value; }
         }
 
         public int Puntuacion
