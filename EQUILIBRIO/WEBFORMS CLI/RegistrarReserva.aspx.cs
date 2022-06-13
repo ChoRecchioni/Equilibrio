@@ -98,7 +98,7 @@ namespace equilibrio.WEBFORMS
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //Check.SelectedValue
+            ///TODO: Generar validaciones de los par´rametros de entrada: Sesion de Usuario, Local y Horas
 
             Mesa mesa = MesaController.FindMesa(int.Parse(DropLocal.SelectedValue), int.Parse(Check.SelectedValue), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)));
             if (mesa != null)

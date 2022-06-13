@@ -24,7 +24,7 @@ namespace equilibrio.Controller
                     Mesa = mesa,
                     FechaHora = fecha,
                     Local = LocalController.FindLocal(codLocal),
-                    Usuario = UsuarioController.FindUser(codUsuario)
+                    Usuario = UsuarioController.FindUsuario(codUsuario)
                 });
 
                 return "Reserva agregada.";
@@ -100,16 +100,17 @@ namespace equilibrio.Controller
 
         public static void CargarReserva()
         {
+            UsuarioController.CargarUsuario();
             LocalController.CargarLocales();
             MesaController.CargarMesa();
 
             if (listaReserva.Count < 1)
             {
-                AddReserva("1", "16", new DateTime(2022, 8, 3, 13, 0, 0), "1", "1");
-                AddReserva("2", "2", new DateTime(2022, 8, 5, 12, 0, 0), "1", "1");
-                AddReserva("3", "2", new DateTime(2022, 8, 7, 12, 0, 0), "1", "1");
-                AddReserva("4", "2", new DateTime(2022, 8, 10, 12, 0, 0), "1", "1");
-                AddReserva("5", "2", new DateTime(2022, 8, 10, 12, 0, 0), "1", "1");
+                AddReserva("1", "16", new DateTime(2022, 8, 3, 13, 0, 0), "1", "2");
+                AddReserva("2", "2", new DateTime(2022, 8, 5, 12, 0, 0), "1", "2");
+                AddReserva("3", "2", new DateTime(2022, 8, 7, 12, 0, 0), "1", "2");
+                AddReserva("4", "2", new DateTime(2022, 8, 10, 12, 0, 0), "1", "2");
+                AddReserva("5", "2", new DateTime(2022, 8, 10, 12, 0, 0), "1", "2");
                 AddReserva("6", "2", new DateTime(2022, 8, 10, 12, 0, 0), "1", "1");
                 AddReserva("7", "2", new DateTime(2022, 8, 10, 12, 0, 0), "1", "1");
                 AddReserva("8", "4", new DateTime(2022, 8, 10, 13, 0, 0), "1", "1");
