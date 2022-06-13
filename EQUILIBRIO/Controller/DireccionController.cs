@@ -113,6 +113,11 @@ namespace equilibrio.Controller
             if (listaDireccion.Count < 1)
             {
                 AddDireccion("1", "casa", "casa 1", "1", "1", "1");
+                AddDireccion("2", "El Florido", "El florido 2", "2", "2", "2");
+                AddDireccion("3", "Santiacentro", "Santiacentro 3", "3", "3", "3");
+                AddDireccion("4", "Mar del viña", "Mar del viña 4", "4", "4", "4");
+                AddDireccion("5", "Muipa", "Muipa 5", "5", "5", "5");
+                AddDireccion("6", "Noobvidencia", "Noobvidencia 6", "6", "5", "5");
 
             }
         }
