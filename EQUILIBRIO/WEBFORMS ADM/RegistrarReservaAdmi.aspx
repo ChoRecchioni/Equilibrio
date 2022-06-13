@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WEBFORMS CLI/Cliente.Master" AutoEventWireup="true" CodeBehind="RegistrarReserva.aspx.cs" Inherits="equilibrio.WEBFORMS.Formulario_web16" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WEBFORMS ADM/Admin.Master" AutoEventWireup="true" CodeBehind="RegistrarReservaAdmi.aspx.cs" Inherits="equilibrio.WEBFORMS_ADM.Formulario_web17" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
@@ -9,13 +8,17 @@
         .auto-style2 {
             width: 550px;
         }
+        .auto-style3 {
+            width: 550px;
+            margin-left: 80px;
+        }
     </style>
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="CPHtitulos" runat="server">
-    <asp:Label class="titulos" ID="Label1" runat="server" Text="Nueva Reserva"></asp:Label><br />
+<asp:Content ID="Content2" ContentPlaceHolderID="CPHtitulos" runat="server">
+<asp:Label class="titulos" ID="Label1" runat="server" Text="Nueva Reserva"></asp:Label><br />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+ <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
     <div class="Contenedor">
         <table class="auto-style1">
@@ -84,7 +87,9 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2"></td>
+                <td class="auto-style2">
+                    <asp:Label class="LblTitulo" ID="LbCliente" runat="server" Text="Nombre del Cliente"></asp:Label>
+                </td>
                 <td>
                     <asp:UpdatePanel ID="UPBtnOK" runat="server">
                         <ContentTemplate>
@@ -92,6 +97,29 @@
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">
+                    <asp:TextBox class="Txt" ID="TxtNombre" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" class="ValidadorRegistro" runat="server" ControlToValidate="TxtNombre" ErrorMessage="Ingrese el nombre del cliente"></asp:RequiredFieldValidator>
+                </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style3">
+                    <asp:Label class="LblTitulo" ID="LbTelefono" runat="server" Text="Numero del Cliente"></asp:Label>
+                </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style3">
+                    <asp:TextBox class="Txt" ID="TxtNumero" runat="server" ></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" class="ValidadorRegistro" runat="server" ControlToValidate="TxtNumero" ErrorMessage="Ingrese un numero de contacto"></asp:RequiredFieldValidator>
+                </td>
+                <td>
+                    &nbsp;</td>
             </tr>
         </table>
         <asp:TextBox ID="TxtCliente" type="Hidden" runat="server" placeholder="CLIENTE"></asp:TextBox>

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using equilibrio.Clases;
-using equilibrio.Controller;
 
 namespace equilibrio.Controller
 {
@@ -13,18 +12,15 @@ namespace equilibrio.Controller
 
         //Metodo de registrar Local
 
-        public static string AddLocal(string codigo, string nombre, string codDir, string telefono)
+        public static string AddLocal(string codigo, string nombre)
         {
-           Direccion direccion = DireccionController.FindDireccion(codDir);
             try
             {
                 listaLocales.Add(new Local()
                 {
-                    
+
                     Codigo = int.Parse(codigo),
                     Nombre = nombre,
-                    Direccion = direccion,
-                    Telefono = telefono
                 });
 
                 return "Local agregado.";
@@ -46,15 +42,14 @@ namespace equilibrio.Controller
         //Metodo para precargar regiones
         public static void CargarLocales()
         {
-            DireccionController.CargarDirección();
 
             if (listaLocales.Count < 1)
             {
-                AddLocal("1", "LA FLORIDA","2", "101");
-                AddLocal("2", "SANTIAGO CENTRO","3", "102");
-                AddLocal("3", "VIÑA DEL MAR","4", "103");
-                AddLocal("4", "MAIPU", "5", "104");
-                AddLocal("5", "PROVIDENCIA", "6", "105");
+                AddLocal("1", "LA FLORIDA");
+                AddLocal("2", "SANTIAGO CENTRO");
+                AddLocal("3", "VIÑA DEL MAR");
+                AddLocal("4", "MAIPU");
+                AddLocal("5", "PROVIDENCIA");
             }
         }
 

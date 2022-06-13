@@ -6,7 +6,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using System.Windows;
 using equilibrio.Clases;
 using equilibrio.Controller;
 
@@ -24,9 +23,20 @@ namespace equilibrio.WEBFORMS
                     CargaReservas(usuario);
                 }
             }
+
+            Usuario u = (Usuario)Session["ActiveUser"];
+
+            if (u != null)
+            {
+                Response.Redirect("MisReservas.aspx");
+            }
+            else
+            {
+                Response.Redirect("IniciarSesión.aspx");
+            }
         }
 
-        public void CargaReservas(Usuario usuario)
+        private void CargaReservas(Usuario usuario)
         {
             UsuarioController.CargarUsuario();
             ReservaController.CargarReserva();
@@ -44,27 +54,27 @@ namespace equilibrio.WEBFORMS
                 Label lblTituloFecha = new Label();
                 lblTituloFecha.Attributes.Add("class", "TxtReserva");
                 lblTituloFecha.Text = "FECHA:";
-
+                
                 Label lblFecha = new Label();
                 lblFecha.Attributes.Add("class", "TxtReserva");
                 lblFecha.Text = item.FechaHora.ToShortDateString();
                 lblFecha.CssClass = "lblReserva";
-
+                
                 tdFecha.Controls.Add(lblTituloFecha);
                 tdFecha.Controls.Add(lblFecha);
                 trFechaHora.Controls.Add(tdFecha);
 
                 HtmlGenericControl tdHora = new HtmlGenericControl("td");
                 tdFecha.Attributes.Add("class", "auto-style3");
-
+                
                 Label lblTituloHora = new Label();
                 lblTituloHora.Attributes.Add("class", "TxtReserva");
                 lblTituloHora.Text = "HORA:";
-
+                
                 Label lblHora = new Label();
                 lblHora.Attributes.Add("class", "TxtReserva");
                 lblHora.Text = item.FechaHora.ToShortTimeString();
-                lblHora.CssClass = "lblReserva";
+                LblHora.CssClass = "lblReserva";
 
                 tdHora.Controls.Add(lblTituloHora);
                 tdHora.Controls.Add(lblHora);
@@ -76,10 +86,6 @@ namespace equilibrio.WEBFORMS
                 btnEditar.Height = 20;
                 btnEditar.Width = 20;
                 btnEditar.ImageUrl = "~/IMG/edit.png";
-                //btnEditar.Click += new ImageClickEventHandler(BtnEditar_Click);
-                btnEditar.OnClientClick = "return EditarReserva('" + item.Codigo.ToString() + "');";
-                btnEditar.ID = item.Codigo.ToString();
-                
                 tdbtnEditar.Controls.Add(btnEditar);
                 trFechaHora.Controls.Add(tdbtnEditar);
 
@@ -101,7 +107,7 @@ namespace equilibrio.WEBFORMS
 
                 Label lblLocal = new Label();
                 lblLocal.Text = item.Local.Nombre;
-                lblLocal.CssClass = "lblReserva";
+                LblLocal.CssClass = "lblReserva";
 
                 tdLocal.Controls.Add(lblTituloLocal);
                 tdLocal.Controls.Add(lblLocal);
@@ -115,7 +121,7 @@ namespace equilibrio.WEBFORMS
                 lblTituloDireccion.Text = "DIRECCIÖN:";
 
                 Label lblDireccion = new Label();
-                lblDireccion.Text = item.Local.Direccion.Alias;
+                lblDireccion.Text = item.Local.Nombre;
                 lblDireccion.CssClass = "lblReserva";
 
                 tdDireccion.Controls.Add(lblTituloDireccion);
@@ -130,7 +136,7 @@ namespace equilibrio.WEBFORMS
                 lblTituloTelefono.Text = "TELÉFONO:";
 
                 Label lblTelefono = new Label();
-                lblTelefono.Text = item.Local.Telefono;
+                lblTelefono.Text = item.Local.Nombre;
                 lblTelefono.CssClass = "lblReserva";
 
                 tdTelefono.Controls.Add(lblTituloTelefono);
@@ -146,16 +152,5 @@ namespace equilibrio.WEBFORMS
             }
 
         }
-
-        //protected void BtnEdit_click(object sender, EventArgs e)
-        //{
-        //}
-
-        protected void BtnEditar_Click(object sender, ImageClickEventArgs e)
-        {
-            Response.Redirect("RegistrarReserva.aspx?id=" + ((ImageButton)sender).ID);
-
-        }
-
     }
 }

@@ -48,7 +48,7 @@
                     <a href="#" class="subm"><span>RESERVAS<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
                     <ul class="submenu">
                         <li class="Reservas"><a href="GestionarReservas.aspx">RESERVAS</a></li>
-                        <li class="AddReserva"><a href="RegistrarReserva.aspx">NUEVA RESERVA</a></li>
+                        <li class="AddReserva"><a href="RegistrarReservaAdmi.aspx">NUEVA RESERVA</a></li>
                     </ul>
                 </li>
                 <!--Fin submenu 1-->

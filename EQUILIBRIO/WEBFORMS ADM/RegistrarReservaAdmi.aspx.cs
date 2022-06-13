@@ -8,32 +8,21 @@ using System.Web.UI.WebControls;
 using equilibrio.Clases;
 using equilibrio.Controller;
 
-namespace equilibrio.WEBFORMS
+namespace equilibrio.WEBFORMS_ADM
 {
-    public partial class Formulario_web16 : System.Web.UI.Page
+    public partial class Formulario_web17 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Usuario u = (Usuario)Session["ActiveUser"];
-
-            if (u != null)
-            {
-                Response.Redirect("RegistrarReserva.aspx");
-            }
-            else
-            {
-                Response.Redirect("IniciarSesión.aspx");
-            }
-
-
+            
             LocalController.CargarLocales();
 
             if (!Page.IsPostBack)
             {
                 CargarDropLocal();
             }
-        }
 
+        }
         protected void CargarDropLocal()
         {
             DropLocal.DataSource = from com in LocalController.FindAll()
@@ -108,8 +97,6 @@ namespace equilibrio.WEBFORMS
         {
         }
 
-
-
         protected void Button1_Click(object sender, EventArgs e)
         {
             ///TODO: Generar validaciones de los par´rametros de entrada: Sesion de Usuario, Local y Horas
@@ -119,10 +106,8 @@ namespace equilibrio.WEBFORMS
             {
                 ReservaController.AddReserva(ReservaController.ResAI().ToString(), mesa.Codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).Codigo.ToString());
             System.Threading.Thread.Sleep(2500);
-                Response.Redirect("MisReservas.aspx");
+                Response.Redirect("GestionarReservas.aspx");
             }
         }
-
-
     }
 }

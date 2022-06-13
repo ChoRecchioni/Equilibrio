@@ -14,6 +14,18 @@ namespace equilibrio.WEBFORMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuario u = (Usuario)Session["ActiveUser"];
+
+            if (u != null)
+            {
+                Response.Redirect("RegistrarReserva.aspx");
+            }
+            else
+            {
+                Response.Redirect("IniciarSesión.aspx");
+            }
+
+
             LocalController.CargarLocales();
 
             if (!Page.IsPostBack)
@@ -96,28 +108,19 @@ namespace equilibrio.WEBFORMS
         {
         }
 
+
+
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string IdR = Request.QueryString["ID"];
+            ///TODO: Generar validaciones de los par´rametros de entrada: Sesion de Usuario, Local y Horas
 
-
-
-            ///TODO: Generar validaciones de los parámetros de entrada: Sesion de Usuario, Local y Horas
             Mesa mesa = MesaController.FindMesa(int.Parse(DropLocal.SelectedValue), int.Parse(Check.SelectedValue), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)));
             if (mesa != null)
             {
-                if (string.IsNullOrEmpty(IdR))
-                {
-                    ReservaController.AddReserva(ReservaController.ResAI().ToString(), mesa.Codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).Codigo.ToString());
-
-                }
-                else
-                {
-                    ReservaController.EditReserva(IdR, mesa.Codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).Codigo.ToString());
-                }
-            }
+                ReservaController.AddReserva(ReservaController.ResAI().ToString(), mesa.Codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).Codigo.ToString());
             System.Threading.Thread.Sleep(2500);
-            Response.Redirect("MisReservas.aspx");
+                Response.Redirect("MisReservas.aspx");
+            }
         }
 
 
