@@ -35,6 +35,32 @@
             return false;
         }
 
+        function EliminarReserva(id) {
+            if (confirm("Desea eliminar la reserva")) {
+                $.ajax({
+                    type: "post",
+                    url: "MisReservas.aspx/EliminarReserva",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify({ id: id }),
+                    dataType: "json",
+                    success: function (response) {
+                        if (!response.d.error) {
+                            alert(response.d.msg);
+                            window.location.reload();
+                        }
+                        else {
+                            alert(response.d.msg);
+                        }
+
+                    },
+                    error: function (response) {
+                        alert("Error: " + response.d.msg);
+                    },
+                    async: true
+                });
+            }
+            return false;
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CPHtitulos" runat="server">
@@ -80,7 +106,5 @@
                 </td>
             </tr>
         </%--table>--%>
-
-
     </div>
 </asp:Content>

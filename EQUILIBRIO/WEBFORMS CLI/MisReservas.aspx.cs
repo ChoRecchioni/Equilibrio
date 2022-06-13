@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
@@ -50,23 +51,23 @@ namespace equilibrio.WEBFORMS
                 Label lblTituloFecha = new Label();
                 lblTituloFecha.Attributes.Add("class", "TxtReserva");
                 lblTituloFecha.Text = "FECHA:";
-                
+
                 Label lblFecha = new Label();
                 lblFecha.Attributes.Add("class", "TxtReserva");
                 lblFecha.Text = item.FechaHora.ToShortDateString();
                 lblFecha.CssClass = "lblReserva";
-                
+
                 tdFecha.Controls.Add(lblTituloFecha);
                 tdFecha.Controls.Add(lblFecha);
                 trFechaHora.Controls.Add(tdFecha);
 
                 HtmlGenericControl tdHora = new HtmlGenericControl("td");
                 tdFecha.Attributes.Add("class", "auto-style3");
-                
+
                 Label lblTituloHora = new Label();
                 lblTituloHora.Attributes.Add("class", "TxtReserva");
                 lblTituloHora.Text = "HORA:";
-                
+
                 Label lblHora = new Label();
                 lblHora.Attributes.Add("class", "TxtReserva");
                 lblHora.Text = item.FechaHora.ToShortTimeString();
@@ -93,7 +94,7 @@ namespace equilibrio.WEBFORMS
                 btnEliminar.Height = 20;
                 btnEliminar.Width = 20;
                 btnEliminar.ImageUrl = "~/IMG/delete.png";
-                btnEliminar.Click += EliminarReserva;
+                btnEliminar.OnClientClick = "return EliminarReserva('" + item.Codigo.ToString() + "');";
                 btnEliminar.ID = item.Codigo.ToString();
                 tdbtnEliminar.Controls.Add(btnEliminar);
                 trFechaHora.Controls.Add(tdbtnEliminar);
@@ -152,17 +153,31 @@ namespace equilibrio.WEBFORMS
             }
         }
 
-        private void EliminarReserva(object sender, ImageClickEventArgs e)
+        [WebMethod]
+        public static object EliminarReserva(string id)
         {
-
-
-            ReservaController.RemoveReserva(((ImageButton)sender).ID).ToString();
+            //System.Windows.Forms.DialogResult result = System.Windows.Forms.MessageBox.Show("Esta seguro de eliminar su reserva?", "Eliminar Reserva", System.Windows.Forms.MessageBoxButtons.OKCancel, System.Windows.Forms.MessageBoxIcon.Exclamation);
+            //if (result.Equals(System.Windows.Forms.DialogResult.OK))
+            //{
+            try
+            {
+                ReservaController.RemoveReserva(id);
+                return new
+                {
+                    error = false,
+                    msg = "Reserva eliminada"
+                };
+            }
+            catch (Exception e)
+            {
+                return new
+                {
+                    error = true,
+                    msg = e.Message
+                };
+            }
+            //}
         }
 
-        protected void BtnEditar_Click(object sender, ImageClickEventArgs e)
-        {
-            Response.Redirect("RegistrarReserva.aspx?id=" + ((ImageButton)sender).ID);
-
-        }
     }
 }
