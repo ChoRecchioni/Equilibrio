@@ -63,7 +63,7 @@ namespace equilibrio.WEBFORMS
                 Label lblHora = new Label();
                 lblHora.Attributes.Add("class", "TxtReserva");
                 lblHora.Text = item.FechaHora.ToShortTimeString();
-                LblHora.CssClass = "lblReserva";
+                lblHora.CssClass = "lblReserva";
 
                 tdHora.Controls.Add(lblTituloHora);
                 tdHora.Controls.Add(lblHora);
@@ -96,7 +96,7 @@ namespace equilibrio.WEBFORMS
 
                 Label lblLocal = new Label();
                 lblLocal.Text = item.Local.Nombre;
-                LblLocal.CssClass = "lblReserva";
+                lblLocal.CssClass = "lblReserva";
 
                 tdLocal.Controls.Add(lblTituloLocal);
                 tdLocal.Controls.Add(lblLocal);
@@ -110,7 +110,7 @@ namespace equilibrio.WEBFORMS
                 lblTituloDireccion.Text = "DIRECCIÖN:";
 
                 Label lblDireccion = new Label();
-                lblDireccion.Text = item.Local.Nombre;
+                lblDireccion.Text = item.Local.Direccion.Alias;
                 lblDireccion.CssClass = "lblReserva";
 
                 tdDireccion.Controls.Add(lblTituloDireccion);
@@ -125,7 +125,7 @@ namespace equilibrio.WEBFORMS
                 lblTituloTelefono.Text = "TELÉFONO:";
 
                 Label lblTelefono = new Label();
-                lblTelefono.Text = item.Local.Nombre;
+                lblTelefono.Text = item.Local.Telefono;
                 lblTelefono.CssClass = "lblReserva";
 
                 tdTelefono.Controls.Add(lblTituloTelefono);
