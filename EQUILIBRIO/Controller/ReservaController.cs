@@ -118,6 +118,8 @@ namespace equilibrio.Controller
                 AddReserva("11", "1", new DateTime(2022, 8, 10, 13, 0, 0), "1", "1");
                 AddReserva("12", "1", new DateTime(2022, 8, 26, 12, 0, 0), "1", "1");
                 AddReserva("13", "1", new DateTime(2022, 8, 30, 16, 0, 0), "1", "1");
+                AddReserva("13", "1", new DateTime(2022, 8, 30, 16, 0, 0), "1", "3");
+
             }
         }
 

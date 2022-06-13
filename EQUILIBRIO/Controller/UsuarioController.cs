@@ -58,6 +58,34 @@ namespace equilibrio.Controller
             }
         }
 
+        //Metodo de validar usuario en la lista
+        public static Usuario FindUser(string username)
+        {
+            foreach (Usuario item in listaUsuario)
+            {
+                if (item.Nombre.Equals(username))
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+        public static Usuario FindUser(int codigo)
+        {
+            return null;
+        }
+        public static Usuario FindUserRut(string rut)
+        {
+            foreach (Usuario item in listaUsuario)
+            {
+                if (item.RUT.Equals(rut))
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
         //Metodo para editar Usuario
         public static string EditUsuario(string codigo, string rut, string nombre, string apellido, string telefono, string pass, string codDireccion)
         {
@@ -88,22 +116,7 @@ namespace equilibrio.Controller
             return "Usuario removido de la lista";
         }
 
-        //Metodo de validar usuario en la lista
-        public static Usuario FindUser(string username)
-        {
-            foreach (Usuario item in listaUsuario)
-            {
-                if (item.Nombre.Equals(username))
-                {
-                    return item;
-                }
-            }
-            return null;
-        }
-        public static Usuario FindUser(int codigo)
-        {
-            return null;
-        }
+        
 
         //Metodo para precargar Admin y Cliente
         public static void CargarUsuario()
@@ -115,6 +128,7 @@ namespace equilibrio.Controller
             {
                 AddUsuario(1, "101", "admin", "admin", "569", "admin", "1", "1");
                 AddUsuario(2, "202", "cliente", "cliente", "569", "cliente", "1", "2");
+                AddUsuario(3, "25929867-9", "sofia", "sofia", "5691111", "sofia", "1", "2");
             }
         }
 
