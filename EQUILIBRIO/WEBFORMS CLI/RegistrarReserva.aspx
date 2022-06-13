@@ -76,12 +76,16 @@
      
                 </td>
                 <td style="vertical-align: top">
-                    <asp:CheckBoxList ID="Check" runat="server">
+
+                    <asp:RadioButtonList ID="Check" runat="server">
+
                         <asp:ListItem Value="2">2 personas</asp:ListItem>
                         <asp:ListItem Value="4">4 personas</asp:ListItem>
-                    </asp:CheckBoxList>
-                   
+
+                    </asp:RadioButtonList>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" class="ValidadorRegistro" ControlToValidate="Check" runat="server" ErrorMessage="seleccione una de las opciones "></asp:RequiredFieldValidator>
                 </td>
+                
             </tr>
             <tr>
                 <td class="auto-style2"></td>
@@ -108,4 +112,5 @@
             </div>
         </ProgressTemplate>
     </asp:UpdateProgress>
+   
 </asp:Content>

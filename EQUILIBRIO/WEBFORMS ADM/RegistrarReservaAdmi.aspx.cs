@@ -105,7 +105,7 @@ namespace equilibrio.WEBFORMS_ADM
             if (mesa != null)
             {
                 ReservaController.AddReserva(ReservaController.ResAI().ToString(), mesa.Codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).Codigo.ToString());
-            System.Threading.Thread.Sleep(2500);
+                System.Threading.Thread.Sleep(2500);
                 Response.Redirect("GestionarReservas.aspx");
             }
         }

@@ -127,6 +127,6 @@ namespace equilibrio.WEBFORMS
             Response.Redirect("MisReservas.aspx");
         }
 
-
+        
     }
 }
