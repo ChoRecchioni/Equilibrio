@@ -89,9 +89,9 @@ namespace equilibrio.Controller
 
 
         }
-        // Metodo para eliminar Usuario
+        // Metodo para eliminar Reseña
 
-        public static string RemoveUsuario(string cod)
+        public static string RemoveReseña(string cod)
         {
             listaReseña.Remove(FindReseña(cod));
 

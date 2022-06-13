@@ -123,6 +123,7 @@
     <Compile Include="Clases\Reseña.cs" />
     <Compile Include="Clases\Role.cs" />
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Controller\ArticuloController.cs" />
     <Compile Include="Controller\ComunaController.cs" />
     <Compile Include="Controller\DireccionController.cs" />
     <Compile Include="Controller\LoginController.cs" />
