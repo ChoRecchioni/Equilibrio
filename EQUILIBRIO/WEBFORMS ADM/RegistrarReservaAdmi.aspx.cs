@@ -104,6 +104,7 @@ namespace equilibrio.WEBFORMS_ADM
             Mesa mesa = MesaController.FindMesa(int.Parse(DropLocal.SelectedValue), int.Parse(Check.SelectedValue), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)));
             if (mesa != null)
             {
+                //modificar usuario (debe llegar nombre y telefono)
                 ReservaController.AddReserva(ReservaController.ResAI().ToString(), mesa.Codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).Codigo.ToString());
                 System.Threading.Thread.Sleep(2500);
                 Response.Redirect("GestionarReservas.aspx");

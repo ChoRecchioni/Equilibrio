@@ -156,9 +156,6 @@ namespace equilibrio.WEBFORMS
         [WebMethod]
         public static object EliminarReserva(string id)
         {
-            //System.Windows.Forms.DialogResult result = System.Windows.Forms.MessageBox.Show("Esta seguro de eliminar su reserva?", "Eliminar Reserva", System.Windows.Forms.MessageBoxButtons.OKCancel, System.Windows.Forms.MessageBoxIcon.Exclamation);
-            //if (result.Equals(System.Windows.Forms.DialogResult.OK))
-            //{
             try
             {
                 ReservaController.RemoveReserva(id);
@@ -176,8 +173,6 @@ namespace equilibrio.WEBFORMS
                     msg = e.Message
                 };
             }
-            //}
         }
-
     }
 }

@@ -36,7 +36,7 @@
         }
 
         function EliminarReserva(id) {
-            if (confirm("Desea eliminar la reserva")) {
+            if (confirm("Desea eliminar la reserva?")) {
                 $.ajax({
                     type: "post",
                     url: "MisReservas.aspx/EliminarReserva",
@@ -51,7 +51,6 @@
                         else {
                             alert(response.d.msg);
                         }
-
                     },
                     error: function (response) {
                         alert("Error: " + response.d.msg);

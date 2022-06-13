@@ -523,8 +523,9 @@ input#ContentPlaceHolder1_TxtPrecio.TxtCarta {
     margin-top: 10px;
 }
 
-.Calendario {
+.calendario {
     width: 350px;
+    margin-bottom: 20px;
 }
 
 .Producto {
