@@ -69,14 +69,14 @@ namespace equilibrio.Controller
 
         //Metodo para editar Reserva
 
-        public static string EditReserva(string codigo, DateTime fecha, string codLocal, string codMesa, string codUsuario)
+        public static string EditReserva(string codigo, string codMesa, DateTime fecha, string codLocal, string codUsuario)
         {
             try
             {
                 Reserva reserva = FindReserva(codigo);
+                reserva.Mesa = MesaController.FindMesa(codMesa);
                 reserva.FechaHora = fecha;
                 reserva.Local = LocalController.FindLocal(codLocal);
-                reserva.Mesa = MesaController.FindMesa(codMesa);
                 reserva.Usuario = UsuarioController.FindUser(codUsuario);
 
                 return "Reserva Modificada";

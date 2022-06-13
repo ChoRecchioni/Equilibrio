@@ -98,14 +98,26 @@ namespace equilibrio.WEBFORMS
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            ///TODO: Generar validaciones de los par´rametros de entrada: Sesion de Usuario, Local y Horas
+            string IdR = Request.QueryString["ID"];
 
+
+
+            ///TODO: Generar validaciones de los parámetros de entrada: Sesion de Usuario, Local y Horas
             Mesa mesa = MesaController.FindMesa(int.Parse(DropLocal.SelectedValue), int.Parse(Check.SelectedValue), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)));
             if (mesa != null)
             {
-                ReservaController.AddReserva(ReservaController.ResAI().ToString(), mesa.Codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).Codigo.ToString());
+                if (string.IsNullOrEmpty(IdR))
+                {
+                    ReservaController.AddReserva(ReservaController.ResAI().ToString(), mesa.Codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).Codigo.ToString());
+
+                }
+                else
+                {
+                    ReservaController.EditReserva(IdR, mesa.Codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).Codigo.ToString());
+                }
             }
             System.Threading.Thread.Sleep(2500);
+            Response.Redirect("MisReservas.aspx");
         }
 
 
