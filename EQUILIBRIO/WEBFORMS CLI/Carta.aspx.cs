@@ -13,15 +13,13 @@ namespace equilibrio.WEBFORMS_CLI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                GenerarArticulo();
-            }
+            GenerarArticulo();            
         }
 
 
         public void GenerarArticulo()
         {
+            CategoriaController.CargarCategoria();
             ArticuloController.CargarArticulo();
 
             var listadoArt = from ar in ArticuloController.FindAll()
@@ -50,7 +48,7 @@ namespace equilibrio.WEBFORMS_CLI
 
                 divCat.Controls.Add(LblTituloCarta);
 
-                foreach (var item in listadoArt)
+                foreach (var item in listadoArt.Where(li => li.Categoria.Nombre == it.Nombre))
                 {
                     //generamos objeto DIV por cada articulo
 
@@ -87,7 +85,11 @@ namespace equilibrio.WEBFORMS_CLI
                     divArt.Controls.Add(NomPCarta);
                     divArt.Controls.Add(PrecProd);
                     divArt.Controls.Add(InfoPCarta);
+
+                    divCat.Controls.Add(divArt);                    
                 }
+                divCartas.Controls.Add(divCat);
+
             }
         }
     }
