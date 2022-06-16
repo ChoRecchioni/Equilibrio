@@ -25,13 +25,13 @@ namespace equilibrio.WEBFORMS_CLI
             ArticuloController.CargarArticulo();
 
             var listadoArt = from ar in ArticuloController.FindAll()
-                          select new
-                          {
-                              Nombre = ar.Nombre,
-                              Comentario = ar.Comentario,
-                              Precio = ar.Precio,
-                              Categoria = ar.Categoria,
-                          };
+                             select new
+                             {
+                                 Nombre = ar.Nombre,
+                                 Comentario = ar.Comentario,
+                                 Precio = ar.Precio,
+                                 Categoria = ar.Categoria,
+                             };
 
             var listadoCat = from cat in CategoriaController.FindAll()
                              select new
@@ -48,6 +48,8 @@ namespace equilibrio.WEBFORMS_CLI
                 LblTituloCarta.Attributes.Add("class", "LblTituloCarta");
                 LblTituloCarta.Text = it.Nombre;
 
+                divCat.Controls.Add(LblTituloCarta);
+
                 foreach (var item in listadoArt)
                 {
                     //generamos objeto DIV por cada articulo
@@ -62,12 +64,16 @@ namespace equilibrio.WEBFORMS_CLI
                     LblTitulo.Attributes.Add("class", "LblTitulo");
                     LblTitulo.Text = item.Nombre;
 
+                    NomPCarta.Controls.Add(LblTitulo);
+
                     HtmlGenericControl PrecProd = new HtmlGenericControl("div");
                     PrecProd.Attributes.Add("class", "PrecProd");
 
                     Label Lblprecio = new Label();
                     Lblprecio.Attributes.Add("class", "Lbl");
                     Lblprecio.Text = item.Precio;
+
+                    PrecProd.Controls.Add(Lblprecio);
 
                     HtmlGenericControl InfoPCarta = new HtmlGenericControl("div");
                     InfoPCarta.Attributes.Add("class", "InfoPCarta");
@@ -76,17 +82,11 @@ namespace equilibrio.WEBFORMS_CLI
                     LblInfo.Attributes.Add("class", "Lbl");
                     LblInfo.Text = item.Comentario;
 
+                    InfoPCarta.Controls.Add(LblInfo);
 
-
-                    ////Agregamos los objetos al nuevo div instanciado (linea 35)   
-                    //divNom.Controls.Add(labelTituloArticulo);
-                    //divPre.Controls.Add(labelPrecio);
-                    //divCom.Controls.Add(labelComentario);
-
-                    ////Luego lo agregamos al div que tenemos en aspx "divCarta" (con N)
-                    //divNomArt.Controls.Add(divNom);
-                    //divPrecio.Controls.Add(divPre);
-                    //divComentario.Controls.Add(divCom);
+                    divArt.Controls.Add(NomPCarta);
+                    divArt.Controls.Add(PrecProd);
+                    divArt.Controls.Add(InfoPCarta);
                 }
             }
         }
