@@ -13,7 +13,7 @@ namespace equilibrio.WEBFORMS_CLI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GenerarArticulo();            
+            GenerarArticulo();
         }
 
 
@@ -43,7 +43,7 @@ namespace equilibrio.WEBFORMS_CLI
                 divCat.Attributes.Add("class", "CategoriaCarta");
 
                 Label LblTituloCarta = new Label();
-                LblTituloCarta.Attributes.Add("class", "LblTituloCarta");
+                LblTituloCarta.Attributes.Add("class", "LblTituloCartaCat");
                 LblTituloCarta.Text = it.Nombre;
 
                 divCat.Controls.Add(LblTituloCarta);
@@ -59,8 +59,9 @@ namespace equilibrio.WEBFORMS_CLI
                     NomPCarta.Attributes.Add("class", "NomPCarta");
 
                     Label LblTitulo = new Label();
-                    LblTitulo.Attributes.Add("class", "LblTitulo");
+                    LblTitulo.Attributes.Add("class", "LblTituloCarta");
                     LblTitulo.Text = item.Nombre;
+                    HtmlGenericControl br = new HtmlGenericControl("br");
 
                     NomPCarta.Controls.Add(LblTitulo);
 
@@ -69,7 +70,8 @@ namespace equilibrio.WEBFORMS_CLI
 
                     Label Lblprecio = new Label();
                     Lblprecio.Attributes.Add("class", "Lbl");
-                    Lblprecio.Text = item.Precio;
+                    Lblprecio.Text = "$" + item.Precio + ".-";
+                    Lblprecio.Attributes.Add("style", "font-weight: bold;");
 
                     PrecProd.Controls.Add(Lblprecio);
 
@@ -83,10 +85,12 @@ namespace equilibrio.WEBFORMS_CLI
                     InfoPCarta.Controls.Add(LblInfo);
 
                     divArt.Controls.Add(NomPCarta);
+                    divArt.Controls.Add(new LiteralControl("<br/>"));
                     divArt.Controls.Add(PrecProd);
+                    divArt.Controls.Add(new LiteralControl("<br/>"));
                     divArt.Controls.Add(InfoPCarta);
 
-                    divCat.Controls.Add(divArt);                    
+                    divCat.Controls.Add(divArt);
                 }
                 divCartas.Controls.Add(divCat);
 

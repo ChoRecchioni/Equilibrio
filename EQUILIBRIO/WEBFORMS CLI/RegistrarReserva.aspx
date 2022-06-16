@@ -23,9 +23,11 @@
                 <td class="auto-style2">
                     <asp:Label class="LblTitulo" ID="Label2" runat="server" Text="Seleccione un local"></asp:Label>
                     <br />
+                    <br />
                 </td>
                 <td>
                     <asp:Label class="LblTitulo" ID="Label3" runat="server" Text="Seleccione la hora"></asp:Label>
+                    <br />
                     <br />
                 </td>
             </tr>
@@ -55,12 +57,14 @@
             </tr>
             <tr>
                 <td class="auto-style2">
-                    <br />
                     <asp:Label class="LblTitulo" ID="Label5" runat="server" Text="Seleccione una fecha"></asp:Label>
+                    <br />
+                    <br />
                 </td>
                 <td>
-                    <br />
                     <asp:Label class="LblTitulo" ID="Label4" runat="server" Text="Cantidad de personas"></asp:Label>
+                    <br />
+                    <br />
                 </td>
             </tr>
             <tr>

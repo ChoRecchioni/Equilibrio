@@ -6,13 +6,8 @@
     <asp:Label class="titulos" ID="Label1" runat="server" Text="CARTA"></asp:Label><br />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <%-- Los label vienen por cs. Al editar, cambian por txt. 
-         También por cs. (ver WEBFORMS.CLI/VerReseña.aspx.cs)
-        
-        Ver CartaAdmi para arreglar formato:
-    --%>
-
-    <div id="divCartas" runat="server" class="Contenedor">
+    
+    <div id="divCartas" runat="server" class="Contenedor" style="padding-top: 30px;">
     </div>
 
     <%-- <div class="CategoriaCarta">

@@ -9,15 +9,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-    <div class="Contenedor">
-        <asp:Image ID="ImgInicio" runat="server" ImageUrl="~/IMG/Mariscos-e1592426953245-1200x900.jpg" Width="470px" style="float: left; margin-right: 40px;8"/>
+    <div class="Contenedor" style="height: 410px;">
+        <asp:Image ID="ImgInicio" runat="server" ImageUrl="~/IMG/Mariscos-e1592426953245-1200x900.jpg" Width="470px" style="float: left;  padding: 30px;"/>
 
         <div class="TextoInicio">
             <asp:Label Class="LblTitulo" ID="TitInicio" runat="server" Text="NUESTRA HISTORIA"></asp:Label>
             <br />
             <br />
             <asp:Label ID="TextInicio" runat="server" Text="
-        Equilibrio es una cadena de mariscos con locales en Santiago y Viña del mar..." ></asp:Label>
+        Equilibrio es una cadena de mariscos con locales en Santiago y Viña del mar..."></asp:Label>
         </div>
     </div>
 

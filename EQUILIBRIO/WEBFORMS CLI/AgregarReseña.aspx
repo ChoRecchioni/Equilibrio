@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
-            margin-top: 30px;
+            margin-top: 0px;
             width: 75%;
         }
 
@@ -77,7 +77,7 @@
                             <asp:TextBox class="Txt" ID="TxtComentario" runat="server" placeholder="COMENTARIO:" Style="text-align-last: left; margin-top: -35px; padding-left: 5px;" Height="100px"></asp:TextBox></td>
                         </td>
                     <td class="auto-style5">
-                        <asp:Button class="BtnOK" ID="BtnEnviar" runat="server" Text="AGREGAR" Style="margin-left: 300px;" OnClick="BtnEnviar_Click" />
+                        <asp:Button class="BtnOK" ID="BtnEnviar" runat="server" Text="AGREGAR" Style="margin-left: 375px;" OnClick="BtnEnviar_Click" />
                     </td>
                     </tr>
                 </table>

@@ -206,6 +206,10 @@ li {
     color: black;
 }
 
+.OpcNav {
+    font-size: 26px;
+}
+
 .CPH {
     float: left;
     position: absolute;
@@ -395,19 +399,20 @@ a#ContentPlaceHolder1_LnkRegistrar.LblTitulo {
 
 .Contenedor {
     margin: 50px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    padding: 30px;
+    
 }
 
 .TextoInicio {
     margin-left: 30px;
+    padding-top: 25px
 }
 
 span#ContentPlaceHolder1_.Lbl {
     width: 100px;
     font-size: large;
-}
-
-table {
-    margin-top: 20px;
 }
 
 input#ContentPlaceHolder1_BtnEditar.BtnForm {
@@ -548,7 +553,7 @@ input#ContentPlaceHolder1_TxtPrecio.TxtCarta {
 
 .ProductoCarta {
     margin-top: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 15px;
 }
 
 .EditarProductoCarta {
@@ -556,7 +561,7 @@ input#ContentPlaceHolder1_TxtPrecio.TxtCarta {
 }
 
 .CategoriaCarta {
-    margin-top: 40px;
+    margin-bottom: 30px;
 }
 
 .InfoPCarta {
@@ -576,6 +581,12 @@ input#ContentPlaceHolder1_TxtPrecio.TxtCarta {
 
 .LblTituloCarta {
     font-size: x-large;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.LblTituloCartaCat {
+    font-size: 27px;
     font-weight: bold;
     text-transform: uppercase;
 }

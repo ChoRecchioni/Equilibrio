@@ -43,25 +43,25 @@
             <ul class="menu">
                 <!--Submenu 1-->
                 <li class="item-submenu" menu="2">
-                    <a href="#" class="subm"><span>RESERVAS<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
+                    <a href="#" class="subm"><span class="OpcNav">RESERVAS<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
                     <ul class="submenu">
-                        <li class="MisReservas"><a href="MisReservas.aspx">MIS RESERVAS</a></li>
-                        <li class="AddReserva"><a  href="RegistrarReserva.aspx" >NUEVA RESERVA</a></li>
+                        <li class="MisReservas"><a href="MisReservas.aspx"  class="OpcNav">MIS RESERVAS</a></li>
+                        <li class="AddReserva"><a  href="RegistrarReserva.aspx"  class="OpcNav">NUEVA RESERVA</a></li>
                     </ul>
                 </li>
                 <!--Fin submenu 1-->
-                <li class="Deli"><a href="Delivery.aspx"><span>DELIVERY</span></a></li>
-                <li class="Carta"><a href="Carta.aspx"><span>CARTA</span></a></li>
-                <li class="Local"><a href="#"><span>LOCALES</span></a></li>
-                <li class="Preg"><a href="#"><span>PREGUNTAS
+                <li class="Deli"><a href="Delivery.aspx"><span class="OpcNav">DELIVERY</span></a></li>
+                <li class="Carta"><a href="Carta.aspx"><span class="OpcNav">CARTA</span></a></li>
+                <li class="Local"><a href="#"><span class="OpcNav">LOCALES</span></a></li>
+                <li class="Preg"><a href="#"><span class="OpcNav">PREGUNTAS
                     <br />
                     FRECUENTES</span></a></li>
                 <!--Submenu 2-->
                 <li class="item-submenu" menu="1">
-                    <a href="#" class="subm"><span>RESEÑAS<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
+                    <a href="#" class="subm"><span class="OpcNav">RESEÑAS<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
                     <ul class="submenu">
-                        <li class="VerReseña"><a href="VerReseña.aspx">RESEÑAS</a></li>
-                        <li class="AddReseña"><a href="AgregarReseña.aspx">NUEVA RESEÑA</a></li>
+                        <li class="VerReseña"><a href="VerReseña.aspx" class="OpcNav">RESEÑAS</a></li>
+                        <li class="AddReseña"><a href="AgregarReseña.aspx" class="OpcNav">NUEVA RESEÑA</a></li>
                     </ul>
                 </li>
                 <!--Fin submenu 2-->
