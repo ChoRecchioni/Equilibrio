@@ -11,23 +11,13 @@
 }
 
 body {
-    background-image: url(../IMG/fondo2.png);
+    background-image: url(../IMG/fondotransparente2.png);
     background-size: cover;
     background-attachment: fixed;
     background-position: top;
     margin: 0px;
     padding: 0px;
     z-index: -2;
-}
-
-#transparencia {
-    opacity: 0.65;
-    background: white;
-    z-index: -1;
-    position: absolute;
-    width: -webkit-fill-available;
-    height: 900px;
-    float: left;
 }
 
 #fondo {

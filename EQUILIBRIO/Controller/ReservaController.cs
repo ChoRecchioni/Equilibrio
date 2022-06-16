@@ -69,7 +69,7 @@ namespace equilibrio.Controller
 
         //Metodo para editar Reserva
 
-        public static string EditReserva(string codigo, string codMesa, DateTime fecha, string codLocal )
+        public static string EditReserva(string codigo, string codMesa, DateTime fecha, string codLocal)
         {
             try
             {

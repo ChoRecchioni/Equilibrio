@@ -116,7 +116,6 @@ namespace equilibrio.WEBFORMS
                 if (string.IsNullOrEmpty(IdR))
                 {
                     ReservaController.AddReserva(ReservaController.ResAI().ToString(), mesa.Codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).Codigo.ToString());
-
                 }
                 else
                 {

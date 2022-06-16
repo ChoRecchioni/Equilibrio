@@ -5,6 +5,7 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using equilibrio.Controller;
+using equilibrio.Clases;
 
 namespace equilibrio.WEBFORMS_CLI
 {
@@ -23,52 +24,70 @@ namespace equilibrio.WEBFORMS_CLI
         {
             ArticuloController.CargarArticulo();
 
-            var listado = from ar in ArticuloController.FindAll()
+            var listadoArt = from ar in ArticuloController.FindAll()
                           select new
                           {
                               Nombre = ar.Nombre,
                               Comentario = ar.Comentario,
-                              Precio = ar.Precio
+                              Precio = ar.Precio,
+                              Categoria = ar.Categoria,
                           };
 
-            foreach (var item in listado)
+            var listadoCat = from cat in CategoriaController.FindAll()
+                             select new
+                             {
+                                 Nombre = cat.Nombre
+                             };
+
+            foreach (var it in listadoCat)
             {
-                //Instanciamos/generamos objeto DIV por cada reseña (con n)
-                HtmlGenericControl divNom = new HtmlGenericControl("div");
-                HtmlGenericControl divCom = new HtmlGenericControl("div");
-                HtmlGenericControl divPre = new HtmlGenericControl("div");
+                HtmlGenericControl divCat = new HtmlGenericControl("div");
+                divCat.Attributes.Add("class", "CategoriaCarta");
 
-                divNom.Attributes.Add("class", "Art");
+                Label LblTituloCarta = new Label();
+                LblTituloCarta.Attributes.Add("class", "LblTituloCarta");
+                LblTituloCarta.Text = it.Nombre;
 
-                //Si quisieramos generar la etiqueta título:
-                //Label labelTitulo = new Label();
-                //labelTitulo.Text = item.Puntuacion.ToString();
-                //labelTitulo.CssClass = "LblTitulo";
-                //divResena.Controls.Add(labelTitulo);
+                foreach (var item in listadoArt)
+                {
+                    //generamos objeto DIV por cada articulo
 
-                //Generamos un Lbl con su clase de css de título
-                Label labelTituloArticulo = new Label();
-                labelTituloArticulo.CssClass = "LblTitulo";
-                labelTituloArticulo.Text = item.Nombre;
+                    HtmlGenericControl divArt = new HtmlGenericControl("div");
+                    divArt.Attributes.Add("class", "ProductoCarta");
 
-                //Generamos el comentario de cada reseNa
-                Label labelComentario = new Label();
-                labelComentario.CssClass = "Lb1";
-                labelComentario.Text = "Descripción: " + item.Comentario;
+                    HtmlGenericControl NomPCarta = new HtmlGenericControl("div");
+                    NomPCarta.Attributes.Add("class", "NomPCarta");
 
-                Label labelPrecio = new Label();
-                labelPrecio.CssClass = "Lb1";
-                labelPrecio.Text = "Precio: " + item.Precio;
+                    Label LblTitulo = new Label();
+                    LblTitulo.Attributes.Add("class", "LblTitulo");
+                    LblTitulo.Text = item.Nombre;
 
-                //Agregamos los objetos al nuevo div instanciado (linea 35)   
-                divNom.Controls.Add(labelTituloArticulo);
-                divPre.Controls.Add(labelPrecio);
-                divCom.Controls.Add(labelComentario);
+                    HtmlGenericControl PrecProd = new HtmlGenericControl("div");
+                    PrecProd.Attributes.Add("class", "PrecProd");
 
-                //Luego lo agregamos al div que tenemos en aspx "divCarta" (con N)
-                divNomArt.Controls.Add(divNom);
-                divPrecio.Controls.Add(divPre);
-                divComentario.Controls.Add(divCom);
+                    Label Lblprecio = new Label();
+                    Lblprecio.Attributes.Add("class", "Lbl");
+                    Lblprecio.Text = item.Precio;
+
+                    HtmlGenericControl InfoPCarta = new HtmlGenericControl("div");
+                    InfoPCarta.Attributes.Add("class", "InfoPCarta");
+
+                    Label LblInfo = new Label();
+                    LblInfo.Attributes.Add("class", "Lbl");
+                    LblInfo.Text = item.Comentario;
+
+
+
+                    ////Agregamos los objetos al nuevo div instanciado (linea 35)   
+                    //divNom.Controls.Add(labelTituloArticulo);
+                    //divPre.Controls.Add(labelPrecio);
+                    //divCom.Controls.Add(labelComentario);
+
+                    ////Luego lo agregamos al div que tenemos en aspx "divCarta" (con N)
+                    //divNomArt.Controls.Add(divNom);
+                    //divPrecio.Controls.Add(divPre);
+                    //divComentario.Controls.Add(divCom);
+                }
             }
         }
     }

@@ -16,8 +16,6 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <div id="transparencia"></div>
-
     <header>
         <section id="redes">
             <a id="fb" href="http://www.facebook.com">

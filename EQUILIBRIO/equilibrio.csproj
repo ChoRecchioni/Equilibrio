@@ -83,6 +83,8 @@
     <Content Include="IMG\fb2.png" />
     <Content Include="IMG\fb_co.png" />
     <Content Include="IMG\fondo2.png" />
+    <Content Include="IMG\fondotransparente.png" />
+    <Content Include="IMG\fondotransparente2.png" />
     <Content Include="IMG\full-star.png" />
     <Content Include="IMG\instagram.png" />
     <Content Include="IMG\instagram2.png" />
@@ -111,6 +113,7 @@
   <ItemGroup>
     <Compile Include="Clases\Artículo.cs" />
     <Compile Include="Clases\CarroCompras.cs" />
+    <Compile Include="Clases\Categoria.cs" />
     <Compile Include="Clases\Comuna.cs" />
     <Compile Include="Clases\Direccion.cs" />
     <Compile Include="Clases\Empleado.cs" />
@@ -125,6 +128,7 @@
     <Compile Include="Clases\Role.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Controller\ArticuloController.cs" />
+    <Compile Include="Controller\CategoriaController.cs" />
     <Compile Include="Controller\ComunaController.cs" />
     <Compile Include="Controller\DireccionController.cs" />
     <Compile Include="Controller\LoginController.cs" />

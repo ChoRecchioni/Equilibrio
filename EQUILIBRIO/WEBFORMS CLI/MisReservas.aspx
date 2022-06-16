@@ -27,7 +27,7 @@
     </style>
     <script>
         function EditarReserva(id) {
-            window.location = "RegistrarReserva.aspx?Id=" + id;
+            window.location = "RegistrarReserva.aspx?ID=" + id;
             return false;
         }
 

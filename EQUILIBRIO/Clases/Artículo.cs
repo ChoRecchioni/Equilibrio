@@ -11,6 +11,7 @@ namespace equilibrio.Clases
         private string nombre;
         private string precio;
         private string comentario;
+        private Categoria categoria;
 
         public int Codigo
         {
@@ -34,6 +35,12 @@ namespace equilibrio.Clases
         {
             get { return comentario; }
             set { comentario = value; }
+        }
+
+        public Categoria Categoria
+        {
+            get { return categoria; }
+            set { categoria = value; }
         }
     }
 }
