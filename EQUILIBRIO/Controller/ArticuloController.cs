@@ -11,8 +11,9 @@ namespace equilibrio.Controller
         private static List<Artículo> listaArticulo = new List<Artículo>();
 
         //Metodo para agregar Articulo
-        public static string AddAarticulo(string codigo, string nombre, string precio, string comentario)
+        public static string AddAarticulo(string codigo, string nombre, string precio, string comentario, string Codcategoria)
         {
+            Categoria cat = CategoriaController.FindCategoria(Codcategoria);
             try
             {
                 listaArticulo.Add(new Artículo()
@@ -21,6 +22,7 @@ namespace equilibrio.Controller
                     Nombre = nombre,
                     Precio = precio,
                     Comentario = comentario,
+                    Categoria = cat,
 
                 });
 
@@ -66,15 +68,16 @@ namespace equilibrio.Controller
 
         //Metodo para editar Articulo
 
-        public static string EditReseña(string codigo, string nombre, string precio, string comentario)
+        public static string EditArticulo(string codigo, string nombre, string precio, string comentario, string Codcategoria)
         {
-
+            Categoria cat = CategoriaController.FindCategoria(Codcategoria);
             try
             {
                 Artículo artículo = FindArticulo(codigo);
                 artículo.Nombre = nombre;
                 artículo.Precio = precio;
                 artículo.Comentario = comentario;
+                artículo.Categoria = cat;
 
                 return "Articulo Modificada";
             }
@@ -101,8 +104,8 @@ namespace equilibrio.Controller
             if (listaArticulo.Count < 1)
             {
 
-                AddAarticulo("1", "papas fritas", "10.000", "Ricas papas fritas de huerto sabor natural 100% real no fake");
-                AddAarticulo("2", "pescado", "15.000", "Pescado de tierra");
+                AddAarticulo("1", "papas fritas", "10.000", "Ricas papas fritas de huerto sabor natural 100% real no fake", "1");
+                AddAarticulo("2", "pescado", "15.000", "Pescado de tierra", "2");
             }
         }
 
