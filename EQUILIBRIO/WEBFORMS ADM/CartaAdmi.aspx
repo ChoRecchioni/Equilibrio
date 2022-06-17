@@ -13,18 +13,20 @@
     <div class="Contenedor">
 
         <div class="HeadCarta">            
-            <asp:TextBox class="Txt" ID="TxtProducto" runat="server" placeholder="NOMBRE"></asp:TextBox>
-            <asp:TextBox class="Txt" ID="TxtDescripcion" runat="server" placeholder="DESCRIPCIÓN"></asp:TextBox><br />
+            <asp:TextBox class="Txt" ID="TxtNombreArt" runat="server" placeholder="NOMBRE"></asp:TextBox>
+            <asp:TextBox class="Txt" ID="TxtDescripcionArt" runat="server" placeholder="DESCRIPCIÓN"></asp:TextBox><br />
 
-            <asp:TextBox class="Txt" ID="TextBox1" runat="server" placeholder="PRECIO"></asp:TextBox>
+            <asp:TextBox class="Txt" ID="TxtPrecioArt" runat="server" placeholder="PRECIO"></asp:TextBox>
             <asp:DropDownList class="Drop" ID="DropCategoria" runat="server" Height="30px"></asp:DropDownList><br />
         
-            <asp:Button class="BtnOKCarta" ID="BtnAgregar" runat="server" Text="confirmar" />
+            <asp:Button class="BtnOK" ID="BtnCrearArt" runat="server" Text="confirmar" OnClick="BtnCrearArt_Click" />
+
+            <asp:Label ID="LbAddArt" runat="server" Text=""></asp:Label>
         </div>        
             
 
-        <div class="CategoriaCarta">
-            <label class="LblTituloCarta">CATEGORÍA</label><br />
+        <div class="CategoriaCarta" id="DivCartas" runat="server">
+           <%-- <label class="LblTituloCarta">CATEGORÍA</label><br />
 
             <div class="ProductoCarta">
                 <div class="NomPCarta">
@@ -50,7 +52,7 @@
                     <asp:TextBox class="TxtCarta" ID="TxtPrecio" placeholder="$10.000.-" runat="server"></asp:TextBox><br />
                     <asp:ImageButton class="BtnCarta" ID="BtnSaveCarta" ImageUrl="~/IMG/check.png" runat="server"/>
                 </div>
-            </div>
+            </div>--%>
         </div>
     </div>
 </asp:Content>
