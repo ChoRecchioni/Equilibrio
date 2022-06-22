@@ -73,11 +73,17 @@
     <Content Include="CSS\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="CSS\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
     <Content Include="CSS\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="IMG\aaa.jpg" />
     <Content Include="IMG\arrow.png" />
     <Content Include="IMG\cart.png" />
     <Content Include="IMG\check.png" />
     <Content Include="IMG\delete.png" />
     <Content Include="IMG\edit.png" />
+    <Content Include="IMG\eee.jpg" />
+    <Content Include="IMG\eee.png" />
+    <Content Include="IMG\eee2.png" />
+    <Content Include="IMG\eee3.png" />
+    <Content Include="IMG\eee4.png" />
     <Content Include="IMG\empty-star.png" />
     <Content Include="IMG\fb.png" />
     <Content Include="IMG\fb2.png" />
@@ -92,6 +98,7 @@
     <Content Include="IMG\line.png" />
     <Content Include="IMG\logo.png" />
     <Content Include="IMG\Mariscos-e1592426953245-1200x900.jpg" />
+    <Content Include="IMG\mariscotransparente.png" />
     <Content Include="IMG\plus.png" />
     <Content Include="IMG\sopa-marisco-y-pescado-655x368.jpeg" />
     <Content Include="IMG\twitter.png" />
@@ -111,6 +118,7 @@
     <Content Include="WEBFORMS CLI\VerReseña.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Articulo-Carro.cs" />
     <Compile Include="Clases\Artículo.cs" />
     <Compile Include="Clases\CarroCompras.cs" />
     <Compile Include="Clases\Categoria.cs" />
@@ -127,7 +135,9 @@
     <Compile Include="Clases\Reseña.cs" />
     <Compile Include="Clases\Role.cs" />
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Controller\Art-CarroController.cs" />
     <Compile Include="Controller\ArticuloController.cs" />
+    <Compile Include="Controller\Carro-ComprasController.cs" />
     <Compile Include="Controller\CategoriaController.cs" />
     <Compile Include="Controller\ComunaController.cs" />
     <Compile Include="Controller\DireccionController.cs" />

@@ -15,19 +15,12 @@ namespace equilibrio.WEBFORMS_ADM
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Usuario u = (Usuario)Session["ActiveUser"];
-
-            //if (u == null)
-            //{
-            //    Response.Redirect("IniciarSesión.aspx");
-            //}
             if (!Page.IsPostBack)
             {
                 cargarDropCat();
             }
 
             GenerarArticulo();
-
         }
 
         public void cargarDropCat()
@@ -35,11 +28,11 @@ namespace equilibrio.WEBFORMS_ADM
             CategoriaController.CargarCategoria();
 
             DropCategoria.DataSource = from cat in CategoriaController.FindAll()
-                                        select new
-                                        {
-                                            codigo = cat.Codigo,
-                                            texto = cat.Nombre,
-                                        };
+                                       select new
+                                       {
+                                           codigo = cat.Codigo,
+                                           texto = cat.Nombre,
+                                       };
             DropCategoria.DataValueField = "codigo";
             DropCategoria.DataTextField = "texto";
 
@@ -54,6 +47,7 @@ namespace equilibrio.WEBFORMS_ADM
             var listadoArt = from ar in ArticuloController.FindAll()
                              select new
                              {
+                                 Codigo = ar.Codigo,
                                  Nombre = ar.Nombre,
                                  Comentario = ar.Comentario,
                                  Precio = ar.Precio,
@@ -102,6 +96,30 @@ namespace equilibrio.WEBFORMS_ADM
                     Lblprecio.Text = "$" + item.Precio + ".-";
                     Lblprecio.Attributes.Add("style", "font-weight: bold;");
 
+                    ImageButton btnEditar = new ImageButton
+                    {
+                        CssClass = "BtnFormCA",
+                        Height = 20,
+                        Width = 20,
+                        ImageUrl = "~/IMG/edit.png",
+                        OnClientClick = "return EditarArticulo('" + item.Codigo.ToString() + "');",
+                        ID = item.Codigo.ToString()
+                    };
+
+                    ImageButton btnEliminar = new ImageButton
+                    {
+                        CssClass = "BtnFormCA",
+                        Height = 20,
+                        Width = 20,
+                        ImageUrl = "~/IMG/delete.png",
+                        OnClientClick = "return EliminarArticulo('" + item.Codigo.ToString() + "');",
+                        ID = item.Codigo.ToString()
+                    };
+
+                    PrecProd.Controls.Add(btnEliminar);
+                    PrecProd.Controls.Add(btnEditar);
+
+                    PrecProd.Controls.Add(new LiteralControl("<br/>"));
                     PrecProd.Controls.Add(Lblprecio);
 
                     HtmlGenericControl InfoPCarta = new HtmlGenericControl("div");

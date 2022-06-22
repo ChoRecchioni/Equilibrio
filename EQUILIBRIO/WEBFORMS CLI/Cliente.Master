@@ -17,6 +17,7 @@
 </head>
 <body>
     <header>
+
         <section id="redes">
             <a id="fb" href="http://www.facebook.com">
                 <img class="red" src="../IMG/fb2.png"></img></a>
@@ -25,8 +26,26 @@
             <img id="divisor" src="../IMG/line.png" />
             <a id="usericon" href="#" runat="server">
                 <img class="opUser" src="../IMG/user.png" /></a>
-            <a id="cart" href="CarroCompras.aspx">
+            <a id="cart" href="#">
                 <img class="opUser" src="../IMG/cart.png" /></a>
+
+            <div class="Container">
+                <div class="CarroCompras">
+                    <div class="CarroHeader">
+                        <div class="CarroTotal">
+                            <span class="lighter-text">Total:</span>
+                            <span id="precioTotal" class="main-color-text"></span>
+                        </div>
+                    </div>
+
+                    <ul class="CarroItems">
+                    </ul>
+
+                    <button id="btnPagar" type="button" onclick="BtnPagar();" class="button">Pagar</button>
+                    <%--<a href="CarroCompras.aspx" class="button">Pagar</a>--%>
+                </div>
+            </div>
+
         </section>
     </header>
 
@@ -36,8 +55,8 @@
 
     <section id="menu">
         <a id="logo" href="inicio.aspx">
-            <img class="logo" src="../IMG/logo.png"/></a>
-        
+            <img class="logo" src="../IMG/logo.png" /></a>
+
         <nav class="nav">
             <!--Menu-->
             <ul class="menu">
@@ -45,8 +64,8 @@
                 <li class="item-submenu" menu="2">
                     <a href="#" class="subm"><span class="OpcNav">RESERVAS<img class="arrow" src="../IMG/arrow.png" alt="Alternate Text" /></span></a>
                     <ul class="submenu">
-                        <li class="MisReservas"><a href="MisReservas.aspx"  class="OpcNav">MIS RESERVAS</a></li>
-                        <li class="AddReserva"><a  href="RegistrarReserva.aspx"  class="OpcNav">NUEVA RESERVA</a></li>
+                        <li class="MisReservas"><a href="MisReservas.aspx" class="OpcNav">MIS RESERVAS</a></li>
+                        <li class="AddReserva"><a href="RegistrarReserva.aspx" class="OpcNav">NUEVA RESERVA</a></li>
                     </ul>
                 </li>
                 <!--Fin submenu 1-->

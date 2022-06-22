@@ -23,17 +23,19 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="Contenedor">
-        <div class="Categoría" style="margin-top: 40px;">
-            <label class="LblTitulo" style="font-size: x-large;">CATEGORÍA</label>
+        <div class="Categoría" id="CategoriaDelivery" style="margin-top: 10px;" runat="server">
+            <%--<label class="LblTitulo" style="font-size: x-large;">CATEGORÍA</label>
             <table class="ProdXCateg">
                 <tr>
                     <td class="auto-style1">
                         <div class="Producto">
                             <div class="NomProd">
-                                <asp:Label Class="LblTitulo" ID="Label2" runat="server" Text="NOMBRE DEL PRODUCTO"></asp:Label><br />
+                                <asp:Label Class="LblTitulo" ID="Label2" runat="server" Text="NOMBRE DEL PRODUCTO"></asp:Label>
+                                <br />
                             </div>
                             <div class="InfoProd">
-                                <asp:Label Class="Txt" ID="Label3" runat="server" Text="Información del producto"></asp:Label><br />
+                                <asp:Label Class="Txt" ID="Label3" runat="server" Text="Información del producto"></asp:Label>
+                                <br />
                             </div>
                             <div class="BotProd">
                                 <asp:Button class="Btn" ID="Button7" runat="server" Text="-" Width="30px" Style="margin-right: 10px;" />
@@ -94,7 +96,7 @@
                         </div>
                     </td>
                 </tr>
-            </table>
+            </table>--%>
         </div>
     </div>
 </asp:Content>

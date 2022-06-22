@@ -9,6 +9,7 @@ namespace equilibrio.Clases
     {
         private int codigo;
         private Usuario User;
+        private List<Articulo_Carro> artCar;
 
         public int Codigo
         {
@@ -20,6 +21,11 @@ namespace equilibrio.Clases
         {
             get { return User; }
             set { User = value; }
+        }
+        public List<Articulo_Carro> ArtCar
+        {
+            get { return artCar; }
+            set { artCar = value; }
         }
     }
 }

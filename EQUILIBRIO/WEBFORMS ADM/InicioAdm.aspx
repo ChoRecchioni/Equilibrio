@@ -8,7 +8,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-    <div class="Contenedor">
+    <div class="Contenedor" style="height: 410px;">
         <asp:Image ID="ImgInicio" runat="server" ImageUrl="~/IMG/Mariscos-e1592426953245-1200x900.jpg" Width="450px" style="float: left; margin-right: 40px;8"/>
 
         <div class="TextoInicio">

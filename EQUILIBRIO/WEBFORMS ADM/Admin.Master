@@ -25,8 +25,6 @@
             <img id="divisor" src="../IMG/line.png" />
             <a id="usericon" href="#" runat="server">
                 <img class="opUser" src="../IMG/user.png" /></a>
-            <a id="cart" href="CarroCompras.aspx">
-                <img class="opUser" src="../IMG/cart.png" /></a>
         </section>
     </header>
 

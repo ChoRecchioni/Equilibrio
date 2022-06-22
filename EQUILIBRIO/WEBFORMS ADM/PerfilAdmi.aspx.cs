@@ -13,5 +13,11 @@ namespace equilibrio.WEBFORMS_ADM
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Session["ActiveUser"] = null;
+            Response.Redirect("IniciarSesión.aspx");
+        }
     }
 }

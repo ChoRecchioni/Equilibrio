@@ -15,9 +15,7 @@ namespace equilibrio.WEBFORMS_CLI
             } else {
                 usericon.HRef = "IniciarSesión.aspx";
             }
-
         }
-
        
 
 
