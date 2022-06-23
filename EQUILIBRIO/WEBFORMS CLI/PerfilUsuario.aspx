@@ -6,11 +6,7 @@
             width: 85%;
             
         }
-        .auto-style2 {
-            margin-left: 30px;
-            width: 291px;
-            border-left: 3px black solid;
-        }
+         
         .auto-style4 {
             width: 540px;
         }
@@ -46,6 +42,11 @@
             height: 10px;
             text-align: right;
         }
+        .auto-style31 {
+            position: relative;
+            right: -58px;
+            top: 0px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CPHtitulos" runat="server">
@@ -57,73 +58,99 @@
     <table class="auto-style1">
         <tr style="height: 10px;">
             <td class="auto-style4" colspan="2"><asp:Label class="LblTitulo" ID="LbDatos" runat="server" Text="DATOS PERSONALES"></asp:Label>
-                <asp:ImageButton class="BtnForm" ID="BtnEditar" runat="server" />
-                <asp:ImageButton class="BtnForm" ID="BtnEditConfirm" runat="server" OnClick="BtnEditar_Click"/>
+                <asp:ImageButton class="BtnForm" ID="BtnEditarUser" runat="server"  Height="20px" Width="20px" ImageUrl="~/IMG/edit.png" CssClass="auto-style31"  OnClick="BtnEditarUser_Click" />
+                <asp:ImageButton class="BtnForm" ID="BtnCheckUser" runat="server" Visible="false"  Height="20px" Width="20px" ImageUrl="~/IMG/check.png" CssClass="auto-style31" OnClick="BtnCheckUser_Click" />
             </td>
-            <td class="auto-style5"><asp:Label class="LblTitulo" ID="LbCompras" runat="server" Text="MIS COMPRAS" Style="margin-left: 10px;"></asp:Label></td>
+            <td class="auto-style5" colspan="2">
+                <asp:Label class="LblTitulo" ID="LbDirecciones0" runat="server" Text="MIS DIRECCIONES"></asp:Label>
+                &nbsp;&nbsp;
+                    <asp:ImageButton class="BtnForm" ID="BtnEditarDir" runat="server" Height="20px" Width="20px" ImageUrl="~/IMG/edit.png" CssClass="auto-style31" OnClick="BtnEditarDir_Click" />
+                    <asp:ImageButton class="BtnForm" ID="BtnCheckDir" Visible="false" runat="server" Height="20px" Width="20px" ImageUrl="~/IMG/check.png" CssClass="auto-style31" OnClick="BtnCheckDir_Click" /></td>
         </tr>
         <tr>
             <td class="auto-style25">
                 <asp:Label class="Lbl" ID="LblRut" runat="server" Text="RUT:"/>
             </td>
             <td class="auto-style26">
-                <asp:TextBox class="Txt" ID="TxtRut" runat="server"></asp:TextBox>
+                <asp:TextBox class="Txt" ID="TxtRut" Enabled="false" runat="server"></asp:TextBox>
             </td>
-            <td class="auto-style2" rowspan="7">&nbsp;</td>
+            <td class="auto-style2">
+                    <asp:Label class="Lbl" ID="LblAlias" runat="server" Text="ALIAS:"/>
+                    </td>
+            <td class="auto-style2">
+                    <asp:TextBox class="Txt Dir" ID="TxtAlias" Enabled="false" runat="server" Width="300px" Style="position: relative; right: -70px;"></asp:TextBox>
+                    </td>
         </tr>
         <tr style="height: 10px;">
             <td class="auto-style15">
                 <asp:Label class="Lbl" ID="LblNombre" runat="server" Text="NOMBRE:"/>
             </td>
             <td class="auto-style16">
-                <asp:TextBox class="Txt" ID="TxtNombre" runat="server"></asp:TextBox>
+                <asp:TextBox class="Txt" ID="TxtNombre" Enabled="false" runat="server"></asp:TextBox>
             </td>
+            <td class="auto-style2">
+                    <asp:Label class="Lbl" ID="LblDireccion" runat="server" Text="DIRECCIÓN:"/>
+                    </td>
+            <td class="auto-style2">
+                    <asp:TextBox class="Txt Dir" ID="TxtDireccion" Enabled="false" runat="server" Style="position: relative; right: -20px;"></asp:TextBox>
+                    </td>
         </tr>
         <tr style="height: 10px;">
             <td class="auto-style13">
                 <asp:Label class="Lbl" ID="LblApellido" runat="server" Text="APELLIDO:"/>
             </td>
             <td class="auto-style14">
-                <asp:TextBox class="Txt" ID="TxtApellido" runat="server" ></asp:TextBox>
+                <asp:TextBox class="Txt" ID="TxtApellido" Enabled="false" runat="server" ></asp:TextBox>
             </td>
+            <td class="auto-style2">
+                    <asp:Label class="Lbl" ID="LblDepto" runat="server" Text="DEPTO:"/>
+                    </td>
+            <td class="auto-style2">
+                    <asp:TextBox class="Txt Dir" ID="TxtDepto" Enabled="false" runat="server" Style="position: relative; right: -20px;"></asp:TextBox>
+                    </td>
         </tr>
         <tr style="height: 10px;">
             <td class="auto-style15">
                 <asp:Label class="Lbl" ID="LblTelefono" runat="server" Text="TELÉFONO:"/>
             </td>
             <td class="auto-style16">
-                <asp:TextBox class="Txt" ID="TxtTeléfono" runat="server"></asp:TextBox>
+                <asp:TextBox class="Txt" ID="TxtTeléfono" Enabled="false" runat="server"></asp:TextBox>
+            </td>
+            <td class="auto-style2">
+                    <asp:Label class="Lbl" ID="LblComuna" runat="server" Text="COMUNA:"/>
+                    </td>
+            <td class="auto-style2">
+                    <asp:DropDownList ID="DropComunas" CssClass="Drop" enabled="false" runat="server">
+                    </asp:DropDownList>
             </td>
         </tr>
         <tr style="height: 10px;">
             <td class="auto-style30" colspan="2">
                 <asp:Button class="BtnOK" ID="Button1" runat="server" Text="Cerrar sesión" style="width: 150px; margin-top: 20px; margin-right: 65px;" OnClick="Button1_Click"/>
             </td>
+            <td class="auto-style2">
+                    <asp:Label class="Lbl" ID="LblRegion" runat="server" Text="REGIÓN:"/>
+                    </td>
+            <td class="auto-style2">
+                    <asp:DropDownList ID="DropRegiones" CssClass="Drop" enabled="false" runat="server">
+                    </asp:DropDownList>
+            </td>
         </tr>
         <tr style="height: 10px;">
             <td class="auto-style29" colspan="2">
                 <br />
-                <asp:Label class="LblTitulo" ID="LbDirecciones" runat="server" Text="MIS DIRECCIONES"></asp:Label>
-                <asp:ImageButton class="BtnForm" ID="BtnAgregar" runat="server" Height="20px" Width="20px" ImageUrl="~/IMG/plus.png" OnClick="BtnAgregar_Click"/>
             </td>
+            <td class="auto-style2">&nbsp;</td>
+            <td class="auto-style2">&nbsp;</td>
         </tr>
         <tr style="height: 10px;">            
             <td colspan="2">
-                <div class="Direccion" style="margin-bottom: 20px;">
-                    <asp:Label class="Lbl" ID="LblAlias" runat="server" Text="ALIAS:"/>
-                    <asp:TextBox class="Txt Dir" ID="TxtAlias" runat="server" Width="300px" Style="position: relative; right: -70px;"></asp:TextBox>
-                    <asp:ImageButton class="BtnForm" ID="BtnEditar0" runat="server" Height="20px" Width="20px" Style="position: relative; right: -85px;" ImageUrl="~/IMG/edit.png" /><br />
-                    <asp:Label class="Lbl" ID="LblDireccion" runat="server" Text="DIRECCIÓN:"/>
-                    <asp:TextBox class="Txt Dir" ID="TxtDireccion" runat="server" Style="position: relative; right: -20px;"></asp:TextBox><br />
-                    <asp:Label class="Lbl" ID="LblComuna" runat="server" Text="COMUNA:"/>
-                    <asp:TextBox class="Txt Dir" ID="TxtComuna" runat="server" Style="position: relative; right: -36px;"></asp:TextBox><br />
-                    <asp:Label class="Lbl" ID="LblRegion" runat="server" Text="REGIÓN:"/>
-                    <asp:TextBox class="Txt Dir" ID="TxtRegion" runat="server" Style="position: relative; right: -50px;"></asp:TextBox><br />
-                </div>
             </td>
+            <td class="auto-style2" colspan="2">&nbsp;</td>
         </tr>
         </table>
         <asp:Label ID="LbEditUser" runat="server" Text=""></asp:Label>
+         <asp:Label ID="LbEditDir" runat="server" Text=""></asp:Label>
     </div>
 
 </asp:Content>

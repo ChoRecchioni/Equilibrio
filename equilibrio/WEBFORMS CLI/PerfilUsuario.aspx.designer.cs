@@ -33,31 +33,49 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.Label LbDatos;
 
         /// <summary>
-        /// Control BtnEditar.
+        /// Control BtnEditarUser.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BtnEditar;
+        protected global::System.Web.UI.WebControls.ImageButton BtnEditarUser;
 
         /// <summary>
-        /// Control BtnEditConfirm.
+        /// Control BtnCheckUser.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BtnEditConfirm;
+        protected global::System.Web.UI.WebControls.ImageButton BtnCheckUser;
 
         /// <summary>
-        /// Control LbCompras.
+        /// Control LbDirecciones0.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbCompras;
+        protected global::System.Web.UI.WebControls.Label LbDirecciones0;
+
+        /// <summary>
+        /// Control BtnEditarDir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton BtnEditarDir;
+
+        /// <summary>
+        /// Control BtnCheckDir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton BtnCheckDir;
 
         /// <summary>
         /// Control LblRut.
@@ -78,87 +96,6 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.TextBox TxtRut;
 
         /// <summary>
-        /// Control LblNombre.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblNombre;
-
-        /// <summary>
-        /// Control TxtNombre.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtNombre;
-
-        /// <summary>
-        /// Control LblApellido.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblApellido;
-
-        /// <summary>
-        /// Control TxtApellido.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtApellido;
-
-        /// <summary>
-        /// Control LblTelefono.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblTelefono;
-
-        /// <summary>
-        /// Control TxtTeléfono.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtTeléfono;
-
-        /// <summary>
-        /// Control Button1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-
-        /// <summary>
-        /// Control LbDirecciones.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbDirecciones;
-
-        /// <summary>
-        /// Control BtnAgregar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BtnAgregar;
-
-        /// <summary>
         /// Control LblAlias.
         /// </summary>
         /// <remarks>
@@ -177,13 +114,22 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.TextBox TxtAlias;
 
         /// <summary>
-        /// Control BtnEditar0.
+        /// Control LblNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BtnEditar0;
+        protected global::System.Web.UI.WebControls.Label LblNombre;
+
+        /// <summary>
+        /// Control TxtNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtNombre;
 
         /// <summary>
         /// Control LblDireccion.
@@ -204,6 +150,60 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.TextBox TxtDireccion;
 
         /// <summary>
+        /// Control LblApellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblApellido;
+
+        /// <summary>
+        /// Control TxtApellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtApellido;
+
+        /// <summary>
+        /// Control LblDepto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblDepto;
+
+        /// <summary>
+        /// Control TxtDepto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtDepto;
+
+        /// <summary>
+        /// Control LblTelefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblTelefono;
+
+        /// <summary>
+        /// Control TxtTeléfono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtTeléfono;
+
+        /// <summary>
         /// Control LblComuna.
         /// </summary>
         /// <remarks>
@@ -213,13 +213,22 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.Label LblComuna;
 
         /// <summary>
-        /// Control TxtComuna.
+        /// Control DropComunas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtComuna;
+        protected global::System.Web.UI.WebControls.DropDownList DropComunas;
+
+        /// <summary>
+        /// Control Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
         /// Control LblRegion.
@@ -231,13 +240,13 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.Label LblRegion;
 
         /// <summary>
-        /// Control TxtRegion.
+        /// Control DropRegiones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtRegion;
+        protected global::System.Web.UI.WebControls.DropDownList DropRegiones;
 
         /// <summary>
         /// Control LbEditUser.
@@ -247,5 +256,14 @@ namespace equilibrio.WEBFORMS
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LbEditUser;
+
+        /// <summary>
+        /// Control LbEditDir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LbEditDir;
     }
 }

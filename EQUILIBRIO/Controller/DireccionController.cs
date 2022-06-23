@@ -84,7 +84,7 @@ namespace equilibrio.Controller
                 direccion.Comuna = comuna;
                 direccion.Region = region;
 
-                return "Dirección Modificada";
+                return "";
             }
             catch (Exception ex)
             {

@@ -87,20 +87,17 @@ namespace equilibrio.Controller
         }
 
         //Metodo para editar Usuario
-        public static string EditUsuario(string codigo, string rut, string nombre, string apellido, string telefono, string pass, string codDireccion)
+        public static string EditUsuario(string codigo, string nombre, string apellido, string telefono)
         {
             try
             {
-                Direccion direccion = DireccionController.FindDireccion(codDireccion);
+                
                 Usuario usuario = FindUsuario(codigo);
-                usuario.RUT = rut;
                 usuario.Nombre = nombre;
                 usuario.Apellido = apellido;
                 usuario.Telefono = telefono;
-                usuario.Pass = pass;
-                usuario.Direccion = direccion;
 
-                return "Usuario Modificado";
+                return "";
             }
             catch (Exception ex)
             {
