@@ -11,7 +11,7 @@ namespace equilibrio.Controller
         private static List<CarroCompras> listaCarro = new List<CarroCompras>();
 
         //Metodo para agregar Carro
-        public static string AddCarro(string codigo, string CodUsuario)
+        public static string AddCarro(string codigo, string CodUsuario, List<Articulo_Carro> ArticuloCarro)
         {
             Usuario usuario = UsuarioController.FindUser(CodUsuario);
             try
@@ -20,6 +20,7 @@ namespace equilibrio.Controller
                 {
                     Codigo = int.Parse(codigo),
                     user = usuario,
+                    ArtCar = ArticuloCarro,
 
                 });
 
@@ -71,19 +72,6 @@ namespace equilibrio.Controller
             listaCarro.Remove(FindCarro(cod));
 
             return "Carro removido de la lista";
-        }
-
-        //Metodo para precargar Articulo
-        public static void CargarCarro()
-        {
-
-            UsuarioController.CargarUsuario();
-
-            if (listaCarro.Count < 1)
-            {
-
-                AddCarro("1", "2");
-            }
         }
 
         //Metodo de auto increment

@@ -11,18 +11,16 @@ namespace equilibrio.Controller
         public static List<Articulo_Carro> listaArtCarro = new List<Articulo_Carro>();
 
         //Metodo para agregar Articulo-Carro
-        public static string AddArtCarro(string codigo, string codArticulo, string codCarroCompras, int cantidad, string precio)
+        public static string AddArtCarro(string codigo, string codArticulo, string cantidad, string precio)
         {
             Artículo articulo = ArticuloController.FindArticulo(codArticulo);
-            CarroCompras carro = CarroComprasController.FindCarro(codCarroCompras);
             try
             {
                 listaArtCarro.Add(new Articulo_Carro()
                 {
                     Codigo = int.Parse(codigo),
                     Artículo = articulo,
-                    Carro = carro,
-                    Cantidad = cantidad,
+                    Cantidad = int.Parse(cantidad),
                     Precio = precio,
 
 

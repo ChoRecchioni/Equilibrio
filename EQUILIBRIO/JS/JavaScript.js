@@ -114,14 +114,14 @@ function BtnPagar() {
 
         $.ajax({
             type: "post",
-            url: "CarroCompras.aspx/",
+            url: "CarroCompras.aspx/GenerarCarro",
             contentType: "application/json; charset=utf-8",
-            data: JSON.stringify({ id: id }),
+            data: JSON.stringify({ usuario: $("#hidSesion").val(), lista: listaProductos }),
             dataType: "json",
             success: function (response) {
                 if (!response.d.error) {
                     alert(response.d.msg);
-                    window.location.reload();
+                    window.location = "CarroCompras.aspx?ID=" + response.d.codCarro;
                 }
                 else {
                     alert(response.d.msg);

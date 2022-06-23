@@ -8,14 +8,6 @@
             width: 100%;
         }
 
-        .auto-style1 {
-            margin-top: 20px;
-        }
-
-        .auto-style2 {
-            width: 222px;
-        }
-
         .auto-style3 {
             width: 163px;
         }
@@ -34,17 +26,39 @@
 
         .auto-style8 {
             margin-top: 20px;
-            width: 73%;
+            width: 60%;
             height: 35px;
         }
 
         .auto-style9 {
-            width: 222px;
+            width: 100px;
             height: 35px;
         }
 
         .auto-style10 {
             width: 163px;
+            height: 35px;
+        }
+
+        .tr1 {
+            height: 50px;
+        }
+
+        .tr2 {
+            height: 35px
+        }
+        .auto-style11 {
+            margin-top: 20px;
+            width: 60%;
+        }
+        .auto-style12 {
+            width: 100px;
+        }
+        .auto-style13 {
+            width: 128px;
+        }
+        .auto-style14 {
+            width: 128px;
             height: 35px;
         }
     </style>
@@ -59,40 +73,48 @@
     <asp:UpdatePanel ID="UpdateMain" runat="server">
         <ContentTemplate>
             <div class="Contenedor">
-                <table>
-                    <tr style="height: 50px;">
-                        <td class="auto-style1">
-                            <asp:Label class="LblTitulo" ID="LbProducto" runat="server" Text="PRODUCTO"></asp:Label></td>
-                        <td class="auto-style2">
-                            <asp:Label class="LblTitulo" ID="LbCantidad" runat="server" Text="CANTIDAD"></asp:Label></td>
+                <br /><br /><br /><br /><br /><br /><br /><br />
+                <table id="tablaCarro">
+                    <tr class="tr1" style="height: 50px;">
+                        <td class="auto-style11">
+                            <asp:Label class="LblTituloCarro" ID="LbProducto" runat="server" Text="PRODUCTO"></asp:Label></td>
+                        <td class="auto-style12">
+                            <asp:Label class="LblTituloCarro" ID="LbCantidad" runat="server" Text="CANTIDAD"></asp:Label></td>
+                        <td class="auto-style13">
+                            <asp:Label class="LblTituloCarro" ID="LbPrecio" runat="server" Text="PRECIO U."></asp:Label>&nbsp;</td>
                         <td class="auto-style3">
-                            <asp:Label class="LblTitulo" ID="LbPrecio" runat="server" Text="PRECIO"></asp:Label></td>
+                            <asp:Label ID="LbPrecio0" runat="server" class="LblTituloCarro" Text="SUBTOTAL"></asp:Label>
+                        </td>
                     </tr>
-                    <tr style="height: 35px">
-                        <td class="auto-style1">
+                    <tr class="tr2" style="height: 35px">
+                        <td class="auto-style11">
                             <asp:Label ID="Label1" runat="server" Text="Nombre del producto"></asp:Label>
                         </td>
-                        <td class="auto-style2">
-                            <asp:Button class="Btn" ID="BtnMenos" runat="server" Text="-" Width="30px" Style="margin-right: 10px;" />
+                        <td class="auto-style12">
                             <asp:Label ID="Label2" runat="server" Text="1"></asp:Label>
-                            <asp:Button class="Btn" ID="BtnMas" runat="server" Text="+" Width="30px" Style="margin-left: 10px;" />
                         </td>
-                        <td class="auto-style3">
+                        <td class="auto-style13">
                             <asp:Label ID="Label3" runat="server" Text="$10.000.-"></asp:Label>
                         </td>
+                        <td class="auto-style3">
+                            <asp:Label ID="subtotal" runat="server" Text="$10.000.-"></asp:Label>
+                        </td>
                     </tr>
-                    <tr style="height: 35px">
-                        <td class="auto-style1">&nbsp;</td>
-                        <td class="auto-style2">&nbsp;</td>
+                    <tr class="tr2" style="height: 35px">
+                        <td class="auto-style11">&nbsp;</td>
+                        <td class="auto-style12">&nbsp;</td>
+                        <td class="auto-style13">&nbsp;</td>
                         <td class="auto-style3">&nbsp;</td>
                     </tr>
                     <tr>
                         <td class="auto-style8"></td>
                         <td class="auto-style9">
-                            <asp:Label class="LblTitulo" ID="LbCantidad0" runat="server" Text="TOTAL:"></asp:Label>
+                            &nbsp;</td>
+                        <td class="auto-style14">
+                            <asp:Label ID="LbCantidad0" runat="server" class="LblTituloCarro" Text="TOTAL:"></asp:Label>
                         </td>
                         <td class="auto-style10">
-                            <asp:Label class="LblTitulo" ID="LblTotal" runat="server" Text="$10.000.-"></asp:Label>
+                            <asp:Label ID="LblTotal" runat="server" class="LblTituloCarro" Text="$10.000.-"></asp:Label>
                         </td>
                     </tr>
                 </table>
@@ -103,12 +125,8 @@
                     <tr>
                         <td class="auto-style7" rowspan="2">
 
-                            <asp:TextBox class="Txt" ID="TxtComentario" runat="server" placeholder="COMENTARIO:" Style="text-align-last: left; margin-top: -35px; padding-left: 5px;" Height="100px"></asp:TextBox></td>
+                            DIRECCIÓN: </td>
                         <td class="auto-style5">
-                            <asp:DropDownList class="Drop" ID="DropDireccion" runat="server">
-                                <asp:ListItem Text="SELECCIONE UNA DIRECCIÓN" Value="0" />
-                                <asp:ListItem Text="ALIAS" Value="1" />
-                            </asp:DropDownList>
                             <br />
                         </td>
                     </tr>

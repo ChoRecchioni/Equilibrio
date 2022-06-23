@@ -42,7 +42,6 @@
                     </ul>
 
                     <button id="btnPagar" type="button" onclick="BtnPagar();" class="button">Pagar</button>
-                    <%--<a href="CarroCompras.aspx" class="button">Pagar</a>--%>
                 </div>
             </div>
 
