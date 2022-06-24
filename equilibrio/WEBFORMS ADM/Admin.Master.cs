@@ -17,7 +17,7 @@ namespace equilibrio.WEBFORMS_ADM
 
             if (u != null)
             {
-                usericon.HRef = "PerfilUsuario.aspx";
+                usericon.HRef = "PerfilAdmi.aspx";
             }
             else
             {
