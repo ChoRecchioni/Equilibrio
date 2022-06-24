@@ -21,6 +21,7 @@ namespace equilibrio.WEBFORMS
                 if (!string.IsNullOrEmpty(idCarro))
                 {
                     GenerarArticulo(idCarro);
+                    direccion();
                 }
             }
         }
@@ -34,92 +35,81 @@ namespace equilibrio.WEBFORMS
         {
             CarroCompras carroCompras = CarroComprasController.FindCarro(idCarro);
             double total = 0;
-            HtmlGenericControl table = new HtmlGenericControl("table");
 
             foreach (Articulo_Carro ar in carroCompras.ArtCar)
             {
-                HtmlGenericControl tr = new HtmlGenericControl("tr");
-                tr.Attributes.Add("class", "tr1");
+                HtmlTableRow tr2 = new HtmlTableRow();
+                tr2.Attributes.Add("class", "tr2");
 
-                HtmlGenericControl td = new HtmlGenericControl("td");
-                td.Attributes.Add("class", "auto-style11");
-                Label LblTitulo = new Label();
-                LblTitulo.Attributes.Add("class", "LblTituloCarro");
-                LblTitulo.Text = "PRODUCTO";
-                td.Controls.Add(LblTitulo);
-
-                HtmlGenericControl td2 = new HtmlGenericControl("td");
-                td2.Attributes.Add("class", "auto-style12");
-                Label LblCant = new Label();
-                LblCant.Attributes.Add("class", "LblTituloCarro");
-                LblCant.Text = "CANTIDAD";
-                td2.Controls.Add(LblCant);
-
-                HtmlGenericControl td3 = new HtmlGenericControl("td");
-                td3.Attributes.Add("class", "auto-style13");
-                Label LblPrecio = new Label();
-                LblPrecio.Attributes.Add("class", "LblTituloCarro");
-                LblPrecio.Text = "PRECIO U.";
-                td3.Controls.Add(LblPrecio);
-
-                HtmlGenericControl td4 = new HtmlGenericControl("td");
-                td4.Attributes.Add("class", "auto-style3");
-                Label LblPrecioS = new Label();
-                LblPrecioS.Attributes.Add("class", "LblTituloCarro");
-                LblPrecioS.Text = "SUBTOTAL";
-                td4.Controls.Add(LblPrecioS);
-
-                tr.Controls.Add(td);
-                tr.Controls.Add(td2);
-                tr.Controls.Add(td3);
-                tr.Controls.Add(td4);
-                table.Controls.Add(tr);
-
-                HtmlGenericControl tr2 = new HtmlGenericControl("tr");
-                tr.Attributes.Add("class", "tr2");
-
-                HtmlGenericControl td5 = new HtmlGenericControl("td");
+                HtmlTableCell td5 = new HtmlTableCell();
                 td5.Attributes.Add("class", "auto-style11");
                 Label LblNom = new Label();
                 LblNom.Text = ar.Artículo.Nombre;
-                td4.Controls.Add(LblNom);
+                td5.Controls.Add(LblNom);
 
-                HtmlGenericControl td6 = new HtmlGenericControl("td");
+                HtmlTableCell td6 = new HtmlTableCell();
                 td6.Attributes.Add("class", "auto-style12");
                 Label LblCantidad = new Label();
                 LblCantidad.Text = ar.Cantidad.ToString();
+                td6.Controls.Add(LblCantidad);
 
-                HtmlGenericControl td7 = new HtmlGenericControl("td");
+                HtmlTableCell td7 = new HtmlTableCell();
                 td7.Attributes.Add("class", "auto-style13");
                 Label LblPrecioU = new Label();
                 LblPrecioU.Text = "$" + ar.Artículo.Precio + ".-";
+                td7.Controls.Add(LblPrecioU);
 
-                HtmlGenericControl td8 = new HtmlGenericControl("td");
-                td7.Attributes.Add("class", "auto-style13");
+                HtmlTableCell td8 = new HtmlTableCell();
+                td8.Attributes.Add("class", "auto-style13");
                 Label LblPrecioST = new Label();
                 LblPrecioST.Text = "$" + double.Parse(ar.Artículo.Precio.Replace(".", "")) * ar.Cantidad + ".-";
+                td8.Controls.Add(LblPrecioST);
+
                 total = total + (double.Parse(ar.Artículo.Precio.Replace(".", "")) * Convert.ToDouble(ar.Cantidad));
 
                 tr2.Controls.Add(td5);
                 tr2.Controls.Add(td6);
                 tr2.Controls.Add(td7);
-                tr2.Controls.Add(td8);
-                table.Controls.Add(tr2);
-                TablaCarro.Controls.Add(table);
+                tr2.Controls.Add(td8);                
+                TablaCarro.Controls.Add(tr2);
             }
 
-            HtmlGenericControl tr3 = new HtmlGenericControl("tr");
+            HtmlTableRow tr3 = new HtmlTableRow();
             tr3.Attributes.Add("class", "tr3");
-            HtmlGenericControl td9 = new HtmlGenericControl("td");
-            td9.Attributes.Add("class", "auto-style0");
+            HtmlTableRow tr4 = new HtmlTableRow();
+            tr3.Attributes.Add("class", "tr3");
+            HtmlTableCell tdtot = new HtmlTableCell();
+            tdtot.Attributes.Add("colspan", "2");
+            HtmlTableCell tdtot1 = new HtmlTableCell();
+            HtmlTableCell tdtot2 = new HtmlTableCell();
+            tdtot.Attributes.Add("class", "tdtot");
+            Label LblPrecioTot1 = new Label();
+            LblPrecioTot1.Attributes.Add("class", "LblTituloCarro");
+            LblPrecioTot1.Text = "$" + total.ToString() + ".-";
             Label LblPrecioTot = new Label();
             LblPrecioTot.Attributes.Add("class", "LblTituloCarro");
-            LblPrecioTot.Text = "$" + total.ToString() + ".-";
+            LblPrecioTot.Text = "TOTAL: ";
 
-            td9.Controls.Add(LblPrecioTot);
-            tr3.Controls.Add(td9);
-            table.Controls.Add(tr3);
+            tdtot1.Controls.Add(LblPrecioTot);
+            tdtot2.Controls.Add(LblPrecioTot1);
+            tr3.Controls.Add(tdtot);
+            tr3.Controls.Add(tdtot1);
+            tr3.Controls.Add(tdtot2);
 
+            TablaCarro.Controls.Add(tr4);
+            TablaCarro.Controls.Add(tr3);
+
+        }
+
+        public void direccion()
+        {
+            Usuario u = (Usuario)Session["ActiveUser"];
+
+            Label labelDir = new Label();
+            labelDir.Attributes.Add("class", "Lbl");
+            labelDir.Text = "DIRECCIÓN: " + u.Direccion.CalleYnum + ", Dpto " + u.Direccion.Depto + ". " + u.Direccion.Comuna.Nombre;
+
+            divDir.Controls.Add(labelDir);
         }
 
         [WebMethod]

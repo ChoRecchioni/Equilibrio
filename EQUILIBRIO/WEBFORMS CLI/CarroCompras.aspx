@@ -50,11 +50,12 @@
 
         .auto-style11 {
             margin-top: 20px;
-            width: 60%;
+            width: 55%;
         }
 
         .auto-style12 {
             width: 100px;
+            padding-left: 10px;
         }
 
         .auto-style13 {
@@ -76,25 +77,30 @@
 
     <asp:UpdatePanel ID="UpdateMain" runat="server">
         <ContentTemplate>
-            <div class="Contenedor" id="TablaCarro" runat="server">
+            <div class="Contenedor" runat="server">
 
-                <br />
-                <br />
-
-                <table class="auto-style4">
-                    <tr>
-                        <td class="auto-style7" rowspan="2">DIRECCIÓN: </td>
-                        <td class="auto-style5">
-                            <br />
+                <table id="TablaCarro" runat="server">
+                    <tr class="tr1" style="height: 50px;">
+                        <td class="auto-style11">
+                            <asp:Label class="LblTituloCarro" ID="LbProducto" runat="server" Text="PRODUCTO"></asp:Label></td>
+                        <td class="auto-style12">
+                            <asp:Label class="LblTituloCarro" ID="LbCantidad" runat="server" Text="CANTIDAD  "></asp:Label></td>
+                        <td class="auto-style13">
+                            <asp:Label class="LblTituloCarro" ID="LbPrecio" runat="server" Text="PRECIO U."></asp:Label>&nbsp;</td>
+                        <td class="auto-style3">
+                            <asp:Label ID="LbPrecio0" runat="server" class="LblTituloCarro" Text="SUBTOTAL"></asp:Label>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
 
-                            <asp:Button class="BtnOK" ID="BtnPagar" runat="server" Text="PAGAR" OnClick="BtnPagar_Click" />
-                        </td>
-                    </tr>
                 </table>
+
+                <br />
+
+                <div id="divDir" runat="server">
+                </div>
+                <div style="text-align: -webkit-right;">
+                    <asp:Button class="BtnOKDir" ID="BtnPagar" runat="server" Text="PAGAR" OnClick="BtnPagar_Click" />
+                </div>
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>

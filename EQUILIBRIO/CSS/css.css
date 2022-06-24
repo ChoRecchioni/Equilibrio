@@ -387,6 +387,17 @@ li {
     text-transform: uppercase;
 }
 
+.BtnOKDir {
+    height: 25px;
+    width: 200px;
+    box-shadow: 3px 3px #888888;
+    border-radius: 3px;
+    border: none;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-right: 50px;
+}
+
 .BtnBN {
     box-shadow: 3px 3px #888888;
     border-radius: 3px;
@@ -412,7 +423,7 @@ input#ContentPlaceHolder1_BtnIniciar.Btn {
 }
 
 .LblTituloCarro {
-    font-size: large;
+    font-size: 22px;
     font-weight: bold;
     text-transform: uppercase;
 }
