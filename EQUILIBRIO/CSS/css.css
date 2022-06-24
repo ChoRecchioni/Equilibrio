@@ -458,6 +458,18 @@ a#ContentPlaceHolder1_LnkRegistrar.LblTitulo {
     margin-bottom: 5px;
 }
 
+.TxtPerfil {
+    width: 350px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    text-align-last: center;
+    color: grey;
+    font-size: 22px;
+    text-transform: uppercase;
+    vertical-align: super;
+}
+
 .Txt {
     width: 350px;
     height: 30px;

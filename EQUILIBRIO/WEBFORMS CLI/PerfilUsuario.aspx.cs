@@ -19,7 +19,6 @@ namespace equilibrio.WEBFORMS
             ValidarUser();
             CargarDropComunas();
             CargarDropRegiones();
-
             }
           
         }
