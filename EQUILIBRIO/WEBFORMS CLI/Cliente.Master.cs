@@ -14,12 +14,16 @@ namespace equilibrio.WEBFORMS_CLI
             if (u != null)
             {
                 usericon.HRef = "PerfilUsuario.aspx";
+                HdnCodUser.Value = u.Codigo.ToString();
             }
             else
             {
                 usericon.HRef = "IniciarSesión.aspx";
             }
+
+
         }
+
 
     }
 }

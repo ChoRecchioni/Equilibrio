@@ -11,7 +11,6 @@ namespace equilibrio.Clases
         private Artículo articulo;
         private CarroCompras carro;
         private int cantidad;
-        private string precio;
 
         public int Codigo
         {
@@ -34,13 +33,5 @@ namespace equilibrio.Clases
             get { return cantidad; }
             set { cantidad = value; }
         }
-
-        public string Precio
-        {
-            get { return precio; }
-            set { precio = value; }
-        }
-
-
     }
 }

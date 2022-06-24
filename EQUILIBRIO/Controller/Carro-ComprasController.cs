@@ -77,7 +77,7 @@ namespace equilibrio.Controller
         //Metodo de auto increment
         public static int CarroAI()
         {
-            int cod = listaCarro[listaCarro.Count - 1].Codigo + 1;
+            int cod = listaCarro.Count > 0 ? listaCarro[listaCarro.Count - 1].Codigo + 1 : 1;
 
             return cod;
         }

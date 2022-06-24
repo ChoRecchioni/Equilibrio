@@ -33,6 +33,15 @@ namespace equilibrio.WEBFORMS_CLI
         protected global::System.Web.UI.HtmlControls.HtmlAnchor usericon;
 
         /// <summary>
+        /// Control HdnCodUser.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden HdnCodUser;
+
+        /// <summary>
         /// Control CPHtitulos.
         /// </summary>
         /// <remarks>

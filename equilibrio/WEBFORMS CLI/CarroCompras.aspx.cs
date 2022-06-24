@@ -18,6 +18,10 @@ namespace equilibrio.WEBFORMS
             if (!IsPostBack)
             {
                 string idCarro = Request.QueryString["ID"];
+                if (!string.IsNullOrEmpty(idCarro))
+                {
+                    GenerarArticulo(idCarro);
+                }
             }
         }
 
@@ -29,6 +33,8 @@ namespace equilibrio.WEBFORMS
         public void GenerarArticulo(string idCarro)
         {
             CarroCompras carroCompras = CarroComprasController.FindCarro(idCarro);
+            double total = 0;
+            HtmlGenericControl table = new HtmlGenericControl("table");
 
             foreach (Articulo_Carro ar in carroCompras.ArtCar)
             {
@@ -38,27 +44,28 @@ namespace equilibrio.WEBFORMS
                 HtmlGenericControl td = new HtmlGenericControl("td");
                 td.Attributes.Add("class", "auto-style11");
                 Label LblTitulo = new Label();
-                LblTitulo.Attributes.Add("class", "LblTitulo");
+                LblTitulo.Attributes.Add("class", "LblTituloCarro");
                 LblTitulo.Text = "PRODUCTO";
                 td.Controls.Add(LblTitulo);
 
                 HtmlGenericControl td2 = new HtmlGenericControl("td");
                 td2.Attributes.Add("class", "auto-style12");
                 Label LblCant = new Label();
-                LblCant.Attributes.Add("class", "LblTitulo");
+                LblCant.Attributes.Add("class", "LblTituloCarro");
                 LblCant.Text = "CANTIDAD";
                 td2.Controls.Add(LblCant);
 
                 HtmlGenericControl td3 = new HtmlGenericControl("td");
                 td3.Attributes.Add("class", "auto-style13");
                 Label LblPrecio = new Label();
-                LblPrecio.Attributes.Add("class", "LblTitulo");
+                LblPrecio.Attributes.Add("class", "LblTituloCarro");
                 LblPrecio.Text = "PRECIO U.";
                 td3.Controls.Add(LblPrecio);
 
                 HtmlGenericControl td4 = new HtmlGenericControl("td");
                 td4.Attributes.Add("class", "auto-style3");
                 Label LblPrecioS = new Label();
+                LblPrecioS.Attributes.Add("class", "LblTituloCarro");
                 LblPrecioS.Text = "SUBTOTAL";
                 td4.Controls.Add(LblPrecioS);
 
@@ -66,6 +73,7 @@ namespace equilibrio.WEBFORMS
                 tr.Controls.Add(td2);
                 tr.Controls.Add(td3);
                 tr.Controls.Add(td4);
+                table.Controls.Add(tr);
 
                 HtmlGenericControl tr2 = new HtmlGenericControl("tr");
                 tr.Attributes.Add("class", "tr2");
@@ -77,44 +85,46 @@ namespace equilibrio.WEBFORMS
                 td4.Controls.Add(LblNom);
 
                 HtmlGenericControl td6 = new HtmlGenericControl("td");
-                td6.Attributes.Add("class", "auto-style12");                
+                td6.Attributes.Add("class", "auto-style12");
                 Label LblCantidad = new Label();
                 LblCantidad.Text = ar.Cantidad.ToString();
 
                 HtmlGenericControl td7 = new HtmlGenericControl("td");
                 td7.Attributes.Add("class", "auto-style13");
                 Label LblPrecioU = new Label();
-                LblPrecioU.Text = "$"+ar.Precio+".-";
+                LblPrecioU.Text = "$" + ar.Artículo.Precio + ".-";
 
                 HtmlGenericControl td8 = new HtmlGenericControl("td");
                 td7.Attributes.Add("class", "auto-style13");
                 Label LblPrecioST = new Label();
-                LblPrecioST.Text = "$" + int.Parse(ar.Precio)*ar.Cantidad + ".-";
+                LblPrecioST.Text = "$" + double.Parse(ar.Artículo.Precio.Replace(".", "")) * ar.Cantidad + ".-";
+                total = total + (double.Parse(ar.Artículo.Precio.Replace(".", "")) * Convert.ToDouble(ar.Cantidad));
 
                 tr2.Controls.Add(td5);
                 tr2.Controls.Add(td6);
                 tr2.Controls.Add(td7);
                 tr2.Controls.Add(td8);
+                table.Controls.Add(tr2);
+                TablaCarro.Controls.Add(table);
             }
 
             HtmlGenericControl tr3 = new HtmlGenericControl("tr");
             tr3.Attributes.Add("class", "tr3");
             HtmlGenericControl td9 = new HtmlGenericControl("td");
-            //td9.Attributes.Add("class", "auto-style11");            
+            td9.Attributes.Add("class", "auto-style0");
             Label LblPrecioTot = new Label();
-            LblPrecioTot.Text = "$" + /*total calcular!*/ + ".-";
+            LblPrecioTot.Attributes.Add("class", "LblTituloCarro");
+            LblPrecioTot.Text = "$" + total.ToString() + ".-";
 
-
-
+            td9.Controls.Add(LblPrecioTot);
+            tr3.Controls.Add(td9);
+            table.Controls.Add(tr3);
 
         }
 
         [WebMethod]
         public static object GenerarCarro(string usuario, List<jsonProductosCarro> lista)
         {
-            //Controller de Generar Carro
-
-            ///Usar controller de Articulo-Carro
             List<Articulo_Carro> articulos = new List<Articulo_Carro>();
 
             foreach (jsonProductosCarro item in lista)

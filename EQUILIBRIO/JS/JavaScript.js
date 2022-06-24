@@ -116,12 +116,12 @@ function BtnPagar() {
             type: "post",
             url: "CarroCompras.aspx/GenerarCarro",
             contentType: "application/json; charset=utf-8",
-            data: JSON.stringify({ usuario: $("#hidSesion").val(), lista: listaProductos }),
+            data: JSON.stringify({ usuario: $("#HdnCodUser").val(), lista: listaProductos }),
             dataType: "json",
             success: function (response) {
                 if (!response.d.error) {
                     alert(response.d.msg);
-                    window.location = "CarroCompras.aspx?ID=" + response.d.codCarro;
+                    window.location = "CarroCompras.aspx?ID=" + response.d.idCarro;
                 }
                 else {
                     alert(response.d.msg);
@@ -132,5 +132,7 @@ function BtnPagar() {
             },
             async: true
         });
+
+        return false;
     }
 }

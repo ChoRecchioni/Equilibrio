@@ -17,7 +17,7 @@
 </head>
 <body>
     <header>
-
+        
         <section id="redes">
             <a id="fb" href="http://www.facebook.com">
                 <img class="red" src="../IMG/fb2.png"></img></a>
@@ -41,7 +41,8 @@
                     <ul class="CarroItems">
                     </ul>
 
-                    <button id="btnPagar" type="button" onclick="BtnPagar();" class="button">Pagar</button>
+                    <input type="hidden" id="HdnCodUser" runat="server"/>
+                    <button id="btnPagar" type="button" onclick="return BtnPagar();" class="button">Pagar</button>
                 </div>
             </div>
 

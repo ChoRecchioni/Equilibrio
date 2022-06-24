@@ -21,9 +21,6 @@ namespace equilibrio.Controller
                     Codigo = int.Parse(codigo),
                     Artículo = articulo,
                     Cantidad = int.Parse(cantidad),
-                    Precio = precio,
-
-
                 });
 
                 return "ArtCarro agregado.";
@@ -64,13 +61,12 @@ namespace equilibrio.Controller
         }
 
         //Metodo para editar Usuario
-        public static string EditArtCarro(string codigo, int cantidad, string precio)
+        public static string EditArtCarro(string codigo, int cantidad)
         {
             try
             {
                 Articulo_Carro ArtCarro = FindArtCarro(codigo);
                 ArtCarro.Cantidad = cantidad;
-                ArtCarro.Precio = precio;
 
                 return "Articulo-Carro Modificado";
             }
@@ -91,7 +87,8 @@ namespace equilibrio.Controller
         //Metodo de auto increment
         public static int ArtCarroAI()
         {
-            int cod = listaArtCarro[listaArtCarro.Count - 1].Codigo + 1;
+
+            int cod = listaArtCarro.Count > 0 ? listaArtCarro[listaArtCarro.Count - 1].Codigo + 1 : 1;
 
             return cod;
         }

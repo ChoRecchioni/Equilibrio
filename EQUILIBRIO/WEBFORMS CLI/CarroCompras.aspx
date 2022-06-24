@@ -47,16 +47,20 @@
         .tr2 {
             height: 35px
         }
+
         .auto-style11 {
             margin-top: 20px;
             width: 60%;
         }
+
         .auto-style12 {
             width: 100px;
         }
+
         .auto-style13 {
             width: 128px;
         }
+
         .auto-style14 {
             width: 128px;
             height: 35px;
@@ -72,60 +76,14 @@
 
     <asp:UpdatePanel ID="UpdateMain" runat="server">
         <ContentTemplate>
-            <div class="Contenedor">
-                <br /><br /><br /><br /><br /><br /><br /><br />
-                <table id="tablaCarro">
-                    <tr class="tr1" style="height: 50px;">
-                        <td class="auto-style11">
-                            <asp:Label class="LblTituloCarro" ID="LbProducto" runat="server" Text="PRODUCTO"></asp:Label></td>
-                        <td class="auto-style12">
-                            <asp:Label class="LblTituloCarro" ID="LbCantidad" runat="server" Text="CANTIDAD"></asp:Label></td>
-                        <td class="auto-style13">
-                            <asp:Label class="LblTituloCarro" ID="LbPrecio" runat="server" Text="PRECIO U."></asp:Label>&nbsp;</td>
-                        <td class="auto-style3">
-                            <asp:Label ID="LbPrecio0" runat="server" class="LblTituloCarro" Text="SUBTOTAL"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr class="tr2" style="height: 35px">
-                        <td class="auto-style11">
-                            <asp:Label ID="Label1" runat="server" Text="Nombre del producto"></asp:Label>
-                        </td>
-                        <td class="auto-style12">
-                            <asp:Label ID="Label2" runat="server" Text="1"></asp:Label>
-                        </td>
-                        <td class="auto-style13">
-                            <asp:Label ID="Label3" runat="server" Text="$10.000.-"></asp:Label>
-                        </td>
-                        <td class="auto-style3">
-                            <asp:Label ID="subtotal" runat="server" Text="$10.000.-"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr class="tr2" style="height: 35px">
-                        <td class="auto-style11">&nbsp;</td>
-                        <td class="auto-style12">&nbsp;</td>
-                        <td class="auto-style13">&nbsp;</td>
-                        <td class="auto-style3">&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style8"></td>
-                        <td class="auto-style9">
-                            &nbsp;</td>
-                        <td class="auto-style14">
-                            <asp:Label ID="LbCantidad0" runat="server" class="LblTituloCarro" Text="TOTAL:"></asp:Label>
-                        </td>
-                        <td class="auto-style10">
-                            <asp:Label ID="LblTotal" runat="server" class="LblTituloCarro" Text="$10.000.-"></asp:Label>
-                        </td>
-                    </tr>
-                </table>
+            <div class="Contenedor" id="TablaCarro" runat="server">
 
+                <br />
                 <br />
 
                 <table class="auto-style4">
                     <tr>
-                        <td class="auto-style7" rowspan="2">
-
-                            DIRECCIÓN: </td>
+                        <td class="auto-style7" rowspan="2">DIRECCIÓN: </td>
                         <td class="auto-style5">
                             <br />
                         </td>
