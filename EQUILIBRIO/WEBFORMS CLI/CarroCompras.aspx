@@ -97,13 +97,13 @@
                 <br />
 
                 <div id="divDir" runat="server">
+                    <asp:Label ID="Label1" runat="server" class="LblTituloCarro" Text="SELECCIONE SU SEDE MAS CERCANA:"></asp:Label>
+                    <br />
+                    <asp:DropDownList ID="DropLocal" class="Drop" runat="server"></asp:DropDownList>
+                    <br />
                 </div>
                 <div style="text-align: -webkit-right;">
                     <asp:Label ID="LblAdd" runat="server" class="LblTituloCarro" style="display:none;" Text=""></asp:Label>
-                    <br />
-                    <asp:Label ID="Label1" runat="server" class="LblTituloCarro" Text="Seleccione su sede mas cercana:"></asp:Label>
-                    <br />
-                    <asp:DropDownList ID="DropLocal" runat="server"></asp:DropDownList>
                     <asp:Button class="BtnOKDir" ID="BtnPagar" runat="server" Text="PAGAR" OnClick="BtnPagar_Click" />
                 </div>
             </div>

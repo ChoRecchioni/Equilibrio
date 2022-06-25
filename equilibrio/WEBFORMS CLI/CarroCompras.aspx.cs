@@ -52,7 +52,7 @@ namespace equilibrio.WEBFORMS
             LblAdd.Text = OrdenCompraController.AddOrden(cod, idCarro, total.ToString(), DropLocal.SelectedValue.ToString());
             OrdenCompra orden = OrdenCompraController.FindOrden(cod);
             DeliveryController.AddDelivery(DeliveryController.DeliveryAI().ToString(),cod, "1");
-            Response.Redirect("ResumenPedido.aspx/ID="+cod);
+            Response.Redirect("ResumenPedido.aspx/ID=" + cod);
             //}
 
         }
@@ -132,7 +132,7 @@ namespace equilibrio.WEBFORMS
             Usuario u = (Usuario)Session["ActiveUser"];
 
             Label labelDir = new Label();
-            labelDir.Attributes.Add("class", "Lbl");
+            labelDir.Attributes.Add("class", "LblTituloCarro");
             labelDir.Text = "DIRECCIÓN: " + u.Direccion.CalleYnum + ", Dpto " + u.Direccion.Depto + ". " + u.Direccion.Comuna.Nombre;
 
             divDir.Controls.Add(labelDir);
