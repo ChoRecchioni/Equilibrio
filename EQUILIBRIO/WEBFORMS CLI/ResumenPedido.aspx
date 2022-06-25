@@ -46,16 +46,18 @@
                     <asp:Label class="Lbl" ID="LblRut" runat="server" Text="RUT:" />
                 </td>
                 <td class="auto-style31">
-                    <asp:Label class="Lbl" ID="Label2" runat="server" Text="Label"></asp:Label>
+                    <asp:Label class="Lbl" ID="LbRutu" runat="server" Text=" "></asp:Label>
                 </td>
-                <td class="auto-style2" rowspan="9">&nbsp;</td>
+                <td class="auto-style2" rowspan="9">
+                    <div id="divC" runat="server"></div>
+                </td>
             </tr>
             <tr style="height: 10px;">
                 <td class="auto-style32">
                     <asp:Label class="Lbl" ID="LblNombre" runat="server" Text="NOMBRE:" />
                 </td>
                 <td class="auto-style31">
-                    <asp:Label class="Lbl" ID="Label3" runat="server" Text="Label"></asp:Label>
+                    <asp:Label class="Lbl" ID="LbNombreu" runat="server" Text=" "></asp:Label>
                 </td>
             </tr>
             <tr style="height: 10px;">
@@ -63,7 +65,7 @@
                     <asp:Label class="Lbl" ID="LblApellido" runat="server" Text="APELLIDO:" />
                 </td>
                 <td class="auto-style31">
-                    <asp:Label class="Lbl" ID="Label4" runat="server" Text="Label"></asp:Label>
+                    <asp:Label class="Lbl" ID="LbApellidou" runat="server" Text=" "></asp:Label>
                 </td>
             </tr>
             <tr style="height: 10px;">
@@ -71,7 +73,7 @@
                     <asp:Label class="Lbl" ID="LblTelefono" runat="server" Text="TELÉFONO:" />
                 </td>
                 <td class="auto-style31">
-                    <asp:Label class="Lbl" ID="Label5" runat="server" Text="Label"></asp:Label>
+                    <asp:Label class="Lbl" ID="LbTelefonou" runat="server" Text=" "></asp:Label>
                 </td>
             </tr>
             <tr style="height: 10px;">
@@ -84,7 +86,7 @@
                     <asp:Label class="Lbl" ID="LblDireccion" runat="server" Text="DIRECCIÓN:" />
                 </td>
                 <td class="auto-style31">
-                    <asp:Label class="Lbl" ID="Label6" runat="server" Text="Label"></asp:Label>
+                    <asp:Label class="Lbl" ID="LbDireccionu" runat="server" Text=" "></asp:Label>
                 </td>
             </tr>
             <tr style="height: 10px;">
@@ -92,7 +94,7 @@
                     <asp:Label class="Lbl" ID="LblComuna" runat="server" Text="COMUNA:" />
                 </td>
                 <td class="auto-style31">
-                    <asp:Label class="Lbl" ID="Label7" runat="server" Text="Label"></asp:Label>
+                    <asp:Label class="Lbl" ID="LbComunau" runat="server" Text=" "></asp:Label>
                 </td>
             </tr>
             <tr style="height: 10px;">
@@ -100,7 +102,7 @@
                     <asp:Label class="Lbl" ID="LblRegion" runat="server" Text="REGIÓN:" />
                 </td>
                 <td class="auto-style31">
-                    <asp:Label class="Lbl" ID="Label8" runat="server" Text="Label"></asp:Label>
+                    <asp:Label class="Lbl" ID="LbRegionu" runat="server" Text=" "></asp:Label>
                 </td>
             </tr>
             <tr style="height: 10px;">
@@ -111,11 +113,11 @@
             </tr>
             <tr style="height: 10px;">
                 <td class="auto-style29" colspan="2">
-                    <asp:Label class="Lbl" ID="Label9" runat="server" Text="Crédito/Débito/Transferencia"></asp:Label>
+                    <asp:Label class="Lbl" ID="Label9" runat="server" Text=""></asp:Label>
                 </td>
                 <td class="auto-style30"> 
                 <asp:Label class="LblTitulo" ID="LbCantidad0" runat="server" Text="TOTAL:" ></asp:Label>
-                <asp:Label class="LblTitulo" ID="LblTotal" runat="server" Text="$10.000.-"></asp:Label>
+                <asp:Label class="LblTitulo" ID="LblTotal" runat="server" Text=" "></asp:Label>
                 </td>
             </tr>
             </table>
