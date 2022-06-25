@@ -9,6 +9,7 @@
 
         .auto-style2 {
             width: 550px;
+            text-align: center;
         }
     </style>
 </asp:Content>
@@ -36,17 +37,20 @@
                                 <label>
                                     <input type="radio" id="rd1" runat="server" name="stars" value="1" />
                                     <span class="icon">★</span>
+                                    <br />
                                 </label>
                                 <label>
                                     <input type="radio" id="rd2" runat="server" name="stars" value="2" />
                                     <span class="icon">★</span>
                                     <span class="icon">★</span>
+                                    <br />
                                 </label>
                                 <label>
                                     <input type="radio" id="rd3" runat="server" name="stars" value="3" />
                                     <span class="icon">★</span>
                                     <span class="icon">★</span>
                                     <span class="icon">★</span>
+                                    <br />
                                 </label>
                                 <label>
                                     <input type="radio" id="rd4" runat="server" name="stars" value="4" />
@@ -54,6 +58,7 @@
                                     <span class="icon">★</span>
                                     <span class="icon">★</span>
                                     <span class="icon">★</span>
+                                    <br />
                                 </label>
                                 <label>
                                     <input type="radio" id="rd5" runat="server" name="stars" value="5" />
@@ -62,6 +67,7 @@
                                     <span class="icon">★</span>
                                     <span class="icon">★</span>
                                     <span class="icon">★</span>
+                                    <br />
                                 </label>
                             </div>
 
@@ -74,10 +80,10 @@
                     </tr>
                     <tr>
                         <td class="auto-style2">
-                            <asp:TextBox class="Txt" ID="TxtComentario" runat="server" placeholder="COMENTARIO:" Style="text-align-last: left; margin-top: -35px; padding-left: 5px;" Height="100px"></asp:TextBox></td>
+                            <asp:TextBox class="Txt" ID="TxtComentario" TextMode="MultiLine" runat="server" placeholder="COMENTARIO:" Style="text-align-last: left; margin-top: -35px; padding-left: 5px;" Height="100px"></asp:TextBox></td>
                         </td>
                     <td class="auto-style5">
-                        <asp:Button class="BtnOK" ID="BtnEnviar" runat="server" Text="AGREGAR" Style="margin-left: 375px;" OnClick="BtnEnviar_Click" />
+                        <asp:Button class="BtnOK" ID="BtnEnviar" runat="server" Text="AGREGAR" Style="margin-left: 300px;" OnClick="BtnEnviar_Click" />
                     </td>
                     </tr>
                 </table>
