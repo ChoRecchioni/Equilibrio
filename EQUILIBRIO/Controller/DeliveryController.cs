@@ -12,7 +12,7 @@ namespace equilibrio.Controller
         private static List<Delivery> listaDelivery = new List<Delivery>();
 
         //Metodo para agregar Delivery
-        public static string AddDeolivery(string codigo, string codOrden, string codEstado)
+        public static string AddDelivery(string codigo, string codOrden, string codEstado)
         {
             OrdenCompra orden = OrdenCompraController.FindOrden(codOrden);
             EstadoDelivery estado = EstadoDeliveryController.FindEstado(codEstado);
@@ -100,8 +100,12 @@ namespace equilibrio.Controller
         //Metodo para precargar Delivery
         public static void CargarDelivery()
         {
+            OrdenCompraController.CargarOrden();
+            EstadoDeliveryController.CargarEstado();
+
             if (listaDelivery.Count < 1)
             {
+                AddDelivery("1", "1", "1");
 
             }
         }

@@ -84,6 +84,18 @@ namespace equilibrio.Controller
             return "Usuario removido de la lista";
         }
 
+        public static void CargarArticuloCarro()
+        {
+            ArticuloController.CargarArticulo();
+
+            if (listaArtCarro.Count < 1)
+            {
+                AddArtCarro("1", "1", "1", "1.000");
+                AddArtCarro("2", "2", "2", "3.000");
+
+            }
+        }
+
         //Metodo de auto increment
         public static int ArtCarroAI()
         {

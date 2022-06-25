@@ -74,6 +74,21 @@ namespace equilibrio.Controller
             return "Carro removido de la lista";
         }
 
+
+        public static void CargarCarro()
+        {
+            Art_CarroController.CargarArticuloCarro();
+            UsuarioController.CargarUsuario();
+          List<Articulo_Carro> listaArticulos = new List<Articulo_Carro>();
+
+            if (listaCarro.Count < 1)
+            {
+                listaArticulos.Add(Art_CarroController.FindArtCarro("1"));
+                listaArticulos.Add(Art_CarroController.FindArtCarro("2"));
+                AddCarro("1", "1", listaArticulos);
+            }            
+        }
+
         //Metodo de auto increment
         public static int CarroAI()
         {

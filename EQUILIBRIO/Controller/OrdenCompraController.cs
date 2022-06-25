@@ -101,9 +101,12 @@ namespace equilibrio.Controller
         //Metodo para precargar Articulo
         public static void CargarOrden()
         {
+            CarroComprasController.CargarCarro();
+            LocalController.CargarLocales();
+
             if (listaOrden.Count < 1)
             {
-
+                AddOrden("1", "1", "1.000", "1");
 
             }
         }

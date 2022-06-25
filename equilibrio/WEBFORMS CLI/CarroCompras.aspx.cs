@@ -24,14 +24,37 @@ namespace equilibrio.WEBFORMS
                     direccion();
                 }
             }
+
+            ReseñaController.CargarReseña();
+            LocalController.CargarLocales();
+
+
+            if (!Page.IsPostBack)
+            {
+                cargarDropLocales();
+            }
         }
 
         protected void BtnPagar_Click(object sender, EventArgs e)
         {
+            string idCarro = Request.QueryString["ID"];
+            CarroCompras carroCompras = CarroComprasController.FindCarro(idCarro);
+
+            double total = 0;
+            foreach (Articulo_Carro ar in carroCompras.ArtCar)
+            {
+                total = total + (double.Parse(ar.Artículo.Precio.Replace(".", "")) * Convert.ToDouble(ar.Cantidad));
+            }
+
+            string cod = OrdenCompraController.OrdenAI().ToString();
             //Response.Redirect("http://webpay.cl");
             //if (pago != null) {
-                
+            LblAdd.Text = OrdenCompraController.AddOrden(cod, idCarro, total.ToString(), DropLocal.SelectedValue.ToString());
+            OrdenCompra orden = OrdenCompraController.FindOrden(cod);
+            DeliveryController.AddDelivery(DeliveryController.DeliveryAI().ToString(),cod, "1");
+            Response.Redirect("ResumenPedido.aspx/ID="+cod);
             //}
+
         }
 
         public void GenerarArticulo(string idCarro)
@@ -113,6 +136,21 @@ namespace equilibrio.WEBFORMS
             labelDir.Text = "DIRECCIÓN: " + u.Direccion.CalleYnum + ", Dpto " + u.Direccion.Depto + ". " + u.Direccion.Comuna.Nombre;
 
             divDir.Controls.Add(labelDir);
+        }
+
+        public void cargarDropLocales()
+        {
+
+            DropLocal.DataSource = from sed in LocalController.FindAll()
+                                   select new
+                                   {
+                                       codigo = sed.Codigo,
+                                       texto = sed.Nombre,
+                                   };
+            DropLocal.DataValueField = "codigo";
+            DropLocal.DataTextField = "texto";
+
+            DropLocal.DataBind();
         }
 
         [WebMethod]
