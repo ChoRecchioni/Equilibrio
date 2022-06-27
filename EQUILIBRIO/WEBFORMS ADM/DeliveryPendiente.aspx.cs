@@ -27,6 +27,9 @@ namespace equilibrio.WEBFORMS_ADM
             {
                 HtmlGenericControl divDet = new HtmlGenericControl("div");
                 divDet.Attributes.Add("class", "divDet");
+                Label lblPed = new Label();
+                lblPed.Attributes.Add("class", "Lbl");
+
             }            
         }
 

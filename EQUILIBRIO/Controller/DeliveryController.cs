@@ -12,7 +12,7 @@ namespace equilibrio.Controller
         private static List<Delivery> listaDelivery = new List<Delivery>();
 
         //Metodo para agregar Delivery
-        public static string AddDelivery(string codigo, string codOrden, string codEstado)
+        public static string AddDelivery(string codigo, string codOrden, string codEstado, string numPed)
         {
             OrdenCompra orden = OrdenCompraController.FindOrden(codOrden);
             EstadoDelivery estado = EstadoDeliveryController.FindEstado(codEstado);
@@ -23,6 +23,7 @@ namespace equilibrio.Controller
                     Codigo = int.Parse(codigo),
                     Orden = orden,
                     Estado = estado,
+                    NumPedido = int.Parse(numPed),
 
                 });
 
@@ -68,7 +69,7 @@ namespace equilibrio.Controller
 
         //Metodo para editar Delivery
 
-        public static string EditDelivery(string codigo, string codOrden, string codEstado)
+        public static string EditDelivery(string codigo, string codOrden, string codEstado, string numPed)
         {
             OrdenCompra orden = OrdenCompraController.FindOrden(codOrden);
             EstadoDelivery estado = EstadoDeliveryController.FindEstado(codEstado);
@@ -77,6 +78,7 @@ namespace equilibrio.Controller
                 Delivery delivery = FindDelivery(codigo);
                 delivery.Orden = orden;
                 delivery.Estado = estado;
+                delivery.NumPedido = int.Parse(numPed);
 
                 return "Delivery Modificado";
             }
@@ -105,7 +107,7 @@ namespace equilibrio.Controller
 
             if (listaDelivery.Count < 1)
             {
-                AddDelivery("1", "1", "1");
+                AddDelivery("1", "1", "1", "1");
 
             }
         }
@@ -116,6 +118,13 @@ namespace equilibrio.Controller
             int cod = listaDelivery[listaDelivery.Count - 1].Codigo + 1;
 
             return cod;
+        }
+
+        public static int numPedidoAI()
+        {
+            int numP = listaDelivery[listaDelivery.Count - 1].Codigo + 12345;
+
+            return numP;
         }
     }
 }

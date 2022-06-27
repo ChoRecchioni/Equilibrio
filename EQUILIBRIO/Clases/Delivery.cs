@@ -11,7 +11,7 @@ namespace equilibrio.Clases
         private int codigo;
         private OrdenCompra orden;
         private EstadoDelivery estado;
-
+        private int numPedido;
 
         public int Codigo
         {
@@ -29,6 +29,12 @@ namespace equilibrio.Clases
         {
             get { return estado; }
             set { estado = value; }
+        }
+
+        public int NumPedido
+        {
+            get { return numPedido; }
+            set { numPedido = value; }
         }
 
     }
