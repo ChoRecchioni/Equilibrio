@@ -15,6 +15,7 @@ namespace equilibrio.Clases
         private string pass;
         private Direccion direccion;
         private Role rol;
+        private Local local; //FK not null
 
         public Usuario() { }
 
@@ -64,6 +65,11 @@ namespace equilibrio.Clases
         {
             get { return rol; }
             set { rol = value; }
+        }
+        public Local Local
+        {
+            get { return local; }
+            set { local = value; }
         }
     }
 }

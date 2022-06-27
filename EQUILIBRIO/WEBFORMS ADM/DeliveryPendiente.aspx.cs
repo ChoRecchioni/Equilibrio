@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using equilibrio.Clases;
+using equilibrio.Controller;
 
 namespace equilibrio.WEBFORMS_ADM
 {
@@ -13,5 +16,19 @@ namespace equilibrio.WEBFORMS_ADM
         {
 
         }
+
+        public void Pendientes()
+        {
+            EstadoDeliveryController.CargarEstado();
+            DeliveryController.CargarDelivery();
+            List<Delivery> listaDelivery =  DeliveryController.FindAll();
+
+            foreach (Delivery item in listaDelivery.Where(L => L.Estado.Codigo == 1))
+            {
+                HtmlGenericControl divDet = new HtmlGenericControl("div");
+                divDet.Attributes.Add("class", "divDet");
+            }            
+        }
+
     }
 }

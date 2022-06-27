@@ -21,7 +21,7 @@ namespace equilibrio.WEBFORMS
                 if (!string.IsNullOrEmpty(idCarro))
                 {
                     GenerarArticulo(idCarro);
-                    direccion();
+                    Direccion();
                 }
             }
 
@@ -127,7 +127,7 @@ namespace equilibrio.WEBFORMS
 
         }
 
-        public void direccion()
+        public void Direccion()
         {
             Usuario u = (Usuario)Session["ActiveUser"];
 

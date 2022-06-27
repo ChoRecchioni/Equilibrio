@@ -70,7 +70,7 @@ namespace equilibrio.WEBFORMS
             TextCalle.Text, TextDpto.Text, DropComuna.SelectedValue, DropRegion.SelectedValue);
 
             LbMensaje.Text = UsuarioController.AddUsuario(codUser, TextRut.Text,
-            TextNombre.Text, TextApellido.Text, TextTelefono.Text, TextContraseña.Text, codDir.ToString(), HdnRolCliente.Value);
+            TextNombre.Text, TextApellido.Text, TextTelefono.Text, TextContraseña.Text, codDir.ToString(), HdnRolCliente.Value, "");
 
             Response.Redirect("IniciarSesión.aspx");
         }

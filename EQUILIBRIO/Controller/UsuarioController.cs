@@ -11,10 +11,11 @@ namespace equilibrio.Controller
         public static List<Usuario> listaUsuario = new List<Usuario>();
 
         //Metodo para agregar Usuario
-        public static string AddUsuario(int codigo, string rut, string nombre, string apellido, string telefono, string pass, string codDireccion, string Codrol)
+        public static string AddUsuario(int codigo, string rut, string nombre, string apellido, string telefono, string pass, string codDireccion, string Codrol, string CodLocal)
         {
             Direccion direccion = DireccionController.FindDireccion(codDireccion);
             Role rol = RoleController.FindRole(Codrol);
+            Local local = LocalController.FindLocal(CodLocal); 
             Usuario u = new Usuario()
             {
                 Codigo = codigo,
@@ -25,6 +26,8 @@ namespace equilibrio.Controller
                 Pass = pass,
                 Direccion = direccion,
                 Rol = rol,
+                Local = local,
+
             };
             listaUsuario.Add(u);
 
@@ -123,9 +126,9 @@ namespace equilibrio.Controller
 
             if (listaUsuario.Count < 1)
             {
-                AddUsuario(1, "101", "admin", "admin", "569", "admin", "1", "1");
-                AddUsuario(2, "202", "cliente", "cliente", "569", "cliente", "1", "2");
-                AddUsuario(3, "25929867-9", "sofia", "sofia", "5691111", "sofia", "1", "2");
+                AddUsuario(1, "101", "admin", "admin", "569", "admin", "1", "1", "1");
+                AddUsuario(2, "202", "cliente", "cliente", "569", "cliente", "1", "2", "");
+                AddUsuario(3, "25929867-9", "sofia", "sofia", "5691111", "sofia", "1", "2", "");
             }
         }
 
