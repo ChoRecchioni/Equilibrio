@@ -26,7 +26,7 @@ namespace equilibrio.WEBFORMS_ADM
             if (usuario != null)
                 reservas.Where(r => r.Usuario.Codigo == usuario.Codigo);
 
-            foreach (var item in reservas)
+            foreach (var item in reservas.Where(R => R.Local.Codigo == usuario.Local.Codigo))
             {
                 HtmlGenericControl Table = new HtmlGenericControl("table");
                 Table.Attributes.Add("class", "auto-style1");
