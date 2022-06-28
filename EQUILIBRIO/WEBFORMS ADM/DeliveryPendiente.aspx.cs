@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
@@ -79,7 +80,32 @@ namespace equilibrio.WEBFORMS_ADM
                 Deliverys.Controls.Add(divArt);
                 Deliverys.Controls.Add(divBut);
             }
+
         }
 
+        [WebMethod]
+        public static object FinalizarDelivery(string id)
+        {
+            try
+            {
+                Delivery delivery = DeliveryController.FindDelivery(id);
+                DeliveryController.EditDelivery(delivery.Codigo.ToString(), delivery.Orden.Codigo.ToString(), "4", delivery.NumPedido.ToString());
+
+                return new
+                {
+                    error = false,
+                    msg = ""
+                };
+            }
+            catch (Exception e)
+            {
+                return new
+                {
+                    error = true,
+                    msg = e.Message
+                };
+            }
+        }
     }
+
 }

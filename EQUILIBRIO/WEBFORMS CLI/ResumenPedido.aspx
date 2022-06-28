@@ -10,9 +10,9 @@
         .auto-style2 {
             margin-left: 30px;
             width: 250px;
+            padding-left: 10px;
             border-left: 3px black solid;
         }
-
 
         .auto-style30 {
             margin-left: 30px;
@@ -20,9 +20,11 @@
             border-left: 3px black solid;
             text-align: right;
         }
+
         .auto-style31 {
             width: 126px;
         }
+
         .auto-style32 {
             width: 76px;
         }
@@ -106,19 +108,18 @@
                 </td>
             </tr>
             <tr style="height: 10px;">
-                <td class="auto-style29" colspan="2">
-                </td>
+                <td class="auto-style29" colspan="2"></td>
             </tr>
             <tr style="height: 10px;">
                 <td class="auto-style29" colspan="2">
                     <asp:Label class="Lbl" ID="Label9" runat="server" Text=""></asp:Label>
                 </td>
-                <td class="auto-style30"> 
-                <asp:Label class="LblTitulo" ID="LbCantidad0" runat="server" Text="TOTAL:" ></asp:Label>
-                <asp:Label class="LblTitulo" ID="LblTotal" runat="server" Text=" "></asp:Label>
+                <td class="auto-style30">
+                    <asp:Label class="LblTitulo" ID="LbCantidad0" runat="server" Text="TOTAL:"></asp:Label>
+                    <asp:Label class="LblTitulo" ID="LblTotal" runat="server" Text=" "></asp:Label>
                 </td>
             </tr>
-            </table>
+        </table>
     </div>
 
 </asp:Content>

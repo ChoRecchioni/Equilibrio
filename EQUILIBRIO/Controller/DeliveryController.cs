@@ -112,7 +112,6 @@ namespace equilibrio.Controller
             if (listaDelivery.Count < 1)
             {
                 AddDelivery("1", "1", "1", "1");
-
             }
         }
 
