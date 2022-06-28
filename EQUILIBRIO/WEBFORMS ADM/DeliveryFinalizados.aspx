@@ -37,10 +37,10 @@
         <ContentTemplate>
     <div class="Contenedor" runat="server">
 
-        <br />
+      <%--  <br />
         <asp:TextBox ID="TxtNpedido" runat="server" placeholder="N° PEDIDO"></asp:TextBox><asp:Button class="btn" ID="Button1" runat="server" Text="Buscar" />
         <asp:TextBox ID="TxtCliente" runat="server" placeholder="CLIENTE"></asp:TextBox><asp:Button class="btn" ID="Button2" runat="server" Text="Buscar" />
-        <asp:TextBox ID="TxtFecha" runat="server" placeholder="FECHA"></asp:TextBox><asp:Button class="btn" ID="Button3" runat="server" Text="Buscar" />
+        <asp:TextBox ID="TxtFecha" runat="server" placeholder="FECHA"></asp:TextBox><asp:Button class="btn" ID="Button3" runat="server" Text="Buscar" />--%>
 
         <div id="Deliverys" runat="server">
 
