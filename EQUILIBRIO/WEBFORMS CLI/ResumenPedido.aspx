@@ -12,6 +12,7 @@
             width: 250px;
             padding-left: 10px;
             border-left: 3px black solid;
+            vertical-align: baseline;
         }
 
         .auto-style30 {

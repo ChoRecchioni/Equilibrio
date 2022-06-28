@@ -21,17 +21,18 @@ namespace equilibrio.WEBFORMS_ADM
         }
         public void CargarGrid()
         {
+            Usuario u = (Usuario)Session["ActiveUser"];
 
             var listado = from re in ReseñaController.FindAll()
                           select new
                           {
-                              Local = re.Local.Nombre,
+                              Local = re.Local,
                               Puntuacion = re.Puntuacion,
                               Comentario = re.Comentario,
                               Usuario = re.Usuario
                           };
 
-            foreach (var item in listado)
+            foreach (var item in listado.Where(L => L.Local.Codigo == u.Local.Codigo))
             {
                 //generamos objeto DIV por cada reseña (con n)
                 HtmlGenericControl divResena = new HtmlGenericControl("div");
