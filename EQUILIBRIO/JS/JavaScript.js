@@ -120,7 +120,6 @@ function BtnPagar() {
             dataType: "json",
             success: function (response) {
                 if (!response.d.error) {
-                    alert(response.d.msg);
                     window.location = "CarroCompras.aspx?ID=" + response.d.idCarro;
                 }
                 else {

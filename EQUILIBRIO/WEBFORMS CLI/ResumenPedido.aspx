@@ -107,8 +107,6 @@
             </tr>
             <tr style="height: 10px;">
                 <td class="auto-style29" colspan="2">
-                    <br />
-                    <span class="LblTitulo">Método de pago</span>
                 </td>
             </tr>
             <tr style="height: 10px;">

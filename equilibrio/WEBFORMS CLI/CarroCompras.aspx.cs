@@ -51,8 +51,8 @@ namespace equilibrio.WEBFORMS
             //if (pago != null) {
             LblAdd.Text = OrdenCompraController.AddOrden(cod, idCarro, total.ToString(), DropLocal.SelectedValue.ToString());
             OrdenCompra orden = OrdenCompraController.FindOrden(cod);
-            DeliveryController.AddDelivery(DeliveryController.DeliveryAI().ToString(),cod, "1");
-            Response.Redirect("ResumenPedido.aspx/ID=" + cod);
+            DeliveryController.AddDelivery(DeliveryController.DeliveryAI().ToString(), orden.Codigo.ToString(), "1", DeliveryController.numPedidoAI().ToString());
+            Response.Redirect("ResumenPedido.aspx?ID=" + cod);
             //}
 
         }

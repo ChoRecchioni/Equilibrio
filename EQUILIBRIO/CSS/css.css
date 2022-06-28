@@ -534,6 +534,18 @@ a#ContentPlaceHolder1_LnkRegistrar.LblTitulo {
     vertical-align: super;
 }
 
+.DropPerfil {
+    width: 248px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    text-align-last: center;
+    color: grey;
+    font-size: 22px;
+    text-transform: uppercase;
+    vertical-align: super;
+}
+
 .DropStars {
     width: 100px;
     text-align-last: auto;

@@ -9,7 +9,6 @@ namespace equilibrio.Clases
     {
         private int codigo;
         private Artículo articulo;
-        private CarroCompras carro;
         private int cantidad;
 
         public int Codigo
@@ -23,11 +22,6 @@ namespace equilibrio.Clases
             set { articulo = value; }
         }
 
-        public CarroCompras Carro
-        {
-            get { return carro; }
-            set { carro = value; }
-        }
         public int Cantidad
         {
             get { return cantidad; }

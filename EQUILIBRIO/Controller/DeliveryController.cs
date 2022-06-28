@@ -15,6 +15,10 @@ namespace equilibrio.Controller
         public static string AddDelivery(string codigo, string codOrden, string codEstado, string numPed)
         {
             OrdenCompra orden = OrdenCompraController.FindOrden(codOrden);
+            if (EstadoDeliveryController.FindEstado(codEstado) == null)
+            {
+                EstadoDeliveryController.CargarEstado();
+            }
             EstadoDelivery estado = EstadoDeliveryController.FindEstado(codEstado);
             try
             {
@@ -115,14 +119,14 @@ namespace equilibrio.Controller
         //Metodo de auto increment
         public static int DeliveryAI()
         {
-            int cod = listaDelivery[listaDelivery.Count - 1].Codigo + 1;
+            int cod = listaDelivery.Count > 0 ? listaDelivery[listaDelivery.Count - 1].Codigo + 1 : 1;
 
             return cod;
         }
 
         public static int numPedidoAI()
         {
-            int numP = listaDelivery[listaDelivery.Count - 1].Codigo + 12345;
+            int numP = listaDelivery.Count > 0 ? listaDelivery[listaDelivery.Count - 1].Codigo + 12345 : 1;
 
             return numP;
         }

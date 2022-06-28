@@ -32,15 +32,6 @@ namespace equilibrio.WEBFORMS_CLI
             CategoriaController.CargarCategoria();
             ArticuloController.CargarArticulo();
 
-            var listadoArt = from ar in ArticuloController.FindAll()
-                             select new
-                             {
-                                 Codigo = ar.Codigo,
-                                 Nombre = ar.Nombre,
-                                 Comentario = ar.Comentario,
-                                 Precio = ar.Precio,
-                                 Categoria = ar.Categoria,
-                             };
 
             var listadoCat = from cat in CategoriaController.FindAll()
                              select new
@@ -48,6 +39,15 @@ namespace equilibrio.WEBFORMS_CLI
                                  Nombre = cat.Nombre
                              };
 
+            var listadoArt = from ar in ArticuloController.FindAll()
+                             select new
+                             {
+                                 Codigo = ar.Codigo,
+                                 Nombre = ar.Nombre,
+                                 Comentario = ar.Comentario,
+                                 Precio = ar.Precio,
+                                 Categoria = ar.Categoria.Nombre,
+                             };
 
 
             foreach (var it in listadoCat)
@@ -71,7 +71,7 @@ namespace equilibrio.WEBFORMS_CLI
 
                 int col = 1;
 
-                foreach (var item in listadoArt.Where(li => li.Categoria.Nombre == it.Nombre))
+                foreach (var item in listadoArt.Where(li => li.Categoria == it.Nombre))
                 {
                     HtmlGenericControl tdTable = new HtmlGenericControl("td");
                     tdTable.Attributes.Add("class", "auto-style1");

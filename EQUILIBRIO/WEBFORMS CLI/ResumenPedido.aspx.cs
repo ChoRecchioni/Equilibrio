@@ -24,7 +24,7 @@ namespace equilibrio.WEBFORMS_CLI
                     OrdenCompra orden = OrdenCompraController.FindOrden(cod);
                     CarroCompras carroCompras = CarroComprasController.FindCarro(orden.Carro.Codigo.ToString());
 
-                    Usuario user = UsuarioController.FindUser(carroCompras.user.Codigo);
+                    Usuario user = UsuarioController.FindUsuario(carroCompras.user.Codigo.ToString());
                     LbRutu.Text = user.RUT;
                     LbNombreu.Text = user.Nombre;
                     LbApellidou.Text = user.Apellido;

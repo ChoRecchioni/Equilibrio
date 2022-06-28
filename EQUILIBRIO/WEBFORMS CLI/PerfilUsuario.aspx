@@ -88,7 +88,7 @@
                     <asp:Label class="Lbl" ID="LblAlias" runat="server" Text="ALIAS:" />
                 </td>
                 <td class="auto-style2">
-                    <asp:TextBox class="TxtPerfil" ID="TxtAlias" Enabled="false" runat="server" Width="300px"></asp:TextBox>
+                    <asp:TextBox class="TxtPerfil" ID="TxtAlias" Enabled="false" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr style="height: 10px;">
@@ -124,7 +124,7 @@
                     <asp:Label class="Lbl" ID="LblTelefono" runat="server" Text="TELÉFONO:" />
                 </td>
                 <td class="auto-style16">
-                    <asp:TextBox class="TxtPerfil" ID="TxtTeléfono" Enabled="false" runat="server"></asp:TextBox>
+                    <asp:TextBox CssClass="TxtPerfil" ID="TxtTeléfono" Enabled="false" runat="server"></asp:TextBox>
                 </td>
                 <td class="auto-style2">
                     <asp:Label class="Lbl" ID="LblComuna" runat="server" Text="COMUNA:" />
@@ -136,7 +136,7 @@
             </tr>
             <tr style="height: 10px;">
                 <td class="auto-style30" colspan="2">
-                    <asp:Button class="BtnOK" ID="Button1" runat="server" Text="Cerrar sesión" Style="width: 150px; margin-top: 20px; margin-right: 65px;" OnClick="Button1_Click" />
+                    <asp:Button class="BtnOK" ID="Button1" runat="server" Text="Cerrar sesión" Style="margin-right: 65px; margin-bottom: 0px;" OnClick="Button1_Click" />
                 </td>
                 <td class="auto-style2">
                     <asp:Label class="Lbl" ID="LblRegion" runat="server" Text="REGIÓN:" />

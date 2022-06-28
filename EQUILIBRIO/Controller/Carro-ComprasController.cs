@@ -13,7 +13,7 @@ namespace equilibrio.Controller
         //Metodo para agregar Carro
         public static string AddCarro(string codigo, string CodUsuario, List<Articulo_Carro> ArticuloCarro)
         {
-            Usuario usuario = UsuarioController.FindUser(CodUsuario);
+            Usuario usuario = UsuarioController.FindUsuario(CodUsuario);
             try
             {
                 listaCarro.Add(new CarroCompras()
@@ -79,14 +79,14 @@ namespace equilibrio.Controller
         {
             Art_CarroController.CargarArticuloCarro();
             UsuarioController.CargarUsuario();
-          List<Articulo_Carro> listaArticulos = new List<Articulo_Carro>();
+            List<Articulo_Carro> listaArticulos = new List<Articulo_Carro>();
 
             if (listaCarro.Count < 1)
             {
                 listaArticulos.Add(Art_CarroController.FindArtCarro("1"));
                 listaArticulos.Add(Art_CarroController.FindArtCarro("2"));
-                AddCarro("1", "1", listaArticulos);
-            }            
+                AddCarro("1", "2", listaArticulos);
+            }
         }
 
         //Metodo de auto increment

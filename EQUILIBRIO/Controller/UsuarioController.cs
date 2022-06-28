@@ -123,7 +123,7 @@ namespace equilibrio.Controller
         {
             RoleController.CargarRoles();
             DireccionController.CargarDirección();
-
+            LocalController.CargarLocales();
             if (listaUsuario.Count < 1)
             {
                 AddUsuario(1, "101", "admin", "admin", "569", "admin", "1", "1", "1");

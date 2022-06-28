@@ -114,7 +114,7 @@ namespace equilibrio.Controller
         //Metodo de auto increment
         public static int OrdenAI()
         {
-            int cod = listaOrden[listaOrden.Count - 1].Codigo + 1;
+            int cod = listaOrden.Count > 0 ? listaOrden[listaOrden.Count - 1].Codigo + 1 : 1;
 
             return cod;
         }

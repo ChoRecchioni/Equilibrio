@@ -89,7 +89,7 @@
         </tr>
         <tr style="height: 10px;">
             <td class="auto-style30" colspan="2">
-                <asp:Button class="BtnOK" ID="Button1" runat="server" Text="Cerrar sesión" style="width: 150px; margin-top: 20px; margin-right: 65px;" OnClick="Button1_Click"/>
+                <asp:Button class="BtnOK" ID="Button1" runat="server" Text="Cerrar sesión" style="margin-top: 20px; margin-right: 65px;" OnClick="Button1_Click"/>
             </td>
         </tr>
         <tr style="height: 10px;">
