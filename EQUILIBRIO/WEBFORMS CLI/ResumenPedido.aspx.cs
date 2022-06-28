@@ -43,25 +43,26 @@ namespace equilibrio.WEBFORMS_CLI
                         LblNomP.Attributes.Add("class", "Lbl");
                         LblNomP.ID = "LblNomP";
                         LblNomP.Text = ar.Artículo.Nombre;
-                        div.Controls.Add(LblNomP);
-                        div.Controls.Add(new LiteralControl("<br/>"));
 
                         Label LblCant = new Label();
                         LblCant.Attributes.Add("class", "Lbl");
                         LblCant.ID = "LblCant";
-                        LblCant.Text = ar.Cantidad.ToString();
-                        div.Controls.Add(LblCant);
-                        div.Controls.Add(new LiteralControl("<br/>"));
+                        LblCant.Text = "Cantidad: " + ar.Cantidad.ToString();
+                        LblCant.Style.Add("font-size", "large");
 
                         Label LblPrecio = new Label();
                         LblPrecio.Attributes.Add("class", "Lbl");
                         LblPrecio.ID = "LblPrecio";
-                        LblPrecio.Text = ar.Artículo.Precio;
+                        LblPrecio.Text = "$" + ar.Artículo.Precio + ".-";
+                        LblPrecio.Style.Add("float", "right");
+                        div.Controls.Add(LblNomP);
                         div.Controls.Add(LblPrecio);
                         div.Controls.Add(new LiteralControl("<br/>"));
+                        div.Controls.Add(LblCant);
                         divC.Controls.Add(div);
                     }
-                    LblTotal.Text = orden.Total.ToString();
+
+                    LblTotal.Text = "$" + orden.Total.ToString() + ".-";
 
                 }
             }
