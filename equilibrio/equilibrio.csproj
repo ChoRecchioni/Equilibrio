@@ -126,7 +126,6 @@
     <Compile Include="Clases\Delivery.cs" />
     <Compile Include="Clases\Direccion.cs" />
     <Compile Include="Clases\Empleado.cs" />
-    <Compile Include="Clases\Entidades.cs" />
     <Compile Include="Clases\EstadoDelivery.cs" />
     <Compile Include="Clases\Fechas.cs" />
     <Compile Include="Clases\Horas.cs" />

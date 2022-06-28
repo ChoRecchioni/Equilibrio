@@ -10,6 +10,7 @@
         .auto-style2 {
             margin-left: 30px;
             width: 250px;
+            padding-left: 10px;
             border-left: 3px black solid;
         }
 
