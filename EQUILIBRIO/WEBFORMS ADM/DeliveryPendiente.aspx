@@ -1,6 +1,33 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WEBFORMS ADM/Admin.Master" AutoEventWireup="true" CodeBehind="DeliveryPendiente.aspx.cs" Inherits="equilibrio.WEBFORMS_ADM.Formulario_web12" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script>
+        function EditarDelivery(id) {
+            if (confirm("Finalizada?")) {
+                $.ajax({
+                    type: "post",
+                    url: "DeliveryPendiente.aspx/FinalizarDelivery",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify({ id: id }),
+                    dataType: "json",
+                    success: function (response) {
+                        if (!response.d.error) {
+                            alert(response.d.msg);
+                            window.location.reload();
+                        }
+                        else {
+                            alert(response.d.msg);
+                        }
+                    },
+                    error: function (response) {
+                        alert("Error: " + response.d.msg);
+                    },
+                    async: true
+                });
+            }
+            return false;
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CPHtitulos" runat="server">
     <asp:Label class="titulos" ID="Label1" runat="server" Text="DELIVERY PENDIENTE"></asp:Label><br />
