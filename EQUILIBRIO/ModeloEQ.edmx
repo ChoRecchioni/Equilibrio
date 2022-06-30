@@ -1,0 +1,1312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EQModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Artículo">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="precio" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="comentario" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="fk_categoria" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ArticuloCarro">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cantidad" Type="int" Nullable="false" />
+          <Property Name="fk_articulo" Type="int" Nullable="false" />
+          <Property Name="fk_carro" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CarroCompras">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fk_usuario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Comuna">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Delivery">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="numPedido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fk_orden" Type="int" Nullable="false" />
+          <Property Name="fk_estadoDeli" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Direccion">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="alias" Type="varchar" MaxLength="25" />
+          <Property Name="calleYnum" Type="varchar" MaxLength="50" />
+          <Property Name="depto" Type="varchar" MaxLength="25" />
+          <Property Name="fk_comuna" Type="int" Nullable="false" />
+          <Property Name="fk_region" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rut" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="apellido" Type="varchar" MaxLength="25" />
+          <Property Name="telefono" Type="varchar" MaxLength="25" />
+          <Property Name="fk_direccion" Type="int" Nullable="false" />
+          <Property Name="fk_rol" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoDelivery">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Mesa">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="numMesa" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="comensales" Type="int" Nullable="false" />
+          <Property Name="fk_sede" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrdenCompra">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="total" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fk_carro" Type="int" Nullable="false" />
+          <Property Name="fk_sede" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reseña">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="puntuacion" Type="int" Nullable="false" />
+          <Property Name="comentario" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="fk_sede" Type="int" Nullable="false" />
+          <Property Name="fk_usuario" Type="int" />
+        </EntityType>
+        <EntityType Name="Reserva">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="fk_sede" Type="int" Nullable="false" />
+          <Property Name="fk_mesa" Type="int" />
+          <Property Name="fk_usuario" Type="int" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sede">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="25" />
+          <Property Name="telefono" Type="varchar" MaxLength="25" />
+          <Property Name="fk_direccion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rut" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="apellido" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="telefono" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="pass" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fk_direccion" Type="int" />
+          <Property Name="fk_rol" Type="int" />
+          <Property Name="fk_sede" Type="int" Nullable="false" />
+          <Property Name="correo" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Artículo__fk_cat__38996AB5">
+          <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
+          <End Role="Artículo" Type="Self.Artículo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Artículo">
+              <PropertyRef Name="fk_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ArticuloC__fk_ar__5441852A">
+          <End Role="Artículo" Type="Self.Artículo" Multiplicity="1" />
+          <End Role="ArticuloCarro" Type="Self.ArticuloCarro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artículo">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="ArticuloCarro">
+              <PropertyRef Name="fk_articulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ArticuloC__fk_ca__5535A963">
+          <End Role="CarroCompras" Type="Self.CarroCompras" Multiplicity="1" />
+          <End Role="ArticuloCarro" Type="Self.ArticuloCarro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CarroCompras">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="ArticuloCarro">
+              <PropertyRef Name="fk_carro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CarroComp__fk_us__4AB81AF0">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="CarroCompras" Type="Self.CarroCompras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="CarroCompras">
+              <PropertyRef Name="fk_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Delivery__fk_est__5CD6CB2B">
+          <End Role="EstadoDelivery" Type="Self.EstadoDelivery" Multiplicity="1" />
+          <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoDelivery">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Delivery">
+              <PropertyRef Name="fk_estadoDeli" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Delivery__fk_ord__5BE2A6F2">
+          <End Role="OrdenCompra" Type="Self.OrdenCompra" Multiplicity="1" />
+          <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrdenCompra">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Delivery">
+              <PropertyRef Name="fk_orden" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Direccion__fk_co__2D27B809">
+          <End Role="Comuna" Type="Self.Comuna" Multiplicity="1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comuna">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="fk_comuna" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Direccion__fk_re__2E1BDC42">
+          <End Role="Region" Type="Self.Region" Multiplicity="1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="fk_region" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Empleado__fk_dir__3B75D760">
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="fk_direccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Empleado__fk_rol__3C69FB99">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="fk_rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Mesa__fk_sede__3F466844">
+          <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
+          <End Role="Mesa" Type="Self.Mesa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sede">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Mesa">
+              <PropertyRef Name="fk_sede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrdenComp__fk_ca__5812160E">
+          <End Role="CarroCompras" Type="Self.CarroCompras" Multiplicity="1" />
+          <End Role="OrdenCompra" Type="Self.OrdenCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CarroCompras">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="OrdenCompra">
+              <PropertyRef Name="fk_carro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrdenComp__fk_se__59063A47">
+          <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
+          <End Role="OrdenCompra" Type="Self.OrdenCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sede">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="OrdenCompra">
+              <PropertyRef Name="fk_sede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reseña__fk_sede__46E78A0C">
+          <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
+          <End Role="Reseña" Type="Self.Reseña" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sede">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Reseña">
+              <PropertyRef Name="fk_sede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reseña__fk_usuar__47DBAE45">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Reseña" Type="Self.Reseña" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Reseña">
+              <PropertyRef Name="fk_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reserva__fk_mesa__4316F928">
+          <End Role="Mesa" Type="Self.Mesa" Multiplicity="0..1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mesa">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="fk_mesa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reserva__fk_sede__4222D4EF">
+          <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sede">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="fk_sede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reserva__fk_usua__440B1D61">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="fk_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sede__fk_direcci__30F848ED">
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="1" />
+          <End Role="Sede" Type="Self.Sede" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Sede">
+              <PropertyRef Name="fk_direccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__fk_dire__33D4B598">
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="0..1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="fk_direccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__fk_rol__34C8D9D1">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="fk_rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__fk_sede__35BCFE0A">
+          <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sede">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="fk_sede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EQModelStoreContainer">
+          <EntitySet Name="Artículo" EntityType="Self.Artículo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ArticuloCarro" EntityType="Self.ArticuloCarro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CarroCompras" EntityType="Self.CarroCompras" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comuna" EntityType="Self.Comuna" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Delivery" EntityType="Self.Delivery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Direccion" EntityType="Self.Direccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstadoDelivery" EntityType="Self.EstadoDelivery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mesa" EntityType="Self.Mesa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrdenCompra" EntityType="Self.OrdenCompra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reseña" EntityType="Self.Reseña" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reserva" EntityType="Self.Reserva" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sede" EntityType="Self.Sede" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Artículo__fk_cat__38996AB5" Association="Self.FK__Artículo__fk_cat__38996AB5">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Artículo" EntitySet="Artículo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ArticuloC__fk_ar__5441852A" Association="Self.FK__ArticuloC__fk_ar__5441852A">
+            <End Role="Artículo" EntitySet="Artículo" />
+            <End Role="ArticuloCarro" EntitySet="ArticuloCarro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ArticuloC__fk_ca__5535A963" Association="Self.FK__ArticuloC__fk_ca__5535A963">
+            <End Role="CarroCompras" EntitySet="CarroCompras" />
+            <End Role="ArticuloCarro" EntitySet="ArticuloCarro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CarroComp__fk_us__4AB81AF0" Association="Self.FK__CarroComp__fk_us__4AB81AF0">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="CarroCompras" EntitySet="CarroCompras" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Delivery__fk_est__5CD6CB2B" Association="Self.FK__Delivery__fk_est__5CD6CB2B">
+            <End Role="EstadoDelivery" EntitySet="EstadoDelivery" />
+            <End Role="Delivery" EntitySet="Delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Delivery__fk_ord__5BE2A6F2" Association="Self.FK__Delivery__fk_ord__5BE2A6F2">
+            <End Role="OrdenCompra" EntitySet="OrdenCompra" />
+            <End Role="Delivery" EntitySet="Delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Direccion__fk_co__2D27B809" Association="Self.FK__Direccion__fk_co__2D27B809">
+            <End Role="Comuna" EntitySet="Comuna" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Direccion__fk_re__2E1BDC42" Association="Self.FK__Direccion__fk_re__2E1BDC42">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Empleado__fk_dir__3B75D760" Association="Self.FK__Empleado__fk_dir__3B75D760">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Empleado__fk_rol__3C69FB99" Association="Self.FK__Empleado__fk_rol__3C69FB99">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Mesa__fk_sede__3F466844" Association="Self.FK__Mesa__fk_sede__3F466844">
+            <End Role="Sede" EntitySet="Sede" />
+            <End Role="Mesa" EntitySet="Mesa" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrdenComp__fk_ca__5812160E" Association="Self.FK__OrdenComp__fk_ca__5812160E">
+            <End Role="CarroCompras" EntitySet="CarroCompras" />
+            <End Role="OrdenCompra" EntitySet="OrdenCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrdenComp__fk_se__59063A47" Association="Self.FK__OrdenComp__fk_se__59063A47">
+            <End Role="Sede" EntitySet="Sede" />
+            <End Role="OrdenCompra" EntitySet="OrdenCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reseña__fk_sede__46E78A0C" Association="Self.FK__Reseña__fk_sede__46E78A0C">
+            <End Role="Sede" EntitySet="Sede" />
+            <End Role="Reseña" EntitySet="Reseña" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reseña__fk_usuar__47DBAE45" Association="Self.FK__Reseña__fk_usuar__47DBAE45">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Reseña" EntitySet="Reseña" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reserva__fk_mesa__4316F928" Association="Self.FK__Reserva__fk_mesa__4316F928">
+            <End Role="Mesa" EntitySet="Mesa" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reserva__fk_sede__4222D4EF" Association="Self.FK__Reserva__fk_sede__4222D4EF">
+            <End Role="Sede" EntitySet="Sede" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reserva__fk_usua__440B1D61" Association="Self.FK__Reserva__fk_usua__440B1D61">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sede__fk_direcci__30F848ED" Association="Self.FK__Sede__fk_direcci__30F848ED">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Sede" EntitySet="Sede" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__fk_dire__33D4B598" Association="Self.FK__Usuario__fk_dire__33D4B598">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__fk_rol__34C8D9D1" Association="Self.FK__Usuario__fk_rol__34C8D9D1">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__fk_sede__35BCFE0A" Association="Self.FK__Usuario__fk_sede__35BCFE0A">
+            <End Role="Sede" EntitySet="Sede" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EQModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Artículo">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="precio" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="comentario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fk_categoria" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Categoria" Relationship="Self.FK__Artículo__fk_cat__38996AB5" FromRole="Artículo" ToRole="Categoria" />
+          <NavigationProperty Name="ArticuloCarro" Relationship="Self.FK__ArticuloC__fk_ar__5441852A" FromRole="Artículo" ToRole="ArticuloCarro" />
+        </EntityType>
+        <EntityType Name="ArticuloCarro">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cantidad" Type="Int32" Nullable="false" />
+          <Property Name="fk_articulo" Type="Int32" Nullable="false" />
+          <Property Name="fk_carro" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Artículo" Relationship="Self.FK__ArticuloC__fk_ar__5441852A" FromRole="ArticuloCarro" ToRole="Artículo" />
+          <NavigationProperty Name="CarroCompras" Relationship="Self.FK__ArticuloC__fk_ca__5535A963" FromRole="ArticuloCarro" ToRole="CarroCompras" />
+        </EntityType>
+        <EntityType Name="CarroCompras">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fk_usuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ArticuloCarro" Relationship="Self.FK__ArticuloC__fk_ca__5535A963" FromRole="CarroCompras" ToRole="ArticuloCarro" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__CarroComp__fk_us__4AB81AF0" FromRole="CarroCompras" ToRole="Usuario" />
+          <NavigationProperty Name="OrdenCompra" Relationship="Self.FK__OrdenComp__fk_ca__5812160E" FromRole="CarroCompras" ToRole="OrdenCompra" />
+        </EntityType>
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Artículo" Relationship="Self.FK__Artículo__fk_cat__38996AB5" FromRole="Categoria" ToRole="Artículo" />
+        </EntityType>
+        <EntityType Name="Comuna">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Direccion" Relationship="Self.FK__Direccion__fk_co__2D27B809" FromRole="Comuna" ToRole="Direccion" />
+        </EntityType>
+        <EntityType Name="Delivery">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numPedido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fk_orden" Type="Int32" Nullable="false" />
+          <Property Name="fk_estadoDeli" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EstadoDelivery" Relationship="Self.FK__Delivery__fk_est__5CD6CB2B" FromRole="Delivery" ToRole="EstadoDelivery" />
+          <NavigationProperty Name="OrdenCompra" Relationship="Self.FK__Delivery__fk_ord__5BE2A6F2" FromRole="Delivery" ToRole="OrdenCompra" />
+        </EntityType>
+        <EntityType Name="Direccion">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="alias" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="calleYnum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="depto" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="fk_comuna" Type="Int32" Nullable="false" />
+          <Property Name="fk_region" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Comuna" Relationship="Self.FK__Direccion__fk_co__2D27B809" FromRole="Direccion" ToRole="Comuna" />
+          <NavigationProperty Name="Region" Relationship="Self.FK__Direccion__fk_re__2E1BDC42" FromRole="Direccion" ToRole="Region" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK__Empleado__fk_dir__3B75D760" FromRole="Direccion" ToRole="Empleado" />
+          <NavigationProperty Name="Sede" Relationship="Self.FK__Sede__fk_direcci__30F848ED" FromRole="Direccion" ToRole="Sede" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__fk_dire__33D4B598" FromRole="Direccion" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rut" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellido" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="fk_direccion" Type="Int32" Nullable="false" />
+          <Property Name="fk_rol" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Direccion" Relationship="Self.FK__Empleado__fk_dir__3B75D760" FromRole="Empleado" ToRole="Direccion" />
+          <NavigationProperty Name="Rol" Relationship="Self.FK__Empleado__fk_rol__3C69FB99" FromRole="Empleado" ToRole="Rol" />
+        </EntityType>
+        <EntityType Name="EstadoDelivery">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Delivery" Relationship="Self.FK__Delivery__fk_est__5CD6CB2B" FromRole="EstadoDelivery" ToRole="Delivery" />
+        </EntityType>
+        <EntityType Name="Mesa">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numMesa" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="comensales" Type="Int32" Nullable="false" />
+          <Property Name="fk_sede" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sede" Relationship="Self.FK__Mesa__fk_sede__3F466844" FromRole="Mesa" ToRole="Sede" />
+          <NavigationProperty Name="Reserva" Relationship="Self.FK__Reserva__fk_mesa__4316F928" FromRole="Mesa" ToRole="Reserva" />
+        </EntityType>
+        <EntityType Name="OrdenCompra">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="total" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fk_carro" Type="Int32" Nullable="false" />
+          <Property Name="fk_sede" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CarroCompras" Relationship="Self.FK__OrdenComp__fk_ca__5812160E" FromRole="OrdenCompra" ToRole="CarroCompras" />
+          <NavigationProperty Name="Delivery" Relationship="Self.FK__Delivery__fk_ord__5BE2A6F2" FromRole="OrdenCompra" ToRole="Delivery" />
+          <NavigationProperty Name="Sede" Relationship="Self.FK__OrdenComp__fk_se__59063A47" FromRole="OrdenCompra" ToRole="Sede" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Direccion" Relationship="Self.FK__Direccion__fk_re__2E1BDC42" FromRole="Region" ToRole="Direccion" />
+        </EntityType>
+        <EntityType Name="Reseña">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="puntuacion" Type="Int32" Nullable="false" />
+          <Property Name="comentario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fk_sede" Type="Int32" Nullable="false" />
+          <Property Name="fk_usuario" Type="Int32" />
+          <NavigationProperty Name="Sede" Relationship="Self.FK__Reseña__fk_sede__46E78A0C" FromRole="Reseña" ToRole="Sede" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Reseña__fk_usuar__47DBAE45" FromRole="Reseña" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Reserva">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fk_sede" Type="Int32" Nullable="false" />
+          <Property Name="fk_mesa" Type="Int32" />
+          <Property Name="fk_usuario" Type="Int32" />
+          <NavigationProperty Name="Mesa" Relationship="Self.FK__Reserva__fk_mesa__4316F928" FromRole="Reserva" ToRole="Mesa" />
+          <NavigationProperty Name="Sede" Relationship="Self.FK__Reserva__fk_sede__4222D4EF" FromRole="Reserva" ToRole="Sede" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Reserva__fk_usua__440B1D61" FromRole="Reserva" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK__Empleado__fk_rol__3C69FB99" FromRole="Rol" ToRole="Empleado" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__fk_rol__34C8D9D1" FromRole="Rol" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Sede">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="fk_direccion" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Direccion" Relationship="Self.FK__Sede__fk_direcci__30F848ED" FromRole="Sede" ToRole="Direccion" />
+          <NavigationProperty Name="Mesa" Relationship="Self.FK__Mesa__fk_sede__3F466844" FromRole="Sede" ToRole="Mesa" />
+          <NavigationProperty Name="OrdenCompra" Relationship="Self.FK__OrdenComp__fk_se__59063A47" FromRole="Sede" ToRole="OrdenCompra" />
+          <NavigationProperty Name="Reseña" Relationship="Self.FK__Reseña__fk_sede__46E78A0C" FromRole="Sede" ToRole="Reseña" />
+          <NavigationProperty Name="Reserva" Relationship="Self.FK__Reserva__fk_sede__4222D4EF" FromRole="Sede" ToRole="Reserva" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__fk_sede__35BCFE0A" FromRole="Sede" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rut" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellido" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pass" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fk_direccion" Type="Int32" />
+          <Property Name="fk_rol" Type="Int32" />
+          <Property Name="fk_sede" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CarroCompras" Relationship="Self.FK__CarroComp__fk_us__4AB81AF0" FromRole="Usuario" ToRole="CarroCompras" />
+          <NavigationProperty Name="Direccion" Relationship="Self.FK__Usuario__fk_dire__33D4B598" FromRole="Usuario" ToRole="Direccion" />
+          <NavigationProperty Name="Reseña" Relationship="Self.FK__Reseña__fk_usuar__47DBAE45" FromRole="Usuario" ToRole="Reseña" />
+          <NavigationProperty Name="Reserva" Relationship="Self.FK__Reserva__fk_usua__440B1D61" FromRole="Usuario" ToRole="Reserva" />
+          <NavigationProperty Name="Rol" Relationship="Self.FK__Usuario__fk_rol__34C8D9D1" FromRole="Usuario" ToRole="Rol" />
+          <NavigationProperty Name="Sede" Relationship="Self.FK__Usuario__fk_sede__35BCFE0A" FromRole="Usuario" ToRole="Sede" />
+          <Property Name="correo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK__Artículo__fk_cat__38996AB5">
+          <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
+          <End Role="Artículo" Type="Self.Artículo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Artículo">
+              <PropertyRef Name="fk_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ArticuloC__fk_ar__5441852A">
+          <End Role="Artículo" Type="Self.Artículo" Multiplicity="1" />
+          <End Role="ArticuloCarro" Type="Self.ArticuloCarro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artículo">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="ArticuloCarro">
+              <PropertyRef Name="fk_articulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ArticuloC__fk_ca__5535A963">
+          <End Role="CarroCompras" Type="Self.CarroCompras" Multiplicity="1" />
+          <End Role="ArticuloCarro" Type="Self.ArticuloCarro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CarroCompras">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="ArticuloCarro">
+              <PropertyRef Name="fk_carro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CarroComp__fk_us__4AB81AF0">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="CarroCompras" Type="Self.CarroCompras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="CarroCompras">
+              <PropertyRef Name="fk_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrdenComp__fk_ca__5812160E">
+          <End Role="CarroCompras" Type="Self.CarroCompras" Multiplicity="1" />
+          <End Role="OrdenCompra" Type="Self.OrdenCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CarroCompras">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="OrdenCompra">
+              <PropertyRef Name="fk_carro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Direccion__fk_co__2D27B809">
+          <End Role="Comuna" Type="Self.Comuna" Multiplicity="1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comuna">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="fk_comuna" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Delivery__fk_est__5CD6CB2B">
+          <End Role="EstadoDelivery" Type="Self.EstadoDelivery" Multiplicity="1" />
+          <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoDelivery">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Delivery">
+              <PropertyRef Name="fk_estadoDeli" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Delivery__fk_ord__5BE2A6F2">
+          <End Role="OrdenCompra" Type="Self.OrdenCompra" Multiplicity="1" />
+          <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrdenCompra">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Delivery">
+              <PropertyRef Name="fk_orden" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Direccion__fk_re__2E1BDC42">
+          <End Role="Region" Type="Self.Region" Multiplicity="1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="fk_region" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Empleado__fk_dir__3B75D760">
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="fk_direccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sede__fk_direcci__30F848ED">
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="1" />
+          <End Role="Sede" Type="Self.Sede" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Sede">
+              <PropertyRef Name="fk_direccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__fk_dire__33D4B598">
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="0..1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="fk_direccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Empleado__fk_rol__3C69FB99">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="fk_rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Mesa__fk_sede__3F466844">
+          <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
+          <End Role="Mesa" Type="Self.Mesa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sede">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Mesa">
+              <PropertyRef Name="fk_sede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reserva__fk_mesa__4316F928">
+          <End Role="Mesa" Type="Self.Mesa" Multiplicity="0..1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mesa">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="fk_mesa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrdenComp__fk_se__59063A47">
+          <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
+          <End Role="OrdenCompra" Type="Self.OrdenCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sede">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="OrdenCompra">
+              <PropertyRef Name="fk_sede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reseña__fk_sede__46E78A0C">
+          <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
+          <End Role="Reseña" Type="Self.Reseña" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sede">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Reseña">
+              <PropertyRef Name="fk_sede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reseña__fk_usuar__47DBAE45">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Reseña" Type="Self.Reseña" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Reseña">
+              <PropertyRef Name="fk_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reserva__fk_sede__4222D4EF">
+          <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sede">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="fk_sede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reserva__fk_usua__440B1D61">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="fk_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__fk_rol__34C8D9D1">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="fk_rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__fk_sede__35BCFE0A">
+          <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sede">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="fk_sede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EQEntidades" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Artículo" EntityType="Self.Artículo" />
+          <EntitySet Name="ArticuloCarro" EntityType="Self.ArticuloCarro" />
+          <EntitySet Name="CarroCompras" EntityType="Self.CarroCompras" />
+          <EntitySet Name="Categoria" EntityType="Self.Categoria" />
+          <EntitySet Name="Comuna" EntityType="Self.Comuna" />
+          <EntitySet Name="Delivery" EntityType="Self.Delivery" />
+          <EntitySet Name="Direccion" EntityType="Self.Direccion" />
+          <EntitySet Name="Empleado" EntityType="Self.Empleado" />
+          <EntitySet Name="EstadoDelivery" EntityType="Self.EstadoDelivery" />
+          <EntitySet Name="Mesa" EntityType="Self.Mesa" />
+          <EntitySet Name="OrdenCompra" EntityType="Self.OrdenCompra" />
+          <EntitySet Name="Region" EntityType="Self.Region" />
+          <EntitySet Name="Reseña" EntityType="Self.Reseña" />
+          <EntitySet Name="Reserva" EntityType="Self.Reserva" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" />
+          <EntitySet Name="Sede" EntityType="Self.Sede" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK__Artículo__fk_cat__38996AB5" Association="Self.FK__Artículo__fk_cat__38996AB5">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Artículo" EntitySet="Artículo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ArticuloC__fk_ar__5441852A" Association="Self.FK__ArticuloC__fk_ar__5441852A">
+            <End Role="Artículo" EntitySet="Artículo" />
+            <End Role="ArticuloCarro" EntitySet="ArticuloCarro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ArticuloC__fk_ca__5535A963" Association="Self.FK__ArticuloC__fk_ca__5535A963">
+            <End Role="CarroCompras" EntitySet="CarroCompras" />
+            <End Role="ArticuloCarro" EntitySet="ArticuloCarro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CarroComp__fk_us__4AB81AF0" Association="Self.FK__CarroComp__fk_us__4AB81AF0">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="CarroCompras" EntitySet="CarroCompras" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrdenComp__fk_ca__5812160E" Association="Self.FK__OrdenComp__fk_ca__5812160E">
+            <End Role="CarroCompras" EntitySet="CarroCompras" />
+            <End Role="OrdenCompra" EntitySet="OrdenCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Direccion__fk_co__2D27B809" Association="Self.FK__Direccion__fk_co__2D27B809">
+            <End Role="Comuna" EntitySet="Comuna" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Delivery__fk_est__5CD6CB2B" Association="Self.FK__Delivery__fk_est__5CD6CB2B">
+            <End Role="EstadoDelivery" EntitySet="EstadoDelivery" />
+            <End Role="Delivery" EntitySet="Delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Delivery__fk_ord__5BE2A6F2" Association="Self.FK__Delivery__fk_ord__5BE2A6F2">
+            <End Role="OrdenCompra" EntitySet="OrdenCompra" />
+            <End Role="Delivery" EntitySet="Delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Direccion__fk_re__2E1BDC42" Association="Self.FK__Direccion__fk_re__2E1BDC42">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Empleado__fk_dir__3B75D760" Association="Self.FK__Empleado__fk_dir__3B75D760">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sede__fk_direcci__30F848ED" Association="Self.FK__Sede__fk_direcci__30F848ED">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Sede" EntitySet="Sede" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__fk_dire__33D4B598" Association="Self.FK__Usuario__fk_dire__33D4B598">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Empleado__fk_rol__3C69FB99" Association="Self.FK__Empleado__fk_rol__3C69FB99">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Mesa__fk_sede__3F466844" Association="Self.FK__Mesa__fk_sede__3F466844">
+            <End Role="Sede" EntitySet="Sede" />
+            <End Role="Mesa" EntitySet="Mesa" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reserva__fk_mesa__4316F928" Association="Self.FK__Reserva__fk_mesa__4316F928">
+            <End Role="Mesa" EntitySet="Mesa" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrdenComp__fk_se__59063A47" Association="Self.FK__OrdenComp__fk_se__59063A47">
+            <End Role="Sede" EntitySet="Sede" />
+            <End Role="OrdenCompra" EntitySet="OrdenCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reseña__fk_sede__46E78A0C" Association="Self.FK__Reseña__fk_sede__46E78A0C">
+            <End Role="Sede" EntitySet="Sede" />
+            <End Role="Reseña" EntitySet="Reseña" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reseña__fk_usuar__47DBAE45" Association="Self.FK__Reseña__fk_usuar__47DBAE45">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Reseña" EntitySet="Reseña" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reserva__fk_sede__4222D4EF" Association="Self.FK__Reserva__fk_sede__4222D4EF">
+            <End Role="Sede" EntitySet="Sede" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reserva__fk_usua__440B1D61" Association="Self.FK__Reserva__fk_usua__440B1D61">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__fk_rol__34C8D9D1" Association="Self.FK__Usuario__fk_rol__34C8D9D1">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__fk_sede__35BCFE0A" Association="Self.FK__Usuario__fk_sede__35BCFE0A">
+            <End Role="Sede" EntitySet="Sede" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EQModelStoreContainer" CdmEntityContainer="EQEntidades">
+          <EntitySetMapping Name="Artículo">
+            <EntityTypeMapping TypeName="EQModel.Artículo">
+              <MappingFragment StoreEntitySet="Artículo">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="comentario" ColumnName="comentario" />
+                <ScalarProperty Name="fk_categoria" ColumnName="fk_categoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ArticuloCarro">
+            <EntityTypeMapping TypeName="EQModel.ArticuloCarro">
+              <MappingFragment StoreEntitySet="ArticuloCarro">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="fk_articulo" ColumnName="fk_articulo" />
+                <ScalarProperty Name="fk_carro" ColumnName="fk_carro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CarroCompras">
+            <EntityTypeMapping TypeName="EQModel.CarroCompras">
+              <MappingFragment StoreEntitySet="CarroCompras">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="fk_usuario" ColumnName="fk_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categoria">
+            <EntityTypeMapping TypeName="EQModel.Categoria">
+              <MappingFragment StoreEntitySet="Categoria">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comuna">
+            <EntityTypeMapping TypeName="EQModel.Comuna">
+              <MappingFragment StoreEntitySet="Comuna">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Delivery">
+            <EntityTypeMapping TypeName="EQModel.Delivery">
+              <MappingFragment StoreEntitySet="Delivery">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="numPedido" ColumnName="numPedido" />
+                <ScalarProperty Name="fk_orden" ColumnName="fk_orden" />
+                <ScalarProperty Name="fk_estadoDeli" ColumnName="fk_estadoDeli" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Direccion">
+            <EntityTypeMapping TypeName="EQModel.Direccion">
+              <MappingFragment StoreEntitySet="Direccion">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="alias" ColumnName="alias" />
+                <ScalarProperty Name="calleYnum" ColumnName="calleYnum" />
+                <ScalarProperty Name="depto" ColumnName="depto" />
+                <ScalarProperty Name="fk_comuna" ColumnName="fk_comuna" />
+                <ScalarProperty Name="fk_region" ColumnName="fk_region" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleado">
+            <EntityTypeMapping TypeName="EQModel.Empleado">
+              <MappingFragment StoreEntitySet="Empleado">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="rut" ColumnName="rut" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="fk_direccion" ColumnName="fk_direccion" />
+                <ScalarProperty Name="fk_rol" ColumnName="fk_rol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoDelivery">
+            <EntityTypeMapping TypeName="EQModel.EstadoDelivery">
+              <MappingFragment StoreEntitySet="EstadoDelivery">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mesa">
+            <EntityTypeMapping TypeName="EQModel.Mesa">
+              <MappingFragment StoreEntitySet="Mesa">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="numMesa" ColumnName="numMesa" />
+                <ScalarProperty Name="comensales" ColumnName="comensales" />
+                <ScalarProperty Name="fk_sede" ColumnName="fk_sede" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrdenCompra">
+            <EntityTypeMapping TypeName="EQModel.OrdenCompra">
+              <MappingFragment StoreEntitySet="OrdenCompra">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="fk_carro" ColumnName="fk_carro" />
+                <ScalarProperty Name="fk_sede" ColumnName="fk_sede" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Region">
+            <EntityTypeMapping TypeName="EQModel.Region">
+              <MappingFragment StoreEntitySet="Region">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reseña">
+            <EntityTypeMapping TypeName="EQModel.Reseña">
+              <MappingFragment StoreEntitySet="Reseña">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="puntuacion" ColumnName="puntuacion" />
+                <ScalarProperty Name="comentario" ColumnName="comentario" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="fk_sede" ColumnName="fk_sede" />
+                <ScalarProperty Name="fk_usuario" ColumnName="fk_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reserva">
+            <EntityTypeMapping TypeName="EQModel.Reserva">
+              <MappingFragment StoreEntitySet="Reserva">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="fk_sede" ColumnName="fk_sede" />
+                <ScalarProperty Name="fk_mesa" ColumnName="fk_mesa" />
+                <ScalarProperty Name="fk_usuario" ColumnName="fk_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rol">
+            <EntityTypeMapping TypeName="EQModel.Rol">
+              <MappingFragment StoreEntitySet="Rol">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sede">
+            <EntityTypeMapping TypeName="EQModel.Sede">
+              <MappingFragment StoreEntitySet="Sede">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="fk_direccion" ColumnName="fk_direccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="EQModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="rut" ColumnName="rut" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="fk_direccion" ColumnName="fk_direccion" />
+                <ScalarProperty Name="fk_rol" ColumnName="fk_rol" />
+                <ScalarProperty Name="fk_sede" ColumnName="fk_sede" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

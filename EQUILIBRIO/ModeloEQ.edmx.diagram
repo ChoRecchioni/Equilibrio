@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c8be565d576a48e98c26fc54b4aebce9" Name="Diagram1" ZoomLevel="58">
+        <EntityTypeShape EntityType="EQModel.Artículo" Width="1.5" PointX="8.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EQModel.ArticuloCarro" Width="1.5" PointX="10.5" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EQModel.CarroCompras" Width="1.5" PointX="8.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EQModel.Categoria" Width="1.5" PointX="6" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EQModel.Comuna" Width="1.5" PointX="1.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EQModel.Delivery" Width="1.5" PointX="12.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EQModel.Direccion" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EQModel.Empleado" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EQModel.EstadoDelivery" Width="1.5" PointX="10.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EQModel.Mesa" Width="1.5" PointX="6" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EQModel.OrdenCompra" Width="1.5" PointX="10.5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EQModel.Region" Width="1.5" PointX="1.5" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EQModel.Reseña" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EQModel.Reserva" Width="1.5" PointX="8.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="EQModel.Rol" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EQModel.Sede" Width="1.5" PointX="3.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EQModel.Usuario" Width="1.5" PointX="6" PointY="7.375" IsExpanded="true" />
+        <AssociationConnector Association="EQModel.FK__Artículo__fk_cat__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__ArticuloC__fk_ar__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__ArticuloC__fk_ca__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__CarroComp__fk_us__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__OrdenComp__fk_ca__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__Direccion__fk_co__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__Delivery__fk_est__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__Delivery__fk_ord__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__Direccion__fk_re__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__Empleado__fk_dir__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__Sede__fk_direcci__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__Usuario__fk_dire__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__Empleado__fk_rol__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__Mesa__fk_sede__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__Reserva__fk_mesa__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__OrdenComp__fk_se__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__Reseña__fk_sede__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__Reseña__fk_usuar__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__Reserva__fk_sede__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__Reserva__fk_usua__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__Usuario__fk_rol__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="EQModel.FK__Usuario__fk_sede__35BCFE0A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
