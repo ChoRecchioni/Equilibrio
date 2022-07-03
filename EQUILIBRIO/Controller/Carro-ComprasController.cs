@@ -83,93 +83,93 @@ namespace equilibrio.Controller
 
         // Fin nuevo Controller
 
-        private static List<CarroCompras> listaCarro = new List<CarroCompras>();
+        //private static List<CarroCompras> listaCarro = new List<CarroCompras>();
 
-        //Metodo para agregar Carro
-        public static string AddCarro(string codigo, string CodUsuario, List<Articulo_Carro> ArticuloCarro)
-        {
-            Usuario usuario = UsuarioController.FindUsuario(CodUsuario);
-            try
-            {
-                listaCarro.Add(new CarroCompras()
-                {
-                    Codigo = int.Parse(codigo),
-                    user = usuario,
-                    ArtCar = ArticuloCarro,
+        ////Metodo para agregar Carro
+        //public static string AddCarro(string codigo, string CodUsuario, List<Articulo_Carro> ArticuloCarro)
+        //{
+        //    Usuario usuario = UsuarioController.FindUsuario(CodUsuario);
+        //    try
+        //    {
+        //        listaCarro.Add(new CarroCompras()
+        //        {
+        //            Codigo = int.Parse(codigo),
+        //            user = usuario,
+        //            ArtCar = ArticuloCarro,
 
-                });
+        //        });
 
-                return "Articulo agregado.";
+        //        return "Articulo agregado.";
 
-            }
-            catch (Exception e)
-            {
+        //    }
+        //    catch (Exception e)
+        //    {
 
-                return e.Message;
-            }
-        }
+        //        return e.Message;
+        //    }
+        //}
 
-        //Metodo para listar todos los carros
-        public static List<CarroCompras> FindAll()
-        {
-            return listaCarro;
-        }
+        ////Metodo para listar todos los carros
+        //public static List<CarroCompras> FindAll()
+        //{
+        //    return listaCarro;
+        //}
 
-        //Metodo para encontrar un objeto
-        public static CarroCompras FindCarro(string cod)
-        {
+        ////Metodo para encontrar un objeto
+        //public static CarroCompras FindCarro(string cod)
+        //{
 
-            try
-            {
-                foreach (CarroCompras carro in FindAll())
-                {
-                    if (carro.Codigo == int.Parse(cod))
-                    {
-                        return carro;
-                    }
-                }
+        //    try
+        //    {
+        //        foreach (CarroCompras carro in FindAll())
+        //        {
+        //            if (carro.Codigo == int.Parse(cod))
+        //            {
+        //                return carro;
+        //            }
+        //        }
 
-                return null;
-            }
-            catch (Exception)
-            {
+        //        return null;
+        //    }
+        //    catch (Exception)
+        //    {
 
-                return null;
-            }
+        //        return null;
+        //    }
 
-        }
-
-
-        // Metodo para eliminar Carro
-
-        public static string RemoveCarro(string cod)
-        {
-            listaCarro.Remove(FindCarro(cod));
-
-            return "Carro removido de la lista";
-        }
+        //}
 
 
-        public static void CargarCarro()
-        {
-            Art_CarroController.CargarArticuloCarro();
-            UsuarioController.CargarUsuario();
-            List<Articulo_Carro> listaArticulos = new List<Articulo_Carro>();
+        //// Metodo para eliminar Carro
 
-            if (listaCarro.Count < 1)
-            {
-                listaArticulos.Add(Art_CarroController.FindArtCarro("1"));
-                listaArticulos.Add(Art_CarroController.FindArtCarro("2"));
-                AddCarro("1", "2", listaArticulos);
-            }
-        }
+        //public static string RemoveCarro(string cod)
+        //{
+        //    listaCarro.Remove(FindCarro(cod));
 
-        //Metodo de auto increment
-        public static int CarroAI()
-        {
-            int cod = listaCarro.Count > 0 ? listaCarro[listaCarro.Count - 1].Codigo + 1 : 1;
+        //    return "Carro removido de la lista";
+        //}
 
-            return cod;
-        }
+
+        //public static void CargarCarro()
+        //{
+        //    Art_CarroController.CargarArticuloCarro();
+        //    UsuarioController.CargarUsuario();
+        //    List<Articulo_Carro> listaArticulos = new List<Articulo_Carro>();
+
+        //    if (listaCarro.Count < 1)
+        //    {
+        //        listaArticulos.Add(Art_CarroController.FindArtCarro("1"));
+        //        listaArticulos.Add(Art_CarroController.FindArtCarro("2"));
+        //        AddCarro("1", "2", listaArticulos);
+        //    }
+        //}
+
+        ////Metodo de auto increment
+        //public static int CarroAI()
+        //{
+        //    int cod = listaCarro.Count > 0 ? listaCarro[listaCarro.Count - 1].Codigo + 1 : 1;
+
+        //    return cod;
+        //}
     }
 }

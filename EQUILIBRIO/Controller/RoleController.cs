@@ -84,61 +84,61 @@ namespace equilibrio.Controller
 
         // Fin nuevo Controller
 
-        private static List<Role> listaRoles = new List<Role>();
+        //private static List<Role> listaRoles = new List<Role>();
 
 
-        //Metodo para agregar Rol
-        public static string AddRole(int codigo, string nombre)
-        {
-            Role r = new Role()
-            {
-                Codigo = codigo,
-                Nombre = nombre,
-            };
-            listaRoles.Add(r);
+        ////Metodo para agregar Rol
+        //public static string AddRole(int codigo, string nombre)
+        //{
+        //    Role r = new Role()
+        //    {
+        //        Codigo = codigo,
+        //        Nombre = nombre,
+        //    };
+        //    listaRoles.Add(r);
 
-            return "Ok";
-        }
+        //    return "Ok";
+        //}
 
-        //Metodo para listar Roles
-        public static List<Role> FindAll()
-        {
-            return listaRoles;
-        }
+        ////Metodo para listar Roles
+        //public static List<Role> FindAll()
+        //{
+        //    return listaRoles;
+        //}
 
-        //Metodo para encontrar un objeto
-        public static Role FindRole(string cod)
-        {
+        ////Metodo para encontrar un objeto
+        //public static Role FindRole(string cod)
+        //{
 
-            try
-            {
-                foreach (Role rol in FindAll())
-                {
-                    if (rol.Codigo == int.Parse(cod))
-                    {
-                        return rol;
-                    }
-                }
+        //    try
+        //    {
+        //        foreach (Role rol in FindAll())
+        //        {
+        //            if (rol.Codigo == int.Parse(cod))
+        //            {
+        //                return rol;
+        //            }
+        //        }
 
-                return null;
-            }
-            catch (Exception)
-            {
+        //        return null;
+        //    }
+        //    catch (Exception)
+        //    {
 
-                return null;
-            }
+        //        return null;
+        //    }
 
-        }
+        //}
 
-        //Metodo para precargar Roles
-        public static void CargarRoles()
-        {
+        ////Metodo para precargar Roles
+        //public static void CargarRoles()
+        //{
 
-            if (listaRoles.Count < 1)
-            {
-                AddRole(1, "Administrador");
-                AddRole(2, "Cliente");
-            }
-        }
+        //    if (listaRoles.Count < 1)
+        //    {
+        //        AddRole(1, "Administrador");
+        //        AddRole(2, "Cliente");
+        //    }
+        //}
     }
 }

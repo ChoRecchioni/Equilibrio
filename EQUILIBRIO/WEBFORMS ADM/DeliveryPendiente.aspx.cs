@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using equilibrio.Clases;
 using equilibrio.Controller;
 
 namespace equilibrio.WEBFORMS_ADM
@@ -21,11 +19,10 @@ namespace equilibrio.WEBFORMS_ADM
         public void Pendientes()
         {
             Usuario u = (Usuario)Session["ActiveUser"];
-            EstadoDeliveryController.CargarEstado();
-            DeliveryController.CargarDelivery();
-            List<Delivery> listaDelivery = DeliveryController.FindAll();
 
-            foreach (Delivery item in listaDelivery.Where(L => L.Estado.Codigo == 1 && L.Orden.Local.Codigo == u.Local.Codigo))
+            List<Delivery> listaDelivery = DeliveryController.findAll();
+
+            foreach (Delivery item in listaDelivery.Where(L => L.EstadoDelivery.codigo == 1 && L.OrdenCompra.fk_sede == u.Sede.codigo))
             {
 
                 HtmlGenericControl divDet = new HtmlGenericControl("div");
@@ -35,16 +32,16 @@ namespace equilibrio.WEBFORMS_ADM
 
                 Label lblNPed = new Label();
                 lblNPed.Attributes.Add("class", "Lbl");
-                lblNPed.Text = "N° DE PEDIDO: " + item.NumPedido;
+                lblNPed.Text = "N° DE PEDIDO: " + item.numPedido;
                 Label lblNombreC = new Label();
                 lblNombreC.Attributes.Add("class", "Lbl");
-                lblNombreC.Text = "CLIENTE: " + item.Orden.Carro.user.Nombre + " " + item.Orden.Carro.user.Apellido;
+                lblNombreC.Text = "CLIENTE: " + item.OrdenCompra.CarroCompras.Usuario.nombre + " " + item.OrdenCompra.CarroCompras.Usuario.apellido;
                 Label lblTelC = new Label();
                 lblTelC.Attributes.Add("class", "Lbl");
-                lblTelC.Text = "TELÉFONO: " + item.Orden.Carro.user.Telefono;
+                lblTelC.Text = "TELÉFONO: " + item.OrdenCompra.CarroCompras.Usuario.telefono;
                 Label lblDireC = new Label();
                 lblDireC.Attributes.Add("class", "Lbl");
-                lblDireC.Text = "DIRECCIÓN: " + item.Orden.Carro.user.Direccion.CalleYnum + ", " + item.Orden.Carro.user.Direccion.Depto + ", " + item.Orden.Carro.user.Direccion.Comuna.Nombre;
+                lblDireC.Text = "DIRECCIÓN: " + item.OrdenCompra.CarroCompras.Usuario.Direccion.calleYnum + ", " + item.OrdenCompra.CarroCompras.Usuario.Direccion.depto + ", " + item.OrdenCompra.CarroCompras.Usuario.Direccion.Comuna.nombre;
 
                 divDet.Controls.Add(lblNPed);
                 divDet.Controls.Add(new LiteralControl("<br/>"));
@@ -60,17 +57,17 @@ namespace equilibrio.WEBFORMS_ADM
                 divArt.Style.Add("float", "left");
                 divArt.Style.Add("width", "40%");
 
-                List<Articulo_Carro> articulos = OrdenCompraController.FindOrden(item.Orden.Codigo.ToString()).Carro.ArtCar;
+                List<ArticuloCarro> articulos = OrdenCompraController.FindOrden(item.OrdenCompra.codigo).CarroCompras.ArticuloCarro.ToList();
 
-                foreach (Articulo_Carro ar in articulos)
+                foreach (ArticuloCarro ar in articulos)
                 {
                     Label lblArt = new Label();
                     lblArt.Attributes.Add("class", "Lbl");
-                    lblArt.Text = ar.Artículo.Nombre;
+                    lblArt.Text = ar.Artículo.nombre;
                     lblArt.Style.Add("font-weight", "bold");
                     Label lblCant = new Label();
                     lblCant.Attributes.Add("class", "Lbl");
-                    lblCant.Text = "x " + ar.Cantidad.ToString();
+                    lblCant.Text = "x " + ar.cantidad.ToString();
                     lblCant.Style.Add("font-weight", "bold");
                     lblCant.Style.Add("float", "right");
 
@@ -88,8 +85,8 @@ namespace equilibrio.WEBFORMS_ADM
                 btnCheck.Height = 30;
                 btnCheck.Width = 30;
                 btnCheck.ImageUrl = "~/IMG/check.png";
-                btnCheck.OnClientClick = "return EditarDelivery('" + item.Codigo.ToString() + "');";
-                btnCheck.ID = item.Codigo.ToString();
+                btnCheck.OnClientClick = "return EditarDelivery('" + item.codigo.ToString() + "');";
+                btnCheck.ID = item.codigo.ToString();
                 divBut.Controls.Add(btnCheck);
 
                 Deliverys.Controls.Add(divDet);
@@ -104,8 +101,8 @@ namespace equilibrio.WEBFORMS_ADM
         {
             try
             {
-                Delivery delivery = DeliveryController.FindDelivery(id);
-                DeliveryController.EditDelivery(delivery.Codigo.ToString(), delivery.Orden.Codigo.ToString(), "4", delivery.NumPedido.ToString());
+                Delivery delivery = DeliveryController.FindDelivery(int.Parse(id));
+                DeliveryController.editDelivery(delivery.codigo.ToString(), delivery.OrdenCompra.codigo.ToString(), "4", delivery.numPedido.ToString());
 
                 return new
                 {

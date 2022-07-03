@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using equilibrio.Clases;
 
 namespace equilibrio.Controller
 {
@@ -60,23 +59,17 @@ namespace equilibrio.Controller
 
 
         //Metodo para editar
-        public static string editUsuario(string codigo, string rut, string nombre, string apellido, string telefono, string pass, string codDir, string codRol, string codSede, string correo)
+        public static string editUsuario(string codigo, string nombre, string apellido, string telefono, string correo)
         {
             int intCod = int.Parse(codigo);
-            //revista r = entidades.revista.Find(id);//Busca por clave primaria
             Usuario u = FindUsuario(intCod);
 
             if (u != null)
             {
-                u.rut = rut;
                 u.nombre = nombre;
                 u.apellido = apellido;
                 u.telefono = telefono;
-                u.pass = pass;
                 u.correo = correo;
-                u.fk_direccion = int.Parse(codDir);
-                u.fk_rol = int.Parse(codRol);
-                u.fk_sede = int.Parse(codSede);
                 entidades.SaveChanges();
                 return "Usuario modificada";
             }
@@ -128,136 +121,136 @@ namespace equilibrio.Controller
         // Fin nuevo Controller
 
 
-        public static List<Usuario> listaUsuario = new List<Usuario>();
+        //public static List<Usuario> listaUsuario = new List<Usuario>();
 
-        //Metodo para agregar Usuario
-        public static string AddUsuario(int codigo, string rut, string nombre, string apellido, string telefono, string pass, string codDireccion, string Codrol, string CodLocal)
-        {
-            Direccion direccion = DireccionController.FindDireccion(codDireccion);
-            Role rol = RoleController.FindRole(Codrol);
-            Local local = LocalController.FindLocal(CodLocal); 
-            Usuario u = new Usuario()
-            {
-                Codigo = codigo,
-                RUT = rut,
-                Nombre = nombre,
-                Apellido = apellido,
-                Telefono = telefono,
-                Pass = pass,
-                Direccion = direccion,
-                Rol = rol,
-                Local = local,
+        ////Metodo para agregar Usuario
+        //public static string AddUsuario(int codigo, string rut, string nombre, string apellido, string telefono, string pass, string codDireccion, string Codrol, string CodLocal)
+        //{
+        //    Direccion direccion = DireccionController.FindDireccion(codDireccion);
+        //    Role rol = RoleController.FindRole(Codrol);
+        //    Local local = LocalController.FindLocal(CodLocal); 
+        //    Usuario u = new Usuario()
+        //    {
+        //        Codigo = codigo,
+        //        RUT = rut,
+        //        Nombre = nombre,
+        //        Apellido = apellido,
+        //        Telefono = telefono,
+        //        Pass = pass,
+        //        Direccion = direccion,
+        //        Rol = rol,
+        //        Local = local,
 
-            };
-            listaUsuario.Add(u);
+        //    };
+        //    listaUsuario.Add(u);
 
-            return "Ok";
-        }
+        //    return "Ok";
+        //}
 
-        //Metodo para listar todos los usuarios
-        public static List<Usuario> FindAll()
-        {
-            return listaUsuario;
-        }
+        ////Metodo para listar todos los usuarios
+        //public static List<Usuario> FindAll()
+        //{
+        //    return listaUsuario;
+        //}
 
-        //Metodo para encontrar un objeto
-        public static Usuario FindUsuario(string cod)
-        {
-            try
-            {
-                foreach (Usuario usuario in FindAll())
-                {
-                    if (usuario.Codigo == int.Parse(cod))
-                    {
-                        return usuario;
-                    }
-                }
-                return null;
-            }
-            catch (Exception)
-            {
+        ////Metodo para encontrar un objeto
+        //public static Usuario FindUsuario(string cod)
+        //{
+        //    try
+        //    {
+        //        foreach (Usuario usuario in FindAll())
+        //        {
+        //            if (usuario.Codigo == int.Parse(cod))
+        //            {
+        //                return usuario;
+        //            }
+        //        }
+        //        return null;
+        //    }
+        //    catch (Exception)
+        //    {
 
-                return null;
-            }
-        }
+        //        return null;
+        //    }
+        //}
 
-        //Metodo de validar usuario en la lista
-        public static Usuario FindUser(string username)
-        {
-            foreach (Usuario item in listaUsuario)
-            {
-                if (item.Nombre.Equals(username))
-                {
-                    return item;
-                }
-            }
-            return null;
-        }
-        public static Usuario FindUser(int codigo)
-        {
-            return null;
-        }
-        public static Usuario FindUserRut(string rut)
-        {
-            foreach (Usuario item in listaUsuario)
-            {
-                if (item.RUT.Equals(rut))
-                {
-                    return item;
-                }
-            }
-            return null;
-        }
+        ////Metodo de validar usuario en la lista
+        //public static Usuario FindUser(string username)
+        //{
+        //    foreach (Usuario item in listaUsuario)
+        //    {
+        //        if (item.Nombre.Equals(username))
+        //        {
+        //            return item;
+        //        }
+        //    }
+        //    return null;
+        //}
+        //public static Usuario FindUser(int codigo)
+        //{
+        //    return null;
+        //}
+        //public static Usuario FindUserRut(string rut)
+        //{
+        //    foreach (Usuario item in listaUsuario)
+        //    {
+        //        if (item.RUT.Equals(rut))
+        //        {
+        //            return item;
+        //        }
+        //    }
+        //    return null;
+        //}
 
-        //Metodo para editar Usuario
-        public static string EditUsuario(string codigo, string nombre, string apellido, string telefono)
-        {
-            try
-            {
+        ////Metodo para editar Usuario
+        //public static string EditUsuario(string codigo, string nombre, string apellido, string telefono)
+        //{
+        //    try
+        //    {
                 
-                Usuario usuario = FindUsuario(codigo);
-                usuario.Nombre = nombre;
-                usuario.Apellido = apellido;
-                usuario.Telefono = telefono;
+        //        Usuario usuario = FindUsuario(codigo);
+        //        usuario.Nombre = nombre;
+        //        usuario.Apellido = apellido;
+        //        usuario.Telefono = telefono;
 
-                return "";
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
-        }
+        //        return "";
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return ex.Message;
+        //    }
+        //}
 
-        // Metodo para eliminar Usuario
-        public static string RemoveUsuario(string cod)
-        {
-            listaUsuario.Remove(FindUsuario(cod));
+        //// Metodo para eliminar Usuario
+        //public static string RemoveUsuario(string cod)
+        //{
+        //    listaUsuario.Remove(FindUsuario(cod));
 
-            return "Usuario removido de la lista";
-        }
+        //    return "Usuario removido de la lista";
+        //}
 
         
 
-        //Metodo para precargar Admin y Cliente
-        public static void CargarUsuario()
-        {
-            RoleController.CargarRoles();
-            DireccionController.CargarDirección();
-            LocalController.CargarLocales();
-            if (listaUsuario.Count < 1)
-            {
-                AddUsuario(1, "101", "admin", "admin", "569", "admin", "1", "1", "1");
-                AddUsuario(2, "202", "cliente", "cliente", "569", "cliente", "1", "2", "");
-                AddUsuario(3, "25929867-9", "sofia", "sofia", "5691111", "sofia", "1", "2", "");
-            }
-        }
+        ////Metodo para precargar Admin y Cliente
+        //public static void CargarUsuario()
+        //{
+        //    RoleController.CargarRoles();
+        //    DireccionController.CargarDirección();
+        //    LocalController.CargarLocales();
+        //    if (listaUsuario.Count < 1)
+        //    {
+        //        AddUsuario(1, "101", "admin", "admin", "569", "admin", "1", "1", "1");
+        //        AddUsuario(2, "202", "cliente", "cliente", "569", "cliente", "1", "2", "");
+        //        AddUsuario(3, "25929867-9", "sofia", "sofia", "5691111", "sofia", "1", "2", "");
+        //    }
+        //}
 
-        //Metodo de auto increment
-        public static int UserAI()
-        {
-            int cod = listaUsuario[listaUsuario.Count - 1].Codigo + 1;
+        ////Metodo de auto increment
+        //public static int UserAI()
+        //{
+        //    int cod = listaUsuario[listaUsuario.Count - 1].Codigo + 1;
 
-            return cod;
-        }
+        //    return cod;
+        //}
     }
 }

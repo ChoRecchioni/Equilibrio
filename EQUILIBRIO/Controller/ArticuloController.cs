@@ -22,7 +22,7 @@ namespace equilibrio.Controller
         }
 
         //Metodo para agregar
-        public static string AddArticulo(string codigo, string nombre, string precio, string comentario, Categoria categoria)
+        public static string AddArticulo(string codigo, string nombre, string precio, string comentario, string codCat)
         {
 
             Artículo ar = new Artículo()
@@ -31,7 +31,7 @@ namespace equilibrio.Controller
                 nombre = nombre,
                 precio = precio,
                 comentario = comentario,
-                Categoria = categoria,
+                fk_categoria = int.Parse(codCat),
             };
 
             entidades.Artículo.Add(ar);

@@ -159,23 +159,6 @@
     <Compile Include="Categoria.cs">
       <DependentUpon>ModeloEQ.tt</DependentUpon>
     </Compile>
-    <Compile Include="Clases\Articulo-Carro.cs" />
-    <Compile Include="Clases\Artículo.cs" />
-    <Compile Include="Clases\CarroCompras.cs" />
-    <Compile Include="Clases\Categoria.cs" />
-    <Compile Include="Clases\Comuna.cs" />
-    <Compile Include="Clases\Delivery.cs" />
-    <Compile Include="Clases\Direccion.cs" />
-    <Compile Include="Clases\Empleado.cs" />
-    <Compile Include="Clases\EstadoDelivery.cs" />
-    <Compile Include="Clases\Local.cs" />
-    <Compile Include="Clases\Mesa.cs" />
-    <Compile Include="Clases\OrdenCompra.cs" />
-    <Compile Include="Clases\Region.cs" />
-    <Compile Include="Clases\Reserva.cs" />
-    <Compile Include="Clases\Reseña.cs" />
-    <Compile Include="Clases\Role.cs" />
-    <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Comuna.cs">
       <DependentUpon>ModeloEQ.tt</DependentUpon>
     </Compile>
