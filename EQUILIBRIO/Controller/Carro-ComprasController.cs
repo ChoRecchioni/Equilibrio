@@ -26,7 +26,7 @@ namespace equilibrio.Controller
         }
 
         //Metodo para agregar
-        public static string AddCarro(string codigo, string codUser)
+        public static CarroCompras AddCarro(string codigo, string codUser)
         {
 
             CarroCompras c = new CarroCompras()
@@ -38,7 +38,7 @@ namespace equilibrio.Controller
             entidades.CarroCompras.Add(c);
             entidades.SaveChanges();
 
-            return "Carro agregado.";
+            return c;
         }
 
 

@@ -8,191 +8,117 @@ namespace equilibrio.Controller
 {
     public class ArticuloController
     {
-        //instancia de las entidades de la BD
-        static EQEntidades entidades = new EQEntidades();
+        private static List<Artículo> listaArticulo = new List<Artículo>();
 
-        //Metodo para listar todos
-        public static List<Artículo> findAll()
+        //Metodo para agregar Articulo
+        public static string AddAarticulo(string codigo, string nombre, string precio, string comentario, string Codcategoria)
         {
-
-            var art = from a in entidades.Artículo
-                      select a;
-
-            return art.ToList();
-        }
-
-        //Metodo para agregar
-        public static string AddArticulo(string codigo, string nombre, string precio, string comentario, string codCat)
-        {
-
-            Artículo ar = new Artículo()
+            Categoria cat = CategoriaController.FindCategoria(Codcategoria);
+            try
             {
-                codigo = int.Parse(codigo),
-                nombre = nombre,
-                precio = precio,
-                comentario = comentario,
-                fk_categoria = int.Parse(codCat),
-            };
+                listaArticulo.Add(new Artículo()
+                {
+                    Codigo = int.Parse(codigo),
+                    Nombre = nombre,
+                    Precio = precio,
+                    Comentario = comentario,
+                    Categoria = cat,
 
-            entidades.Artículo.Add(ar);
-            entidades.SaveChanges();
+                });
 
-            return " ";
-        }
+                return "Articulo agregado.";
 
-
-        //Metodo para encontrar uno
-        public static Artículo FindArticulo(int codigo)
-        {
-
-            return entidades.Artículo.SingleOrDefault(ar => ar.codigo == codigo);
-        }
-
-
-        //Metodo para editar
-        public static string editArticulo(string codigo, string nombre, string precio, string comentario, Categoria categoria)
-
-        {
-            int intCod = int.Parse(codigo);
-            Artículo ar = FindArticulo(intCod);
-
-            if (ar != null)
-            {
-                ar.nombre = nombre;
-                ar.precio = precio;
-                ar.comentario = comentario;
-                ar.fk_categoria = categoria.codigo;
-                entidades.SaveChanges();
-                return "Artículo modificado";
             }
-            else
+            catch (Exception e)
             {
-                return "No se pudo modificar el artículo";
+
+                return e.Message;
             }
         }
 
-
-        //Metodo para eliminar
-        public static string removeArticulo(int codigo)
+        //Metodo para listar todos los Articulo
+        public static List<Artículo> FindAll()
         {
-            Artículo ar = FindArticulo(codigo);
-
-            entidades.Artículo.Remove(ar);
-            entidades.SaveChanges();
-            return "Artículo eliminado";
+            return listaArticulo;
         }
 
-        //private static List<Artículo> listaArticulo = new List<Artículo>();
+        //Metodo para encontrar un objeto
+        public static Artículo FindArticulo(string cod)
+        {
 
-        ////Metodo para agregar Articulo
-        //public static string AddAarticulo(string codigo, string nombre, string precio, string comentario, string Codcategoria)
-        //{
-        //    Categoria cat = CategoriaController.FindCategoria(Codcategoria);
-        //    try
-        //    {
-        //        listaArticulo.Add(new Artículo()
-        //        {
-        //            Codigo = int.Parse(codigo),
-        //            Nombre = nombre,
-        //            Precio = precio,
-        //            Comentario = comentario,
-        //            Categoria = cat,
+            try
+            {
+                foreach (Artículo artículo in FindAll())
+                {
+                    if (artículo.Codigo == int.Parse(cod))
+                    {
+                        return artículo;
+                    }
+                }
 
-        //        });
+                return null;
+            }
+            catch (Exception)
+            {
 
-        //        return "Articulo agregado.";
+                return null;
+            }
 
-        //    }
-        //    catch (Exception e)
-        //    {
+        }
 
-        //        return e.Message;
-        //    }
-        //}
+        //Metodo para editar Articulo
 
-        ////Metodo para listar todos los Articulo
-        //public static List<Artículo> FindAll()
-        //{
-        //    return listaArticulo;
-        //}
+        public static string EditArticulo(string codigo, string nombre, string precio, string comentario, string Codcategoria)
+        {
+            Categoria cat = CategoriaController.FindCategoria(Codcategoria);
+            try
+            {
+                Artículo artículo = FindArticulo(codigo);
+                artículo.Nombre = nombre;
+                artículo.Precio = precio;
+                artículo.Comentario = comentario;
+                artículo.Categoria = cat;
 
-        ////Metodo para encontrar un objeto
-        //public static Artículo FindArticulo(string cod)
-        //{
+                return "Articulo Modificada";
+            }
+            catch (Exception ex)
+            {
 
-        //    try
-        //    {
-        //        foreach (Artículo artículo in FindAll())
-        //        {
-        //            if (artículo.Codigo == int.Parse(cod))
-        //            {
-        //                return artículo;
-        //            }
-        //        }
-
-        //        return null;
-        //    }
-        //    catch (Exception)
-        //    {
-
-        //        return null;
-        //    }
-
-        //}
-
-        ////Metodo para editar Articulo
-
-        //public static string EditArticulo(string codigo, string nombre, string precio, string comentario, string Codcategoria)
-        //{
-        //    Categoria cat = CategoriaController.FindCategoria(Codcategoria);
-        //    try
-        //    {
-        //        Artículo artículo = FindArticulo(codigo);
-        //        artículo.Nombre = nombre;
-        //        artículo.Precio = precio;
-        //        artículo.Comentario = comentario;
-        //        artículo.Categoria = cat;
-
-        //        return "Articulo Modificada";
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        return ex.Message;
-        //    }
+                return ex.Message;
+            }
 
 
-        //}
-        //// Metodo para eliminar Articulo
+        }
+        // Metodo para eliminar Articulo
 
-        //public static string RemoveArticulo(string cod)
-        //{
-        //    listaArticulo.Remove(FindArticulo(cod));
+        public static string RemoveArticulo(string cod)
+        {
+            listaArticulo.Remove(FindArticulo(cod));
 
-        //    return "Articulo removido de la lista";
-        //}
+            return "Articulo removido de la lista";
+        }
 
-        ////Metodo para precargar Articulo
-        //public static void CargarArticulo()
-        //{
-        //    if (listaArticulo.Count < 1)
-        //    {
+        //Metodo para precargar Articulo
+        public static void CargarArticulo()
+        {
+            if (listaArticulo.Count < 1)
+            {
 
-        //        AddAarticulo("1", "papas fritas", "10.000", "Ricas papas fritas de huerto sabor natural 100% real no fake", "1");
-        //        AddAarticulo("2", "tomates", "10.000", "Huerto sabor natural 100% real no fake", "1");
-        //        AddAarticulo("3", "pescado", "15.000", "Pescado de tierra", "2");
-        //        AddAarticulo("4", "pescado diferente", "15.000", "Pollo de tierra", "2");
-        //        AddAarticulo("5", "pescado", "15.000", "Pescado de tierra", "2");
-        //        AddAarticulo("6", "pescado diferente", "15.000", "Pollo de tierra", "2");
-        //    }
-        //}
+                AddAarticulo("1", "papas fritas", "10.000", "Ricas papas fritas de huerto sabor natural 100% real no fake", "1");
+                AddAarticulo("2", "tomates", "10.000", "Huerto sabor natural 100% real no fake", "1");
+                AddAarticulo("3", "pescado", "15.000", "Pescado de tierra", "2");
+                AddAarticulo("4", "pescado diferente", "15.000", "Pollo de tierra", "2");
+                AddAarticulo("5", "pescado", "15.000", "Pescado de tierra", "2");
+                AddAarticulo("6", "pescado diferente", "15.000", "Pollo de tierra", "2");
+            }
+        }
 
-        ////Metodo de auto increment
-        //public static int ArticuloAI()
-        //{
-        //    int cod = listaArticulo[listaArticulo.Count - 1].Codigo + 1;
+        //Metodo de auto increment
+        public static int ArticuloAI()
+        {
+            int cod = listaArticulo[listaArticulo.Count - 1].Codigo + 1;
 
-        //    return cod;
-        //}
+            return cod;
+        }
     }
 }

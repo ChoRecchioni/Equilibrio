@@ -17,13 +17,13 @@ namespace equilibrio
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Region()
         {
-            this.Comuna = new HashSet<Comuna>();
+            this.Direccion = new HashSet<Direccion>();
         }
     
         public int codigo { get; set; }
         public string nombre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Comuna> Comuna { get; set; }
+        public virtual ICollection<Direccion> Direccion { get; set; }
     }
 }

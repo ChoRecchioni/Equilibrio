@@ -5,7 +5,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using equilibrio.Clases;
 using equilibrio.Controller;
 
 namespace equilibrio.WEBFORMS
@@ -21,7 +20,6 @@ namespace equilibrio.WEBFORMS
                 Response.Redirect("IniciarSesión.aspx");
             }
 
-            LocalController.CargarLocales();
 
             if (!Page.IsPostBack)
             {
@@ -31,11 +29,11 @@ namespace equilibrio.WEBFORMS
 
         protected void CargarDropLocal()
         {
-            DropLocal.DataSource = from com in LocalController.FindAll()
+            DropLocal.DataSource = from com in LocalController.findAll()
                                    select new
                                    {
-                                       codigo = com.Codigo,
-                                       texto = com.Nombre,
+                                       codigo = com.codigo,
+                                       texto = com.nombre,
                                    };
             DropLocal.DataValueField = "codigo";
             DropLocal.DataTextField = "texto";
@@ -45,14 +43,12 @@ namespace equilibrio.WEBFORMS
 
         protected void CargarDropHoras()
         {
-            MesaController.CargarMesa();
-            ReservaController.CargarReserva();
-            var mesas = MesaController.FindAll().Where(m => m.Local.Codigo == int.Parse(DropLocal.SelectedValue));
+            var mesas = MesaController.findAll().Where(m => m.Sede.codigo == int.Parse(DropLocal.SelectedValue));
 
             //for (int hora = 12; hora < 21; hora++)
             for (int hora = int.Parse(ConfigurationManager.AppSettings["HoraInicio"]); hora < int.Parse(ConfigurationManager.AppSettings["HoraTermino"]); hora++)
             {
-                var reservasLocal = ReservaController.FindAll().Where(r => r.Local.Codigo == int.Parse(DropLocal.SelectedValue) && r.FechaHora == Calendar1.SelectedDate.AddHours(hora));
+                var reservasLocal = ReservaController.findAll().Where(r => r.Sede.codigo == int.Parse(DropLocal.SelectedValue) && r.fecha == Calendar1.SelectedDate.AddHours(hora));
 
                 if ((mesas.Count() * 0.25) - reservasLocal.Count() > 0)
                 {
@@ -64,11 +60,8 @@ namespace equilibrio.WEBFORMS
         protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
         {
             string codLocal = DropLocal.SelectedValue;
-            LocalController.CargarLocales();
-            MesaController.CargarMesa();
-            ReservaController.CargarReserva();
 
-            var mesas = MesaController.FindAll().Where(m => m.Local.Codigo == int.Parse(codLocal));
+            var mesas = MesaController.findAll().Where(m => m.Sede.codigo == int.Parse(codLocal));
 
             //deshabilita domingos y dias anteriores a hoy.
             if (e.Day.Date.DayOfWeek == DayOfWeek.Sunday || e.Day.Date < DateTime.Now.Date)
@@ -79,7 +72,7 @@ namespace equilibrio.WEBFORMS
 
                 for (int hora = int.Parse(ConfigurationManager.AppSettings["HoraInicio"]); hora < int.Parse(ConfigurationManager.AppSettings["HoraTermino"]); hora++)
                 {
-                    var reservasLocal = ReservaController.FindAll().Where(r => r.Local.Codigo == int.Parse(DropLocal.SelectedValue) && r.FechaHora == e.Day.Date.AddHours(hora));
+                    var reservasLocal = ReservaController.findAll().Where(r => r.Sede.codigo == int.Parse(DropLocal.SelectedValue) && r.fecha == e.Day.Date.AddHours(hora));
                     if ((mesas.Count() * 0.25) - reservasLocal.Count() > 0)
                     {
                         e.Day.IsSelectable = true;
@@ -110,16 +103,16 @@ namespace equilibrio.WEBFORMS
             string IdR = Request.QueryString["ID"];
 
             ///TODO: Generar validaciones de los parámetros de entrada: Sesion de Usuario, Local y Horas
-            Mesa mesa = MesaController.FindMesa(int.Parse(DropLocal.SelectedValue), int.Parse(Check.SelectedValue), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)));
+            Mesa mesa = MesaController.EncontrarMesa(int.Parse(DropLocal.SelectedValue), int.Parse(Check.SelectedValue), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)));
             if (mesa != null)
             {
                 if (string.IsNullOrEmpty(IdR))
                 {
-                    ReservaController.AddReserva(ReservaController.ResAI().ToString(), mesa.Codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).Codigo.ToString());
+                    ReservaController.AddReserva("", mesa.codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)).ToString(), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).codigo.ToString());
                 }
                 else
                 {
-                    ReservaController.EditReserva(IdR, mesa.Codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)), DropLocal.SelectedValue);
+                    ReservaController.editReserva(IdR, mesa.codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)).ToString(), DropLocal.SelectedValue);
                 }
             }
             System.Threading.Thread.Sleep(2500);

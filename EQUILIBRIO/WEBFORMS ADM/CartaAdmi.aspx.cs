@@ -25,12 +25,13 @@ namespace equilibrio.WEBFORMS_ADM
 
         public void cargarDropCat()
         {
+            CategoriaController.CargarCategoria();
 
-            DropCategoria.DataSource = from cat in CategoriaController.findAll()
+            DropCategoria.DataSource = from cat in CategoriaController.FindAll()
                                        select new
                                        {
-                                           codigo = cat.codigo,
-                                           texto = cat.nombre,
+                                           codigo = cat.Codigo,
+                                           texto = cat.Nombre,
                                        };
             DropCategoria.DataValueField = "codigo";
             DropCategoria.DataTextField = "texto";
@@ -40,20 +41,23 @@ namespace equilibrio.WEBFORMS_ADM
 
         public void GenerarArticulo()
         {
-            var listadoArt = from ar in ArticuloController.findAll()
+            CategoriaController.CargarCategoria();
+            ArticuloController.CargarArticulo();
+
+            var listadoArt = from ar in ArticuloController.FindAll()
                              select new
                              {
-                                 Codigo = ar.codigo,
-                                 Nombre = ar.nombre,
-                                 Comentario = ar.comentario,
-                                 Precio = ar.precio,
+                                 Codigo = ar.Codigo,
+                                 Nombre = ar.Nombre,
+                                 Comentario = ar.Comentario,
+                                 Precio = ar.Precio,
                                  Categoria = ar.Categoria,
                              };
 
-            var listadoCat = from cat in CategoriaController.findAll()
+            var listadoCat = from cat in CategoriaController.FindAll()
                              select new
                              {
-                                 Nombre = cat.nombre
+                                 Nombre = cat.Nombre
                              };
 
             foreach (var it in listadoCat)
@@ -67,7 +71,7 @@ namespace equilibrio.WEBFORMS_ADM
 
                 divCat.Controls.Add(LblTituloCarta);
 
-                foreach (var item in listadoArt.Where(li => li.Categoria.nombre == it.Nombre))
+                foreach (var item in listadoArt.Where(li => li.Categoria.Nombre == it.Nombre))
                 {
                     //generamos objeto DIV por cada articulo
 
@@ -142,7 +146,9 @@ namespace equilibrio.WEBFORMS_ADM
 
         protected void BtnCrearArt_Click(object sender, EventArgs e)
         {
-            LbAddArt.Text = ArticuloController.AddArticulo(" ", TxtNombreArt.Text, TxtPrecioArt.Text, TxtDescripcionArt.Text, DropCategoria.SelectedValue);
+            ArticuloController.CargarArticulo();
+            int codArt = ArticuloController.ArticuloAI();
+            LbAddArt.Text = ArticuloController.AddAarticulo(codArt.ToString(), TxtNombreArt.Text, TxtPrecioArt.Text, TxtDescripcionArt.Text, DropCategoria.SelectedValue);
             Response.Redirect("CartaAdmi.aspx");
         }
     }

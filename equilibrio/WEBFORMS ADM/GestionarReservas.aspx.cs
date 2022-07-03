@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using equilibrio.Clases;
 using equilibrio.Controller;
 
 namespace equilibrio.WEBFORMS_ADM
@@ -18,12 +19,14 @@ namespace equilibrio.WEBFORMS_ADM
 
         public void CargaReservas(Usuario usuario)
         {
-            var reservas = ReservaController.findAll();
+            UsuarioController.CargarUsuario();
+            ReservaController.CargarReserva();
+            var reservas = ReservaController.FindAll();
 
             if (usuario != null)
-                reservas.Where(r => r.Usuario.codigo == usuario.codigo);
+                reservas.Where(r => r.Usuario.Codigo == usuario.Codigo);
 
-            foreach (var item in reservas.Where(R => R.Sede.codigo == usuario.Sede.codigo))
+            foreach (var item in reservas.Where(R => R.Local.Codigo == usuario.Local.Codigo))
             {
                 HtmlGenericControl Table = new HtmlGenericControl("table");
                 Table.Attributes.Add("class", "auto-style1");
@@ -38,7 +41,7 @@ namespace equilibrio.WEBFORMS_ADM
 
                 Label lblFecha = new Label();
                 lblFecha.Attributes.Add("class", "TxtReserva");
-                lblFecha.Text = item.fecha.ToShortDateString();
+                lblFecha.Text = item.FechaHora.ToShortDateString();
                 lblFecha.CssClass = "lblReserva";
 
                 tdFecha.Controls.Add(lblTituloFecha);
@@ -54,7 +57,7 @@ namespace equilibrio.WEBFORMS_ADM
 
                 Label lblHora = new Label();
                 lblHora.Attributes.Add("class", "TxtReserva");
-                lblHora.Text = item.fecha.ToShortTimeString();
+                lblHora.Text = item.FechaHora.ToShortTimeString();
                 lblHora.CssClass = "lblReserva";
 
                 tdHora.Controls.Add(lblTituloHora);
@@ -67,8 +70,8 @@ namespace equilibrio.WEBFORMS_ADM
                 btnEditar.Height = 20;
                 btnEditar.Width = 20;
                 btnEditar.ImageUrl = "~/IMG/edit.png";
-                btnEditar.OnClientClick = "return EditarReserva('" + item.codigo.ToString() + "');";
-                btnEditar.ID = item.codigo.ToString();
+                btnEditar.OnClientClick = "return EditarReserva('" + item.Codigo.ToString() + "');";
+                btnEditar.ID = item.Codigo.ToString();
                 tdbtnEditar.Controls.Add(btnEditar);
                 trFechaHora.Controls.Add(tdbtnEditar);
 
@@ -78,8 +81,8 @@ namespace equilibrio.WEBFORMS_ADM
                 btnEliminar.Height = 20;
                 btnEliminar.Width = 20;
                 btnEliminar.ImageUrl = "~/IMG/delete.png";
-                btnEliminar.OnClientClick = "return EliminarReserva('" + item.codigo.ToString() + "');";
-                btnEliminar.ID = item.codigo.ToString();
+                btnEliminar.OnClientClick = "return EliminarReserva('" + item.Codigo.ToString() + "');";
+                btnEliminar.ID = item.Codigo.ToString();
                 tdbtnEliminar.Controls.Add(btnEliminar);
                 trFechaHora.Controls.Add(tdbtnEliminar);
 
@@ -91,7 +94,7 @@ namespace equilibrio.WEBFORMS_ADM
                 lblTituloCliente.Text = "CLIENTE:";
 
                 Label lblCliente = new Label();
-                lblCliente.Text = item.Usuario.nombre + " " + item.Usuario.apellido;
+                lblCliente.Text = item.Usuario.Nombre + " " + item.Usuario.Apellido;
                 lblCliente.CssClass = "lblReserva";
 
                 tdCliente.Controls.Add(lblTituloCliente);
@@ -106,7 +109,7 @@ namespace equilibrio.WEBFORMS_ADM
                 lblTituloTelefono.Text = "TELÉFONO:";
 
                 Label lblTelefono = new Label();
-                lblTelefono.Text = item.Usuario.telefono;
+                lblTelefono.Text = item.Usuario.Telefono;
                 lblTelefono.CssClass = "lblReserva";
 
                 tdTelefono.Controls.Add(lblTituloTelefono);

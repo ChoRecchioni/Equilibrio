@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using equilibrio.Controller;
-using equilibrio.Clases;
 using System.Windows.Forms;
 
 namespace equilibrio.WEBFORMS
@@ -15,7 +14,6 @@ namespace equilibrio.WEBFORMS
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            UsuarioController.CargarUsuario();
         }
 
         protected void LnkRegistrar_Click(object sender, EventArgs e)
@@ -28,7 +26,7 @@ namespace equilibrio.WEBFORMS
             Usuario u = LoginController.Login(TxtUser.Text, TxtPass.Text);
             if (u != null)
             {
-                if (u.Rol.Codigo == 1)
+                if (u.Rol.codigo == 1)
                 {
                     Session["ActiveUser"] = u;
                     Response.Redirect("../WEBFORMS ADM/InicioAdm.aspx");

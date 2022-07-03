@@ -7,7 +7,6 @@ using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using equilibrio.Clases;
 using equilibrio.Controller;
 
 namespace equilibrio.WEBFORMS
@@ -35,11 +34,10 @@ namespace equilibrio.WEBFORMS
 
         public void CargaReservas(Usuario usuario)
         {
-            UsuarioController.CargarUsuario();
-            ReservaController.CargarReserva();
-            var reservas = ReservaController.FindAll();
 
-            foreach (var item in reservas.Where(r => r.Usuario.Codigo == usuario.Codigo))
+            var reservas = ReservaController.findAll();
+
+            foreach (var item in reservas.Where(r => r.Usuario.codigo == usuario.codigo))
             {
                 HtmlGenericControl Table = new HtmlGenericControl("table");
                 Table.Attributes.Add("class", "auto-style1");
@@ -54,7 +52,7 @@ namespace equilibrio.WEBFORMS
 
                 Label lblFecha = new Label();
                 lblFecha.Attributes.Add("class", "TxtReserva");
-                lblFecha.Text = item.FechaHora.ToShortDateString();
+                lblFecha.Text = item.fecha.ToShortDateString();
                 lblFecha.CssClass = "lblReserva";
 
                 tdFecha.Controls.Add(lblTituloFecha);
@@ -70,7 +68,7 @@ namespace equilibrio.WEBFORMS
 
                 Label lblHora = new Label();
                 lblHora.Attributes.Add("class", "TxtReserva");
-                lblHora.Text = item.FechaHora.ToShortTimeString();
+                lblHora.Text = item.fecha.ToShortTimeString();
                 lblHora.CssClass = "lblReserva";
 
                 tdHora.Controls.Add(lblTituloHora);
@@ -83,8 +81,8 @@ namespace equilibrio.WEBFORMS
                 btnEditar.Height = 20;
                 btnEditar.Width = 20;
                 btnEditar.ImageUrl = "~/IMG/edit.png";
-                btnEditar.OnClientClick = "return EditarReserva('" + item.Codigo.ToString() + "');";
-                btnEditar.ID = item.Codigo.ToString();
+                btnEditar.OnClientClick = "return EditarReserva('" + item.codigo.ToString() + "');";
+                btnEditar.ID = item.codigo.ToString();
                 tdbtnEditar.Controls.Add(btnEditar);
                 trFechaHora.Controls.Add(tdbtnEditar);
 
@@ -94,8 +92,8 @@ namespace equilibrio.WEBFORMS
                 btnEliminar.Height = 20;
                 btnEliminar.Width = 20;
                 btnEliminar.ImageUrl = "~/IMG/delete.png";
-                btnEliminar.OnClientClick = "return EliminarReserva('" + item.Codigo.ToString() + "');";
-                btnEliminar.ID = item.Codigo.ToString();
+                btnEliminar.OnClientClick = "return EliminarReserva('" + item.codigo.ToString() + "');";
+                btnEliminar.ID = item.codigo.ToString();
                 tdbtnEliminar.Controls.Add(btnEliminar);
                 trFechaHora.Controls.Add(tdbtnEliminar);
 
@@ -107,7 +105,7 @@ namespace equilibrio.WEBFORMS
                 lblTituloLocal.Text = "LOCAL:";
 
                 Label lblLocal = new Label();
-                lblLocal.Text = item.Local.Nombre;
+                lblLocal.Text = item.Sede.nombre;
                 lblLocal.CssClass = "lblReserva";
 
                 tdLocal.Controls.Add(lblTituloLocal);
@@ -122,7 +120,7 @@ namespace equilibrio.WEBFORMS
                 lblTituloDireccion.Text = "DIRECCIÓN:";
 
                 Label lblDireccion = new Label();
-                lblDireccion.Text = item.Local.Nombre;
+                lblDireccion.Text = item.Sede.nombre;
                 lblDireccion.CssClass = "lblReserva";
 
                 tdDireccion.Controls.Add(lblTituloDireccion);
@@ -137,7 +135,7 @@ namespace equilibrio.WEBFORMS
                 lblTituloTelefono.Text = "TELÉFONO:";
 
                 Label lblTelefono = new Label();
-                lblTelefono.Text = item.Local.Nombre;
+                lblTelefono.Text = item.Sede.nombre;
                 lblTelefono.CssClass = "lblReserva";
 
                 tdTelefono.Controls.Add(lblTituloTelefono);
@@ -158,7 +156,7 @@ namespace equilibrio.WEBFORMS
         {
             try
             {
-                ReservaController.RemoveReserva(id);
+                ReservaController.removeReserva(int.Parse(id));
                 return new
                 {
                     error = false,

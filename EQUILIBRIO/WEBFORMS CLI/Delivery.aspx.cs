@@ -3,7 +3,6 @@ using System.Linq;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using equilibrio.Clases;
 using equilibrio.Controller;
 
 namespace equilibrio.WEBFORMS_CLI
@@ -29,24 +28,23 @@ namespace equilibrio.WEBFORMS_CLI
 
         public void GenerarArticulo()
         {
-            CategoriaController.CargarCategoria();
             ArticuloController.CargarArticulo();
 
 
-            var listadoCat = from cat in CategoriaController.FindAll()
+            var listadoCat = from cat in CategoriaController.findAll()
                              select new
                              {
-                                 Nombre = cat.Nombre
+                                 Nombre = cat.nombre
                              };
 
             var listadoArt = from ar in ArticuloController.FindAll()
                              select new
                              {
-                                 Codigo = ar.Codigo,
-                                 Nombre = ar.Nombre,
-                                 Comentario = ar.Comentario,
-                                 Precio = ar.Precio,
-                                 Categoria = ar.Categoria.Nombre,
+                                 Codigo = ar.codigo,
+                                 Nombre = ar.nombre,
+                                 Comentario = ar.comentario,
+                                 Precio = ar.precio,
+                                 Categoria = ar.Categoria.nombre,
                              };
 
 

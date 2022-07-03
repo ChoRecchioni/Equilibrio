@@ -162,6 +162,7 @@
     <Compile Include="Comuna.cs">
       <DependentUpon>ModeloEQ.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controller\Art-CarroController.cs" />
     <Compile Include="Controller\ArticuloController.cs" />
     <Compile Include="Controller\Carro-ComprasController.cs" />
     <Compile Include="Controller\CategoriaController.cs" />

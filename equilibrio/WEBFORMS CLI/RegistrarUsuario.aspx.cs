@@ -14,11 +14,6 @@ namespace equilibrio.WEBFORMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ComunaController.CargarComuna();
-            RegionController.CargarRegion();
-            RoleController.CargarRoles();
-            UsuarioController.CargarUsuario();
-            DireccionController.CargarDirección();
 
             if (!Page.IsPostBack)
             {
@@ -31,11 +26,11 @@ namespace equilibrio.WEBFORMS
         public void CargarDropComuna()
         {
 
-            DropComuna.DataSource = from com in ComunaController.FindAll()
+            DropComuna.DataSource = from com in ComunaController.findAll()
                                     select new
                                     {
-                                        codigo = com.Codigo,
-                                        texto = com.Nombre,
+                                        codigo = com.codigo,
+                                        texto = com.nombre,
                                     };
             DropComuna.DataValueField = "codigo";
             DropComuna.DataTextField = "texto";
@@ -46,11 +41,11 @@ namespace equilibrio.WEBFORMS
         public void CargarDropRegion()
         {
 
-            DropRegion.DataSource = from reg in RegionController.FindAll()
+            DropRegion.DataSource = from reg in RegionController.findAll()
                                     select new
                                     {
-                                        codigo = reg.Codigo,
-                                        texto = reg.Nombre,
+                                        codigo = reg.codigo,
+                                        texto = reg.nombre,
                                     };
             DropRegion.DataValueField = "codigo";
             DropRegion.DataTextField = "texto";
@@ -62,15 +57,13 @@ namespace equilibrio.WEBFORMS
         {
             System.Threading.Thread.Sleep(2500);
 
-            int codUser = UsuarioController.UserAI();
-            int codDir = DireccionController.DirAI();
             HdnRolCliente.Value = "2";
            
-            LbMensaje1.Text = DireccionController.AddDireccion(codDir.ToString(), TextAlias.Text,
+            Direccion dir = DireccionController.AddDireccion("", TextAlias.Text,
             TextCalle.Text, TextDpto.Text, DropComuna.SelectedValue, DropRegion.SelectedValue);
 
-            LbMensaje.Text = UsuarioController.AddUsuario(codUser, TextRut.Text,
-            TextNombre.Text, TextApellido.Text, TextTelefono.Text, TextContraseña.Text, codDir.ToString(), HdnRolCliente.Value, "");
+            LbMensaje.Text = UsuarioController.AddUsuario("", TextRut.Text,
+            TextNombre.Text, TextApellido.Text, TextTelefono.Text, TextContraseña.Text, dir.codigo.ToString(), HdnRolCliente.Value, "", TextCorreo.Text);
 
             Response.Redirect("IniciarSesión.aspx");
         }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using equilibrio.Clases;
 
 namespace equilibrio.Controller
 {
@@ -59,17 +60,18 @@ namespace equilibrio.Controller
 
 
         //Metodo para editar
-        public static string editUsuario(string codigo, string nombre, string apellido, string telefono, string correo)
+        public static string editUsuario(string codigo, string nombre, string apellido, string telefono)
         {
             int intCod = int.Parse(codigo);
+            //revista r = entidades.revista.Find(id);//Busca por clave primaria
             Usuario u = FindUsuario(intCod);
 
             if (u != null)
             {
+             
                 u.nombre = nombre;
                 u.apellido = apellido;
                 u.telefono = telefono;
-                u.correo = correo;
                 entidades.SaveChanges();
                 return "Usuario modificada";
             }

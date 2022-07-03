@@ -29,7 +29,6 @@ namespace equilibrio.Controller
         //Metodo para agregar
         public static string AddDelivery(string codigo, string numPedido, string codOrden, string codEstadoDeli)
         {
-
             Delivery d = new Delivery()
             {
                 codigo = int.Parse(codigo),

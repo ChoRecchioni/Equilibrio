@@ -16,19 +16,19 @@ namespace equilibrio.WEBFORMS_CLI
         {
             CargarDropLocales();
             CargarGrid();
-            ReseñaController.CargarReseña();
+
         }
          
         public void CargarGrid()
         {
-            ReseñaController.CargarReseña();
 
-           var listado = from re in ReseñaController.FindAll()
+
+           var listado = from re in ReseñaController.findAll()
                                    select new
                                    {
-                                       Local = re.Local.Nombre,
-                                       Puntuacion = re.Puntuacion,
-                                       Comentario = re.Comentario
+                                       Local = re.Sede.nombre,
+                                       Puntuacion = re.puntuacion,
+                                       Comentario = re.comentario
                                    };
 
             foreach (var item in listado)
@@ -81,13 +81,12 @@ namespace equilibrio.WEBFORMS_CLI
 
         public void CargarDropLocales()
         {
-            LocalController.CargarLocales();
 
-            FiltroLocal.DataSource = from sed in LocalController.FindAll()
+            FiltroLocal.DataSource = from sed in LocalController.findAll()
                                      select new
                                      {
-                                         codigo = sed.Codigo,
-                                         texto = sed.Nombre,
+                                         codigo = sed.codigo,
+                                         texto = sed.nombre,
                                      };
             FiltroLocal.DataValueField = "codigo";
             FiltroLocal.DataTextField = "texto";

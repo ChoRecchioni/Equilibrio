@@ -27,8 +27,10 @@ namespace equilibrio
         public string calleYnum { get; set; }
         public string depto { get; set; }
         public int fk_comuna { get; set; }
+        public int fk_region { get; set; }
     
         public virtual Comuna Comuna { get; set; }
+        public virtual Region Region { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Empleado> Empleado { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

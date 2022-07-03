@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using equilibrio.Clases;
 using equilibrio.Controller;
 
 namespace equilibrio.WEBFORMS_ADM
@@ -14,16 +15,16 @@ namespace equilibrio.WEBFORMS_ADM
         {
 
         }
-
+       
         protected void Button1_Click(object sender, EventArgs e)
         {
             Session["ActiveUser"] = null;
             Response.Redirect("~/WEBFORMS CLI/IniciarSesión.aspx");
         }
 
+        
 
-
-
+        
 
         protected void BtnEditarUser_Click(object sender, ImageClickEventArgs e)
         {
@@ -35,19 +36,19 @@ namespace equilibrio.WEBFORMS_ADM
 
         }
 
+       
 
-
-
+        
 
         protected void BtnCheckUser_Click(object sender, ImageClickEventArgs e)
         {
             Usuario u = (Usuario)Session["ActiveUser"];
-            LbEditUser.Text = UsuarioController.editUsuario(u.codigo.ToString(), TxtNombre.Text, TxtApellido.Text, TxtTeléfono.Text, u.correo);
+            LbEditUser.Text = UsuarioController.EditUsuario(u.Codigo.ToString(), TxtNombre.Text, TxtApellido.Text, TxtTeléfono.Text);
             BtnEditarUser.Visible = true;
             BtnCheckUser.Visible = false;
-            TxtNombre.Text = u.nombre;
-            TxtApellido.Text = u.apellido;
-            TxtTeléfono.Text = u.telefono;
+            TxtNombre.Text = u.Nombre;
+            TxtApellido.Text = u.Apellido;
+            TxtTeléfono.Text = u.Telefono;
             TxtNombre.Enabled = false;
             TxtApellido.Enabled = false;
             TxtTeléfono.Enabled = false;

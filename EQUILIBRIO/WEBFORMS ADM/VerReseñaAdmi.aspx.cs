@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using equilibrio.Clases;
 using equilibrio.Controller;
 
 //Se mostrarán las reservas según local del administrador.
@@ -22,16 +23,16 @@ namespace equilibrio.WEBFORMS_ADM
         {
             Usuario u = (Usuario)Session["ActiveUser"];
 
-            var listado = from re in ReseñaController.findAll()
+            var listado = from re in ReseñaController.FindAll()
                           select new
                           {
-                              Local = re.Sede,
-                              Puntuacion = re.puntuacion,
-                              Comentario = re.comentario,
+                              Local = re.Local,
+                              Puntuacion = re.Puntuacion,
+                              Comentario = re.Comentario,
                               Usuario = re.Usuario
                           };
 
-            foreach (var item in listado.Where(L => L.Local.codigo == u.Sede.codigo))
+            foreach (var item in listado.Where(L => L.Local.Codigo == u.Local.Codigo))
             {
                 //generamos objeto DIV por cada reseña (con n)
                 HtmlGenericControl divResena = new HtmlGenericControl("div");
@@ -84,7 +85,7 @@ namespace equilibrio.WEBFORMS_ADM
 
                 Label labelClienteC = new Label();
                 labelClienteC.CssClass = "Lbl";
-                labelClienteC.Text = item.Usuario.nombre + " " + item.Usuario.apellido;
+                labelClienteC.Text = item.Usuario.Nombre + " " + item.Usuario.Apellido;
 
                 Label labelDatos = new Label();
                 labelDatos.CssClass = "LblTitulo";
@@ -92,7 +93,7 @@ namespace equilibrio.WEBFORMS_ADM
 
                 Label labelDatos1 = new Label();
                 labelDatos1.CssClass = "Lbl";
-                labelDatos1.Text = item.Usuario.telefono;
+                labelDatos1.Text = item.Usuario.Telefono;
 
                 divResenaUsuario.Controls.Add(labelCliente);
                 divResenaUsuario.Controls.Add(labelClienteC);

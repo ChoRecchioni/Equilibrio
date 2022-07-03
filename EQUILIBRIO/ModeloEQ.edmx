@@ -44,7 +44,6 @@
           </Key>
           <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="25" Nullable="false" />
-          <Property Name="fk_region" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Delivery">
           <Key>
@@ -64,6 +63,7 @@
           <Property Name="calleYnum" Type="varchar" MaxLength="50" />
           <Property Name="depto" Type="varchar" MaxLength="25" />
           <Property Name="fk_comuna" Type="int" Nullable="false" />
+          <Property Name="fk_region" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Empleado">
           <Key>
@@ -209,18 +209,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Comuna__fk_regio__01142BA1">
-          <End Role="Region" Type="Self.Region" Multiplicity="1" />
-          <End Role="Comuna" Type="Self.Comuna" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Region">
-              <PropertyRef Name="codigo" />
-            </Principal>
-            <Dependent Role="Comuna">
-              <PropertyRef Name="fk_region" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Delivery__fk_est__5CD6CB2B">
           <End Role="EstadoDelivery" Type="Self.EstadoDelivery" Multiplicity="1" />
           <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
@@ -254,6 +242,18 @@
             </Principal>
             <Dependent Role="Direccion">
               <PropertyRef Name="fk_comuna" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Direccion__fk_re__2E1BDC42">
+          <End Role="Region" Type="Self.Region" Multiplicity="1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="fk_region" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -459,10 +459,6 @@
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="CarroCompras" EntitySet="CarroCompras" />
           </AssociationSet>
-          <AssociationSet Name="FK__Comuna__fk_regio__01142BA1" Association="Self.FK__Comuna__fk_regio__01142BA1">
-            <End Role="Region" EntitySet="Region" />
-            <End Role="Comuna" EntitySet="Comuna" />
-          </AssociationSet>
           <AssociationSet Name="FK__Delivery__fk_est__5CD6CB2B" Association="Self.FK__Delivery__fk_est__5CD6CB2B">
             <End Role="EstadoDelivery" EntitySet="EstadoDelivery" />
             <End Role="Delivery" EntitySet="Delivery" />
@@ -473,6 +469,10 @@
           </AssociationSet>
           <AssociationSet Name="FK__Direccion__fk_co__2D27B809" Association="Self.FK__Direccion__fk_co__2D27B809">
             <End Role="Comuna" EntitySet="Comuna" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Direccion__fk_re__2E1BDC42" Association="Self.FK__Direccion__fk_re__2E1BDC42">
+            <End Role="Region" EntitySet="Region" />
             <End Role="Direccion" EntitySet="Direccion" />
           </AssociationSet>
           <AssociationSet Name="FK__Empleado__fk_dir__3B75D760" Association="Self.FK__Empleado__fk_dir__3B75D760">
@@ -584,8 +584,6 @@
           <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Direccion" Relationship="Self.FK__Direccion__fk_co__2D27B809" FromRole="Comuna" ToRole="Direccion" />
-          <Property Name="fk_region" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Region" Relationship="EQModel.FK__Comuna__fk_regio__01142BA1" FromRole="Comuna" ToRole="Region" />
         </EntityType>
         <EntityType Name="Delivery">
           <Key>
@@ -607,7 +605,9 @@
           <Property Name="calleYnum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="depto" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="fk_comuna" Type="Int32" Nullable="false" />
+          <Property Name="fk_region" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Comuna" Relationship="Self.FK__Direccion__fk_co__2D27B809" FromRole="Direccion" ToRole="Comuna" />
+          <NavigationProperty Name="Region" Relationship="Self.FK__Direccion__fk_re__2E1BDC42" FromRole="Direccion" ToRole="Region" />
           <NavigationProperty Name="Empleado" Relationship="Self.FK__Empleado__fk_dir__3B75D760" FromRole="Direccion" ToRole="Empleado" />
           <NavigationProperty Name="Sede" Relationship="Self.FK__Sede__fk_direcci__30F848ED" FromRole="Direccion" ToRole="Sede" />
           <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__fk_dire__33D4B598" FromRole="Direccion" ToRole="Usuario" />
@@ -663,7 +663,7 @@
           </Key>
           <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Comuna" Relationship="EQModel.FK__Comuna__fk_regio__01142BA1" FromRole="Region" ToRole="Comuna" />
+          <NavigationProperty Name="Direccion" Relationship="Self.FK__Direccion__fk_re__2E1BDC42" FromRole="Region" ToRole="Direccion" />
         </EntityType>
         <EntityType Name="Reseña">
           <Key>
@@ -829,6 +829,18 @@
             </Principal>
             <Dependent Role="Delivery">
               <PropertyRef Name="fk_orden" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Direccion__fk_re__2E1BDC42">
+          <End Role="Region" Type="Self.Region" Multiplicity="1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="fk_region" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1038,6 +1050,10 @@
             <End Role="OrdenCompra" EntitySet="OrdenCompra" />
             <End Role="Delivery" EntitySet="Delivery" />
           </AssociationSet>
+          <AssociationSet Name="FK__Direccion__fk_re__2E1BDC42" Association="Self.FK__Direccion__fk_re__2E1BDC42">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
           <AssociationSet Name="FK__Empleado__fk_dir__3B75D760" Association="Self.FK__Empleado__fk_dir__3B75D760">
             <End Role="Direccion" EntitySet="Direccion" />
             <End Role="Empleado" EntitySet="Empleado" />
@@ -1090,23 +1106,7 @@
             <End Role="Sede" EntitySet="Sede" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
-          <AssociationSet Name="FK__Comuna__fk_regio__01142BA1" Association="EQModel.FK__Comuna__fk_regio__01142BA1">
-            <End Role="Region" EntitySet="Region" />
-            <End Role="Comuna" EntitySet="Comuna" />
-          </AssociationSet>
         </EntityContainer>
-        <Association Name="FK__Comuna__fk_regio__01142BA1">
-          <End Type="EQModel.Region" Role="Region" Multiplicity="1" />
-          <End Type="EQModel.Comuna" Role="Comuna" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Region">
-              <PropertyRef Name="codigo" />
-            </Principal>
-            <Dependent Role="Comuna">
-              <PropertyRef Name="fk_region" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1153,7 +1153,6 @@
           <EntitySetMapping Name="Comuna">
             <EntityTypeMapping TypeName="EQModel.Comuna">
               <MappingFragment StoreEntitySet="Comuna">
-                <ScalarProperty Name="fk_region" ColumnName="fk_region" />
                 <ScalarProperty Name="codigo" ColumnName="codigo" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
               </MappingFragment>
@@ -1177,6 +1176,7 @@
                 <ScalarProperty Name="calleYnum" ColumnName="calleYnum" />
                 <ScalarProperty Name="depto" ColumnName="depto" />
                 <ScalarProperty Name="fk_comuna" ColumnName="fk_comuna" />
+                <ScalarProperty Name="fk_region" ColumnName="fk_region" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

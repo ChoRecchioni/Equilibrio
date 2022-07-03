@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using equilibrio.Clases;
-
 namespace equilibrio.Controller
 {
     public class DireccionController
@@ -26,7 +24,7 @@ namespace equilibrio.Controller
         }
 
         //Metodo para agregar
-        public static string AddDireccion(string codigo, string alias, string calleYnum, string depto, string codComuna)
+        public static Direccion AddDireccion(string codigo, string alias, string calleYnum, string depto, string codComuna, string codRegion)
         {
 
             Direccion d = new Direccion()
@@ -36,12 +34,13 @@ namespace equilibrio.Controller
                 calleYnum = calleYnum,
                 depto = depto,
                 fk_comuna = int.Parse(codComuna),
+                fk_region = int .Parse(codRegion),
             };
 
             entidades.Direccion.Add(d);
             entidades.SaveChanges();
 
-            return "Direccion agregada.";
+            return d;
         }
 
 
@@ -54,7 +53,7 @@ namespace equilibrio.Controller
 
 
         //Metodo para editar
-        public static string editDireccion(string codigo, string alias, string calleYnum, string depto, string codComuna)
+        public static string editDireccion(string codigo, string alias, string calleYnum, string depto, string codComuna, string codRegion)
         {
             int intCod = int.Parse(codigo);
             //revista r = entidades.revista.Find(id);//Busca por clave primaria
@@ -66,6 +65,7 @@ namespace equilibrio.Controller
                 d.calleYnum = calleYnum;
                 d.depto = depto;
                 d.fk_comuna = int.Parse(codComuna);
+                d.fk_region = int.Parse(codRegion);
                 entidades.SaveChanges();
                 return "Dirección modificada";
             }

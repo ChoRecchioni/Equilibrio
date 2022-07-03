@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using equilibrio.Clases;
 using equilibrio.Controller;
 
 namespace equilibrio.WEBFORMS_CLI
@@ -21,19 +20,19 @@ namespace equilibrio.WEBFORMS_CLI
                 if (!string.IsNullOrEmpty(cod))
                 {
 
-                    OrdenCompra orden = OrdenCompraController.FindOrden(cod);
-                    CarroCompras carroCompras = CarroComprasController.FindCarro(orden.Carro.Codigo.ToString());
+                    OrdenCompra orden = OrdenCompraController.FindOrden(int.Parse(cod));
+                    CarroCompras carroCompras = CarroComprasController.FindCarroCompras(orden.CarroCompras.codigo);
 
-                    Usuario user = UsuarioController.FindUsuario(carroCompras.user.Codigo.ToString());
-                    LbRutu.Text = user.RUT;
-                    LbNombreu.Text = user.Nombre;
-                    LbApellidou.Text = user.Apellido;
-                    LbTelefonou.Text = user.Telefono;
-                    LbDireccionu.Text = user.Direccion.CalleYnum;
-                    LbComunau.Text = user.Direccion.Comuna.Nombre;
-                    LbRegionu.Text = user.Direccion.Region.Nombre;
+                    Usuario user = UsuarioController.FindUsuario(carroCompras.Usuario.codigo);
+                    LbRutu.Text = user.rut;
+                    LbNombreu.Text = user.nombre;
+                    LbApellidou.Text = user.apellido;
+                    LbTelefonou.Text = user.telefono;
+                    LbDireccionu.Text = user.Direccion.calleYnum;
+                    LbComunau.Text = user.Direccion.Comuna.nombre;
+                    LbRegionu.Text = user.Direccion.Region.nombre;
             
-                    foreach (Articulo_Carro ar in carroCompras.ArtCar)
+                    foreach (ArticuloCarro ar in carroCompras.ArticuloCarro)
 
                     {
                         HtmlGenericControl div = new HtmlGenericControl("div");
@@ -42,18 +41,18 @@ namespace equilibrio.WEBFORMS_CLI
                         Label LblNomP= new Label();
                         LblNomP.Attributes.Add("class", "Lbl");
                         LblNomP.ID = "LblNomP";
-                        LblNomP.Text = ar.Artículo.Nombre;
+                        LblNomP.Text = ar.Artículo.nombre;
 
                         Label LblCant = new Label();
                         LblCant.Attributes.Add("class", "Lbl");
                         LblCant.ID = "LblCant";
-                        LblCant.Text = "Cantidad: " + ar.Cantidad.ToString();
+                        LblCant.Text = "Cantidad: " + ar.cantidad.ToString();
                         LblCant.Style.Add("font-size", "large");
 
                         Label LblPrecio = new Label();
                         LblPrecio.Attributes.Add("class", "Lbl");
                         LblPrecio.ID = "LblPrecio";
-                        LblPrecio.Text = "$" + ar.Artículo.Precio + ".-";
+                        LblPrecio.Text = "$" + ar.Artículo.precio + ".-";
                         LblPrecio.Style.Add("float", "right");
                         div.Controls.Add(LblNomP);
                         div.Controls.Add(LblPrecio);
@@ -62,7 +61,7 @@ namespace equilibrio.WEBFORMS_CLI
                         divC.Controls.Add(div);
                     }
 
-                    LblTotal.Text = "$" + orden.Total.ToString() + ".-";
+                    LblTotal.Text = "$" + orden.total.ToString() + ".-";
 
                 }
             }
