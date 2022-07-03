@@ -8,6 +8,86 @@ namespace equilibrio.Controller
 {
     public class LocalController
     {
+
+        // Comienzo de nuevo Controller
+
+
+        //instancia de las entidades de la BD
+        static EQEntidades entidades = new EQEntidades();
+
+        //Metodo para listar todos
+        public static List<Sede> findAll()
+        {
+
+            var sed = from s in entidades.Sede
+                      select s;
+
+            return sed.ToList();
+        }
+
+        //Metodo para agregar
+        public static string AddSede(string codigo, string nombre, string telefono, string codDir)
+        {
+
+            Sede s = new Sede()
+            {
+                codigo = int.Parse(codigo),
+                nombre = nombre,
+                telefono = telefono,
+                fk_direccion = int.Parse(codDir),
+
+            };
+
+            entidades.Sede.Add(s);
+            entidades.SaveChanges();
+
+            return "Sede agregado.";
+        }
+
+
+        //Metodo para encontrar uno
+        public static Sede FindSede(int codigo)
+        {
+
+            return entidades.Sede.SingleOrDefault(s => s.codigo == codigo);
+        }
+
+
+        //Metodo para editar
+        public static string editSede(string codigo, string nombre, string telefono, string codDir)
+        {
+            int intCod = int.Parse(codigo);
+            //revista r = entidades.revista.Find(id);//Busca por clave primaria
+            Sede s = FindSede(intCod);
+
+            if (s != null)
+            {
+                s.nombre = nombre;
+                s.telefono = telefono;
+                s.fk_direccion = int.Parse(codDir);
+                entidades.SaveChanges();
+                return "Sede modificada";
+            }
+            else
+            {
+                return "No se pudo modificar la Sede";
+            }
+        }
+
+
+        //Metodo para eliminar
+        public static string removeSede(int codigo)
+        {
+
+            Sede s = FindSede(codigo);
+            entidades.Sede.Remove(s);
+            entidades.SaveChanges();
+
+            return "Sede eliminada";
+        }
+
+        // Fin nuevo Controller
+
         private static List<Local> listaLocales = new List<Local>();
 
         //Metodo de registrar Local

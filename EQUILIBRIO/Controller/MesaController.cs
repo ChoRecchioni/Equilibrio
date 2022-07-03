@@ -9,6 +9,84 @@ namespace equilibrio.Controller
     {
         private static List<Mesa> listaMesa = new List<Mesa>();
 
+        // Comienzo de nuevo Controller
+
+
+        //instancia de las entidades de la BD
+        static EQEntidades entidades = new EQEntidades();
+
+        //Metodo para listar todos
+        public static List<Mesa> findAll()
+        {
+
+            var mes = from m in entidades.Mesa
+                      select m;
+
+            return mes.ToList();
+        }
+
+        //Metodo para agregar
+        public static string addMesa(string codigo, string numMesa, string comensales, string codSede)
+        {
+
+            Mesa m = new Mesa()
+            {
+                codigo = int.Parse(codigo),
+                numMesa = numMesa,
+                comensales = int.Parse(comensales),
+                fk_sede = int.Parse(codSede),
+            };
+
+            entidades.Mesa.Add(m);
+            entidades.SaveChanges();
+
+            return "Mesa agregada.";
+        }
+
+
+        //Metodo para encontrar uno
+        public static Mesa FindMesa(int codigo)
+        {
+
+            return entidades.Mesa.SingleOrDefault(m => m.codigo == codigo);
+        }
+
+
+        //Metodo para editar
+        public static string editMesa(string codigo, string numMesa, string comensales, string codSede)
+        {
+            int intCod = int.Parse(codigo);
+            //revista r = entidades.revista.Find(id);//Busca por clave primaria
+            Mesa m = FindMesa(intCod);
+
+            if (m != null)
+            {
+                m.numMesa = numMesa;
+                m.comensales = int.Parse(comensales);
+                m.fk_sede = int.Parse(codSede);
+                entidades.SaveChanges();
+                return "Mesa modificada";
+            }
+            else
+            {
+                return "No se pudo modificar la Mesa";
+            }
+        }
+
+
+        //Metodo para eliminar
+        public static string removeMesa(int codigo)
+        {
+
+            Mesa m = FindMesa(codigo);
+            entidades.Mesa.Remove(m);
+            entidades.SaveChanges();
+
+            return "Mesa eliminada";
+        }
+
+        // Fin nuevo Controller
+
         //Metodo para agregar mesa
         public static string AddMesa(string codigo, string numMesa, string comensales, Local local)
         {

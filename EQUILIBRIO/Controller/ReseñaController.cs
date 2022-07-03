@@ -8,6 +8,89 @@ namespace equilibrio.Controller
 {
     public class ReseñaController
     {
+
+        // Comienzo de nuevo Controller
+
+
+        //instancia de las entidades de la BD
+        static EQEntidades entidades = new EQEntidades();
+
+        //Metodo para listar todos
+        public static List<Reseña> findAll()
+        {
+
+            var res = from r in entidades.Reseña
+                      select r;
+
+            return res.ToList();
+        }
+
+        //Metodo para agregar
+        public static string AddReseña(string codigo, string puntuacion, string comentario, string fecha, string codSede, string codUser)
+        {
+
+            Reseña r = new Reseña()
+            {
+                codigo = int.Parse(codigo),
+                puntuacion = int.Parse(puntuacion),
+                comentario = comentario,
+                fecha = Convert.ToDateTime(fecha),
+                fk_sede = int.Parse(codSede),
+                fk_usuario = int.Parse(codUser),
+            };
+
+            entidades.Reseña.Add(r);
+            entidades.SaveChanges();
+
+            return "Reseña agregado.";
+        }
+
+
+        //Metodo para encontrar uno
+        public static Reseña FindReseña(int codigo)
+        {
+
+            return entidades.Reseña.SingleOrDefault(r => r.codigo == codigo);
+        }
+
+
+        //Metodo para editar
+        public static string editReseña(string codigo, string puntuacion, string comentario, string fecha, string codSede, string codUser)
+        {
+            int intCod = int.Parse(codigo);
+            //revista r = entidades.revista.Find(id);//Busca por clave primaria
+            Reseña r = FindReseña(intCod);
+
+            if (r != null)
+            {
+                r.puntuacion = int.Parse(puntuacion);
+                r.comentario = comentario;
+                r.fecha = Convert.ToDateTime(fecha);
+                r.fk_sede = int.Parse(codSede);
+                r.fk_usuario = int.Parse(codUser);
+                entidades.SaveChanges();
+                return "Reseña modificada";
+            }
+            else
+            {
+                return "No se pudo modificar la Reseña";
+            }
+        }
+
+
+        //Metodo para eliminar
+        public static string removeReseña(int codigo)
+        {
+
+            Reseña r = FindReseña(codigo);
+            entidades.Reseña.Remove(r);
+            entidades.SaveChanges();
+
+            return "Reseña eliminada";
+        }
+
+        // Fin nuevo Controller
+
         private static List<Reseña> listaReseña = new List<Reseña>();
 
         //Metodo para agregar Reseña

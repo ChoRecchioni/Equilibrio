@@ -16,7 +16,7 @@ namespace equilibrio.Controller
             Usuario lgu = UsuarioController.FindUser(username);
             if (lgu != null)
             {
-                if (lgu.Pass.Equals(password))
+                if (lgu.pass.Equals(password))
                 {
                     return lgu;
                 }

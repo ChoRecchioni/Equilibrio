@@ -9,6 +9,81 @@ namespace equilibrio.Controller
 {
     public class CategoriaController
     {
+
+        // Comienzo de nuevo Controller
+
+
+        //instancia de las entidades de la BD
+        static EQEntidades entidades = new EQEntidades();
+
+        //Metodo para listar todos
+        public static List<Categoria> findAll()
+        {
+
+            var cat = from c in entidades.Categoria
+                      select c;
+
+            return cat.ToList();
+        }
+
+        //Metodo para agregar
+        public static string AddCategoria(string codigo, string nombre)
+        {
+
+            Categoria c = new Categoria()
+            {
+                codigo = int.Parse(codigo),
+                nombre = nombre,    
+            };
+
+            entidades.Categoria.Add(c);
+            entidades.SaveChanges();
+
+            return "Categoria agregado.";
+        }
+
+
+        //Metodo para encontrar uno
+        public static Categoria FindCategoria(int codigo)
+        {
+
+            return entidades.Categoria.SingleOrDefault(c => c.codigo == codigo);
+        }
+
+
+        //Metodo para editar
+        public static string editCategoria(string codigo, string nombre)
+        {
+            int intCod = int.Parse(codigo);
+            //revista r = entidades.revista.Find(id);//Busca por clave primaria
+            Categoria c = FindCategoria(intCod);
+
+            if (c != null)
+            {
+                c.nombre = nombre;
+                entidades.SaveChanges();
+                return "Categoria modificada";
+            }
+            else
+            {
+                return "No se pudo modificar la Categoria";
+            }
+        }
+
+
+        //Metodo para eliminar
+        public static string removeCategoria(int codigo)
+        {
+
+            Categoria c = FindCategoria(codigo);
+            entidades.Categoria.Remove(c);
+            entidades.SaveChanges();
+
+            return "Categoria eliminada";
+        }
+
+        // Fin nuevo Controller
+
         private static List<Categoria> listaCategoria = new List<Categoria>();
 
             public static string AddCategoria(string codigo, string nombre)

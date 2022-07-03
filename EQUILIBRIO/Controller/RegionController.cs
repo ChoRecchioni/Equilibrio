@@ -81,6 +81,7 @@ namespace equilibrio.Controller
         }
 
         // Fin nuevo Controller
+
         private static List<Region> listaRegion = new List<Region>();
 
         //Metodo de registrar region

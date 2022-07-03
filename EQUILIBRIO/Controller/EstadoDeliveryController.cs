@@ -9,6 +9,81 @@ namespace equilibrio.Controller
 {
     public class EstadoDeliveryController
     {
+
+        // Comienzo de nuevo Controller
+
+
+        //instancia de las entidades de la BD
+        static EQEntidades entidades = new EQEntidades();
+
+        //Metodo para listar todos
+        public static List<EstadoDelivery> findAll()
+        {
+
+            var est = from e in entidades.EstadoDelivery
+                      select e;
+
+            return est.ToList();
+        }
+
+        //Metodo para agregar
+        public static string AddEstadoDeli(string codigo, string nombre)
+        {
+
+            EstadoDelivery e = new EstadoDelivery()
+            {
+                codigo = int.Parse(codigo),
+                nombre = nombre,
+            };
+
+            entidades.EstadoDelivery.Add(e);
+            entidades.SaveChanges();
+
+            return "Estado Delivery agregado.";
+        }
+
+
+        //Metodo para encontrar uno
+        public static EstadoDelivery FindEstadoDeli(int codigo)
+        {
+
+            return entidades.EstadoDelivery.SingleOrDefault(e => e.codigo == codigo);
+        }
+
+
+        //Metodo para editar
+        public static string editEstadoDeli(string codigo, string nombre)
+        {
+            int intCod = int.Parse(codigo);
+            //revista r = entidades.revista.Find(id);//Busca por clave primaria
+            EstadoDelivery e = FindEstadoDeli(intCod);
+
+            if (e != null)
+            {
+                e.nombre = nombre;
+                entidades.SaveChanges();
+                return "Estado modificado";
+            }
+            else
+            {
+                return "No se pudo modificar el estado";
+            }
+        }
+
+
+        //Metodo para eliminar
+        public static string removeEstadoDeli(int codigo)
+        {
+
+            EstadoDelivery e = FindEstadoDeli(codigo);
+            entidades.EstadoDelivery.Remove(e);
+            entidades.SaveChanges();
+
+            return "Estado eliminado";
+        }
+
+        // Fin nuevo Controller
+
         private static List<EstadoDelivery> listaEstado = new List<EstadoDelivery>();
 
         //Metodo para agregar Estado

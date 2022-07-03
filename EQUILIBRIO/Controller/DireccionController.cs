@@ -8,6 +8,89 @@ namespace equilibrio.Controller
 {
     public class DireccionController
     {
+
+        // Comienzo de nuevo Controller
+
+
+        //instancia de las entidades de la BD
+        static EQEntidades entidades = new EQEntidades();
+
+        //Metodo para listar todos
+        public static List<Direccion> findAll()
+        {
+
+            var dir = from d in entidades.Direccion
+                      select d;
+
+            return dir.ToList();
+        }
+
+        //Metodo para agregar
+        public static string AddDireccion(string codigo, string alias, string calleYnum, string depto, string codComuna, string codRegion)
+        {
+
+            Direccion d = new Direccion()
+            {
+                codigo = int.Parse(codigo),
+                alias = alias,
+                calleYnum = calleYnum,
+                depto = depto,
+                fk_comuna = int.Parse(codComuna),
+                fk_region = int .Parse(codRegion),
+            };
+
+            entidades.Direccion.Add(d);
+            entidades.SaveChanges();
+
+            return "Direccion agregada.";
+        }
+
+
+        //Metodo para encontrar uno
+        public static Direccion FindDireccion(int codigo)
+        {
+
+            return entidades.Direccion.SingleOrDefault(d => d.codigo == codigo);
+        }
+
+
+        //Metodo para editar
+        public static string editDireccion(string codigo, string alias, string calleYnum, string depto, string codComuna, string codRegion)
+        {
+            int intCod = int.Parse(codigo);
+            //revista r = entidades.revista.Find(id);//Busca por clave primaria
+            Direccion d = FindDireccion(intCod);
+
+            if (d != null)
+            {
+                d.alias = alias;
+                d.calleYnum = calleYnum;
+                d.depto = depto;
+                d.fk_comuna = int.Parse(codComuna);
+                d.fk_region = int.Parse(codRegion);
+                entidades.SaveChanges();
+                return "Dirección modificada";
+            }
+            else
+            {
+                return "No se pudo modificar la Direccion";
+            }
+        }
+
+
+        //Metodo para eliminar
+        public static string removeDireccion(int codigo)
+        {
+
+            Direccion d = FindDireccion(codigo);
+            entidades.Direccion.Remove(d);
+            entidades.SaveChanges();
+
+            return "Dirección eliminada";
+        }
+
+        // Fin nuevo Controller
+
         private static List<Direccion> listaDireccion = new List<Direccion>();
 
         //Metodo para agregar Direccion

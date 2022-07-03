@@ -9,6 +9,81 @@ namespace equilibrio.Controller
 {
     public class RoleController
     {
+
+        // Comienzo de nuevo Controller
+
+
+        //instancia de las entidades de la BD
+        static EQEntidades entidades = new EQEntidades();
+
+        //Metodo para listar todos
+        public static List<Rol> findAll()
+        {
+
+            var rol = from r in entidades.Rol
+                      select r;
+
+            return rol.ToList();
+        }
+
+        //Metodo para agregar
+        public static string AddRol(string codigo, string nombre)
+        {
+
+            Rol r = new Rol()
+            {
+                codigo = int.Parse(codigo),
+                nombre = nombre,
+            };
+
+            entidades.Rol.Add(r);
+            entidades.SaveChanges();
+
+            return "Rol agregado.";
+        }
+
+
+        //Metodo para encontrar uno
+        public static Rol FindRol(int codigo)
+        {
+
+            return entidades.Rol.SingleOrDefault(r => r.codigo == codigo);
+        }
+
+
+        //Metodo para editar
+        public static string editRol(string codigo, string nombre)
+        {
+            int intCod = int.Parse(codigo);
+            //revista r = entidades.revista.Find(id);//Busca por clave primaria
+            Rol r = FindRol(intCod);
+
+            if (r != null)
+            {
+                r.nombre = nombre;
+                entidades.SaveChanges();
+                return "Rol modificado";
+            }
+            else
+            {
+                return "No se pudo modificar el rol";
+            }
+        }
+
+
+        //Metodo para eliminar
+        public static string removeRol(int codigo)
+        {
+
+            Rol r = FindRol(codigo);
+            entidades.Rol.Remove(r);
+            entidades.SaveChanges();
+
+            return "Rol eliminado";
+        }
+
+        // Fin nuevo Controller
+
         private static List<Role> listaRoles = new List<Role>();
 
 

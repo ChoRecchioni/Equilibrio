@@ -9,6 +9,86 @@ namespace equilibrio.Controller
 {
     public class ReservaController
     {
+
+        // Comienzo de nuevo Controller
+
+
+        //instancia de las entidades de la BD
+        static EQEntidades entidades = new EQEntidades();
+
+        //Metodo para listar todos
+        public static List<Reserva> findAll()
+        {
+
+            var res = from r in entidades.Reserva
+                      select r;
+
+            return res.ToList();
+        }
+
+        //Metodo para agregar
+        public static string AddReserva(string codigo, string fecha, string codSede, string codMesa, string codUser)
+        {
+
+            Reserva r = new Reserva()
+            {
+                codigo = int.Parse(codigo),
+                fecha = Convert.ToDateTime(fecha),
+                fk_sede = int.Parse(codSede),
+                fk_mesa = int.Parse(codMesa),
+                fk_usuario = int.Parse(codUser),
+            };
+
+            entidades.Reserva.Add(r);
+            entidades.SaveChanges();
+
+            return "Reserva agregada.";
+        }
+
+
+        //Metodo para encontrar uno
+        public static Reserva FindReserva(int codigo)
+        {
+
+            return entidades.Reserva.SingleOrDefault(r => r.codigo == codigo);
+        }
+
+
+        //Metodo para editar
+        public static string editReserva(string codigo, string fecha, string codSede, string codMesa, string codUser)
+        {
+            int intCod = int.Parse(codigo);
+            //revista r = entidades.revista.Find(id);//Busca por clave primaria
+            Reserva r = FindReserva(intCod);
+
+            if (r != null)
+            {
+                r.fecha = Convert.ToDateTime(fecha);
+                r.fk_sede = int.Parse(codSede);
+                r.fk_mesa = int.Parse(codMesa);
+                r.fk_usuario = int.Parse(codUser);
+                entidades.SaveChanges();
+                return "Reserva modificada";
+            }
+            else
+            {
+                return "No se pudo modificar la Reserva";
+            }
+        }
+
+
+        //Metodo para eliminar
+        public static string removeReserva(int codigo)
+        {
+
+            Reserva r = FindReserva(codigo);
+            entidades.Reserva.Remove(r);
+            entidades.SaveChanges();
+            return "Region eliminada";
+        }
+
+        // Fin nuevo Controller
+
         private static List<Reserva> listaReserva = new List<Reserva>();
 
         //Metodo para agregar Reserva
