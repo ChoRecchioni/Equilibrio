@@ -91,13 +91,14 @@ namespace equilibrio.WEBFORMS_ADM
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            ///TODO: Generar validaciones de los paráametros de entrada: Sesion de Usuario, Local y Horas
+            ///TODO: Generar validaciones de los parámetros de entrada: Sesion de Usuario, Local y Horas
 
-            Mesa mesa = MesaController.FindMesa();
+            Mesa mesa = MesaController.EncontrarMesa(int.Parse(DropLocal.SelectedValue), int.Parse(Check.SelectedValue), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)));
+            
             if (mesa != null)
             {
                 //modificar usuario (debe llegar nombre y telefono)
-                ReservaController.AddReserva(ReservaController.ResAI().ToString(), mesa.Codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).Codigo.ToString());
+                ReservaController.AddReserva(" ", mesa.codigo.ToString(),Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)).ToString(), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).codigo.ToString());
                 System.Threading.Thread.Sleep(2500);
                 Response.Redirect("GestionarReservas.aspx");
             }
