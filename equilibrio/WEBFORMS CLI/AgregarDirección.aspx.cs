@@ -54,8 +54,8 @@ namespace equilibrio.WEBFORMS
         protected void BtnEnviar_Click(object sender, EventArgs e)
         {
             HdnCodigo.Value = "1";
-            LbMensaje.Text = DireccionController.AddDireccion(" ", TxtAlias.Text,
-              TxtCalle.Text, TxtDpto.Text, DropComuna.SelectedValue);
+            LbMensaje.Text = DireccionController.AddDireccion(TxtAlias.Text,
+              TxtCalle.Text, TxtDpto.Text, DropComuna.SelectedValue).ToString();
             Response.Redirect("PerfilUsuario.aspx");
         }
     }

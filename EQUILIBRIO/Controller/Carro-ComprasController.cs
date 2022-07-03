@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using equilibrio.Clases;
 
 namespace equilibrio.Controller
 {
@@ -26,19 +25,19 @@ namespace equilibrio.Controller
         }
 
         //Metodo para agregar
-        public static string AddCarro(string codigo, string codUser)
+        public static CarroCompras AddCarro(string codUser)
         {
 
             CarroCompras c = new CarroCompras()
             {
-                codigo = int.Parse(codigo),
+                
                 fk_usuario = int.Parse(codUser),
             };
 
             entidades.CarroCompras.Add(c);
             entidades.SaveChanges();
 
-            return "Carro agregado.";
+            return c;
         }
 
 

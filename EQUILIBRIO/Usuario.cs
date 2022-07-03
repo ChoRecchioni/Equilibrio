@@ -30,7 +30,7 @@ namespace equilibrio
         public string pass { get; set; }
         public Nullable<int> fk_direccion { get; set; }
         public Nullable<int> fk_rol { get; set; }
-        public int fk_sede { get; set; }
+        public Nullable<int> fk_sede { get; set; }
         public string correo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

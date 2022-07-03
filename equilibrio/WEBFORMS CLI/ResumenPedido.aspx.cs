@@ -30,7 +30,6 @@ namespace equilibrio.WEBFORMS_CLI
                     LbTelefonou.Text = user.telefono;
                     LbDireccionu.Text = user.Direccion.calleYnum;
                     LbComunau.Text = user.Direccion.Comuna.nombre;
-                    LbRegionu.Text = user.Direccion.Region.nombre;
             
                     foreach (ArticuloCarro ar in carroCompras.ArticuloCarro)
 

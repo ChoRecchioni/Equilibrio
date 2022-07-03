@@ -25,12 +25,11 @@ namespace equilibrio.Controller
         }
 
         //Metodo para agregar
-        public static string AddUsuario(string codigo, string rut, string nombre, string apellido, string telefono, string pass, string codDir, string codRol, string codSede, string correo)
+        public static string AddUsuario(string rut, string nombre, string apellido, string telefono, string pass, string codDir, string correo)
         {
 
             Usuario u = new Usuario()
             {
-                codigo = int.Parse(codigo),
                 rut = rut,
                 nombre = nombre,
                 apellido = apellido,
@@ -38,8 +37,8 @@ namespace equilibrio.Controller
                 pass = pass,
                 correo = correo,
                 fk_direccion = int.Parse(codDir),
-                fk_rol = int.Parse(codRol),
-                fk_sede = int.Parse(codSede),
+                fk_rol = null,
+                fk_sede = null,
 
             };
 
@@ -59,7 +58,7 @@ namespace equilibrio.Controller
 
 
         //Metodo para editar
-        public static string editUsuario(string codigo, string nombre, string apellido, string telefono, string correo)
+        public static string editUsuario(string codigo, string nombre, string apellido, string telefono)
         {
             int intCod = int.Parse(codigo);
             Usuario u = FindUsuario(intCod);
@@ -69,7 +68,6 @@ namespace equilibrio.Controller
                 u.nombre = nombre;
                 u.apellido = apellido;
                 u.telefono = telefono;
-                u.correo = correo;
                 entidades.SaveChanges();
                 return "Usuario modificada";
             }

@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
-using equilibrio.Clases;
 using equilibrio.Controller;
 
 namespace equilibrio.WEBFORMS
@@ -59,11 +58,10 @@ namespace equilibrio.WEBFORMS
 
             HdnRolCliente.Value = "2";
            
-            Direccion dir = DireccionController.AddDireccion("", TextAlias.Text,
-            TextCalle.Text, TextDpto.Text, DropComuna.SelectedValue, DropRegion.SelectedValue);
+            Direccion dir = DireccionController.AddDireccion(TextAlias.Text,
+            TextCalle.Text, TextDpto.Text, DropComuna.SelectedValue.ToString());
 
-            LbMensaje.Text = UsuarioController.AddUsuario("", TextRut.Text,
-            TextNombre.Text, TextApellido.Text, TextTelefono.Text, TextContraseña.Text, dir.codigo.ToString(), HdnRolCliente.Value, "", TextCorreo.Text);
+            LbMensaje.Text = UsuarioController.AddUsuario(TextRut.Text, TextNombre.Text, TextApellido.Text, TextTelefono.Text, TextContraseña.Text, dir.codigo.ToString(), TextCorreo.Text);
 
             Response.Redirect("IniciarSesión.aspx");
         }

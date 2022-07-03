@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using equilibrio.Clases;
 
 namespace equilibrio.Controller
 {
@@ -22,12 +21,12 @@ namespace equilibrio.Controller
         }
 
         //Metodo para agregar
-        public static string AddArticulo(string codigo, string nombre, string precio, string comentario, string codCat)
+        public static string AddArticulo(string nombre, string precio, string comentario, string codCat)
         {
 
             Artículo ar = new Artículo()
             {
-                codigo = int.Parse(codigo),
+                
                 nombre = nombre,
                 precio = precio,
                 comentario = comentario,

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using equilibrio.Clases;
 using equilibrio.Controller;
 
 namespace equilibrio.Controller
@@ -27,12 +26,11 @@ namespace equilibrio.Controller
         }
 
         //Metodo para agregar
-        public static string AddRol(string codigo, string nombre)
+        public static string AddRol(string nombre)
         {
 
             Rol r = new Rol()
             {
-                codigo = int.Parse(codigo),
                 nombre = nombre,
             };
 

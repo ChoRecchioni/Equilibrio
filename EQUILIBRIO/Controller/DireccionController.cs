@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using equilibrio.Clases;
 
 namespace equilibrio.Controller
 {
@@ -26,22 +25,21 @@ namespace equilibrio.Controller
         }
 
         //Metodo para agregar
-        public static string AddDireccion(string codigo, string alias, string calleYnum, string depto, string codComuna)
+        public static Direccion AddDireccion( string alias, string calleYnum, string depto, string codComuna)
         {
-
+            Comuna c = ComunaController.FindComuna(int.Parse(codComuna));
             Direccion d = new Direccion()
             {
-                codigo = int.Parse(codigo),
                 alias = alias,
                 calleYnum = calleYnum,
                 depto = depto,
-                fk_comuna = int.Parse(codComuna),
+                fk_comuna = c.codigo,
             };
 
             entidades.Direccion.Add(d);
             entidades.SaveChanges();
 
-            return "Direccion agregada.";
+            return d;
         }
 
 

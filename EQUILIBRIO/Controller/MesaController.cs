@@ -25,12 +25,12 @@ namespace equilibrio.Controller
         }
 
         //Metodo para agregar
-        public static string addMesa(string codigo, string numMesa, string comensales, string codSede)
+        public static string addMesa(string numMesa, string comensales, string codSede)
         {
 
             Mesa m = new Mesa()
             {
-                codigo = int.Parse(codigo),
+                
                 numMesa = numMesa,
                 comensales = int.Parse(comensales),
                 fk_sede = int.Parse(codSede),

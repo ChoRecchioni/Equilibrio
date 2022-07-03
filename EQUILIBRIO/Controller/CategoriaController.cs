@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using equilibrio.Clases;
 using equilibrio.Controller;
 
 namespace equilibrio.Controller
@@ -27,12 +26,11 @@ namespace equilibrio.Controller
         }
 
         //Metodo para agregar
-        public static string AddCategoria(string codigo, string nombre)
+        public static string AddCategoria(string nombre)
         {
 
             Categoria c = new Categoria()
-            {
-                codigo = int.Parse(codigo),
+            {                
                 nombre = nombre,    
             };
 

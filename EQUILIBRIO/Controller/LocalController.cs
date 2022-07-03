@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using equilibrio.Clases;
 
 namespace equilibrio.Controller
 {
@@ -26,12 +25,12 @@ namespace equilibrio.Controller
         }
 
         //Metodo para agregar
-        public static string AddSede(string codigo, string nombre, string telefono, string codDir)
+        public static string AddSede(string nombre, string telefono, string codDir)
         {
 
             Sede s = new Sede()
             {
-                codigo = int.Parse(codigo),
+               
                 nombre = nombre,
                 telefono = telefono,
                 fk_direccion = int.Parse(codDir),

@@ -98,7 +98,7 @@ namespace equilibrio.WEBFORMS_ADM
             if (mesa != null)
             {
                 //modificar usuario (debe llegar nombre y telefono)
-                ReservaController.AddReserva(" ", mesa.codigo.ToString(),Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)).ToString(), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).codigo.ToString());
+                ReservaController.AddReserva( mesa.codigo.ToString(),Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)).ToString(), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).codigo.ToString());
                 System.Threading.Thread.Sleep(2500);
                 Response.Redirect("GestionarReservas.aspx");
             }

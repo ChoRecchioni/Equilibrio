@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using equilibrio.Controller;
-using equilibrio.Clases;
 
 
 namespace equilibrio.WEBFORMS_ADM
@@ -142,7 +141,7 @@ namespace equilibrio.WEBFORMS_ADM
 
         protected void BtnCrearArt_Click(object sender, EventArgs e)
         {
-            LbAddArt.Text = ArticuloController.AddArticulo(" ", TxtNombreArt.Text, TxtPrecioArt.Text, TxtDescripcionArt.Text, DropCategoria.SelectedValue);
+            LbAddArt.Text = ArticuloController.AddArticulo( TxtNombreArt.Text, TxtPrecioArt.Text, TxtDescripcionArt.Text, DropCategoria.SelectedValue);
             Response.Redirect("CartaAdmi.aspx");
         }
     }

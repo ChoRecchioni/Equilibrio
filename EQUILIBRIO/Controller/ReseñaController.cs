@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using equilibrio.Clases;
 
 namespace equilibrio.Controller
 {
@@ -26,12 +25,11 @@ namespace equilibrio.Controller
         }
 
         //Metodo para agregar
-        public static string AddReseña(string codigo, string puntuacion, string comentario, string fecha, string codSede, string codUser)
+        public static string AddReseña( string puntuacion, string comentario, string fecha, string codSede, string codUser)
         {
 
             Reseña r = new Reseña()
             {
-                codigo = int.Parse(codigo),
                 puntuacion = int.Parse(puntuacion),
                 comentario = comentario,
                 fecha = Convert.ToDateTime(fecha),

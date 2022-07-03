@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using equilibrio.Clases;
 using equilibrio.Controller;
 
 namespace equilibrio.Controller
@@ -27,12 +26,11 @@ namespace equilibrio.Controller
         }
 
         //Metodo para agregar
-        public static string AddReserva(string codigo, string fecha, string codSede, string codMesa, string codUser)
+        public static string AddReserva(string fecha, string codSede, string codMesa, string codUser)
         {
 
             Reserva r = new Reserva()
             {
-                codigo = int.Parse(codigo),
                 fecha = Convert.ToDateTime(fecha),
                 fk_sede = int.Parse(codSede),
                 fk_mesa = int.Parse(codMesa),
@@ -55,7 +53,7 @@ namespace equilibrio.Controller
 
 
         //Metodo para editar
-        public static string editReserva(string codigo, string fecha, string codSede, string codMesa, string codUser)
+        public static string editReserva(string codigo, string fecha, string codSede, string codMesa)
         {
             int intCod = int.Parse(codigo);
             //revista r = entidades.revista.Find(id);//Busca por clave primaria
@@ -66,7 +64,6 @@ namespace equilibrio.Controller
                 r.fecha = Convert.ToDateTime(fecha);
                 r.fk_sede = int.Parse(codSede);
                 r.fk_mesa = int.Parse(codMesa);
-                r.fk_usuario = int.Parse(codUser);
                 entidades.SaveChanges();
                 return "Reserva modificada";
             }

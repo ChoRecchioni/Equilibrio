@@ -27,17 +27,15 @@ namespace equilibrio.WEBFORMS_CLI
         }
 
         public void GenerarArticulo()
-        {
-            ArticuloController.CargarArticulo();
 
-
+        { 
             var listadoCat = from cat in CategoriaController.findAll()
                              select new
                              {
                                  Nombre = cat.nombre
                              };
 
-            var listadoArt = from ar in ArticuloController.FindAll()
+            var listadoArt = from ar in ArticuloController.findAll()
                              select new
                              {
                                  Codigo = ar.codigo,

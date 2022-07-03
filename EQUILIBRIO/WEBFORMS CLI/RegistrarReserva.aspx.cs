@@ -108,11 +108,11 @@ namespace equilibrio.WEBFORMS
             {
                 if (string.IsNullOrEmpty(IdR))
                 {
-                    ReservaController.AddReserva("", mesa.codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)).ToString(), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).codigo.ToString());
+                    ReservaController.AddReserva(mesa.codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)).ToString(), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).codigo.ToString());
                 }
                 else
                 {
-                    ReservaController.editReserva(IdR, mesa.codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)).ToString(), DropLocal.SelectedValue);
+                    ReservaController.editReserva("", mesa.codigo.ToString(), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)).ToString(), DropLocal.SelectedValue);
                 }
             }
             System.Threading.Thread.Sleep(2500);

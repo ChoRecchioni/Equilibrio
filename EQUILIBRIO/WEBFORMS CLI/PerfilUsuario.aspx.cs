@@ -42,7 +42,6 @@ namespace equilibrio.WEBFORMS
                 TxtDireccion.Text = u.Direccion.calleYnum;
                 TxtDepto.Text = u.Direccion.depto;
                 DropComunas.SelectedValue = u.Direccion.Comuna.codigo.ToString();
-                DropRegiones.SelectedValue = u.Direccion.Region.codigo.ToString();
             }
             else
             {
@@ -155,7 +154,7 @@ namespace equilibrio.WEBFORMS
         protected void BtnCheckDir_Click(object sender, ImageClickEventArgs e)
         {
             Usuario u = (Usuario)Session["ActiveUser"];
-            LbEditDir.Text = DireccionController.editDireccion(u.Direccion.codigo.ToString(), TxtAlias.Text, TxtDireccion.Text, TxtDepto.Text, DropComunas.SelectedValue, DropRegiones.SelectedValue);
+            LbEditDir.Text = DireccionController.editDireccion(u.Direccion.codigo.ToString(), TxtAlias.Text, TxtDireccion.Text, TxtDepto.Text, DropComunas.SelectedValue);
             BtnEditarDir.Visible = true;
             BtnCheckDir.Visible = false;
             TxtAlias.Text = u.Direccion.alias;
@@ -167,7 +166,6 @@ namespace equilibrio.WEBFORMS
             DropComunas.Enabled = false;
             DropRegiones.Enabled = false;
             DropComunas.SelectedValue = u.Direccion.Comuna.codigo.ToString();
-            DropRegiones.SelectedValue = u.Direccion.Region.codigo.ToString();
 
         }
 

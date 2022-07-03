@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using equilibrio.Clases;
 using equilibrio.Controller;
 
 namespace equilibrio.Controller
@@ -27,12 +26,12 @@ namespace equilibrio.Controller
         }
 
         //Metodo para agregar
-        public static string AddEstadoDeli(string codigo, string nombre)
+        public static string AddEstadoDeli( string nombre)
         {
 
             EstadoDelivery e = new EstadoDelivery()
             {
-                codigo = int.Parse(codigo),
+                
                 nombre = nombre,
             };
 

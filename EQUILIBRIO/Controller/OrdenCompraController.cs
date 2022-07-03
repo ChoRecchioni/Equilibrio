@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using equilibrio.Clases;
 using equilibrio.Controller;
 namespace equilibrio.Controller
 {
@@ -26,12 +25,12 @@ namespace equilibrio.Controller
         }
 
         //Metodo para agregar
-        public static string AddOrden(string codigo, string total, string codCarro, string codSede)
+        public static OrdenCompra AddOrden( string total, string codCarro, string codSede)
         {
 
             OrdenCompra o = new OrdenCompra()
             {
-                codigo = int.Parse(codigo),
+                
                 total = total,
                 fk_carro = int.Parse(codCarro),
                 fk_sede = int.Parse(codSede),
@@ -40,7 +39,7 @@ namespace equilibrio.Controller
             entidades.OrdenCompra.Add(o);
             entidades.SaveChanges();
 
-            return "Orden agregada.";
+            return o;
         }
 
 

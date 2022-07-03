@@ -42,7 +42,7 @@ namespace equilibrio.WEBFORMS_ADM
         protected void BtnCheckUser_Click(object sender, ImageClickEventArgs e)
         {
             Usuario u = (Usuario)Session["ActiveUser"];
-            LbEditUser.Text = UsuarioController.editUsuario(u.codigo.ToString(), TxtNombre.Text, TxtApellido.Text, TxtTeléfono.Text, u.correo);
+            LbEditUser.Text = UsuarioController.editUsuario(u.codigo.ToString(), TxtNombre.Text, TxtApellido.Text, TxtTeléfono.Text);
             BtnEditarUser.Visible = true;
             BtnCheckUser.Visible = false;
             TxtNombre.Text = u.nombre;
