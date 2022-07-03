@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using equilibrio.Clases;
 using equilibrio.Controller;
 
 namespace equilibrio.WEBFORMS
@@ -20,10 +19,6 @@ namespace equilibrio.WEBFORMS
                 Response.Redirect("IniciarSesión.aspx");
             } 
 
-            ReseñaController.CargarReseña();
-            LocalController.CargarLocales();
-
-
             if (!Page.IsPostBack)
             {
                 cargarDropLocales();
@@ -33,11 +28,11 @@ namespace equilibrio.WEBFORMS
         public void cargarDropLocales()
         {
 
-            DropLocal.DataSource = from sed in LocalController.FindAll()
+            DropLocal.DataSource = from sed in LocalController.findAll()
                                     select new
                                     {
-                                        codigo = sed.Codigo,
-                                        texto = sed.Nombre,
+                                        codigo = sed.codigo,
+                                        texto = sed.nombre,
                                     };
             DropLocal.DataValueField = "codigo";
             DropLocal.DataTextField = "texto";
@@ -79,10 +74,9 @@ namespace equilibrio.WEBFORMS
                     puntuacion = rd5.Value;
                 }
 
-                int codRe = ReseñaController.ReseñaAI();
                 Usuario u = (Usuario)Session["ActiveUser"];
 
-                LbAddReseña.Text = ReseñaController.AddReseña(codRe.ToString(), DropLocal.SelectedValue, puntuacion, TxtComentario.Text, u);
+                LbAddReseña.Text = ReseñaController.AddReseña(" ", DropLocal.SelectedValue, DateTime.Now.Date.ToString(), puntuacion, TxtComentario.Text, u.codigo.ToString());
                 Response.Redirect("VerReseña.aspx");
             }
             

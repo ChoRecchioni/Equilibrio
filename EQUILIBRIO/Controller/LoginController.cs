@@ -13,7 +13,7 @@ namespace equilibrio.Controller
         //Metodo de Log in
         public static Usuario Login(string username, string password)
         {
-            Usuario lgu = UsuarioController.FindUser(username);
+            Usuario lgu = UsuarioController.validUser(username);
             if (lgu != null)
             {
                 if (lgu.pass.Equals(password))

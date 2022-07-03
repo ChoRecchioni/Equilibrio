@@ -5,7 +5,6 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using equilibrio.Controller;
-using equilibrio.Clases;
 
 namespace equilibrio.WEBFORMS_CLI
 {
@@ -19,22 +18,19 @@ namespace equilibrio.WEBFORMS_CLI
 
         public void GenerarArticulo()
         {
-            CategoriaController.CargarCategoria();
-            ArticuloController.CargarArticulo();
-
-            var listadoArt = from ar in ArticuloController.FindAll()
+            var listadoArt = from ar in ArticuloController.findAll()
                              select new
                              {
-                                 Nombre = ar.Nombre,
-                                 Comentario = ar.Comentario,
-                                 Precio = ar.Precio,
+                                 Nombre = ar.nombre,
+                                 Comentario = ar.comentario,
+                                 Precio = ar.precio,
                                  Categoria = ar.Categoria,
                              };
 
-            var listadoCat = from cat in CategoriaController.FindAll()
+            var listadoCat = from cat in CategoriaController.findAll()
                              select new
                              {
-                                 Nombre = cat.Nombre
+                                 Nombre = cat.nombre
                              };
 
             foreach (var it in listadoCat)
@@ -48,7 +44,7 @@ namespace equilibrio.WEBFORMS_CLI
 
                 divCat.Controls.Add(LblTituloCarta);
 
-                foreach (var item in listadoArt.Where(li => li.Categoria.Nombre == it.Nombre))
+                foreach (var item in listadoArt.Where(li => li.Categoria.nombre == it.Nombre))
                 {
                     //generamos objeto DIV por cada articulo
 

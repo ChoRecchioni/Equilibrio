@@ -26,7 +26,7 @@ namespace equilibrio.Controller
         }
 
         //Metodo para agregar
-        public static OrdenCompra AddOrden(string codigo, string total, string codCarro, string codSede)
+        public static string AddOrden(string codigo, string total, string codCarro, string codSede)
         {
 
             OrdenCompra o = new OrdenCompra()
@@ -40,7 +40,7 @@ namespace equilibrio.Controller
             entidades.OrdenCompra.Add(o);
             entidades.SaveChanges();
 
-            return o;
+            return "Orden agregada.";
         }
 
 

@@ -25,6 +25,9 @@ namespace equilibrio.WEBFORMS
                 }
             }
 
+            ReseñaController.CargarReseña();
+            LocalController.CargarLocales();
+
 
             if (!Page.IsPostBack)
             {
@@ -35,31 +38,31 @@ namespace equilibrio.WEBFORMS
         protected void BtnPagar_Click(object sender, EventArgs e)
         {
             string idCarro = Request.QueryString["ID"];
-            CarroCompras carroCompras = CarroComprasController.FindCarroCompras(int.Parse(idCarro));
+            CarroCompras carroCompras = CarroComprasController.FindCarro(idCarro);
 
             double total = 0;
-            foreach (ArticuloCarro ar in carroCompras.ArticuloCarro)
+            foreach (Articulo_Carro ar in carroCompras.ArtCar)
             {
-                total = total + (double.Parse(ar.Artículo.precio.Replace(".", "")) * Convert.ToDouble(ar.cantidad));
+                total = total + (double.Parse(ar.Artículo.Precio.Replace(".", "")) * Convert.ToDouble(ar.Cantidad));
             }
+
+            string cod = OrdenCompraController.OrdenAI().ToString();
             //Response.Redirect("http://webpay.cl");
             //if (pago != null) {
-            OrdenCompra orden = OrdenCompraController.AddOrden("",total.ToString() ,idCarro, DropLocal.SelectedValue.ToString());
-
-            Random random = new Random();
-            int numero = random.Next(1, 100000);
-            DeliveryController.AddDelivery("", numero.ToString(), orden.codigo.ToString(), "1");
-            Response.Redirect("ResumenPedido.aspx?ID=" + orden.codigo);
+            LblAdd.Text = OrdenCompraController.AddOrden(cod, idCarro, total.ToString(), DropLocal.SelectedValue.ToString());
+            OrdenCompra orden = OrdenCompraController.FindOrden(cod);
+            DeliveryController.AddDelivery(DeliveryController.DeliveryAI().ToString(), orden.Codigo.ToString(), "1", DeliveryController.numPedidoAI().ToString());
+            Response.Redirect("ResumenPedido.aspx?ID=" + cod);
             //}
 
         }
 
         public void GenerarArticulo(string idCarro)
         {
-            CarroCompras carroCompras = CarroComprasController.FindCarroCompras(int.Parse(idCarro));
+            CarroCompras carroCompras = CarroComprasController.FindCarro(idCarro);
             double total = 0;
 
-            foreach (ArticuloCarro ar in carroCompras.ArticuloCarro)
+            foreach (Articulo_Carro ar in carroCompras.ArtCar)
             {
                 HtmlTableRow tr2 = new HtmlTableRow();
                 tr2.Attributes.Add("class", "tr2");
@@ -67,28 +70,28 @@ namespace equilibrio.WEBFORMS
                 HtmlTableCell td5 = new HtmlTableCell();
                 td5.Attributes.Add("class", "auto-style11");
                 Label LblNom = new Label();
-                LblNom.Text = ar.Artículo.nombre;
+                LblNom.Text = ar.Artículo.Nombre;
                 td5.Controls.Add(LblNom);
 
                 HtmlTableCell td6 = new HtmlTableCell();
                 td6.Attributes.Add("class", "auto-style12");
                 Label LblCantidad = new Label();
-                LblCantidad.Text = ar.cantidad.ToString();
+                LblCantidad.Text = ar.Cantidad.ToString();
                 td6.Controls.Add(LblCantidad);
 
                 HtmlTableCell td7 = new HtmlTableCell();
                 td7.Attributes.Add("class", "auto-style13");
                 Label LblPrecioU = new Label();
-                LblPrecioU.Text = "$" + ar.Artículo.precio + ".-";
+                LblPrecioU.Text = "$" + ar.Artículo.Precio + ".-";
                 td7.Controls.Add(LblPrecioU);
 
                 HtmlTableCell td8 = new HtmlTableCell();
                 td8.Attributes.Add("class", "auto-style13");
                 Label LblPrecioST = new Label();
-                LblPrecioST.Text = "$" + double.Parse(ar.Artículo.precio.Replace(".", "")) * ar.cantidad + ".-";
+                LblPrecioST.Text = "$" + double.Parse(ar.Artículo.Precio.Replace(".", "")) * ar.Cantidad + ".-";
                 td8.Controls.Add(LblPrecioST);
 
-                total = total + (double.Parse(ar.Artículo.precio.Replace(".", "")) * Convert.ToDouble(ar.cantidad));
+                total = total + (double.Parse(ar.Artículo.Precio.Replace(".", "")) * Convert.ToDouble(ar.Cantidad));
 
                 tr2.Controls.Add(td5);
                 tr2.Controls.Add(td6);
@@ -130,7 +133,7 @@ namespace equilibrio.WEBFORMS
 
             Label labelDir = new Label();
             labelDir.Attributes.Add("class", "LblTituloCarro");
-            labelDir.Text = "DIRECCIÓN: " + u.Direccion.calleYnum + ", Dpto " + u.Direccion.depto + ". " + u.Direccion.Comuna.nombre;
+            labelDir.Text = "DIRECCIÓN: " + u.Direccion.CalleYnum + ", Dpto " + u.Direccion.Depto + ". " + u.Direccion.Comuna.Nombre;
 
             divDir.Controls.Add(labelDir);
         }
@@ -138,11 +141,11 @@ namespace equilibrio.WEBFORMS
         public void cargarDropLocales()
         {
 
-            DropLocal.DataSource = from sed in LocalController.findAll()
+            DropLocal.DataSource = from sed in LocalController.FindAll()
                                    select new
                                    {
-                                       codigo = sed.codigo,
-                                       texto = sed.nombre,
+                                       codigo = sed.Codigo,
+                                       texto = sed.Nombre,
                                    };
             DropLocal.DataValueField = "codigo";
             DropLocal.DataTextField = "texto";
@@ -153,32 +156,26 @@ namespace equilibrio.WEBFORMS
         [WebMethod]
         public static object GenerarCarro(string usuario, List<jsonProductosCarro> lista)
         {
-            List<ArticuloCarro> articulos = new List<ArticuloCarro>();
-            CarroCompras carro = CarroComprasController.AddCarro("", usuario);
+            List<Articulo_Carro> articulos = new List<Articulo_Carro>();
 
             foreach (jsonProductosCarro item in lista)
             {
-              
                 Artículo artículo = ArticuloController.FindArticulo(item.id);
-                ArticuloCarro articulo_Carro = new ArticuloCarro();
-                articulo_Carro.codigo = int.Parse(" ") ;
-                articulo_Carro.cantidad = int.Parse(item.cantidad);
-                articulo_Carro.fk_articulo = artículo.codigo;
-                articulo_Carro.fk_carro = carro.codigo;
+                Articulo_Carro articulo_Carro = new Articulo_Carro();
+                articulo_Carro.Codigo = Art_CarroController.ArtCarroAI();
+                articulo_Carro.Cantidad = int.Parse(item.cantidad);
+                articulo_Carro.Artículo = artículo;
                 articulos.Add(articulo_Carro);
             }
 
-
-
-
-
-
+            string codCarro = CarroComprasController.CarroAI().ToString();
+            CarroComprasController.AddCarro(codCarro, usuario, articulos);
 
             return new
             {
                 error = false,
                 msg = "ok",
-                idCarro = carro.codigo,
+                idCarro = codCarro
             };
         }
     }

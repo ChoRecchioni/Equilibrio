@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using equilibrio.Controller;
-using equilibrio.Clases;
 
 namespace equilibrio.WEBFORMS
 {
@@ -13,8 +12,6 @@ namespace equilibrio.WEBFORMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ComunaController.CargarComuna();
-            RegionController.CargarRegion();
 
             if (!Page.IsPostBack)
             {
@@ -27,11 +24,11 @@ namespace equilibrio.WEBFORMS
         public void cargarDropComuna()
         {
 
-            DropComuna.DataSource = from com in ComunaController.FindAll()
+            DropComuna.DataSource = from com in ComunaController.findAll()
                                        select new
                                        {
-                                           codigo = com.Codigo,
-                                           texto = com.Nombre,
+                                           codigo = com.codigo,
+                                           texto = com.nombre,
                                        };
             DropComuna.DataValueField = "codigo";
             DropComuna.DataTextField = "texto";
@@ -42,11 +39,11 @@ namespace equilibrio.WEBFORMS
         public void cargarDropRegion()
         {
 
-            DropRegion.DataSource = from reg in RegionController.FindAll()
+            DropRegion.DataSource = from reg in RegionController.findAll()
                                     select new
                                     {
-                                        codigo = reg.Codigo,
-                                        texto = reg.Nombre,
+                                        codigo = reg.codigo,
+                                        texto = reg.nombre,
                                     };
             DropRegion.DataValueField = "codigo";
             DropRegion.DataTextField = "texto";
@@ -57,8 +54,8 @@ namespace equilibrio.WEBFORMS
         protected void BtnEnviar_Click(object sender, EventArgs e)
         {
             HdnCodigo.Value = "1";
-            LbMensaje.Text = DireccionController.AddDireccion(HdnCodigo.Value, TxtAlias.Text,
-              TxtCalle.Text, TxtDpto.Text, DropComuna.SelectedValue, DropRegion.SelectedValue);
+            LbMensaje.Text = DireccionController.AddDireccion(" ", TxtAlias.Text,
+              TxtCalle.Text, TxtDpto.Text, DropComuna.SelectedValue);
             Response.Redirect("PerfilUsuario.aspx");
         }
     }

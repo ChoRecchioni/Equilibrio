@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Services;
-using equilibrio.Clases;
 
 namespace equilibrio.WEBFORMS_CLI
 {
@@ -14,7 +13,7 @@ namespace equilibrio.WEBFORMS_CLI
             if (u != null)
             {
                 usericon.HRef = "PerfilUsuario.aspx";
-                HdnCodUser.Value = u.Codigo.ToString();
+                HdnCodUser.Value = u.codigo.ToString();
             }
             else
             {
