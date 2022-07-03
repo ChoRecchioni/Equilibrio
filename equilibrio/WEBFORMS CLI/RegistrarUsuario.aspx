@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <script>
-       function checkRut(rut) {
+        function checkRut(rut) {
             // Despejar Puntos
             var valor = rut.value.replace('.', '');
             // Despejar Guión
@@ -64,19 +64,14 @@
             vertical-align: super;
         }
     </style>
-
-
-
-
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CPHtitulos" runat="server">
     <asp:Label class="titulos" ID="Label1" runat="server" Text="REGISTRO"></asp:Label><br />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="UpdateMain" runat="server">
-        <ContentTemplate>            
+        <ContentTemplate>
             <asp:HiddenField ID="HdnRolCliente" runat="server" />
 
             <div class="Contenedor">
@@ -102,9 +97,7 @@
                     <tr>
                         <td class="auto-style2">
                             <asp:TextBox class="Txt" ID="TextApellido" runat="server" placeholder="APELLIDO"></asp:TextBox>
-
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" class="ValidadorRegistro" runat="server" ControlToValidate="TextApellido" ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
-
                         </td>
                         <td class="auto-style4">
                             <asp:TextBox class="Txt" ID="TextCalle" runat="server" placeholder="CALLE Y N°"></asp:TextBox>
@@ -114,9 +107,8 @@
                     <tr>
                         <td class="auto-style2">
                             <asp:TextBox class="Txt" ID="TextRut" oninput="checkRut(this)" runat="server" placeholder="RUT"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" class="ValidadorRegistro" style="margin-bottom: 0px;" runat="server" ControlToValidate="TextRut" ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" class="ValidadorRegistro" Style="margin-bottom: 0px;" runat="server" ControlToValidate="TextRut" ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" class="ValidadorRegistro" runat="server" ControlToValidate="TextRut" ErrorMessage="RUT no valido" ValidationExpression="^(\d{7,8}-)(\d{1}$)"></asp:RegularExpressionValidator>
-
                         </td>
 
                         <td class="auto-style4">
@@ -140,9 +132,9 @@
                         <td class="auto-style2">
                             <asp:TextBox class="Txt" ID="TextCorreo" runat="server" placeholder="CORREO"></asp:TextBox>
 
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator10" class="ValidadorRegistro" style="margin-bottom: 0px;" runat="server" ControlToValidate="TextCorreo" ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator10" class="ValidadorRegistro" Style="margin-bottom: 0px;" runat="server" ControlToValidate="TextCorreo" ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" class="ValidadorRegistro" runat="server" ControlToValidate="TextCorreo" ErrorMessage="Correo No Valido." ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-                            </td>
+                        </td>
                         <td class="auto-style4" style="vertical-align: super;">
                             <asp:DropDownList class="Drop" ID="DropRegion" runat="server">
                                 <asp:ListItem Text="SELECCIONE UNA COMUNA" Value="0" />
@@ -160,8 +152,7 @@
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" class="ValidadorRegistro" runat="server" ControlToValidate="TextContraseña2" ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
 
                         </td>
-                        <td class="auto-style5">
-                            &nbsp;</td>
+                        <td class="auto-style5">&nbsp;</td>
                     </tr>
                     <tr>
                         <td class="auto-style2">&nbsp;</td>
