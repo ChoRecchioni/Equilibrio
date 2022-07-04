@@ -25,7 +25,7 @@ namespace equilibrio.Controller
         }
 
         //Metodo para agregar
-        public static string AddReseña( string puntuacion, string comentario, string fecha, string codSede, string codUser)
+        public static string AddReseña(string puntuacion, string comentario, string fecha, string codSede, string codUser)
         {
 
             Reseña r = new Reseña()

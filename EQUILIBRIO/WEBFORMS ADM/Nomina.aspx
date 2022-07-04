@@ -20,6 +20,6 @@
         <asp:TextBox class="TxtNomina" ID="TxtRol" runat="server" placeholder="ROL"></asp:TextBox>
         <asp:Button class="BtnBN" ID="BtnBuscar3" runat="server" Text="BUSCAR" />
 
-        <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+        
     </div>
 </asp:Content>

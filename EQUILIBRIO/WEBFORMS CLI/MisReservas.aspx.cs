@@ -34,10 +34,10 @@ namespace equilibrio.WEBFORMS
 
         public void CargaReservas(Usuario usuario)
         {
-
+            Usuario u = UsuarioController.FindUsuario(usuario.codigo);
             var reservas = ReservaController.findAll();
 
-            foreach (var item in reservas.Where(r => r.Usuario.codigo == usuario.codigo))
+            foreach (var item in reservas.Where(r => r.Usuario.codigo == u.codigo))
             {
                 HtmlGenericControl Table = new HtmlGenericControl("table");
                 Table.Attributes.Add("class", "auto-style1");
@@ -120,7 +120,7 @@ namespace equilibrio.WEBFORMS
                 lblTituloDireccion.Text = "DIRECCIÓN:";
 
                 Label lblDireccion = new Label();
-                lblDireccion.Text = item.Sede.nombre;
+                lblDireccion.Text = item.Sede.Direccion.calleYnum + ", " + item.Sede.Direccion.Comuna.nombre;
                 lblDireccion.CssClass = "lblReserva";
 
                 tdDireccion.Controls.Add(lblTituloDireccion);
@@ -135,7 +135,7 @@ namespace equilibrio.WEBFORMS
                 lblTituloTelefono.Text = "TELÉFONO:";
 
                 Label lblTelefono = new Label();
-                lblTelefono.Text = item.Sede.nombre;
+                lblTelefono.Text = item.Sede.telefono;
                 lblTelefono.CssClass = "lblReserva";
 
                 tdTelefono.Controls.Add(lblTituloTelefono);

@@ -53,7 +53,7 @@ namespace equilibrio.Controller
 
 
         //Metodo para editar
-        public static string editReserva(string codigo, string fecha, string codSede, string codMesa)
+        public static string editReserva(string codigo, DateTime fecha, string codSede, string codMesa)
         {
             int intCod = int.Parse(codigo);
             //revista r = entidades.revista.Find(id);//Busca por clave primaria

@@ -15,26 +15,23 @@ namespace equilibrio.WEBFORMS_CLI
         {
             CargarDropLocales();
             CargarGrid();
-
         }
-         
+
         public void CargarGrid()
         {
-
-
-           var listado = from re in ReseñaController.findAll()
-                                   select new
-                                   {
-                                       Local = re.Sede.nombre,
-                                       Puntuacion = re.puntuacion,
-                                       Comentario = re.comentario
-                                   };
+            var listado = from re in ReseñaController.findAll()
+                          select new
+                          {
+                              Sede = re.Sede.nombre,
+                              Puntuacion = re.puntuacion,
+                              Comentario = re.comentario
+                          };
 
             foreach (var item in listado)
             {
                 //Instanciamos/generamos objeto DIV por cada reseña (con n)
                 HtmlGenericControl divResena = new HtmlGenericControl("div");
-                
+
                 divResena.Attributes.Add("class", "Reseña");
 
                 //Si quisieramos generar la etiqueta título:
@@ -45,15 +42,15 @@ namespace equilibrio.WEBFORMS_CLI
 
                 //Recorremos las puntuaciones que trae, para generar
                 //la cantidad de estrellas correspondiente
-                for (int i = 0 ; i < item.Puntuacion ; i++)
+                for (int i = 0; i < item.Puntuacion; i++)
                 {
                     //Generamos la imagen de estrella
                     Image imgTitulo = new Image();
-                    imgTitulo.Height = 20;
-                    imgTitulo.Width = 20;
+                    imgTitulo.Height = 30;
+                    imgTitulo.Width = 30;
                     imgTitulo.Style.Add("vertical-align", "bottom");
                     imgTitulo.ImageUrl = "~/IMG/full-star.png";
-                    
+
                     divResena.Controls.Add(imgTitulo);
                 }
 

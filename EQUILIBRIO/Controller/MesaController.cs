@@ -141,7 +141,7 @@ namespace equilibrio.Controller
         {
             try
             {
-                var mesas = findAll().Where(m => m.Sede.codigo == codLocal && m.comensales == comensales);
+                var mesas = MesaController.findAll().Where(m => m.Sede.codigo == codLocal && m.comensales == comensales);
                 var mesasReservadas = ReservaController.findAll().Where(r => r.Sede.codigo == codLocal && r.fecha == fecha);
                 var lista = mesas.Where(m => !mesasReservadas.Any(mr => mr.Mesa.codigo == m.codigo));
 
