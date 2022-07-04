@@ -27,7 +27,6 @@ namespace equilibrio.Controller
         //Metodo para agregar
         public static string AddUsuario(string rut, string nombre, string apellido, string telefono, string pass, string codDir, string correo)
         {
-
             Usuario u = new Usuario()
             {
                 rut = rut,
@@ -39,7 +38,6 @@ namespace equilibrio.Controller
                 fk_direccion = int.Parse(codDir),
                 fk_rol = null,
                 fk_sede = null,
-
             };
 
             entidades.Usuario.Add(u);
@@ -52,7 +50,6 @@ namespace equilibrio.Controller
         //Metodo para encontrar uno
         public static Usuario FindUsuario(int codigo)
         {
-
             return entidades.Usuario.SingleOrDefault(u => u.codigo == codigo);
         }
 
