@@ -19,8 +19,8 @@ namespace equilibrio.WEBFORMS_CLI
                 string cod = Request.QueryString["ID"];
                 if (!string.IsNullOrEmpty(cod))
                 {
-
                     OrdenCompra orden = OrdenCompraController.FindOrden(int.Parse(cod));
+
                     CarroCompras carroCompras = CarroComprasController.FindCarroCompras(orden.CarroCompras.codigo);
 
                     Usuario user = UsuarioController.FindUsuario(carroCompras.Usuario.codigo);

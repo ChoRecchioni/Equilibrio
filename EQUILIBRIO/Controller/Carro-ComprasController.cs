@@ -44,7 +44,6 @@ namespace equilibrio.Controller
         //Metodo para encontrar uno
         public static CarroCompras FindCarroCompras(int codigo)
         {
-
             return entidades.CarroCompras.SingleOrDefault(c => c.codigo == codigo);
         }
 
@@ -170,5 +169,21 @@ namespace equilibrio.Controller
 
         //    return cod;
         //}
+        public static ArticuloCarro AddArtCar(int cantidad, Artículo articulo, CarroCompras carro)
+        {
+            EQEntidades entidades = new EQEntidades();
+
+            ArticuloCarro ar = new ArticuloCarro()
+            {
+                cantidad = cantidad,
+                fk_articulo = articulo.codigo,
+                fk_carro = carro.codigo,
+            };
+
+            entidades.ArticuloCarro.Add(ar);
+            entidades.SaveChanges();
+
+            return ar;
+        }
     }
 }

@@ -35,6 +35,8 @@ namespace equilibrio.WEBFORMS
         {
             string idCarro = Request.QueryString["ID"];
             CarroCompras carroCompras = CarroComprasController.FindCarroCompras(int.Parse(idCarro));
+            
+           // ArticuloCarro articulo = CarroComprasController.AddArtCar();
 
             double total = 0;
             foreach (ArticuloCarro ar in carroCompras.ArticuloCarro)
@@ -44,9 +46,11 @@ namespace equilibrio.WEBFORMS
             //Response.Redirect("http://webpay.cl");
             //if (pago != null) {
             OrdenCompra orden = OrdenCompraController.AddOrden(total.ToString(), idCarro, DropLocal.SelectedValue.ToString());
+             
 
             Random random = new Random();
             int numero = random.Next(1, 100000);
+
             DeliveryController.AddDelivery(numero.ToString(), orden.codigo.ToString(), "1");
             Response.Redirect("ResumenPedido.aspx?ID=" + orden.codigo);
             //}
@@ -55,7 +59,7 @@ namespace equilibrio.WEBFORMS
 
         public void GenerarArticulo(string idCarro)
         {
-            CarroCompras carroCompras = CarroComprasController.FindCarroCompras(int.Parse(idCarro));
+            var carroCompras = CarroComprasController.FindCarroCompras(int.Parse(idCarro));
             double total = 0;
 
             foreach (ArticuloCarro ar in carroCompras.ArticuloCarro)
@@ -149,22 +153,26 @@ namespace equilibrio.WEBFORMS
             DropLocal.DataBind();
         }
 
+        static EQEntidades entidades = new EQEntidades();
+
         [WebMethod]
         public static object GenerarCarro(string usuario, List<jsonProductosCarro> lista)
         {
-            List<ArticuloCarro> articulos = new List<ArticuloCarro>();
-            CarroCompras carro = CarroComprasController.AddCarro(usuario);
 
+            CarroCompras carro = CarroComprasController.AddCarro(usuario);
+            entidades.CarroCompras.Add(carro);
+            entidades.SaveChanges();
+            
+            
             foreach (jsonProductosCarro item in lista)
             {
-
-                Artículo artículo = ArticuloController.FindArticulo(int.Parse(item.id));
+                //Artículo artículo = ArticuloController.FindArticulo(int.Parse(item.id));
                 ArticuloCarro articulo_Carro = new ArticuloCarro();
-                articulo_Carro.codigo = int.Parse(" ");
                 articulo_Carro.cantidad = int.Parse(item.cantidad);
-                articulo_Carro.fk_articulo = artículo.codigo;
+                articulo_Carro.fk_articulo = int.Parse(item.id);
                 articulo_Carro.fk_carro = carro.codigo;
-                articulos.Add(articulo_Carro);
+                entidades.ArticuloCarro.Add(articulo_Carro);
+                entidades.SaveChanges();
             }
 
             return new
@@ -180,4 +188,6 @@ namespace equilibrio.WEBFORMS
         public string id { get; set; }
         public string cantidad { get; set; }
     }
+
+    
 }

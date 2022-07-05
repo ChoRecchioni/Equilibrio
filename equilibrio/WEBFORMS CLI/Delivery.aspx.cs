@@ -28,7 +28,7 @@ namespace equilibrio.WEBFORMS_CLI
 
         public void GenerarArticulo()
 
-        { 
+        {
 
             var listadoArt = from ar in ArticuloController.findAll()
                              select new
@@ -37,7 +37,7 @@ namespace equilibrio.WEBFORMS_CLI
                                  Nombre = ar.nombre,
                                  Comentario = ar.comentario,
                                  Precio = ar.precio,
-                                 Categoria = ar.Categoria.nombre,
+                                 Categoria = ar.Categoria,
                              };
 
             var listadoCat = from cat in CategoriaController.findAll()
@@ -66,8 +66,9 @@ namespace equilibrio.WEBFORMS_CLI
                 divCat.Controls.Add(new LiteralControl("<br/>"));
 
                 int col = 1;
+                var listArt = listadoArt.Where(li => li.Categoria.nombre == it.Nombre);
 
-                foreach (var item in listadoArt.Where(li => li.Categoria == it.Nombre))
+                foreach (var item in listArt)
                 {
                     HtmlGenericControl tdTable = new HtmlGenericControl("td");
                     tdTable.Attributes.Add("class", "auto-style1");
@@ -138,14 +139,23 @@ namespace equilibrio.WEBFORMS_CLI
                     {
                         Table.Controls.Add(trTable);
                         divCat.Controls.Add(Table);
-                        CategoriaDelivery.Controls.Add(divCat);
+                        trTable = new HtmlGenericControl("tr");
+                        col = 1;
+                    }
+                    else if (listArt.Count() == 1)
+                    {
+                        Table.Controls.Add(trTable);
+                        divCat.Controls.Add(Table);
                         trTable = new HtmlGenericControl("tr");
                         col = 1;
                     }
                     else
+                    {
                         col++;
+                    }
+                    CategoriaDelivery.Controls.Add(divCat);
                 }
             }
-        }   
+        }
     }
 }

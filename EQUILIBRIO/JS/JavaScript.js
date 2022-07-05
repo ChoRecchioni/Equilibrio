@@ -29,19 +29,18 @@
 
     });
 
-    var mytext = document.querySelector(".LblInfoProd");
-    var mytextHeight = mytext.offsetHeight;
-    var mytextstyle = window.getComputedStyle(mytext);
+    //var mytext = document.querySelector(".LblInfoProd");
+    //var mytextHeight = mytext.offsetHeight;
+    //var mytextstyle = window.getComputedStyle(mytext);
 
-    if (mytextHeight > 22) {
-        do {
-            var fz = mytextstyle.getPropertyValue("font-size");
-            fz = parseInt(fz.slice(0, -2)) - 1;
-            mytext.style["font-size"] = fz + "px";
-            mytextHeight = mytext.offsetHeight;
-        } while (mytextHeight > 22);
-    }
-
+    //if (mytextHeight > 22) {
+    //    do {
+    //        var fz = mytextstyle.getPropertyValue("font-size");
+    //        fz = parseInt(fz.slice(0, -2)) - 1;
+    //        mytext.style["font-size"] = fz + "px";
+    //        mytextHeight = mytext.offsetHeight;
+    //    } while (mytextHeight > 22);
+    //}
 });
 
 function Restar(id) {

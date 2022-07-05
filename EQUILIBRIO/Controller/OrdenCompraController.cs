@@ -30,14 +30,15 @@ namespace equilibrio.Controller
 
             OrdenCompra o = new OrdenCompra()
             {
-                
                 total = total,
-                fk_carro = int.Parse(codCarro),
                 fk_sede = int.Parse(codSede),
+                fk_carro = int.Parse(codCarro),
             };
 
             entidades.OrdenCompra.Add(o);
             entidades.SaveChanges();
+
+            o.CarroCompras = CarroComprasController.FindCarroCompras(int.Parse(codCarro));
 
             return o;
         }
