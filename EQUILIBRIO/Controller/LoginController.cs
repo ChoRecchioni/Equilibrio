@@ -13,9 +13,10 @@ namespace equilibrio.Controller
         public static Usuario Login(string username, string password)
         {
             Usuario lgu = UsuarioController.validUser(username);
+            string passMD5 = UsuarioController.GetMD5(password);
             if (lgu != null)
             {
-                if (lgu.pass.Equals(password))
+                if (lgu.pass.Equals(passMD5))
                 {
                     return lgu;
                 }

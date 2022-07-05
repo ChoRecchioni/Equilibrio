@@ -45,8 +45,9 @@ namespace equilibrio.WEBFORMS
 
             Direccion dir = DireccionController.AddDireccion(TextAlias.Text,
             TextCalle.Text, TextDpto.Text, DropComuna.SelectedValue.ToString());
+            string passMD5 = UsuarioController.GetMD5(TextContraseña.Text);
 
-            LbMensaje.Text = UsuarioController.AddUsuario(TextRut.Text, TextNombre.Text, TextApellido.Text, TextTelefono.Text, TextContraseña.Text, dir.codigo.ToString(), TextCorreo.Text);
+            LbMensaje.Text = UsuarioController.AddUsuario(TextRut.Text, TextNombre.Text, TextApellido.Text, TextTelefono.Text, passMD5, dir.codigo.ToString(), TextCorreo.Text);
 
             Response.Redirect("IniciarSesión.aspx");
         }
