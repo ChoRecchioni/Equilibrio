@@ -29,11 +29,6 @@ namespace equilibrio.WEBFORMS_CLI
         public void GenerarArticulo()
 
         { 
-            var listadoCat = from cat in CategoriaController.findAll()
-                             select new
-                             {
-                                 Nombre = cat.nombre
-                             };
 
             var listadoArt = from ar in ArticuloController.findAll()
                              select new
@@ -45,6 +40,11 @@ namespace equilibrio.WEBFORMS_CLI
                                  Categoria = ar.Categoria.nombre,
                              };
 
+            var listadoCat = from cat in CategoriaController.findAll()
+                             select new
+                             {
+                                 Nombre = cat.nombre
+                             };
 
             foreach (var it in listadoCat)
             {

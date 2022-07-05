@@ -16,26 +16,11 @@ namespace equilibrio.WEBFORMS
 
             if (!Page.IsPostBack)
             {
-                CargarDropComuna();
                 CargarDropRegion();
             }
 
         }
 
-        public void CargarDropComuna()
-        {
-
-            DropComuna.DataSource = from com in ComunaController.findAll()
-                                    select new
-                                    {
-                                        codigo = com.codigo,
-                                        texto = com.nombre,
-                                    };
-            DropComuna.DataValueField = "codigo";
-            DropComuna.DataTextField = "texto";
-
-            DropComuna.DataBind();
-        }
 
         public void CargarDropRegion()
         {
@@ -57,7 +42,7 @@ namespace equilibrio.WEBFORMS
             System.Threading.Thread.Sleep(2500);
 
             HdnRolCliente.Value = "2";
-           
+
             Direccion dir = DireccionController.AddDireccion(TextAlias.Text,
             TextCalle.Text, TextDpto.Text, DropComuna.SelectedValue.ToString());
 
@@ -66,6 +51,25 @@ namespace equilibrio.WEBFORMS
             Response.Redirect("IniciarSesión.aspx");
         }
 
-       
+        protected void DropRegion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string codRegion = DropRegion.SelectedValue;
+
+            var comunas = ComunaController.findAll().Where(c => c.Region.codigo.ToString() == codRegion);
+
+            DropComuna.DataSource = from com in ComunaController.findAll().Where
+                                    (c => c.Region.codigo.ToString() == codRegion)
+                                    select new
+                                    {
+                                        codigo = com.codigo,
+                                        texto = com.nombre,
+                                    };
+            DropComuna.DataValueField = "codigo";
+            DropComuna.DataTextField = "texto";
+
+            DropComuna.DataBind();
+        }
+
+
     }
 }

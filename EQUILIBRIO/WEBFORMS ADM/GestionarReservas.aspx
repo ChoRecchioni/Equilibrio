@@ -127,7 +127,7 @@
     <div class="Contenedor" style="margin-top: 40px;">
 
         <asp:TextBox class="Txt" oninput="checkRut(this)" Style="float: left; margin-bottom: 30px;" ID="TxtBuscar" runat="server" placeholder="CLIENTE"></asp:TextBox>
-        <asp:Button class="Btn" Style="float: left;" OnClick="BtnBuscar_Click" ID="BtnBuscar" runat="server" Text="BUSCAR" />
+        <asp:Button class="Btn" Style="float: left;" ID="BtnBuscar" runat="server" Text="BUSCAR" />
         <asp:TextBox class="Txt" Style="float: left;" ID="TextBox1" runat="server" placeholder="FECHA"></asp:TextBox>
         <asp:Button class="Btn" Style="float: left;" ID="Button1" runat="server" Text="BUSCAR" />
         <br />

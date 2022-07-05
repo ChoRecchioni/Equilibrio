@@ -24,6 +24,24 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
+        /// Control ScriptManager1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+
+        /// <summary>
+        /// Control UpdateMain.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdateMain;
+
+        /// <summary>
         /// Control LbDatos.
         /// </summary>
         /// <remarks>
@@ -213,13 +231,22 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.Label LblComuna;
 
         /// <summary>
-        /// Control DropComunas.
+        /// Control UPC.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropComunas;
+        protected global::System.Web.UI.UpdatePanel UPC;
+
+        /// <summary>
+        /// Control DropRegion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropRegion;
 
         /// <summary>
         /// Control Button1.
@@ -240,13 +267,22 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.Label LblRegion;
 
         /// <summary>
-        /// Control DropRegiones.
+        /// Control UPR.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropRegiones;
+        protected global::System.Web.UI.UpdatePanel UPR;
+
+        /// <summary>
+        /// Control DropComuna.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropComuna;
 
         /// <summary>
         /// Control LbEditUser.
@@ -265,5 +301,14 @@ namespace equilibrio.WEBFORMS
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LbEditDir;
+
+        /// <summary>
+        /// Control Cargando.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdateProgress Cargando;
     }
 }

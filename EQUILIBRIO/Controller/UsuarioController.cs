@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 
 namespace equilibrio.Controller
@@ -113,6 +115,17 @@ namespace equilibrio.Controller
             return null;
         }
 
+        public static string GetMD5(string pass)
+        {
+            MD5 md5 = MD5CryptoServiceProvider.Create();
+            ASCIIEncoding codificar = new ASCIIEncoding();
+            byte[] stream = null;
+            StringBuilder sb = new StringBuilder();
+            stream = md5.ComputeHash(codificar.GetBytes(pass));
+            for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
+            return sb.ToString();
+        }
+
         // Fin nuevo Controller
 
 
@@ -202,7 +215,7 @@ namespace equilibrio.Controller
         //{
         //    try
         //    {
-                
+
         //        Usuario usuario = FindUsuario(codigo);
         //        usuario.Nombre = nombre;
         //        usuario.Apellido = apellido;
@@ -224,7 +237,7 @@ namespace equilibrio.Controller
         //    return "Usuario removido de la lista";
         //}
 
-        
+
 
         ////Metodo para precargar Admin y Cliente
         //public static void CargarUsuario()

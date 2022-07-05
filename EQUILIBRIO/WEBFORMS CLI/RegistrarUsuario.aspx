@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <script>
-       function checkRut(rut) {
+        function checkRut(rut) {
             // Despejar Puntos
             var valor = rut.value.replace('.', '');
             // Despejar Guión
@@ -76,7 +76,7 @@
 
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="UpdateMain" runat="server">
-        <ContentTemplate>            
+        <ContentTemplate>
             <asp:HiddenField ID="HdnRolCliente" runat="server" />
 
             <div class="Contenedor">
@@ -114,7 +114,7 @@
                     <tr>
                         <td class="auto-style2">
                             <asp:TextBox class="Txt" ID="TextRut" oninput="checkRut(this)" runat="server" placeholder="RUT"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" class="ValidadorRegistro" style="margin-bottom: 0px;" runat="server" ControlToValidate="TextRut" ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" class="ValidadorRegistro" Style="margin-bottom: 0px;" runat="server" ControlToValidate="TextRut" ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" class="ValidadorRegistro" runat="server" ControlToValidate="TextRut" ErrorMessage="RUT no valido" ValidationExpression="^(\d{7,8}-)(\d{1}$)"></asp:RegularExpressionValidator>
 
                         </td>
@@ -128,25 +128,34 @@
                         <td class="auto-style2">
                             <asp:TextBox class="Txt" ID="TextTelefono" runat="server" placeholder="TELÉFONO"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" class="ValidadorRegistro" runat="server" ControlToValidate="TextTelefono" ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
-
                         </td>
-
                         <td class="auto-style4" style="vertical-align: super;">
-                            <asp:DropDownList class="Drop" ID="DropComuna" runat="server">
-                                <asp:ListItem Text="SELECCIONE UNA REGIÓN" Value="0" />
-                            </asp:DropDownList></td>
+                            <asp:UpdatePanel ID="UPC" runat="server">
+                                <ContentTemplate>
+                                    <asp:DropDownList class="Drop" ID="DropRegion" runat="server"  OnSelectedIndexChanged="DropRegion_SelectedIndexChanged" AutoPostBack="true">
+                                    </asp:DropDownList>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </td>
                     </tr>
                     <tr>
                         <td class="auto-style2">
                             <asp:TextBox class="Txt" ID="TextCorreo" runat="server" placeholder="CORREO"></asp:TextBox>
 
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator10" class="ValidadorRegistro" style="margin-bottom: 0px;" runat="server" ControlToValidate="TextCorreo" ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator10" class="ValidadorRegistro" Style="margin-bottom: 0px;" runat="server" ControlToValidate="TextCorreo" ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" class="ValidadorRegistro" runat="server" ControlToValidate="TextCorreo" ErrorMessage="Correo No Valido." ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-                            </td>
+                        </td>
                         <td class="auto-style4" style="vertical-align: super;">
-                            <asp:DropDownList class="Drop" ID="DropRegion" runat="server">
-                                <asp:ListItem Text="SELECCIONE UNA COMUNA" Value="0" />
-                            </asp:DropDownList></td>
+                            <asp:UpdatePanel ID="UPR" runat="server">
+                                <ContentTemplate>
+                                    <asp:DropDownList class="Drop" ID="DropComuna" runat="server">
+                                    </asp:DropDownList>
+                                </ContentTemplate>
+                                <Triggers>
+                                    <asp:AsyncPostBackTrigger ControlID="DropComuna" EventName="selectedindexchanged" />
+                                </Triggers>
+                            </asp:UpdatePanel>
+                        </td>
                     </tr>
                     <tr>
                         <td class="auto-style2">
@@ -160,8 +169,7 @@
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" class="ValidadorRegistro" runat="server" ControlToValidate="TextContraseña2" ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
 
                         </td>
-                        <td class="auto-style5">
-                            &nbsp;</td>
+                        <td class="auto-style5">&nbsp;</td>
                     </tr>
                     <tr>
                         <td class="auto-style2">&nbsp;</td>

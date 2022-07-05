@@ -15,24 +15,22 @@ namespace equilibrio.WEBFORMS
 
             if (!IsPostBack)
             {
-            ValidarUser();
-            CargarDropComunas();
-            CargarDropRegiones();
+                ValidarUser();
+                CargarDropRegiones();
             }
-          
+
         }
 
         //Metodo para validar inicio de sesion y rol
         public void ValidarUser()
         {
-
             if (Session["ActiveUser"] == null)
             {
                 Response.Redirect("IniciarSesión.aspx");
             }
 
             Usuario u = (Usuario)Session["ActiveUser"];
-            if (u.Rol.codigo == 2)
+            if (u.Rol.codigo == 3)
             {
                 TxtRut.Text = u.rut;
                 TxtNombre.Text = u.nombre;
@@ -41,7 +39,7 @@ namespace equilibrio.WEBFORMS
                 TxtAlias.Text = u.Direccion.alias;
                 TxtDireccion.Text = u.Direccion.calleYnum;
                 TxtDepto.Text = u.Direccion.depto;
-                DropComunas.SelectedValue = u.Direccion.Comuna.codigo.ToString();
+                DropComuna.SelectedValue = u.Direccion.Comuna.codigo.ToString();
             }
             else
             {
@@ -61,34 +59,20 @@ namespace equilibrio.WEBFORMS
             Response.Redirect("IniciarSesión.aspx");
         }
 
-        public void CargarDropComunas()
-        {
-
-            DropComunas.DataSource = from com in ComunaController.findAll()
-                                     select new
-                                     {
-                                         codigo = com.codigo,
-                                         texto = com.nombre,
-                                     };
-            DropComunas.DataValueField = "codigo";
-            DropComunas.DataTextField = "texto";
-
-            DropComunas.DataBind();
-        }
 
         public void CargarDropRegiones()
         {
 
-            DropRegiones.DataSource = from reg in RegionController.findAll()
-                                     select new
-                                     {
-                                         codigo = reg.codigo,
-                                         texto = reg.nombre,
-                                     };
-            DropRegiones.DataValueField = "codigo";
-            DropRegiones.DataTextField = "texto";
+            DropRegion.DataSource = from reg in RegionController.findAll()
+                                      select new
+                                      {
+                                          codigo = reg.codigo,
+                                          texto = reg.nombre,
+                                      };
+            DropRegion.DataValueField = "codigo";
+            DropRegion.DataTextField = "texto";
 
-            DropRegiones.DataBind();
+            DropRegion.DataBind();
         }
 
         //public void CargarDirecciones()
@@ -145,8 +129,8 @@ namespace equilibrio.WEBFORMS
             TxtAlias.Enabled = true;
             TxtDireccion.Enabled = true;
             TxtDepto.Enabled = true;
-            DropComunas.Enabled = true;
-            DropRegiones.Enabled = true;
+            DropComuna.Enabled = true;
+            DropRegion.Enabled = true;
             BtnEditarDir.Visible = false;
             BtnCheckDir.Visible = true;
         }
@@ -154,18 +138,20 @@ namespace equilibrio.WEBFORMS
         protected void BtnCheckDir_Click(object sender, ImageClickEventArgs e)
         {
             Usuario u = (Usuario)Session["ActiveUser"];
-            LbEditDir.Text = DireccionController.editDireccion(u.Direccion.codigo.ToString(), TxtAlias.Text, TxtDireccion.Text, TxtDepto.Text, DropComunas.SelectedValue);
+            LbEditDir.Text = DireccionController.editDireccion(u.Direccion.codigo.ToString(), TxtAlias.Text, TxtDireccion.Text, TxtDepto.Text, DropComuna.SelectedValue);
+            Direccion DUser = DireccionController.FindDireccion(u.Direccion.codigo);
             BtnEditarDir.Visible = true;
             BtnCheckDir.Visible = false;
-            TxtAlias.Text = u.Direccion.alias;
-            TxtDireccion.Text = u.Direccion.calleYnum;
-            TxtDepto.Text = u.Direccion.depto;
+            TxtAlias.Text = DUser.alias;
+            TxtDireccion.Text = DUser.calleYnum;
+            TxtDepto.Text = DUser.depto;
             TxtAlias.Enabled = false;
             TxtDireccion.Enabled = false;
             TxtDepto.Enabled = false;
-            DropComunas.Enabled = false;
-            DropRegiones.Enabled = false;
-            DropComunas.SelectedValue = u.Direccion.Comuna.codigo.ToString();
+            DropComuna.Enabled = false;
+            DropRegion.Enabled = false;
+            DropComuna.SelectedValue = DUser.Comuna.codigo.ToString();
+            DropRegion.SelectedValue = DUser.Comuna.Region.codigo.ToString();
 
         }
 
@@ -181,6 +167,24 @@ namespace equilibrio.WEBFORMS
             TxtNombre.Enabled = false;
             TxtApellido.Enabled = false;
             TxtTeléfono.Enabled = false;
+        }
+        protected void DropRegion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string codRegion = DropRegion.SelectedValue;
+
+            var comunas = ComunaController.findAll().Where(c => c.Region.codigo.ToString() == codRegion);
+
+            DropComuna.DataSource = from com in ComunaController.findAll().Where
+                                    (c => c.Region.codigo.ToString() == codRegion)
+                                    select new
+                                    {
+                                        codigo = com.codigo,
+                                        texto = com.nombre,
+                                    };
+            DropComuna.DataValueField = "codigo";
+            DropComuna.DataTextField = "texto";
+
+            DropComuna.DataBind();
         }
     }
 }

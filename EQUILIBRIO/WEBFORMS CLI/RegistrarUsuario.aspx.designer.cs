@@ -204,13 +204,22 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
 
         /// <summary>
-        /// Control DropComuna.
+        /// Control UPC.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropComuna;
+        protected global::System.Web.UI.UpdatePanel UPC;
+
+        /// <summary>
+        /// Control DropRegion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropRegion;
 
         /// <summary>
         /// Control TextCorreo.
@@ -240,13 +249,22 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
 
         /// <summary>
-        /// Control DropRegion.
+        /// Control UPR.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropRegion;
+        protected global::System.Web.UI.UpdatePanel UPR;
+
+        /// <summary>
+        /// Control DropComuna.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropComuna;
 
         /// <summary>
         /// Control TextContraseña.

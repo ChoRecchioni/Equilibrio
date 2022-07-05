@@ -13,17 +13,16 @@ namespace equilibrio.WEBFORMS_ADM
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CargaReservas(new Usuario());
+            CargaReservas();
         }
 
-        public void CargaReservas(Usuario usuario)
+        public void CargaReservas()
         {
+            Usuario u = (Usuario)Session["ActiveUser"];
             var reservas = ReservaController.findAll();
 
-            if (usuario != null)
-                reservas.Where(r => r.Usuario.codigo == usuario.codigo);
-
-            foreach (var item in reservas.Where(R => R.Sede.codigo == usuario.Sede.codigo))
+                        
+            foreach (var item in reservas.Where(R => R.Sede.codigo == u.Sede.codigo))
             {
                 HtmlGenericControl Table = new HtmlGenericControl("table");
                 Table.Attributes.Add("class", "auto-style1");
@@ -121,14 +120,5 @@ namespace equilibrio.WEBFORMS_ADM
             }
         }
 
-        protected void BtnBuscar_Click(object sender, EventArgs e)
-        {
-            Usuario u = UsuarioController.FindUserRut(TxtBuscar.Text);
-
-            if (u != null)
-            {
-                CargaReservas(u);
-            }
-        }
     }
 }

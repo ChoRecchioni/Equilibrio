@@ -65,14 +65,13 @@ namespace equilibrio.Controller
                 d.depto = depto;
                 d.fk_comuna = int.Parse(codComuna);
                 entidades.SaveChanges();
-                return "Dirección modificada";
+                return " ";
             }
             else
             {
-                return "No se pudo modificar la Direccion";
+                return " ";
             }
         }
-
 
         //Metodo para eliminar
         public static string removeDireccion(int codigo)
