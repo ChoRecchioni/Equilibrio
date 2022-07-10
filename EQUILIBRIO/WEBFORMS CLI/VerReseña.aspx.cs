@@ -22,7 +22,7 @@ namespace equilibrio.WEBFORMS_CLI
             var listado = from re in ReseñaController.findAll()
                           select new
                           {
-                              Sede = re.Sede.nombre,
+                              Sede = re.fk_sede,
                               Puntuacion = re.puntuacion,
                               Comentario = re.comentario
                           };

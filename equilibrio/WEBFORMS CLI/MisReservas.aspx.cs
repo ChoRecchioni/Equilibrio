@@ -37,7 +37,7 @@ namespace equilibrio.WEBFORMS
             Usuario u = UsuarioController.FindUsuario(usuario.codigo);
             var reservas = ReservaController.findAll();
 
-            foreach (var item in reservas.Where(r => r.Usuario.codigo == u.codigo))
+            foreach (var item in reservas.Where(r => r.fk_usuario == u.codigo))
             {
                 HtmlGenericControl Table = new HtmlGenericControl("table");
                 Table.Attributes.Add("class", "auto-style1");

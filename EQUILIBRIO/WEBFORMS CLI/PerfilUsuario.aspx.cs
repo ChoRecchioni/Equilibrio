@@ -30,7 +30,7 @@ namespace equilibrio.WEBFORMS
             }
 
             Usuario u = (Usuario)Session["ActiveUser"];
-            if (u.Rol.codigo == 3)
+            if (u != null)
             {
                 TxtRut.Text = u.rut;
                 TxtNombre.Text = u.nombre;

@@ -102,7 +102,7 @@ namespace equilibrio.WEBFORMS_ADM
             try
             {
                 Delivery delivery = DeliveryController.FindDelivery(int.Parse(id));
-                DeliveryController.editDelivery(delivery.codigo.ToString(), delivery.OrdenCompra.codigo.ToString(), "4", delivery.numPedido.ToString());
+                DeliveryController.editDelivery(delivery.codigo.ToString(), "2");
 
                 return new
                 {

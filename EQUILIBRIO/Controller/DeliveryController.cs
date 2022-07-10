@@ -53,7 +53,7 @@ namespace equilibrio.Controller
 
 
         //Metodo para editar
-        public static string editDelivery(string codigo, string numPedido, string codOrden, string codEstadoDeli)
+        public static string editDelivery(string codigo, string codEstadoDeli)
         {
             int intCod = int.Parse(codigo);
             //revista r = entidades.revista.Find(id);//Busca por clave primaria
@@ -61,8 +61,6 @@ namespace equilibrio.Controller
 
             if (d != null)
             {
-                d.numPedido = numPedido;
-                d.fk_orden = int.Parse(codOrden);
                 d.fk_estadoDeli = int.Parse(codEstadoDeli);
                 entidades.SaveChanges();
                 return "Delivery modificada";

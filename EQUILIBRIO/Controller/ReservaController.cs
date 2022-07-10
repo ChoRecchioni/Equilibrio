@@ -18,7 +18,6 @@ namespace equilibrio.Controller
         //Metodo para listar todos
         public static List<Reserva> findAll()
         {
-
             var res = from r in entidades.Reserva
                       select r;
 

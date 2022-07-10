@@ -21,7 +21,7 @@ namespace equilibrio.WEBFORMS_ADM
             Usuario u = (Usuario)Session["ActiveUser"];
             List<Delivery> listaDelivery = DeliveryController.findAll();
 
-            foreach (Delivery item in listaDelivery.Where(L => L.fk_estadoDeli == 4 && L.OrdenCompra.fk_sede == u.fk_sede))
+            foreach (Delivery item in listaDelivery.Where(L => L.fk_estadoDeli == 2 && L.OrdenCompra.fk_sede == u.fk_sede))
             {
                 HtmlGenericControl divDet = new HtmlGenericControl("div");
                 divDet.Attributes.Add("class", "divDet");
