@@ -13,71 +13,126 @@ namespace equilibrio.WEBFORMS_CLI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CargarDropLocales();
-            CargarGrid();
+            if (!Page.IsPostBack)
+            {
+                CargarDropLocales();
+                
+
+            }
+            
         }
 
         public void CargarGrid()
         {
+
+
             var listado = from re in ReseñaController.findAll()
                           select new
                           {
-                              Sede = re.fk_sede,
+                              Sede = re.Sede.codigo,
                               Puntuacion = re.puntuacion,
                               Comentario = re.comentario
                           };
 
-            foreach (var item in listado)
+            string dropLocal = FiltroLocal.SelectedValue;
+            if (int.Parse(dropLocal) == 1)
             {
-                //Instanciamos/generamos objeto DIV por cada reseña (con n)
-                HtmlGenericControl divResena = new HtmlGenericControl("div");
-
-                divResena.Attributes.Add("class", "Reseña");
-
-                //Si quisieramos generar la etiqueta título:
-                //Label labelTitulo = new Label();
-                //labelTitulo.Text = item.Puntuacion.ToString();
-                //labelTitulo.CssClass = "LblTitulo";
-                //divResena.Controls.Add(labelTitulo);
-
-                //Recorremos las puntuaciones que trae, para generar
-                //la cantidad de estrellas correspondiente
-                for (int i = 0; i < item.Puntuacion; i++)
+                foreach (var item in listado)
                 {
-                    //Generamos la imagen de estrella
-                    Image imgTitulo = new Image();
-                    imgTitulo.Height = 30;
-                    imgTitulo.Width = 30;
-                    imgTitulo.Style.Add("vertical-align", "bottom");
-                    imgTitulo.ImageUrl = "~/IMG/full-star.png";
+                    {
 
-                    divResena.Controls.Add(imgTitulo);
+                        //Instanciamos/generamos objeto DIV por cada reseña (con n)
+                        HtmlGenericControl divResena = new HtmlGenericControl("div");
+
+                        divResena.Attributes.Add("class", "Reseña");
+
+                        //Recorremos las puntuaciones que trae, para generar
+                        //la cantidad de estrellas correspondiente
+                        for (int i = 0; i < item.Puntuacion; i++)
+                        {
+                            //Generamos la imagen de estrella
+                            Image imgTitulo = new Image();
+                            imgTitulo.Height = 30;
+                            imgTitulo.Width = 30;
+                            imgTitulo.Style.Add("vertical-align", "bottom");
+                            imgTitulo.ImageUrl = "~/IMG/full-star.png";
+
+                            divResena.Controls.Add(imgTitulo);
+                        }
+
+                        //Generamos un Lbl con su clase de css de título
+                        Label labelTituloComentario = new Label();
+                        labelTituloComentario.CssClass = "LblTitulo";
+                        labelTituloComentario.Text = "  - COMENTARIO: ";
+
+                        //Generamos el comentario de cada reseNa
+                        Label labelComentario = new Label();
+                        labelComentario.CssClass = "Lbl";
+                        labelComentario.Text = item.Comentario;
+
+                        //Agregamos los objetos al nuevo div instanciado (linea 35)   
+                        divResena.Controls.Add(labelTituloComentario);
+                        divResena.Controls.Add(labelComentario);
+
+                        //Luego lo agregamos al div que tenemos en aspx "DivResenas" (con N)
+                        DivResenas.Controls.Add(divResena);
+                    }
                 }
-
-                //Generamos un Lbl con su clase de css de título
-                Label labelTituloComentario = new Label();
-                labelTituloComentario.CssClass = "LblTitulo";
-                labelTituloComentario.Text = "  - COMENTARIO: ";
-
-                //Generamos el comentario de cada reseNa
-                Label labelComentario = new Label();
-                labelComentario.CssClass = "Lbl";
-                labelComentario.Text = item.Comentario;
-
-                //Agregamos los objetos al nuevo div instanciado (linea 35)   
-                divResena.Controls.Add(labelTituloComentario);
-                divResena.Controls.Add(labelComentario);
-
-                //Luego lo agregamos al div que tenemos en aspx "DivResenas" (con N)
-                DivResenas.Controls.Add(divResena);
             }
+
+            else if (int.Parse(dropLocal) > 1)
+            {
+
+
+
+                foreach (var item in listado.Where(l => l.Sede.ToString() == dropLocal))
+                {
+                    {
+
+                        //Instanciamos/generamos objeto DIV por cada reseña (con n)
+                        HtmlGenericControl divResena = new HtmlGenericControl("div");
+
+                        divResena.Attributes.Add("class", "Reseña");
+
+                        //Recorremos las puntuaciones que trae, para generar
+                        //la cantidad de estrellas correspondiente
+                        for (int i = 0; i < item.Puntuacion; i++)
+                        {
+                            //Generamos la imagen de estrella
+                            Image imgTitulo = new Image();
+                            imgTitulo.Height = 30;
+                            imgTitulo.Width = 30;
+                            imgTitulo.Style.Add("vertical-align", "bottom");
+                            imgTitulo.ImageUrl = "~/IMG/full-star.png";
+
+                            divResena.Controls.Add(imgTitulo);
+                        }
+
+                        //Generamos un Lbl con su clase de css de título
+                        Label labelTituloComentario = new Label();
+                        labelTituloComentario.CssClass = "LblTitulo";
+                        labelTituloComentario.Text = "  - COMENTARIO: ";
+
+                        //Generamos el comentario de cada reseNa
+                        Label labelComentario = new Label();
+                        labelComentario.CssClass = "Lbl";
+                        labelComentario.Text = item.Comentario;
+
+                        //Agregamos los objetos al nuevo div instanciado (linea 35)   
+                        divResena.Controls.Add(labelTituloComentario);
+                        divResena.Controls.Add(labelComentario);
+
+                        //Luego lo agregamos al div que tenemos en aspx "DivResenas" (con N)
+                        DivResenas.Controls.Add(divResena);
+                    }
+                }
+            }
+
         }
-
-
 
         public void CargarDropLocales()
         {
-
+            
             FiltroLocal.DataSource = from sed in LocalController.findAll()
                                      select new
                                      {
@@ -86,8 +141,14 @@ namespace equilibrio.WEBFORMS_CLI
                                      };
             FiltroLocal.DataValueField = "codigo";
             FiltroLocal.DataTextField = "texto";
-
+           
             FiltroLocal.DataBind();
+            //FiltroLocal.Items.Insert(0, "todos");
+        }
+
+        protected void FiltroLocal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarGrid();
         }
     }
 }
