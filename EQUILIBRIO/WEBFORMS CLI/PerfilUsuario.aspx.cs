@@ -39,7 +39,8 @@ namespace equilibrio.WEBFORMS
                 TxtAlias.Text = u.Direccion.alias;
                 TxtDireccion.Text = u.Direccion.calleYnum;
                 TxtDepto.Text = u.Direccion.depto;
-                DropComuna.SelectedValue = u.Direccion.Comuna.codigo.ToString();
+                DropRegion.SelectedValue = u.Direccion.Comuna.Region.codigo.ToString();
+                DropComuna.SelectedValue = u.Direccion.fk_comuna.ToString();
             }
             else
             {

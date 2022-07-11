@@ -222,6 +222,15 @@ namespace equilibrio.WEBFORMS
         protected global::System.Web.UI.WebControls.DropDownList DropRegion;
 
         /// <summary>
+        /// Control RequiredFieldValidator11.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator11;
+
+        /// <summary>
         /// Control TextCorreo.
         /// </summary>
         /// <remarks>
@@ -265,6 +274,15 @@ namespace equilibrio.WEBFORMS
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropComuna;
+
+        /// <summary>
+        /// Control RequiredFieldValidator12.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator12;
 
         /// <summary>
         /// Control TextContraseña.
