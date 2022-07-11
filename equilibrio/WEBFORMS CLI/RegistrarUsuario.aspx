@@ -134,8 +134,6 @@
                                 <ContentTemplate>
                                     <asp:DropDownList class="Drop" ID="DropRegion" runat="server"  OnSelectedIndexChanged="DropRegion_SelectedIndexChanged" AutoPostBack="true">
                                     </asp:DropDownList>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator11" class="ValidadorRegistro" runat="server" ControlToValidate="DropRegion" ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
-
                                 </ContentTemplate>
                             </asp:UpdatePanel>
                         </td>
@@ -152,8 +150,6 @@
                                 <ContentTemplate>
                                     <asp:DropDownList class="Drop" ID="DropComuna" runat="server">
                                     </asp:DropDownList>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator12" class="ValidadorRegistro" runat="server" ControlToValidate="DropComuna" ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
-                                    
                                 </ContentTemplate>
                                 <Triggers>
                                     <asp:AsyncPostBackTrigger ControlID="DropComuna" EventName="selectedindexchanged" />

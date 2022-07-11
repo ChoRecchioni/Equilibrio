@@ -12,6 +12,23 @@ namespace equilibrio.WEBFORMS_ADM
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+            Usuario u = (Usuario)Session["ActiveUser"];
+            if (u != null)
+            {
+                TxtRut.Text = u.rut;
+                TxtNombre.Text = u.nombre;
+                TxtApellido.Text = u.apellido;
+                TxtTeléfono.Text = u.telefono;
+               
+            }
+            else
+            {
+                Response.Redirect("IniciarSesión.aspx");
+            }
+
+            }
 
         }
 

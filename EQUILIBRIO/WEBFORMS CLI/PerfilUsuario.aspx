@@ -37,8 +37,13 @@
         }
 
         .auto-style26 {
-            width: 288px;
+            width: 350px;
             height: 30px;
+        }
+
+        .auto-style29 {
+            width: 540px;
+            height: 10px;
         }
 
         .auto-style30 {
@@ -51,9 +56,6 @@
             position: relative;
             right: -58px;
             top: 0px;
-        }
-        .auto-style32 {
-            width: 288px;
         }
     </style>
 </asp:Content>
@@ -96,7 +98,7 @@
                         <td class="auto-style15">
                             <asp:Label class="Lbl" ID="LblNombre" runat="server" Text="NOMBRE:" />
                         </td>
-                        <td class="auto-style32">
+                        <td class="auto-style16">
                             <asp:TextBox class="TxtPerfil" ID="TxtNombre" Enabled="false" runat="server"></asp:TextBox>
                         </td>
                         <td class="auto-style2">
@@ -110,7 +112,7 @@
                         <td class="auto-style13">
                             <asp:Label class="Lbl" ID="LblApellido" runat="server" Text="APELLIDO:" />
                         </td>
-                        <td class="auto-style32">
+                        <td class="auto-style14">
                             <asp:TextBox class="TxtPerfil" ID="TxtApellido" Enabled="false" runat="server"></asp:TextBox>
                         </td>
                         <td class="auto-style2">
@@ -124,11 +126,11 @@
                         <td class="auto-style15">
                             <asp:Label class="Lbl" ID="LblTelefono" runat="server" Text="TELÉFONO:" />
                         </td>
-                        <td class="auto-style32">
-                            <asp:TextBox class="TxtPerfil" ID="TxtTeléfono" Enabled="false" runat="server"></asp:TextBox>
+                        <td class="auto-style16">
+                            <asp:TextBox CssClass="TxtPerfil" ID="TxtTeléfono" Enabled="false" runat="server"></asp:TextBox>
                         </td>
                         <td class="auto-style2">
-                            <asp:Label class="Lbl" ID="LblComuna" runat="server" Text="REGIÓN:" />
+                            <asp:Label class="Lbl" ID="LblComuna" runat="server" Text="COMUNA:" />
                         </td>
                         <td class="auto-style2">
                             <asp:UpdatePanel ID="UPC" runat="server">
@@ -140,11 +142,11 @@
                         </td>
                     </tr>
                     <tr style="height: 10px;">
-                        <td class="auto-style30" colspan="2" style="text-align: center;">
-                            <asp:Button class="BtnOK" ID="Button1" runat="server" Text="Cerrar sesión" Style="margin-right: 150px; margin-bottom: 0px;" OnClick="Button1_Click" />
+                        <td class="auto-style30" colspan="2">
+                            <asp:Button class="BtnOK" ID="Button1" runat="server" Text="Cerrar sesión" Style="margin-right: 65px; margin-bottom: 0px;" OnClick="Button1_Click" />
                         </td>
                         <td class="auto-style2">
-                            <asp:Label class="Lbl" ID="LblRegion" runat="server" Text="COMUNA:" />
+                            <asp:Label class="Lbl" ID="LblRegion" runat="server" Text="REGIÓN:" />
                         </td>
                         <td class="auto-style2">
                             <asp:UpdatePanel ID="UPR" runat="server">

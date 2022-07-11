@@ -105,7 +105,7 @@
             <tr>
                 <td style="vertical-align: top">
 
-                    <asp:Label class="LblTitulo" ID="LbCliente" runat="server" Text="RUT Cliente"></asp:Label>
+                    <asp:Label class="LblTitulo" ID="LbCliente" runat="server" Text="Nombre del Cliente"></asp:Label>
                     <asp:TextBox class="Txt" ID="TxtNombre" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" class="ValidadorRegistro" runat="server" ControlToValidate="TxtNombre" ErrorMessage="Ingrese el nombre del cliente"></asp:RequiredFieldValidator>
 
