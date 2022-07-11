@@ -42,6 +42,24 @@ namespace equilibrio.Controller
             return "Reserva agregada.";
         }
 
+        public static string AddReservaAdm(string fecha, string codSede, string codMesa, string rut, string nombre, string telefono)
+        {
+
+            Reserva r = new Reserva()
+            {
+                fecha = Convert.ToDateTime(fecha),
+                fk_sede = int.Parse(codSede),
+                fk_mesa = int.Parse(codMesa),
+                rut = rut,
+                nombre = nombre,
+                telefono = telefono,
+            };
+
+            entidades.Reserva.Add(r);
+            entidades.SaveChanges();
+
+            return "Reserva agregada.";
+        }
 
         //Metodo para encontrar uno
         public static Reserva FindReserva(int codigo)

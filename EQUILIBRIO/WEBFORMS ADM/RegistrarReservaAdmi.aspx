@@ -1,6 +1,54 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WEBFORMS ADM/Admin.Master" AutoEventWireup="true" CodeBehind="RegistrarReservaAdmi.aspx.cs" Inherits="equilibrio.WEBFORMS_ADM.Formulario_web17" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script>
+        function checkRut(rut) {
+            // Despejar Puntos
+            var valor = rut.value.replace('.', '');
+            // Despejar Guión
+            valor = valor.replace('-', '');
+
+            // Aislar Cuerpo y Dígito Verificador
+            cuerpo = valor.slice(0, -1);
+            dv = valor.slice(-1).toUpperCase();
+
+            // Formatear RUN
+            rut.value = cuerpo + '-' + dv
+
+            // Si no cumple con el mínimo ej. (n.nnn.nnn)
+            if (cuerpo.length <= 6) { return false; }
+
+            // Calcular Dígito Verificador
+            suma = 0;
+            multiplo = 2;
+
+            // Para cada dígito del Cuerpo
+            for (i = 1; i <= cuerpo.length; i++) {
+
+                // Obtener su Producto con el Múltiplo Correspondiente
+                index = multiplo * valor.charAt(cuerpo.length - i);
+
+                // Sumar al Contador General
+                suma = suma + index;
+
+                // Consolidar Múltiplo dentro del rango [2,7]
+                if (multiplo < 7) { multiplo = multiplo + 1; } else { multiplo = 2; }
+            }
+
+            // Calcular Dígito Verificador en base al Módulo 11
+            dvEsperado = 11 - (suma % 11);
+
+            // Casos Especiales (0 y K)
+            dv = (dv == 'K') ? 10 : dv;
+            dv = (dv == 0) ? 11 : dv;
+
+            // Validar que el Cuerpo coincide con su Dígito Verificador
+            if (dvEsperado != dv) { return false; }
+
+            // Si todo sale bien, eliminar errores (decretar que es válido)
+            rut.setCustomValidity('');
+        }
+    </script>
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -87,7 +135,6 @@
                             <asp:AsyncPostBackTrigger ControlID="Calendar1" EventName="selectionChanged" />
                         </Triggers>
                     </asp:UpdatePanel>
-
                 </td>
                 <td style="vertical-align: top">
 
@@ -99,28 +146,29 @@
                     </asp:RadioButtonList>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" class="ValidadorRegistro" ControlToValidate="Check" runat="server" ErrorMessage="seleccione una de las opciones "></asp:RequiredFieldValidator>
 
-
                 </td>
             </tr>
             <tr>
                 <td style="vertical-align: top">
-
-                    <asp:Label class="LblTitulo" ID="LbCliente" runat="server" Text="Nombre del Cliente"></asp:Label>
+                    <asp:Label class="LblTitulo" ID="LbCliente" runat="server" Text="Rut Cliente"></asp:Label>
+                    <asp:TextBox class="Txt" ID="TxtRut" oninput="checkRut(this)" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" class="ValidadorRegistro" Style="margin-bottom: 0px;" runat="server" ControlToValidate="TxtRut" ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" class="ValidadorRegistro" runat="server" ControlToValidate="TxtRut" ErrorMessage="RUT no valido" ValidationExpression="^(\d{7,8}-)(\d{1}$)"></asp:RegularExpressionValidator>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top">
+                    <asp:Label class="LblTitulo" ID="Label6" runat="server" Text="Nombre"></asp:Label>
                     <asp:TextBox class="Txt" ID="TxtNombre" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" class="ValidadorRegistro" runat="server" ControlToValidate="TxtNombre" ErrorMessage="Ingrese el nombre del cliente"></asp:RequiredFieldValidator>
-
-
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" class="ValidadorRegistro" runat="server" ControlToValidate="TxtNombre" ErrorMessage="Ingrese el nombre del cliente"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td style="vertical-align: top" class="auto-style4">
-
                     <asp:Label ID="LbTelefono" runat="server" class="LblTitulo" Text="Teléfono"></asp:Label>
                     <br />
                     <asp:TextBox class="Txt" ID="TxtNumero" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" class="ValidadorRegistro" runat="server" ControlToValidate="TxtNumero" ErrorMessage="Ingrese un numero de contacto"></asp:RequiredFieldValidator>
-
-
                 </td>
             </tr>
             <tr>

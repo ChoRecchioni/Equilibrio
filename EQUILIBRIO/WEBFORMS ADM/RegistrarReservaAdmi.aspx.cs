@@ -53,7 +53,7 @@ namespace equilibrio.WEBFORMS_ADM
         protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
         {
             string codLocal = DropLocal.SelectedValue;
-            
+
             var mesas = MesaController.findAll().Where(m => m.Sede.codigo == int.Parse(codLocal));
 
             //deshabilita domingos y dias anteriores a hoy.
@@ -94,11 +94,19 @@ namespace equilibrio.WEBFORMS_ADM
             ///TODO: Generar validaciones de los parámetros de entrada: Sesion de Usuario, Local y Horas
 
             Mesa mesa = MesaController.EncontrarMesa(int.Parse(DropLocal.SelectedValue), int.Parse(Check.SelectedValue), Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)));
-            
-            if (mesa != null)
+            Usuario usuario = UsuarioController.FindUserRut(TxtRut.Text);
+
+            if (usuario != null)
             {
-                //modificar usuario (debe llegar nombre y telefono)
-                ReservaController.AddReserva( mesa.codigo.ToString(),Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)).ToString(), DropLocal.SelectedValue, ((Usuario)Session["ActiveUser"]).codigo.ToString());
+                if (mesa != null)
+                {
+                    ReservaController.AddReserva(Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)).ToString(), DropLocal.SelectedValue, mesa.codigo.ToString(), usuario.codigo.ToString());
+                    System.Threading.Thread.Sleep(2500);
+                    Response.Redirect("GestionarReservas.aspx");
+                }
+            } else
+            {
+                ReservaController.AddReservaAdm(Calendar1.SelectedDate.AddHours(int.Parse(DropHoras.SelectedValue)).ToString(), DropLocal.SelectedValue, mesa.codigo.ToString(), TxtRut.Text, TxtNombre.Text, TxtNumero.Text);
                 System.Threading.Thread.Sleep(2500);
                 Response.Redirect("GestionarReservas.aspx");
             }

@@ -21,7 +21,7 @@ namespace equilibrio.WEBFORMS_ADM
             Usuario u = (Usuario)Session["ActiveUser"];
             var reservas = ReservaController.findAll();
 
-                        
+
             foreach (var item in reservas.Where(R => R.Sede.codigo == u.Sede.codigo))
             {
                 HtmlGenericControl Table = new HtmlGenericControl("table");
@@ -88,13 +88,25 @@ namespace equilibrio.WEBFORMS_ADM
 
                 Label lblTituloCliente = new Label();
                 lblTituloCliente.Text = "CLIENTE:";
-
-                Label lblCliente = new Label();
-                lblCliente.Text = item.Usuario.nombre + " " + item.Usuario.apellido;
-                lblCliente.CssClass = "lblReserva";
-
                 tdCliente.Controls.Add(lblTituloCliente);
-                tdCliente.Controls.Add(lblCliente);
+
+                if (item.Usuario != null)
+                {
+                    Label lblCliente = new Label();
+                    lblCliente.Text = item.Usuario.nombre + " " + item.Usuario.apellido;
+                    lblCliente.CssClass = "lblReserva";
+
+                    tdCliente.Controls.Add(lblCliente);
+                }
+                else
+                {
+                    Label lblCliente = new Label();
+                    lblCliente.Text = item.nombre;
+                    lblCliente.CssClass = "lblReserva";
+
+                    tdCliente.Controls.Add(lblCliente);
+                }
+
                 trCliente.Controls.Add(tdCliente);
 
                 HtmlGenericControl trTelefono = new HtmlGenericControl("tr");
@@ -103,13 +115,25 @@ namespace equilibrio.WEBFORMS_ADM
 
                 Label lblTituloTelefono = new Label();
                 lblTituloTelefono.Text = "TELÉFONO:";
-
-                Label lblTelefono = new Label();
-                lblTelefono.Text = item.Usuario.telefono;
-                lblTelefono.CssClass = "lblReserva";
-
                 tdTelefono.Controls.Add(lblTituloTelefono);
-                tdTelefono.Controls.Add(lblTelefono);
+
+                if (item.Usuario != null)
+                {
+                    Label lblTelefono = new Label();
+                    lblTelefono.Text = item.Usuario.telefono;
+                    lblTelefono.CssClass = "lblReserva";
+
+                    tdCliente.Controls.Add(lblTelefono);
+                }
+                else
+                {
+                    Label lblTelefono = new Label();
+                    lblTelefono.Text = item.telefono;
+                    lblTelefono.CssClass = "lblReserva";
+
+                    tdCliente.Controls.Add(lblTelefono);
+                }
+
                 trTelefono.Controls.Add(tdTelefono);
 
                 Table.Controls.Add(trFechaHora);
