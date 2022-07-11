@@ -100,7 +100,7 @@ namespace equilibrio.WEBFORMS_ADM
                         Height = 20,
                         Width = 20,
                         ImageUrl = "~/IMG/edit.png",
-                        OnClientClick = "return EditarArticulo('" + item.Codigo.ToString() + "');",
+                        OnClientClick = "return ModificarArticulo('" + item.Codigo.ToString() + "');",
                         ID ="btneditar"+item.Codigo.ToString()
                     };
 
@@ -113,6 +113,8 @@ namespace equilibrio.WEBFORMS_ADM
                         OnClientClick = "return EliminarArticulo('" + item.Codigo.ToString() + "');",
                         ID = "btneliminar"+item.Codigo.ToString()
                     };
+
+
 
                     PrecProd.Controls.Add(btnEliminar);
                     PrecProd.Controls.Add(btnEditar);
@@ -159,7 +161,7 @@ namespace equilibrio.WEBFORMS_ADM
                 return new
                 {
                     error = false,
-                    msg = "Reserva eliminada"
+                    msg = "Articulo eliminada"
                 };
             }
             catch (Exception e)
@@ -171,6 +173,8 @@ namespace equilibrio.WEBFORMS_ADM
                 };
             }
         }
+
+
     }
 
 }

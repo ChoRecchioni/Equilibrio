@@ -49,18 +49,18 @@ namespace equilibrio.Controller
 
 
         //Metodo para editar
-        public static string editArticulo(string codigo, string nombre, string precio, string comentario, Categoria categoria)
+        public static string editArticulo(string codigo, string nombre, string precio, string comentario, string categoria)
 
         {
             int intCod = int.Parse(codigo);
             Artículo ar = FindArticulo(intCod);
-
+            Categoria ca = CategoriaController.FindCategoria(int.Parse(categoria));
             if (ar != null)
             {
                 ar.nombre = nombre;
                 ar.precio = precio;
                 ar.comentario = comentario;
-                ar.fk_categoria = categoria.codigo;
+                ar.fk_categoria = ca.codigo;
                 entidades.SaveChanges();
                 return "Artículo modificado";
             }

@@ -141,6 +141,7 @@
     <Content Include="Scripts\jquery-3.6.0.slim.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
     <Content Include="Web.config" />
+    <Content Include="WEBFORMS ADM\EditarArticulo.aspx" />
     <Content Include="WEBFORMS ADM\RegistrarReservaAdmi.aspx" />
     <Content Include="WEBFORMS CLI\Carta.aspx" />
     <Content Include="WEBFORMS CLI\ResumenPedido.aspx" />
@@ -257,6 +258,13 @@
     </Compile>
     <Compile Include="WEBFORMS ADM\DeliveryPendiente.aspx.designer.cs">
       <DependentUpon>DeliveryPendiente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\EditarArticulo.aspx.cs">
+      <DependentUpon>EditarArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEBFORMS ADM\EditarArticulo.aspx.designer.cs">
+      <DependentUpon>EditarArticulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="WEBFORMS ADM\RegistrarReservaAdmi.aspx.cs">
       <DependentUpon>RegistrarReservaAdmi.aspx</DependentUpon>

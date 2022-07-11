@@ -1,7 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WEBFORMS ADM/Admin.Master" AutoEventWireup="true" CodeBehind="CartaAdmi.aspx.cs" Inherits="equilibrio.WEBFORMS_ADM.Formulario_web14" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script> 
+    <script>
+
+        function ModificarArticulo(id) {
+            window.location = "EditarArticulo.aspx?ID=" + id;
+            return false;
+        }
+
 
         function EliminarArticulo(id) {
             if (confirm("Desea eliminar el articulo?")) {
