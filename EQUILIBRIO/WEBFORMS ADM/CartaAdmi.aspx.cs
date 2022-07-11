@@ -76,20 +76,22 @@ namespace equilibrio.WEBFORMS_ADM
                     HtmlGenericControl NomPCarta = new HtmlGenericControl("div");
                     NomPCarta.Attributes.Add("class", "NomPCarta");
 
-                    Label LblTitulo = new Label();
-                    LblTitulo.Attributes.Add("class", "LblTituloCarta");
-                    LblTitulo.Text = item.Nombre;
+                    TextBox TxtTitulo = new TextBox();
+                    TxtTitulo.Attributes.Add("class", "Txt");
+                    TxtTitulo.Attributes.Add("Disabled", "Disabled");
+                    TxtTitulo.Text = item.Nombre;
                     HtmlGenericControl br = new HtmlGenericControl("br");
 
-                    NomPCarta.Controls.Add(LblTitulo);
+                    NomPCarta.Controls.Add(TxtTitulo);
 
                     HtmlGenericControl PrecProd = new HtmlGenericControl("div");
                     PrecProd.Attributes.Add("class", "PrecProd");
 
-                    Label Lblprecio = new Label();
-                    Lblprecio.Attributes.Add("class", "Lbl");
-                    Lblprecio.Text = "$" + item.Precio + ".-";
-                    Lblprecio.Attributes.Add("style", "font-weight: bold;");
+                     TextBox Txtprecio = new TextBox();
+                    Txtprecio.Attributes.Add("class", "Txt");
+                    Txtprecio.Attributes.Add("Disabled", "Disabled");
+                    Txtprecio.Text = "$" + item.Precio + ".-";
+                    Txtprecio.Attributes.Add("style", "font-weight: bold;");
 
                     ImageButton btnEditar = new ImageButton
                     {
@@ -115,16 +117,17 @@ namespace equilibrio.WEBFORMS_ADM
                     PrecProd.Controls.Add(btnEditar);
 
                     PrecProd.Controls.Add(new LiteralControl("<br/>"));
-                    PrecProd.Controls.Add(Lblprecio);
+                    PrecProd.Controls.Add(Txtprecio);
 
                     HtmlGenericControl InfoPCarta = new HtmlGenericControl("div");
                     InfoPCarta.Attributes.Add("class", "InfoPCarta");
 
-                    Label LblInfo = new Label();
-                    LblInfo.Attributes.Add("class", "Lbl");
-                    LblInfo.Text = item.Comentario;
+                    TextBox TxtInfo = new TextBox();
+                    TxtInfo.Attributes.Add("class", "Txt");
+                    TxtInfo.Attributes.Add("Disabled", "Disabled");
+                    TxtInfo.Text = item.Comentario;
 
-                    InfoPCarta.Controls.Add(LblInfo);
+                    InfoPCarta.Controls.Add(TxtInfo);
 
                     divArt.Controls.Add(NomPCarta);
                     divArt.Controls.Add(new LiteralControl("<br/>"));
