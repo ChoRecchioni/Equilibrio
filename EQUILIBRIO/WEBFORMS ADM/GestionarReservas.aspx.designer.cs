@@ -24,40 +24,40 @@ namespace equilibrio.WEBFORMS_ADM
         protected global::System.Web.UI.WebControls.Label Label7;
 
         /// <summary>
-        /// Control TxtBuscar.
+        /// Control TxtBuscarRut.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtBuscar;
+        protected global::System.Web.UI.WebControls.TextBox TxtBuscarRut;
 
         /// <summary>
-        /// Control BtnBuscar.
+        /// Control BtnBuscarRut.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnBuscar;
+        protected global::System.Web.UI.WebControls.Button BtnBuscarRut;
 
         /// <summary>
-        /// Control TextBox1.
+        /// Control fechaBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl fechaBuscar;
 
         /// <summary>
-        /// Control Button1.
+        /// Control BtnBuscarFecha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button BtnBuscarFecha;
 
         /// <summary>
         /// Control divReservas.

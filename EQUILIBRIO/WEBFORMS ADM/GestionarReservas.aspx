@@ -126,10 +126,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="Contenedor" style="margin-top: 40px;">
 
-        <asp:TextBox class="Txt" oninput="checkRut(this)" Style="float: left; margin-bottom: 30px;" ID="TxtBuscar" runat="server" placeholder="CLIENTE"></asp:TextBox>
-        <asp:Button class="Btn" Style="float: left;" ID="BtnBuscar" runat="server" Text="BUSCAR" />
-        <asp:TextBox class="Txt" Style="float: left;" ID="TextBox1" runat="server" placeholder="FECHA"></asp:TextBox>
-        <asp:Button class="Btn" Style="float: left;" ID="Button1" runat="server" Text="BUSCAR" />
+        <asp:TextBox class="Txt" oninput="checkRut(this)" Style="float: left; margin-bottom: 30px;" ID="TxtBuscarRut" runat="server" placeholder="CLIENTE"></asp:TextBox>
+        <asp:Button class="Btn" Style="float: left;" ID="BtnBuscarRut" runat="server" Text="BUSCAR" OnClick="BtnBuscarRut_Click" />
+        <input id="fechaBuscar" runat="server" type="date" />
+        <asp:Button class="Btn" Style="float: left;" ID="BtnBuscarFecha" runat="server" Text="BUSCAR" OnClick="BtnBuscarFecha_Click" />
         <br />
 
         <div id="divReservas" class="Contenedor" style="margin-left: 0px;" runat="server">

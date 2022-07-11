@@ -13,7 +13,8 @@ namespace equilibrio.WEBFORMS_ADM
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CargaReservas();
+            if (!IsPostBack)
+                CargaReservas();
         }
 
         public void CargaReservas()
@@ -21,6 +22,16 @@ namespace equilibrio.WEBFORMS_ADM
             Usuario u = (Usuario)Session["ActiveUser"];
             var reservas = ReservaController.findAll();
 
+            if (!string.IsNullOrEmpty(TxtBuscarRut.Text) && TxtBuscarRut.Text != "-")
+            {
+                reservas = reservas.Where(R => R.Usuario.rut == TxtBuscarRut.Text).ToList();
+            }
+
+            if (!string.IsNullOrEmpty(fechaBuscar.Value))
+            {
+                DateTime fecha = Convert.ToDateTime(fechaBuscar.Value);
+                reservas = reservas.Where(R => R.fecha.ToShortDateString() == fecha.ToShortDateString()).ToList();
+            }
 
             foreach (var item in reservas.Where(R => R.Sede.codigo == u.Sede.codigo))
             {
