@@ -44,7 +44,6 @@
         <AssociationConnector Association="EQModel.FK__Usuario__fk_rol__34C8D9D1" ManuallyRouted="false" />
         <AssociationConnector Association="EQModel.FK__Usuario__fk_sede__35BCFE0A" ManuallyRouted="false" />
         <AssociationConnector Association="EQModel.FK__Comuna__fk_regio__01142BA1" />
-        <AssociationConnector Association="EQModel.FK__Comuna__fk_regio__01142BA1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
