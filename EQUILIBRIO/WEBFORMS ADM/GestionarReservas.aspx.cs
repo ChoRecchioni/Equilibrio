@@ -155,5 +155,15 @@ namespace equilibrio.WEBFORMS_ADM
             }
         }
 
+        protected void BtnBuscarRut_Click(object sender, EventArgs e)
+        {
+            CargaReservas();
+        }
+
+        protected void BtnBuscarFecha_Click(object sender, EventArgs e)
+        {
+            CargaReservas();
+        }
+
     }
 }
