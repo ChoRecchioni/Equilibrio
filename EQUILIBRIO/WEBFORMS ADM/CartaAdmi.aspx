@@ -1,6 +1,33 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WEBFORMS ADM/Admin.Master" AutoEventWireup="true" CodeBehind="CartaAdmi.aspx.cs" Inherits="equilibrio.WEBFORMS_ADM.Formulario_web14" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script> 
+
+        function EliminarArticulo(id) {
+            if (confirm("Desea eliminar el articulo?")) {
+                $.ajax({
+                    type: "post",
+                    url: "CartaAdmi.aspx/BorrarArticulo",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify({ id: id }),
+                    dataType: "json",
+                    success: function (response) {
+                        if (!response.d.error) {
+                            alert(response.d.msg);
+                            window.location.reload();
+                        }
+                        else {
+                            alert(response.d.msg);
+                        }
+                    },
+                    error: function (response) {
+                        alert("Error: " + response.d.msg);
+                    },
+                    async: true
+                });
+            }
+            return false;
+        }  </script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CPHtitulos" runat="server">
     <asp:Label class="titulos" ID="Label1" runat="server" Text="CARTA"></asp:Label><br />

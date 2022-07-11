@@ -75,7 +75,6 @@ namespace equilibrio.Controller
         public static string removeArticulo(int codigo)
         {
             Artículo ar = FindArticulo(codigo);
-
             entidades.Artículo.Remove(ar);
             entidades.SaveChanges();
             return "Artículo eliminado";

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
@@ -100,7 +101,7 @@ namespace equilibrio.WEBFORMS_ADM
                         Width = 20,
                         ImageUrl = "~/IMG/edit.png",
                         OnClientClick = "return EditarArticulo('" + item.Codigo.ToString() + "');",
-                        ID = item.Codigo.ToString()
+                        ID ="btneditar"+item.Codigo.ToString()
                     };
 
                     ImageButton btnEliminar = new ImageButton
@@ -110,7 +111,7 @@ namespace equilibrio.WEBFORMS_ADM
                         Width = 20,
                         ImageUrl = "~/IMG/delete.png",
                         OnClientClick = "return EliminarArticulo('" + item.Codigo.ToString() + "');",
-                        ID = item.Codigo.ToString()
+                        ID = "btneliminar"+item.Codigo.ToString()
                     };
 
                     PrecProd.Controls.Add(btnEliminar);
@@ -146,6 +147,29 @@ namespace equilibrio.WEBFORMS_ADM
         {
             LbAddArt.Text = ArticuloController.AddArticulo( TxtNombreArt.Text, TxtPrecioArt.Text, TxtDescripcionArt.Text, DropCategoria.SelectedValue);
             Response.Redirect("CartaAdmi.aspx");
+        }
+
+        [WebMethod]
+        public static object BorrarArticulo(string id)
+        {
+            try
+            {
+
+                ArticuloController.removeArticulo(int.Parse(id));
+                return new
+                {
+                    error = false,
+                    msg = "Reserva eliminada"
+                };
+            }
+            catch (Exception e)
+            {
+                return new
+                {
+                    error = true,
+                    msg = e.Message
+                };
+            }
         }
     }
 
