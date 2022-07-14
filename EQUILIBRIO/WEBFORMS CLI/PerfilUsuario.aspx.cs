@@ -135,7 +135,9 @@ namespace equilibrio.WEBFORMS
             DropComuna.Enabled = false;
             DropRegion.Enabled = false;
             DropComuna.SelectedValue = CUser.codigo.ToString();
+            DropComuna.Enabled = false;
             DropRegion.SelectedValue = RUser.codigo.ToString();
+            DropRegion.Enabled = false;
 
         }
 
