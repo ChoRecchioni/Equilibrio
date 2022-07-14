@@ -31,16 +31,19 @@ namespace equilibrio.WEBFORMS
             }
 
             Usuario u = (Usuario)Session["ActiveUser"];
+            Direccion d = DireccionController.FindDireccion(u.fk_direccion.Value);
+            Comuna c = ComunaController.FindComuna(d.fk_comuna);
             if (u != null)
             {
+             
                 TxtRut.Text = u.rut;
                 TxtNombre.Text = u.nombre;
                 TxtApellido.Text = u.apellido;
                 TxtTeléfono.Text = u.telefono;
-                TxtAlias.Text = u.Direccion.alias;
-                TxtDireccion.Text = u.Direccion.calleYnum;
-                TxtDepto.Text = u.Direccion.depto;
-                DropComuna.SelectedValue = u.Direccion.Comuna.codigo.ToString();
+                TxtAlias.Text = d.alias;
+                TxtDireccion.Text = d.calleYnum;
+                TxtDepto.Text = d.depto;
+                DropComuna.SelectedValue = c.codigo.ToString();
             }
             else
             {
@@ -85,10 +88,10 @@ namespace equilibrio.WEBFORMS
                                         codigo = com.codigo,
                                         texto = com.nombre,
                                     };
-            DropRegion.DataValueField = "codigo";
-            DropRegion.DataTextField = "texto";
+            DropComuna.DataValueField = "codigo";
+            DropComuna.DataTextField = "texto";
 
-            DropRegion.DataBind();
+            DropComuna.DataBind();
         }
 
         protected void BtnEditarUser_Click(object sender, ImageClickEventArgs e)
@@ -115,8 +118,12 @@ namespace equilibrio.WEBFORMS
         protected void BtnCheckDir_Click(object sender, ImageClickEventArgs e)
         {
             Usuario u = (Usuario)Session["ActiveUser"];
-            LbEditDir.Text = DireccionController.editDireccion(u.Direccion.codigo.ToString(), TxtAlias.Text, TxtDireccion.Text, TxtDepto.Text, DropComuna.SelectedValue);
-            Direccion DUser = DireccionController.FindDireccion(u.Direccion.codigo);
+            Direccion d = DireccionController.FindDireccion(u.fk_direccion.Value);
+            Comuna c = ComunaController.FindComuna(d.fk_comuna);
+            LbEditDir.Text = DireccionController.editDireccion(d.codigo.ToString(), TxtAlias.Text, TxtDireccion.Text, TxtDepto.Text, DropComuna.SelectedValue);
+            Direccion DUser = DireccionController.FindDireccion(d.codigo);
+            Comuna CUser = ComunaController.FindComuna(DUser.fk_comuna);
+            Region RUser = RegionController.FindRegion(CUser.fk_region);
             BtnEditarDir.Visible = true;
             BtnCheckDir.Visible = false;
             TxtAlias.Text = DUser.alias;
@@ -127,8 +134,8 @@ namespace equilibrio.WEBFORMS
             TxtDepto.Enabled = false;
             DropComuna.Enabled = false;
             DropRegion.Enabled = false;
-            DropComuna.SelectedValue = DUser.Comuna.codigo.ToString();
-            DropRegion.SelectedValue = DUser.Comuna.Region.codigo.ToString();
+            DropComuna.SelectedValue = CUser.codigo.ToString();
+            DropRegion.SelectedValue = RUser.codigo.ToString();
 
         }
 

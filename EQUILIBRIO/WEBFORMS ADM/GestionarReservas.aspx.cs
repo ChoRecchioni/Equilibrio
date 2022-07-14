@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
@@ -13,8 +14,10 @@ namespace equilibrio.WEBFORMS_ADM
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!IsPostBack) {
                 CargaReservas();
+            }
+               
         }
 
         public void CargaReservas()
@@ -22,18 +25,18 @@ namespace equilibrio.WEBFORMS_ADM
             Usuario u = (Usuario)Session["ActiveUser"];
             var reservas = ReservaController.findAll();
 
-            if (!string.IsNullOrEmpty(TxtBuscarRut.Text) && TxtBuscarRut.Text != "-")
-            {
-                reservas = reservas.Where(R => R.Usuario.rut == TxtBuscarRut.Text).ToList();
-            }
+            //if (!string.IsNullOrEmpty(TxtBuscarRut.Text) && TxtBuscarRut.Text != "-")
+            //{
+            //    reservas = reservas.Where(R => R.Usuario.rut == TxtBuscarRut.Text).ToList();
+            //}
 
-            if (!string.IsNullOrEmpty(fechaBuscar.Value))
-            {
-                DateTime fecha = Convert.ToDateTime(fechaBuscar.Value);
-                reservas = reservas.Where(R => R.fecha.ToShortDateString() == fecha.ToShortDateString()).ToList();
-            }
+            //if (!string.IsNullOrEmpty(fechaBuscar.Value))
+            //{
+            //    DateTime fecha = Convert.ToDateTime(fechaBuscar.Value);
+            //    reservas = reservas.Where(R => R.fecha.ToShortDateString() == fecha.ToShortDateString()).ToList();
+            //}
 
-            foreach (var item in reservas.Where(R => R.Sede.codigo == u.Sede.codigo))
+            foreach (var item in reservas.Where(R => R.fk_sede == u.Sede.codigo))
             {
                 HtmlGenericControl Table = new HtmlGenericControl("table");
                 Table.Attributes.Add("class", "auto-style1");
@@ -89,7 +92,7 @@ namespace equilibrio.WEBFORMS_ADM
                 btnEliminar.Width = 20;
                 btnEliminar.ImageUrl = "~/IMG/delete.png";
                 btnEliminar.OnClientClick = "return EliminarReserva('" + item.codigo.ToString() + "');";
-                btnEliminar.ID ="btnEliminar"+ item.codigo.ToString();
+                btnEliminar.ID = "btnEliminar" + item.codigo.ToString();
                 tdbtnEliminar.Controls.Add(btnEliminar);
                 trFechaHora.Controls.Add(tdbtnEliminar);
 
@@ -165,5 +168,28 @@ namespace equilibrio.WEBFORMS_ADM
             CargaReservas();
         }
 
+
+        [WebMethod]
+        public static object EliminarReserva(string id)
+        {
+            try
+            {
+                ReservaController.removeReserva(int.Parse(id));
+                return new
+                {
+                    error = false,
+                    msg = "Reserva eliminada"
+                };
+            }
+            catch (Exception e)
+            {
+                return new
+                {
+                    error = true,
+                    msg = e.Message
+                };
+            }
+        }
     }
 }
+

@@ -82,7 +82,7 @@ namespace equilibrio.WEBFORMS
                 btnEditar.Width = 20;
                 btnEditar.ImageUrl = "~/IMG/edit.png";
                 btnEditar.OnClientClick = "return EditarReserva('" + item.codigo.ToString() + "');";
-                btnEditar.ID = item.codigo.ToString();
+                btnEditar.ID ="btnEditar" + item.codigo.ToString();
                 tdbtnEditar.Controls.Add(btnEditar);
                 trFechaHora.Controls.Add(tdbtnEditar);
 
@@ -93,7 +93,7 @@ namespace equilibrio.WEBFORMS
                 btnEliminar.Width = 20;
                 btnEliminar.ImageUrl = "~/IMG/delete.png";
                 btnEliminar.OnClientClick = "return EliminarReserva('" + item.codigo.ToString() + "');";
-                btnEliminar.ID = item.codigo.ToString();
+                btnEliminar.ID = "btnEliminar" + item.codigo.ToString();
                 tdbtnEliminar.Controls.Add(btnEliminar);
                 trFechaHora.Controls.Add(tdbtnEliminar);
 
@@ -105,7 +105,7 @@ namespace equilibrio.WEBFORMS
                 lblTituloLocal.Text = "LOCAL:";
 
                 Label lblLocal = new Label();
-                lblLocal.Text = item.Sede.nombre;
+                lblLocal.Text =LocalController.FindSede(item.fk_sede).nombre /*item.Sede.nombre*/;
                 lblLocal.CssClass = "lblReserva";
 
                 tdLocal.Controls.Add(lblTituloLocal);

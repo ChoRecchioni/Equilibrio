@@ -24,12 +24,14 @@ namespace equilibrio.WEBFORMS_CLI
                     CarroCompras carroCompras = CarroComprasController.FindCarroCompras(orden.CarroCompras.codigo);
 
                     Usuario user = UsuarioController.FindUsuario(carroCompras.Usuario.codigo);
+                    Direccion d = DireccionController.FindDireccion(user.fk_direccion.Value);
+                    Comuna c = ComunaController.FindComuna(d.fk_comuna);
                     LbRutu.Text = user.rut;
                     LbNombreu.Text = user.nombre;
                     LbApellidou.Text = user.apellido;
                     LbTelefonou.Text = user.telefono;
-                    LbDireccionu.Text = user.Direccion.calleYnum;
-                    LbComunau.Text = user.Direccion.Comuna.nombre;
+                    LbDireccionu.Text = d.calleYnum;
+                    LbComunau.Text = c.nombre;
             
                     foreach (ArticuloCarro ar in carroCompras.ArticuloCarro)
 

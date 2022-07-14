@@ -31,6 +31,7 @@ namespace equilibrio.WEBFORMS_ADM
                               Usuario = re.Usuario
                           };
 
+            string dropranking = FiltroEstrellas.SelectedValue;
             foreach (var item in listado.Where(L => L.Local.codigo == u.Sede.codigo))
             {
                 //generamos objeto DIV por cada reseña (con n)

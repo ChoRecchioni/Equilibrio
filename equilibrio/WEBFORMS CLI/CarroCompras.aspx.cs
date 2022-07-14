@@ -131,9 +131,12 @@ namespace equilibrio.WEBFORMS
         {
             Usuario u = (Usuario)Session["ActiveUser"];
 
+            Direccion d = DireccionController.FindDireccion(u.fk_direccion.Value);
+            Comuna c = ComunaController.FindComuna(d.fk_comuna);
+
             Label labelDir = new Label();
             labelDir.Attributes.Add("class", "LblTituloCarro");
-            labelDir.Text = "DIRECCIÓN: " + u.Direccion.calleYnum + ", Dpto " + u.Direccion.depto + ". " + u.Direccion.Comuna.nombre;
+            labelDir.Text = "DIRECCIÓN: " + d.calleYnum + ", Dpto " + d.depto + ". " + c.nombre;
 
             divDir.Controls.Add(labelDir);
         }

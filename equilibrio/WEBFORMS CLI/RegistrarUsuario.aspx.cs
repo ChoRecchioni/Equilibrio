@@ -54,8 +54,11 @@ namespace equilibrio.WEBFORMS
             DropRegion.DataBind();
         }
 
+        static EQEntidades entidades = new EQEntidades();
+
         protected void BtnEnviar_Click(object sender, EventArgs e)
         {
+           
             System.Threading.Thread.Sleep(2500);
 
             HdnRolCliente.Value = "2";
@@ -65,7 +68,7 @@ namespace equilibrio.WEBFORMS
             string passMD5 = UsuarioController.GetMD5(TextContraseña.Text);
 
             LbMensaje.Text = UsuarioController.AddUsuario(TextRut.Text, TextNombre.Text, TextApellido.Text, TextTelefono.Text, passMD5, dir.codigo.ToString(), TextCorreo.Text);
-
+           
             Response.Redirect("IniciarSesión.aspx");
         }
 

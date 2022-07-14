@@ -15,6 +15,7 @@ namespace equilibrio.WEBFORMS_ADM
             if (!Page.IsPostBack)
             {
                 cargarDropCat();
+                cargarTxt();
             }
 
         }
@@ -40,6 +41,19 @@ namespace equilibrio.WEBFORMS_ADM
             DropCategoria.DataTextField = "texto";
 
             DropCategoria.DataBind();
+        }
+
+        public void cargarTxt() {
+
+            string IdA = Request.QueryString["ID"];
+
+            Artículo artículo = ArticuloController.FindArticulo(int.Parse(IdA));
+
+            TxtTitulo.Text = artículo.nombre;
+            Txtprecio.Text = artículo.precio;
+            TxtInfo.Text = artículo.comentario;
+
+
         }
     }
 }
