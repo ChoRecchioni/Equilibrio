@@ -11,18 +11,38 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+    <asp:UpdatePanel ID="UpdateMain" runat="server">
+        <ContentTemplate>
+
+            <asp:HiddenField ID="HdnRolCliente" runat="server" />
+
     <div class="Contenedor">  
-    <asp:DropDownList class="DropStars" ID="FiltroEstrellas" runat="server">
+         <asp:UpdatePanel ID="UPC" runat="server">
+                  <ContentTemplate>
+    <asp:DropDownList class="DropStars" ID="FiltroEstrellas" runat="server" OnSelectedIndexChanged="FiltroEstrellas_SelectedIndexChanged" AutoPostBack="true" AppendDataBoundItems="true">
+       <asp:ListItem Text="TODOS LAS RESEÑAS" Value="0" />
         <asp:ListItem Value="1" >★</asp:ListItem>
         <asp:ListItem Value="2" >★★</asp:ListItem>
         <asp:ListItem Value="3" >★★★</asp:ListItem>
         <asp:ListItem Value="4" >★★★★</asp:ListItem>
         <asp:ListItem Value="5" >★★★★★</asp:ListItem>        
     </asp:DropDownList>
+ </ContentTemplate>
+                </asp:UpdatePanel>
 
-    <div id="DivResenas" runat="server">
-        
-    </div>
-    </div>
-
+                <asp:UpdatePanel ID="UPR" runat="server">
+                    <ContentTemplate>
+                        <div id="DivResenas" runat="server">
+                        </div>
+                    </ContentTemplate>
+                    <Triggers>
+                        <asp:AsyncPostBackTrigger ControlID="FiltroEstrellas" EventName="selectedindexchanged" />
+                    </Triggers>
+                </asp:UpdatePanel>
+  
+             </div>
+     </ContentTemplate>
+         </asp:UpdatePanel>
 </asp:Content>

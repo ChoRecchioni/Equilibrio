@@ -21,8 +21,7 @@
                 <asp:UpdatePanel ID="UPC" runat="server">
                     <ContentTemplate>
                         <asp:DropDownList class="Drop" ID="FiltroLocal" runat="server" OnSelectedIndexChanged="FiltroLocal_SelectedIndexChanged" AutoPostBack="true" AppendDataBoundItems="true">
-                            
-                            <asp:ListItem Text="TODOS LOS LOCALES" Value="1" />
+                             <asp:ListItem Text="TODOS LOS LOCALES" Value="1" />
                             
                         </asp:DropDownList>
                     </ContentTemplate>

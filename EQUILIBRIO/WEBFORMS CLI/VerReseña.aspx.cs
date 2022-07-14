@@ -15,6 +15,7 @@ namespace equilibrio.WEBFORMS_CLI
         {
             if (!Page.IsPostBack)
             {
+                CargarGrid();
                 CargarDropLocales();
                 
 
