@@ -17,6 +17,7 @@ namespace equilibrio.WEBFORMS
             if (!Page.IsPostBack)
             {
                 CargarDropRegion();
+                CargarDropComunas();
             }
 
         }
@@ -30,6 +31,22 @@ namespace equilibrio.WEBFORMS
                                     {
                                         codigo = reg.codigo,
                                         texto = reg.nombre,
+                                    };
+            DropRegion.DataValueField = "codigo";
+            DropRegion.DataTextField = "texto";
+
+            DropRegion.DataBind();
+        }
+
+        public void CargarDropComunas()
+        {
+            
+
+            DropComuna.DataSource = from com in ComunaController.findAll()
+                                    select new
+                                    {
+                                        codigo = com.codigo,
+                                        texto = com.nombre,
                                     };
             DropRegion.DataValueField = "codigo";
             DropRegion.DataTextField = "texto";

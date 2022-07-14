@@ -24,12 +24,10 @@ namespace equilibrio.WEBFORMS_CLI
 
         public void CargarGrid()
         {
-
-
             var listado = from re in ReseñaController.findAll()
                           select new
                           {
-                              Sede = re.Sede.codigo,
+                              Sede = re.fk_sede,
                               Puntuacion = re.puntuacion,
                               Comentario = re.comentario
                           };

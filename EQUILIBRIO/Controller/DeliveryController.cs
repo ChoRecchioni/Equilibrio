@@ -18,11 +18,25 @@ namespace equilibrio.Controller
         //Metodo para listar todos
         public static List<Delivery> findAll()
         {
+            var deli = from d in entidades.Delivery
+                       select d;
+                        
+            //foreach (Delivery item in deli)
+            //{
+            //    if (int.TryParse(item.fk_orden.ToString(), out int num))
+            //    {
+            //        OrdenCompra o = OrdenCompraController.FindOrden(num);
+            //        o.Sede = LocalController.FindSede(o.fk_sede);
+            //        o.CarroCompras = CarroComprasController.FindCarroCompras(o.fk_carro);
+            //        o.Sede.Direccion = DireccionController.FindDireccion(o.Sede.fk_direccion);
+                        
+            //        item.OrdenCompra = o;
+            //        item.OrdenCompra.CarroCompras = o.CarroCompras;
+            //        item.OrdenCompra.Sede.Direccion = o.Sede.Direccion;
+            //    }
+            //}
 
-            var del = from d in entidades.Delivery
-                      select d;
-
-            return del.ToList();
+            return deli.ToList();
         }
 
         //Metodo para agregar

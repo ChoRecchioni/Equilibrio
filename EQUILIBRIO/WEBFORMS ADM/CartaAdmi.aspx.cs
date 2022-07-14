@@ -88,7 +88,7 @@ namespace equilibrio.WEBFORMS_ADM
                     HtmlGenericControl PrecProd = new HtmlGenericControl("div");
                     PrecProd.Attributes.Add("class", "PrecProd");
 
-                     TextBox Txtprecio = new TextBox();
+                    TextBox Txtprecio = new TextBox();
                     Txtprecio.Attributes.Add("class", "Txt");
                     Txtprecio.Attributes.Add("Disabled", "Disabled");
                     Txtprecio.Text = "$" + item.Precio + ".-";
@@ -100,8 +100,8 @@ namespace equilibrio.WEBFORMS_ADM
                         Height = 20,
                         Width = 20,
                         ImageUrl = "~/IMG/edit.png",
-                        OnClientClick = "return EditarArticulo('" + item.Codigo.ToString() + "');",
-                        ID ="btneditar"+item.Codigo.ToString()
+                        OnClientClick = "return ModificarArticulo('" + item.Codigo.ToString() + "');",
+                        ID = "btneditar" + item.Codigo.ToString()
                     };
 
                     ImageButton btnEliminar = new ImageButton
@@ -111,8 +111,10 @@ namespace equilibrio.WEBFORMS_ADM
                         Width = 20,
                         ImageUrl = "~/IMG/delete.png",
                         OnClientClick = "return EliminarArticulo('" + item.Codigo.ToString() + "');",
-                        ID = "btneliminar"+item.Codigo.ToString()
+                        ID = "btneliminar" + item.Codigo.ToString()
                     };
+
+
 
                     PrecProd.Controls.Add(btnEliminar);
                     PrecProd.Controls.Add(btnEditar);
@@ -145,7 +147,7 @@ namespace equilibrio.WEBFORMS_ADM
 
         protected void BtnCrearArt_Click(object sender, EventArgs e)
         {
-            LbAddArt.Text = ArticuloController.AddArticulo( TxtNombreArt.Text, TxtPrecioArt.Text, TxtDescripcionArt.Text, DropCategoria.SelectedValue);
+            LbAddArt.Text = ArticuloController.AddArticulo(TxtNombreArt.Text, TxtPrecioArt.Text, TxtDescripcionArt.Text, DropCategoria.SelectedValue);
             Response.Redirect("CartaAdmi.aspx");
         }
 
@@ -159,7 +161,7 @@ namespace equilibrio.WEBFORMS_ADM
                 return new
                 {
                     error = false,
-                    msg = "Reserva eliminada"
+                    msg = "Articulo eliminada"
                 };
             }
             catch (Exception e)
@@ -171,6 +173,8 @@ namespace equilibrio.WEBFORMS_ADM
                 };
             }
         }
+
+
     }
 
 }

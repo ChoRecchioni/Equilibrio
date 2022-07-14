@@ -78,7 +78,7 @@ namespace equilibrio.WEBFORMS_ADM
                 btnEditar.Width = 20;
                 btnEditar.ImageUrl = "~/IMG/edit.png";
                 btnEditar.OnClientClick = "return EditarReserva('" + item.codigo.ToString() + "');";
-                btnEditar.ID = item.codigo.ToString();
+                btnEditar.ID = "btnEditar" + item.codigo.ToString();
                 tdbtnEditar.Controls.Add(btnEditar);
                 trFechaHora.Controls.Add(tdbtnEditar);
 
@@ -89,7 +89,7 @@ namespace equilibrio.WEBFORMS_ADM
                 btnEliminar.Width = 20;
                 btnEliminar.ImageUrl = "~/IMG/delete.png";
                 btnEliminar.OnClientClick = "return EliminarReserva('" + item.codigo.ToString() + "');";
-                btnEliminar.ID = item.codigo.ToString();
+                btnEliminar.ID ="btnEliminar"+ item.codigo.ToString();
                 tdbtnEliminar.Controls.Add(btnEliminar);
                 trFechaHora.Controls.Add(tdbtnEliminar);
 

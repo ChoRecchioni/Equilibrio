@@ -130,7 +130,7 @@
                             <asp:TextBox CssClass="TxtPerfil" ID="TxtTeléfono" Enabled="false" runat="server"></asp:TextBox>
                         </td>
                         <td class="auto-style2">
-                            <asp:Label class="Lbl" ID="LblComuna" runat="server" Text="COMUNA:" />
+                            <asp:Label class="Lbl" ID="LblComuna" runat="server" Text="REGIÓN:" />
                         </td>
                         <td class="auto-style2">
                             <asp:UpdatePanel ID="UPC" runat="server">
@@ -146,7 +146,7 @@
                             <asp:Button class="BtnOK" ID="Button1" runat="server" Text="Cerrar sesión" Style="margin-right: 65px; margin-bottom: 0px;" OnClick="Button1_Click" />
                         </td>
                         <td class="auto-style2">
-                            <asp:Label class="Lbl" ID="LblRegion" runat="server" Text="REGIÓN:" />
+                            <asp:Label class="Lbl" ID="LblRegion" runat="server" Text="COMUNA:" />
                         </td>
                         <td class="auto-style2">
                             <asp:UpdatePanel ID="UPR" runat="server">

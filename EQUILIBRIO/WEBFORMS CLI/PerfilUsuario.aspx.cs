@@ -17,6 +17,7 @@ namespace equilibrio.WEBFORMS
             {
                 ValidarUser();
                 CargarDropRegiones();
+                CargarDropComunas();
             }
 
         }
@@ -64,55 +65,31 @@ namespace equilibrio.WEBFORMS
         {
 
             DropRegion.DataSource = from reg in RegionController.findAll()
-                                      select new
-                                      {
-                                          codigo = reg.codigo,
-                                          texto = reg.nombre,
-                                      };
+                                    select new
+                                    {
+                                        codigo = reg.codigo,
+                                        texto = reg.nombre,
+                                    };
             DropRegion.DataValueField = "codigo";
             DropRegion.DataTextField = "texto";
 
             DropRegion.DataBind();
         }
 
-        //public void CargarDirecciones()
-        //{
-        //    Direccion DirUser = DireccionController.FindDireccion(DropDirecciones.SelectedValue);
+        public void CargarDropComunas()
+        {
 
-        //    TxtAlias.Text = DirUser.Alias;
-        //    TxtDireccion.Text = DirUser.CalleYnum;
-        //    TxtComuna.Text = DirUser.Comuna.Nombre;
-        //    TxtRegion.Text = DirUser.Region.Nombre;
+            DropComuna.DataSource = from com in ComunaController.findAll()
+                                    select new
+                                    {
+                                        codigo = com.codigo,
+                                        texto = com.nombre,
+                                    };
+            DropRegion.DataValueField = "codigo";
+            DropRegion.DataTextField = "texto";
 
-        //}
-
-
-        //public void CargarDropDirecciones()
-        //{
-        //    DireccionController.CargarDirección();
-
-        //    Usuario u = (Usuario)Session["ActiveUser"];
-
-        //    int codDirUser = u.Direccion.Codigo;
-
-        //    var ListDirUser = from dire in DireccionController.FindAll()
-        //                      select new
-        //                      {
-        //                          Codigo = dire.Codigo,
-        //                          Alias = dire.Alias,                               
-        //                      };
-
-        //    DropDirecciones.DataSource = from dir in ListDirUser.Where(dire => dire.Codigo == codDirUser)
-        //                             select new
-        //                             {
-        //                               codigo = dir.Codigo,
-        //                               alias = dir.Alias,
-        //                             };
-        //    DropDirecciones.DataValueField = "codigo";
-        //    DropDirecciones.DataTextField = "alias";
-
-        //    DropDirecciones.DataBind();
-        //}
+            DropRegion.DataBind();
+        }
 
         protected void BtnEditarUser_Click(object sender, ImageClickEventArgs e)
         {

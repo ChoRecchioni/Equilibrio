@@ -22,7 +22,7 @@ namespace equilibrio.WEBFORMS_ADM
 
             var listaDelivery = DeliveryController.findAll();
 
-            foreach (Delivery item in listaDelivery.Where(L => L.EstadoDelivery.codigo == 1 && L.OrdenCompra.Sede.codigo == u.Sede.codigo))
+            foreach (Delivery item in listaDelivery.Where(L => L.EstadoDelivery.codigo == 1 && L.OrdenCompra.fk_sede == u.Sede.codigo))
             {
 
                 HtmlGenericControl divDet = new HtmlGenericControl("div");
