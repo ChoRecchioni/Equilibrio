@@ -128,8 +128,8 @@
 
         <asp:TextBox class="Txt" oninput="checkRut(this)" Style="float: left; margin-bottom: 30px;" ID="TxtBuscarRut" runat="server" placeholder="CLIENTE"></asp:TextBox>
         <asp:Button class="Btn" Style="float: left;" ID="BtnBuscarRut" runat="server" Text="BUSCAR" OnClick="BtnBuscarRut_Click" />
-        <input id="fechaBuscar" runat="server" type="date" />
-        <asp:Button class="Btn" Style="float: left;" ID="BtnBuscarFecha" runat="server" Text="BUSCAR" OnClick="BtnBuscarFecha_Click" />
+        <input class="calendarioreserva" id="fechaBuscar" runat="server" type="date" />
+        <asp:Button class="Btn" ID="BtnBuscarFecha" runat="server" Text="BUSCAR" OnClick="BtnBuscarFecha_Click" />
         <br />
 
         <div id="divReservas" class="Contenedor" style="margin-left: 0px;" runat="server">

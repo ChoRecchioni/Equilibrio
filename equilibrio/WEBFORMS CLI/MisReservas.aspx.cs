@@ -47,11 +47,11 @@ namespace equilibrio.WEBFORMS
                 tdFecha.Attributes.Add("class", "auto-style2");
 
                 Label lblTituloFecha = new Label();
-                lblTituloFecha.Attributes.Add("class", "TxtReserva");
+                lblTituloFecha.Attributes.Add("class", "TxtReservaB");
                 lblTituloFecha.Text = "FECHA:";
 
                 Label lblFecha = new Label();
-                lblFecha.Attributes.Add("class", "TxtReserva");
+                lblFecha.Attributes.Add("class", "TxtReservaB");
                 lblFecha.Text = item.fecha.ToShortDateString();
                 lblFecha.CssClass = "lblReserva";
 
@@ -63,11 +63,11 @@ namespace equilibrio.WEBFORMS
                 tdFecha.Attributes.Add("class", "auto-style3");
 
                 Label lblTituloHora = new Label();
-                lblTituloHora.Attributes.Add("class", "TxtReserva");
+                lblTituloHora.Attributes.Add("class", "TxtReservaB");
                 lblTituloHora.Text = "HORA:";
 
                 Label lblHora = new Label();
-                lblHora.Attributes.Add("class", "TxtReserva");
+                lblHora.Attributes.Add("class", "TxtReservaB");
                 lblHora.Text = item.fecha.ToShortTimeString();
                 lblHora.CssClass = "lblReserva";
 

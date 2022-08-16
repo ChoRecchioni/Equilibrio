@@ -72,13 +72,13 @@
                     <tr style="height: 10px;">
                         <td class="auto-style4" colspan="2">
                             <asp:Label class="LblTitulo" ID="LbDatos" runat="server" Text="DATOS PERSONALES"></asp:Label>
-                            <asp:ImageButton class="BtnForm" ID="BtnEditarUser" style="float: right;" runat="server" Height="20px" Width="20px" ImageUrl="~/IMG/edit.png" CssClass="auto-style31" OnClick="BtnEditarUser_Click" />
-                            <asp:ImageButton class="BtnForm" ID="BtnCheckUser" style="float: right;" runat="server" Visible="false" Height="20px" Width="20px" ImageUrl="~/IMG/check.png" CssClass="auto-style31" OnClick="BtnCheckUser_Click" />
+                            <asp:ImageButton class="BtnForm" ID="BtnEditarUser" style="float: right; margin-right: 100px;" runat="server" Height="20px" Width="20px" ImageUrl="~/IMG/edit.png" CssClass="auto-style31" OnClick="BtnEditarUser_Click" />
+                            <asp:ImageButton class="BtnForm" ID="BtnCheckUser" style="float: right; margin-right: 100px;" runat="server" Visible="false" Height="20px" Width="20px" ImageUrl="~/IMG/check.png" CssClass="auto-style31" OnClick="BtnCheckUser_Click" />
                         </td>
                         <td class="auto-style5" colspan="2">
                             <asp:Label class="LblTitulo" ID="LbDirecciones0" runat="server" Text="MIS DIRECCIONES"></asp:Label>
-                            <asp:ImageButton class="BtnForm" ID="BtnEditarDir" style="float: right;" runat="server" Height="20px" Width="20px" ImageUrl="~/IMG/edit.png" CssClass="auto-style31" OnClick="BtnEditarDir_Click" />
-                            <asp:ImageButton class="BtnForm" ID="BtnCheckDir" Visible="false" style="float: right;" runat="server" Height="20px" Width="20px" ImageUrl="~/IMG/check.png" CssClass="auto-style31" OnClick="BtnCheckDir_Click" />
+                            <asp:ImageButton class="BtnForm" ID="BtnEditarDir" style="float: right; margin-right: 100px;" runat="server" Height="20px" Width="20px" ImageUrl="~/IMG/edit.png" CssClass="auto-style31" OnClick="BtnEditarDir_Click" />
+                            <asp:ImageButton class="BtnForm" ID="BtnCheckDir" Visible="false" style="float: right; margin-right: 100px;" runat="server" Height="20px" Width="20px" ImageUrl="~/IMG/check.png" CssClass="auto-style31" OnClick="BtnCheckDir_Click" />
 
                         </td>
                     </tr>

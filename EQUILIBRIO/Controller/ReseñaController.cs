@@ -40,7 +40,7 @@ namespace equilibrio.Controller
             entidades.Reseña.Add(r);
             entidades.SaveChanges();
 
-            return "Reseña agregado.";
+            return "Reseña agregada.";
         }
 
 
